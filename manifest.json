@@ -13,7 +13,7 @@
   "connection_templates": true,
   "unified_query_runner": true,
   "metabase_scripts": true,
-  "file_count": 266,
+  "file_count": 267,
   "files": [
     {
       "path": "README.md",
@@ -116,6 +116,36 @@
       "sha256": "55d3349999b7803ae691fa181ba7721abac4089575acf05f8736a11a4196a124"
     },
     {
+      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/manifest.yaml",
+      "bytes": 105,
+      "sha256": "8d491885bfa4c804cabfef52ef553e31f106e969701de9ea30c35f62270ebfc1"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/metrics/refund-rate-legacy.md",
+      "bytes": 433,
+      "sha256": "183751ec0251d62c9e1418d3849e7b15aa7ec048fa6402f53dbe18556d158432"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/reviews/refund-rate-review.md",
+      "bytes": 298,
+      "sha256": "2ee2792669ef90366304041cdd5eed2bd4d76eabc89b5aa3ac5ef972383666a9"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/manifest.yaml",
+      "bytes": 105,
+      "sha256": "8d491885bfa4c804cabfef52ef553e31f106e969701de9ea30c35f62270ebfc1"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/metrics/refund-rate-legacy.md",
+      "bytes": 433,
+      "sha256": "183751ec0251d62c9e1418d3849e7b15aa7ec048fa6402f53dbe18556d158432"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/reviews/refund-rate-review.md",
+      "bytes": 298,
+      "sha256": "2ee2792669ef90366304041cdd5eed2bd4d76eabc89b5aa3ac5ef972383666a9"
+    },
+    {
       "path": "evals/fixtures/data-query-knowledge/OWNERS.yaml",
       "bytes": 87,
       "sha256": "9ede92e874f2e20b8c7c42d9e2ef9651c5a7eaac31d5d5250fa6d4adb5dc0901"
@@ -171,41 +201,6 @@
       "sha256": "c5a2e4d63b78332733bfce17ef54ba536ed58af97df33403bafefa7f3b611542"
     },
     {
-      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/manifest.yaml",
-      "bytes": 105,
-      "sha256": "8d491885bfa4c804cabfef52ef553e31f106e969701de9ea30c35f62270ebfc1"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/metrics/refund-rate-legacy.md",
-      "bytes": 433,
-      "sha256": "183751ec0251d62c9e1418d3849e7b15aa7ec048fa6402f53dbe18556d158432"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/reviews/refund-rate-review.md",
-      "bytes": 298,
-      "sha256": "2ee2792669ef90366304041cdd5eed2bd4d76eabc89b5aa3ac5ef972383666a9"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge-old/manifest.yaml",
-      "bytes": 105,
-      "sha256": "8d491885bfa4c804cabfef52ef553e31f106e969701de9ea30c35f62270ebfc1"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge-old/metrics/refund-rate-legacy.md",
-      "bytes": 433,
-      "sha256": "183751ec0251d62c9e1418d3849e7b15aa7ec048fa6402f53dbe18556d158432"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge-old/reviews/refund-rate-review.md",
-      "bytes": 298,
-      "sha256": "2ee2792669ef90366304041cdd5eed2bd4d76eabc89b5aa3ac5ef972383666a9"
-    },
-    {
-      "path": "evals/fixtures/metabase/card_1001_gmv_daily.json",
-      "bytes": 2036,
-      "sha256": "037e3a78a4824391176914a4c7f7df25e45d2b5cd592d3f5e31116d6f81b8892"
-    },
-    {
       "path": "evals/fixtures/metabase-mock/card-321.json",
       "bytes": 475,
       "sha256": "d0793806c98004c3c107b850c726e2805632e2a6440ae56eb39a2d04965ebbc1"
@@ -224,6 +219,11 @@
       "path": "evals/fixtures/metabase-mock/search.json",
       "bytes": 402,
       "sha256": "e559f318813d3829daf065804011cfc5e6b54a443e83e1828eeb457e60bd2266"
+    },
+    {
+      "path": "evals/fixtures/metabase/card_1001_gmv_daily.json",
+      "bytes": 2036,
+      "sha256": "037e3a78a4824391176914a4c7f7df25e45d2b5cd592d3f5e31116d6f81b8892"
     },
     {
       "path": "evals/fixtures/missing-time-range.sql",
@@ -771,6 +771,11 @@
       "sha256": "0934d58513a5f5838e4e11cbdb1cfec91d66a24d712c2d1bed27d8cfa5071858"
     },
     {
+      "path": "references/sql-query-method-internal/references/method-skills-index.md",
+      "bytes": 7026,
+      "sha256": "ac8cffc210b7b3e9bdadf664e00a9374e8ecc36ef26ebd946b32333c0e9fb8e5"
+    },
+    {
       "path": "references/sql-query-method-internal/references/method-skills/cohort-analysis-local/SKILL.reference.md",
       "bytes": 5375,
       "sha256": "918035049294f58cbce20af3d300902f84b67a94cfd1021a774d06768dde40e9"
@@ -951,6 +956,11 @@
       "sha256": "25a92410b81f9197d3b691246be79ae2c55c9c028b116fd94b0d303b540a8792"
     },
     {
+      "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb-workflow/SKILL.reference.md",
+      "bytes": 10204,
+      "sha256": "b26c4e8eda03e9ee90b9660c1c7eb0b891d56c47373593ff26ffa267815e3a9f"
+    },
+    {
       "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb/SKILL.reference.md",
       "bytes": 11695,
       "sha256": "a7d327eca6722f9354737df03c11cccd137fe104f1a1e3eccbd460d85f258940"
@@ -969,11 +979,6 @@
       "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb/references/clickhouse-user-relationship-export.md",
       "bytes": 2321,
       "sha256": "9afae9efb9aaf2e10246737332a7a8507e6579059022a815bab782e075d1956a"
-    },
-    {
-      "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb-workflow/SKILL.reference.md",
-      "bytes": 10204,
-      "sha256": "b26c4e8eda03e9ee90b9660c1c7eb0b891d56c47373593ff26ffa267815e3a9f"
     },
     {
       "path": "references/sql-query-method-internal/references/method-skills/profitability-analysis-local/SKILL.reference.md",
@@ -1086,9 +1091,9 @@
       "sha256": "35058a51176f387ec40d435b81772cb0c28dc50391958c0430187b6c25bd0ee8"
     },
     {
-      "path": "references/sql-query-method-internal/references/method-skills-index.md",
-      "bytes": 7026,
-      "sha256": "ac8cffc210b7b3e9bdadf664e00a9374e8ecc36ef26ebd946b32333c0e9fb8e5"
+      "path": "references/sql-query-method-internal/references/old-sql-index.md",
+      "bytes": 177,
+      "sha256": "645b787cf977fbb0ad15bbc94411335cb711a16eaca8754254b4bd4226d7d37f"
     },
     {
       "path": "references/sql-query-method-internal/references/old-sql/README.md",
@@ -1096,9 +1101,9 @@
       "sha256": "7a825911cf00c3e91677b0a89a1d1c6e99bb58b334d9b609de240033ca8280dc"
     },
     {
-      "path": "references/sql-query-method-internal/references/old-sql-index.md",
-      "bytes": 177,
-      "sha256": "645b787cf977fbb0ad15bbc94411335cb711a16eaca8754254b4bd4226d7d37f"
+      "path": "references/sql-query-method-internal/references/schema-kb-index.md",
+      "bytes": 503,
+      "sha256": "a8b2606f86e56cfa722c819b6d5b4ddcfe8fd128ec5988cbed9cd6f492fb857c"
     },
     {
       "path": "references/sql-query-method-internal/references/schema-kb/clickhouse_manifest_latest.json",
@@ -1134,11 +1139,6 @@
       "path": "references/sql-query-method-internal/references/schema-kb/unified_schema_index.json",
       "bytes": 10835117,
       "sha256": "1c89045a14c4700afb9c5122252e00d495adce9249653df5ef13dd8b075fd244"
-    },
-    {
-      "path": "references/sql-query-method-internal/references/schema-kb-index.md",
-      "bytes": 503,
-      "sha256": "a8b2606f86e56cfa722c819b6d5b4ddcfe8fd128ec5988cbed9cd6f492fb857c"
     },
     {
       "path": "references/sql-query-method-overlay.md",
@@ -1196,6 +1196,11 @@
       "sha256": "04cad7def7159aba05ebb7df8546f5544f5b5b86ce3210b88fab20b023cebef0"
     },
     {
+      "path": "scripts/package_skill.py",
+      "bytes": 3829,
+      "sha256": "fb6016944fe530dcb856873e8bc4616abbf44bb7a9bb075a90083554af888cc3"
+    },
+    {
       "path": "scripts/promote_query_knowledge.py",
       "bytes": 6846,
       "sha256": "390a4b0329efc07b7807a7bae9638b480a97a6c3ee2e4450d41b41628f8970d8"
@@ -1247,8 +1252,8 @@
     },
     {
       "path": "scripts/validate_manifest.py",
-      "bytes": 2758,
-      "sha256": "ee7a18322cb8f22a9e54670b5d0a3f2474eea4b5eb91850764cd3254dfefa747"
+      "bytes": 2790,
+      "sha256": "77ce7499ccdb35dfb4f8884c39ecd199ae7e80c4aedc48c8689b28641b346eea"
     },
     {
       "path": "scripts/validate_query_knowledge.py",

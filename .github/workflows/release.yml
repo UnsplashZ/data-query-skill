@@ -1,0 +1,122 @@
+name: Package Skill Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag. Defaults to manual-<run_number>-<short_sha>."
+        required: false
+        type: string
+      prerelease:
+        description: "Mark the release as a prerelease."
+        required: false
+        default: false
+        type: boolean
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  package-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate manifest
+        run: python scripts/validate_manifest.py
+
+      - name: Scan for sensitive information
+        run: python scripts/scan_sensitive_info.py .
+
+      - name: Run offline eval pack
+        run: python scripts/eval_skill_pack.py --allow-blocked
+
+      - name: Package skill
+        run: python scripts/package_skill.py --json
+
+      - name: Resolve release metadata
+        id: meta
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            tag="${GITHUB_REF_NAME}"
+          elif [[ -n "${INPUT_TAG}" ]]; then
+            tag="${INPUT_TAG}"
+          else
+            tag="manual-${GITHUB_RUN_NUMBER}-${GITHUB_SHA::7}"
+          fi
+          echo "tag=${tag}" >> "${GITHUB_OUTPUT}"
+          echo "title=internal-data-query ${tag}" >> "${GITHUB_OUTPUT}"
+
+      - name: Write release notes
+        shell: bash
+        run: |
+          set -euo pipefail
+          checksum="$(cut -d ' ' -f 1 dist/internal-data-query-skill.zip.sha256)"
+          {
+            echo "## Internal Data Query Skill"
+            echo
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Package: \`internal-data-query-skill.zip\`"
+            echo "- SHA256: \`${checksum}\`"
+            echo
+            echo "Install by extracting the zip into a skills directory, then run:"
+            echo
+            echo '```bash'
+            echo "python scripts/validate_manifest.py"
+            echo "python scripts/scan_sensitive_info.py ."
+            echo "python scripts/setup_connections.py"
+            echo '```'
+          } > release-notes.md
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-data-query-skill
+          path: |
+            dist/internal-data-query-skill.zip
+            dist/internal-data-query-skill.zip.sha256
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_PRERELEASE: ${{ inputs.prerelease }}
+          RELEASE_TAG: ${{ steps.meta.outputs.tag }}
+          RELEASE_TITLE: ${{ steps.meta.outputs.title }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "${RELEASE_TAG}" >/dev/null 2>&1; then
+            gh release upload "${RELEASE_TAG}" \
+              dist/internal-data-query-skill.zip \
+              dist/internal-data-query-skill.zip.sha256 \
+              --clobber
+            gh release edit "${RELEASE_TAG}" \
+              --title "${RELEASE_TITLE}" \
+              --notes-file release-notes.md
+          else
+            args=(
+              gh release create "${RELEASE_TAG}"
+              dist/internal-data-query-skill.zip
+              dist/internal-data-query-skill.zip.sha256
+              --title "${RELEASE_TITLE}"
+              --notes-file release-notes.md
+              --target "${GITHUB_SHA}"
+            )
+            if [[ "${INPUT_PRERELEASE}" == "true" ]]; then
+              args+=(--prerelease)
+            fi
+            "${args[@]}"
+          fi

@@ -8,8 +8,8 @@ import hashlib
 import json
 from pathlib import Path
 
-IGNORED_DIRS = {".git", "__pycache__", "data-query-work", "docs"}
-IGNORED_NAMES = {".gitignore"}
+IGNORED_DIRS = {".git", ".github", "__pycache__", "data-query-work", "dist", "docs"}
+IGNORED_NAMES = {".DS_Store", ".gitignore"}
 IGNORED_SUFFIXES = {".pyc", ".pyo"}
 
 
