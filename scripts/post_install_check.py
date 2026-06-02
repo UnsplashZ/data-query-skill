@@ -10,8 +10,10 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from lib_dependencies import dependency_report
 from lib_data_sources import (
     SUPPORTED_ENGINES,
+    resolve_config_path,
     iter_profile_configs,
     load_config_with_path,
     profile_missing_fields,
@@ -61,13 +63,16 @@ def build_report(root: Path, config_path: Path | None, env_file: Path | None, re
     setup_help = run(root, [sys.executable, "scripts/setup_connections.py", "--help"])
     schema_smoke = run(root, [sys.executable, "scripts/search_schema.py", "example", "--limit", "1"])
 
+    dependencies = dependency_report(["yaml", "openpyxl", "clickhouse_driver", "pymysql", "odps"])
     config_error = None
+    config_parse_skipped = False
     try:
         resolved_config, config = load_config_with_path(config_path, env_file)
     except (FileNotFoundError, RuntimeError) as exc:
-        resolved_config = config_path.expanduser() if config_path else None
+        resolved_config = resolve_config_path(config_path) or (config_path.expanduser() if config_path else None)
         config = {}
         config_error = str(exc)
+        config_parse_skipped = "PyYAML" in str(exc) or "yaml" in str(exc).lower()
     profiles = profile_rows(config)
     configured_engines = {row["engine"] for row in profiles if row["status"] == "configured"}
     present_engines = {row["engine"] for row in profiles}
@@ -99,9 +104,12 @@ def build_report(root: Path, config_path: Path | None, env_file: Path | None, re
             "setup_help": setup_help,
             "schema_offline_smoke": schema_smoke,
         },
+        "dependencies": dependencies,
         "config": {
             "path": str(resolved_config) if resolved_config else None,
+            "exists": bool(resolved_config and resolved_config.exists()),
             "error": config_error,
+            "profile_parsing_skipped": config_parse_skipped,
             "profiles": profiles,
             "configured_sources": sorted(configured_engines),
             "missing_sources": missing_sources,
@@ -133,8 +141,18 @@ def print_text(report: dict[str, Any]) -> None:
     for key, value in report["status"].items():
         print(f"- {key}: {value}")
     print(f"config_path: {report['config']['path'] or 'not found'}")
+    print(f"config_exists: {'yes' if report['config'].get('exists') else 'no'}")
     if report["config"].get("error"):
         print(f"config_error: {report['config']['error']}")
+    print(f"python: {report['dependencies']['python']}")
+    print(f"version: {report['dependencies']['version']}")
+    print(f"platform: {report['dependencies']['platform']}")
+    print("missing_modules:")
+    if report["dependencies"]["missing_modules"]:
+        for row in report["dependencies"]["missing_modules"]:
+            print(f"- {row['module']}: {row['recommendation']}")
+    else:
+        print("- none")
     print(f"configured_sources: {', '.join(report['config']['configured_sources']) or 'none'}")
     print(f"missing_sources: {', '.join(report['config']['missing_sources']) or 'none'}")
     print(f"incomplete_sources: {', '.join(report['config']['incomplete_sources']) or 'none'}")

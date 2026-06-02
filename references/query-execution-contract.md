@@ -9,6 +9,7 @@
 3. SQL 必须只读。默认禁止 DDL、DML、权限、导出、过程执行、维护类语句。
 4. 每个查询必须声明时间字段、时间范围、统计粒度、状态过滤、金额单位和业务 scope。
 5. 执行路径必须是 `static check -> sample -> validation -> full scope`。无法执行 full scope 时，结果只能标为 `partially_verified` 或 `unverified`。
+6. 若只需要指定表，先用 `refresh_schema.py --table-list` 定向刷新 metadata；若需要表样例，优先用 `sample_tables.py --dry-run` 生成 SQL/status，再在用户允许真实查询后执行。
 
 ## 2. Dialect 策略
 
@@ -47,6 +48,8 @@
 - error 必须阻断执行；warning 可以继续 sample，但输出必须记录风险和修正计划。
 
 `scripts/run_query.py` 在有 SQL 的情况下会强制执行 static check。Metabase 纯 card 查询没有 SQL 文本时不做 SQL static check，但仍需要记录 card source 和参数。
+
+`scripts/run_query.py` 会在写出 CSV/XLSX 前对 rows 进行字段名和值形态脱敏，并对导出文件做 residual scan；高风险残留会阻断写入并删除已生成文件。credential-like 值不得降级为 report-only。
 
 `scripts/run_query.py` 的 JSON 报告必须至少包含：
 

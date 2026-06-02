@@ -222,10 +222,13 @@ def ensure_output_dir(path: Path) -> Path:
 
 
 def write_csv(path: Path, columns: list[str], rows: list[dict[str, Any]]) -> None:
-    with path.open("w", newline="", encoding="utf-8-sig") as f:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(f"{path.stem}.tmp{path.suffix}")
+    with tmp.open("w", newline="", encoding="utf-8-sig") as f:
         writer = csv.DictWriter(f, fieldnames=columns, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
+    tmp.replace(path)
 
 
 def write_xlsx(path: Path, columns: list[str], rows: list[dict[str, Any]]) -> None:
@@ -239,7 +242,10 @@ def write_xlsx(path: Path, columns: list[str], rows: list[dict[str, Any]]) -> No
     ws.append(columns)
     for row in rows:
         ws.append([row.get(col) for col in columns])
-    wb.save(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(f"{path.stem}.tmp{path.suffix}")
+    wb.save(tmp)
+    tmp.replace(path)
 
 
 def export_rows(output_dir: Path, stem: str, fmt: str, rows: list[dict[str, Any]], columns: list[str] | None = None) -> Path:

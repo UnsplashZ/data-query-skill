@@ -1,0 +1,5 @@
+# scoped refresh fixture
+dm.orders
+`dm`.`drh_users`
+orders
+dm.orders

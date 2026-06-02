@@ -7,12 +7,13 @@
 ## 🧩 能力
 
 - 配置本机只读数据源：Metabase、ClickHouse、ODPS / MaxCompute、MySQL
-- 刷新表结构、字段、注释、DDL 等 schema 信息
+- 刷新表结构、字段、注释、DDL 等 schema 信息，支持按 txt/csv/xlsx table list 定向刷新
+- 从 schema index 生成每表最新样例 SQL，并在落盘前统一脱敏
 - 搜索业务仓库或外部提供的 schema index / historical SQL index
 - 搜索、读取和运行 Metabase card
 - 检查 SQL 只读安全性，拦截 DDL/DML、危险函数、外部 table function、system 表等风险
 - 执行只读查询并导出 CSV/XLSX
-- 在业务仓库内沉淀查询 brief、SQL draft、review、discovery report 和可复用知识
+- 在业务仓库内沉淀查询 brief、SQL draft、review、discovery report 和可复用知识，并支持 promotion 文件迁移
 
 ## 🔐 安全边界
 
@@ -48,8 +49,8 @@ data-query-work/
 ```
 
 - `schema/` 保存从只读数据源刷新出的 `unified_schema_index.json` 和 DDL 快照。
-- `knowledge/` 保存经过 capture / review / approval 的团队可复用知识。
-- `exports/` 可能包含查询结果，提交前应按团队安全要求处理。
+- `knowledge/` 默认只创建 `candidates/`、`reviewed/`、`approved/`、`OWNERS.yaml`、`promotion-log.md`；`deprecated/` 只在首次弃用时创建。
+- `exports/` 可能包含查询结果；内置查询导出和样例抽取默认写入脱敏结果，提交前仍应按团队安全要求处理。
 
 `data-query-work/` 默认不要整体加入业务仓库 `.gitignore`，因为它承载多人协作的过程记录和知识沉淀。若有敏感导出，只忽略具体敏感文件或团队约定的本地子路径。
 
@@ -62,9 +63,12 @@ data-query-work/
 ```text
 帮我配置内部数据源账号
 帮我刷新这个仓库的数据表结构
+按这个 tables.xlsx 定向刷新 schema
+从 schema index 抽每张表两条最新样例并脱敏
 帮我查一下数据
 写个 SQL
 看一下 Metabase 里有没有这个指标
 这个页面字段应该接哪张表
 验证这个报表口径
+把这些 knowledge candidate 批量 approve / deprecated
 ```

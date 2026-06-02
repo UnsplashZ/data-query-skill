@@ -13,17 +13,9 @@ DEFAULT_KNOWLEDGE_ROOT = Path(WORKSPACE_DIR) / KNOWLEDGE_DIR
 
 KNOWLEDGE_MARKER_FILES = ("OWNERS.yaml",)
 KNOWLEDGE_SUBDIRS = (
-    "candidates/observations",
-    "candidates/query-verified",
-    "candidates/reusable-patterns",
-    "candidates/user-assertions",
-    "metrics",
-    "sources",
-    "joins",
-    "golden-queries",
-    "semantic-memory",
-    "review-records",
-    "deprecated",
+    "candidates",
+    "reviewed",
+    "approved",
 )
 
 
@@ -58,6 +50,13 @@ def warn_if_needed(selection: KnowledgeRoot) -> None:
         print(f"WARN: {selection.warning}", file=sys.stderr)
 
 
+def atomic_write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    tmp.replace(path)
+
+
 def ensure_knowledge_skeleton(knowledge_root: Path) -> None:
     knowledge_root.mkdir(parents=True, exist_ok=True)
     for subdir in KNOWLEDGE_SUBDIRS:
@@ -65,15 +64,15 @@ def ensure_knowledge_skeleton(knowledge_root: Path) -> None:
 
     owners = knowledge_root / "OWNERS.yaml"
     if not owners.exists():
-        owners.write_text("owners: []\nreviewers: []\napprovers: []\n", encoding="utf-8")
+        atomic_write_text(owners, "owners: []\nreviewers: []\napprovers: []\n")
 
     promotion_log = knowledge_root / "promotion-log.md"
     if not promotion_log.exists():
-        promotion_log.write_text(
+        atomic_write_text(
+            promotion_log,
             "# Query Knowledge Promotion Log\n\n"
             "| timestamp | id | from_status | to_status | actor | reviewer | evidence | notes |\n"
             "| --- | --- | --- | --- | --- | --- | --- | --- |\n",
-            encoding="utf-8",
         )
 
 

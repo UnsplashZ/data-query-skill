@@ -32,7 +32,7 @@ source_interaction: []
 - Related files:
 - Validation:
 - Risk:
-- Suggested file: `data-query-work/knowledge/candidates/query-verified/YYYY-MM-DD__domain__topic__candidate.md`
+- Suggested file: `data-query-work/knowledge/candidates/YYYY-MM-DD__domain__topic__candidate-<id>.md`
 - Maturity: `observed / user_asserted / query_verified / reused / ready_for_candidate / ready_for_review`
 - Capture trigger:
 - Source interaction:

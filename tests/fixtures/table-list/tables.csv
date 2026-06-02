@@ -1,0 +1,4 @@
+table_name,note
+dm.orders,primary
+dm.drh_users,drh
+orders,default-db

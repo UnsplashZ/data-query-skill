@@ -5,19 +5,20 @@ from __future__ import annotations
 
 import argparse
 import csv
-import importlib.util
 import json
 import os
 import re
 from pathlib import Path
 from typing import Any
 
+from lib_dependencies import dependency_report, module_installed
 from lib_data_sources import (
     SUPPORTED_ENGINES,
     iter_profile_configs,
     load_config_with_path,
     profile_missing_fields,
     profile_placeholder_fields,
+    resolve_config_path,
 )
 from lib_workspace import resolve_knowledge_root
 
@@ -36,7 +37,7 @@ def driver_status() -> dict[str, dict[str, Any]]:
     for name, module in DRIVERS.items():
         rows[name] = {
             "module": module,
-            "installed": True if module is None else importlib.util.find_spec(module) is not None,
+            "installed": module_installed(module),
         }
     return rows
 
@@ -213,7 +214,15 @@ def main() -> int:
     args = parser.parse_args()
 
     root = args.root.resolve()
-    config_path, config = load_config_with_path(args.config, args.env_file)
+    config_error = None
+    profile_parsing_skipped = False
+    try:
+        config_path, config = load_config_with_path(args.config, args.env_file)
+    except (FileNotFoundError, RuntimeError) as exc:
+        config_path = resolve_config_path(args.config) or (args.config.expanduser() if args.config else None)
+        config = {}
+        config_error = str(exc)
+        profile_parsing_skipped = "PyYAML" in str(exc) or "yaml" in str(exc).lower()
     profiles = [profile_status(engine, profile, cfg) for engine, profile, cfg in iter_profile_configs(config)]
     configured_engines = {row["engine"] for row in profiles}
     for engine in SUPPORTED_ENGINES:
@@ -236,9 +245,12 @@ def main() -> int:
     local_config = {
         "path": str(config_path) if config_path else None,
         "exists": bool(config_path and config_path.exists()),
+        "error": config_error,
+        "profile_parsing_skipped": profile_parsing_skipped,
     }
     result = {
         "installed": driver_status(),
+        "dependencies": dependency_report(["yaml", "openpyxl", "clickhouse_driver", "pymysql", "odps"]),
         "local_config": local_config,
         "available_sources": profiles,
         "offline_knowledge": offline_knowledge,

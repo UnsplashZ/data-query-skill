@@ -93,6 +93,8 @@ Useful options:
 
 ```bash
 python scripts/refresh_schema.py --engine clickhouse --profile default --root <target-repo>
+python scripts/refresh_schema.py --engine clickhouse --profile default --table-list tables.txt --default-database dm --root <target-repo>
+python scripts/refresh_schema.py --engine clickhouse --profile default --table-list tables.xlsx --table-column table_name --root <target-repo>
 python scripts/refresh_schema.py --replace --root <target-repo>
 python scripts/refresh_schema.py --limit-tables 200 --root <target-repo>
 ```
@@ -130,7 +132,9 @@ Default artifact names:
 - Discovery report: `data-query-work/discovery-reports/YYYY-MM-DD__domain__topic__discovery.md`
 - Requirement gap: `data-query-work/requirement-gaps/YYYY-MM-DD__domain__topic__gap.md`
 - Export: `data-query-work/exports/YYYY-MM-DD__domain__topic__sample.*`
-- Knowledge candidate: `data-query-work/knowledge/candidates/<maturity>/YYYY-MM-DD__domain__topic__candidate-<id>.md`
+- Knowledge candidate: `data-query-work/knowledge/candidates/YYYY-MM-DD__domain__topic__candidate-<id>.md`
+- Reviewed knowledge: `data-query-work/knowledge/reviewed/YYYY-MM-DD__domain__topic__reviewed-<id>.md`
+- Approved knowledge: `data-query-work/knowledge/approved/YYYY-MM-DD__domain__topic__approved-<id>.md`
 
 Use this Markdown title pattern for generated process files:
 
@@ -185,6 +189,7 @@ python scripts/capture_query_knowledge.py <artifact> --root <target-repo>
 python scripts/validate_query_knowledge.py --root <target-repo>
 python scripts/search_query_knowledge.py <keyword> --root <target-repo>
 python scripts/promote_query_knowledge.py <id-or-path> --to reviewed --reviewer <name> --evidence <path> --root <target-repo>
+python scripts/patch_query_knowledge.py --root <target-repo> --patch-file corrections.yaml --dry-run
 ```
 
 ## Scripts
@@ -192,6 +197,7 @@ python scripts/promote_query_knowledge.py <id-or-path> --to reviewed --reviewer 
 - `scripts/setup_connections.py`: create or merge local readonly data-source config.
 - `scripts/check_connections.py`: parse config and optionally smoke-check real readonly connectivity.
 - `scripts/refresh_schema.py`: pull metadata, table structure, field details, and available DDL into `data-query-work/schema/`.
+- `scripts/sample_tables.py`: generate latest-row sample SQL from schema index, execute ClickHouse sampling when allowed, and write masked JSONL/status/report outputs.
 - `scripts/discover_data_sources.py`: summarize configured profiles, drivers, schema index, historical SQL index, and workspace knowledge.
 - `scripts/search_schema.py`: search schema index by table, field, engine, or keyword.
 - `scripts/search_old_sql.py`: search an external historical SQL index.
@@ -201,6 +207,8 @@ python scripts/promote_query_knowledge.py <id-or-path> --to reviewed --reviewer 
 - `scripts/metabase_get_card.py`: fetch card SQL and metadata.
 - `scripts/metabase_run_card.py`: run a card and export CSV/XLSX.
 - `scripts/post_install_check.py`: lightweight install/config status report.
+- `scripts/scan_sensitive_info.py`: scan high-confidence secret leaks and optional sensitive field-name risks.
+- `scripts/patch_query_knowledge.py`: batch update, deprecate, promote, verify absent keywords, and validate knowledge files.
 
 ## References And Templates
 

@@ -31,7 +31,7 @@ source_interaction: []
 - Related files:
 - Validation:
 - Risk:
-- Suggested file: `data-query-work/knowledge/sources/YYYY-MM-DD__domain__topic__source-profile.md`
+- Suggested file: `data-query-work/knowledge/candidates/YYYY-MM-DD__domain__topic__candidate-<id>.md`
 
 ## Purpose
 

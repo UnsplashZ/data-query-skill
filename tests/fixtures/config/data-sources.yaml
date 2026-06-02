@@ -1,0 +1,9 @@
+profiles:
+  clickhouse:
+    default:
+      host: example.invalid
+      port: 9000
+      database: dm
+      username: readonly_user
+      password: ${CLICKHOUSE_PASSWORD}
+      secure: false

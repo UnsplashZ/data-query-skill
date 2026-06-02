@@ -31,7 +31,7 @@ source_interaction: []
 - Related files:
 - Validation:
 - Risk:
-- Suggested file: `data-query-work/knowledge/golden-queries/YYYY-MM-DD__domain__topic__golden-query.md`
+- Suggested file: `data-query-work/knowledge/candidates/YYYY-MM-DD__domain__topic__candidate-<id>.md`
 
 ## Use Case
 

@@ -10,6 +10,7 @@ import time
 from pathlib import Path
 from typing import Any
 
+from lib_masking import mask_records, residual_scan_file
 from query_static_check import check_sql
 from lib_data_sources import (
     bool_value,
@@ -235,7 +236,18 @@ def main() -> int:
         columns, rows = run_metabase(cfg, args, sql)
     elapsed = time.perf_counter() - started
 
-    out = export_rows(args.output_dir, now_stem(args.name), args.output_format, rows, columns)
+    exported_rows = mask_records(rows)
+    out = export_rows(args.output_dir, now_stem(args.name), args.output_format, exported_rows, columns)
+    residual_findings = residual_scan_file(out)
+    if residual_findings:
+        try:
+            out.unlink()
+        except OSError:
+            pass
+        raise RuntimeError(
+            "Masked export still contains high-risk residual sensitive values; output removed. "
+            f"first_kind={residual_findings[0].matched_kind}"
+        )
     print(json.dumps({
         "engine": args.engine,
         "source": source,
@@ -247,6 +259,11 @@ def main() -> int:
         "confidence": confidence,
         "validation_notes": validation_notes(args, stage, static_result),
         "row_count": len(rows),
+        "masked_export": True,
+        "residual_scan": {
+            "high_risk_findings": len(residual_findings),
+            "status": "passed",
+        },
         "elapsed_seconds": round(elapsed, 3),
         "output_path": str(out),
     }, ensure_ascii=False, indent=2))

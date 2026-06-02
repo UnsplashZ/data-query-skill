@@ -31,7 +31,7 @@ source_interaction: []
 - Related files:
 - Validation:
 - Risk:
-- Suggested file: `data-query-work/knowledge/review-records/YYYY-MM-DD__domain__topic__promotion-request.md`
+- Suggested file: `data-query-work/knowledge/reviewed/YYYY-MM-DD__domain__topic__reviewed-<id>.md`
 
 ## Target Status
 

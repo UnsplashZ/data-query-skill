@@ -16,6 +16,11 @@ import yaml
 
 from lib_workspace import warn_if_needed, writable_knowledge_root
 
+try:
+    from lib_masking import residual_scan_text as shared_residual_scan_text
+except ImportError:  # pragma: no cover - compatibility until lib_masking ships.
+    shared_residual_scan_text = None
+
 
 SENSITIVE_PATTERNS: list[re.Pattern[str]] = [
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
@@ -49,6 +54,30 @@ class Candidate:
 
 def has_sensitive_value(text: str) -> bool:
     return any(pattern.search(text) for pattern in SENSITIVE_PATTERNS)
+
+
+def residual_scan_text(text: str) -> list[Any]:
+    if shared_residual_scan_text:
+        return list(shared_residual_scan_text(text))
+    findings: list[str] = []
+    for pattern in SENSITIVE_PATTERNS:
+        if pattern.search(text):
+            findings.append(pattern.pattern)
+    return findings
+
+
+def is_generated_slug_finding(finding: Any) -> bool:
+    matched_kind = getattr(finding, "matched_kind", "")
+    sample = str(getattr(finding, "sample", "") or "").strip()
+    if matched_kind != "token_like":
+        return False
+    if sample.startswith("topic: "):
+        return True
+    return sample.startswith("# ") and sample.endswith("/ query knowledge candidate")
+
+
+def blocking_residual_findings(text: str) -> list[Any]:
+    return [finding for finding in residual_scan_text(text) if not is_generated_slug_finding(finding)]
 
 
 def clean_line(line: str) -> str:
@@ -282,14 +311,14 @@ def read_inputs(paths: list[Path], inline_text: str | None) -> list[tuple[Path |
 def output_subdir(root: Path, candidate: Candidate) -> Path:
     selection = writable_knowledge_root(root)
     warn_if_needed(selection)
-    knowledge_root = selection.path
-    mapping = {
-        "observed": knowledge_root / "candidates" / "observations",
-        "user_asserted": knowledge_root / "candidates" / "user-assertions",
-        "query_verified": knowledge_root / "candidates" / "query-verified",
-        "reused": knowledge_root / "candidates" / "reusable-patterns",
-    }
-    return mapping.get(candidate.maturity, mapping["observed"])
+    return selection.path / "candidates"
+
+
+def atomic_write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    tmp.replace(path)
 
 
 def main() -> int:
@@ -324,7 +353,12 @@ def main() -> int:
         directory.mkdir(parents=True, exist_ok=True)
         filename = f"{candidate.operation_date}__{candidate.domain}__{candidate.topic}__candidate-{candidate.candidate_id}.md"
         path = directory / filename
-        path.write_text(render_candidate(candidate), encoding="utf-8")
+        rendered = render_candidate(candidate)
+        findings = blocking_residual_findings(rendered)
+        if findings:
+            print(f"FAIL: residual sensitive findings blocked write for {filename} ({len(findings)} finding(s)).")
+            return 1
+        atomic_write_text(path, rendered)
         written.append(path)
 
     for path in written:

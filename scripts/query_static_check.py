@@ -45,6 +45,22 @@ CLICKHOUSE_QUOTED_SYSTEM_TABLE_RE = re.compile(
     r'''\b(?:from|join)\s+["`]system["`]\s*\.''',
     re.IGNORECASE,
 )
+CLICKHOUSE_FINAL_ALIAS_RE = re.compile(
+    r"\b(?:from|join)\s+[`\"]?[A-Za-z_][A-Za-z0-9_]*[`\"]?(?:\.[`\"]?[A-Za-z_][A-Za-z0-9_]*[`\"]?)?\s+FINAL\s+(?:AS\s+)?[A-Za-z_][A-Za-z0-9_]*\b",
+    re.IGNORECASE,
+)
+CLICKHOUSE_LOCAL_TABLE_RE = re.compile(
+    r"\b(?:from|join)\s+[`\"]?(?:[A-Za-z_][A-Za-z0-9_]*\.)?(?:local_[A-Za-z0-9_]*|[A-Za-z0-9_]*_local)[`\"]?\b",
+    re.IGNORECASE,
+)
+CLICKHOUSE_COMPLEX_CTE_ALIAS_RE = re.compile(
+    r"\bwith\s+.+?\)\s+(?:as\s+)?[A-Za-z_][A-Za-z0-9_]*\s*,\s*[A-Za-z_][A-Za-z0-9_]*\s+as\s*\(",
+    re.IGNORECASE | re.S,
+)
+CLICKHOUSE_STRING_DATE_COMPARE_RE = re.compile(
+    r"\b(?:dt|ds|date|biz_date|pt)\s*(?:>=|<=|=|>|<|between)",
+    re.IGNORECASE,
+)
 TIME_FIELD_RE = re.compile(
     r"\b("
     r"dt|ds|date|day|month|biz_date|stat_date|pay_time|paid_at|created_at|updated_at|"
@@ -154,6 +170,42 @@ def engine_warnings(engine: str, clean_sql: str) -> list[dict[str, str]]:
             warnings.append(finding("warning", "dialect_clickhouse_date_format", "ClickHouse 通常使用 formatDateTime/toDate 系列函数。", "复核日期函数是否为 ClickHouse 方言。"))
         if re.search(r"\bnow\s*\(\s*\)\s*-\s*interval\b", clean_sql, re.IGNORECASE):
             warnings.append(finding("warning", "dialect_clickhouse_interval", "ClickHouse interval 写法可能需要 INTERVAL n DAY。", "执行前用 sample SQL 验证方言。"))
+        if CLICKHOUSE_FINAL_ALIAS_RE.search(clean_sql):
+            warnings.append(
+                finding(
+                    "warning",
+                    "clickhouse_old_final_alias",
+                    "检测到 FINAL 后直接 alias，旧版本 ClickHouse 可能解析不稳定。",
+                    "优先使用 FROM db.table FINAL 且避免紧跟 alias；确需 alias 时先用 sample 验证版本行为。",
+                )
+            )
+        if CLICKHOUSE_LOCAL_TABLE_RE.search(clean_sql):
+            warnings.append(
+                finding(
+                    "warning",
+                    "clickhouse_local_table_default",
+                    "检测到 local 表访问，分布式口径可能不完整。",
+                    "默认使用分布式表；只有明确需要单节点排查时才使用 local 表。",
+                )
+            )
+        if CLICKHOUSE_COMPLEX_CTE_ALIAS_RE.search(clean_sql):
+            warnings.append(
+                finding(
+                    "warning",
+                    "clickhouse_old_complex_cte_alias",
+                    "复杂 CTE alias 在旧版本 ClickHouse 上可能存在 WITH 语义差异。",
+                    "将 CTE 拆小或先用 EXPLAIN/sample 验证别名解析。",
+                )
+            )
+        if CLICKHOUSE_STRING_DATE_COMPARE_RE.search(clean_sql) and not re.search(r"\btoDate\s*\(|parseDateTimeBestEffort", clean_sql, re.IGNORECASE):
+            warnings.append(
+                finding(
+                    "warning",
+                    "clickhouse_string_date_compare",
+                    "疑似直接用 String 日期字段比较，可能发生字典序或隐式转换风险。",
+                    "确认字段类型；必要时显式使用 toDate/parseDateTimeBestEffort 并复核分区裁剪。",
+                )
+            )
     elif engine == "odps":
         if re.search(r"\btoDate\s*\(|\bformatDateTime\s*\(", clean_sql):
             warnings.append(finding("warning", "dialect_odps_clickhouse_func", "SQL 中疑似出现 ClickHouse 日期函数。", "ODPS/MaxCompute 需改用 to_date/dateadd 等团队约定方言。"))

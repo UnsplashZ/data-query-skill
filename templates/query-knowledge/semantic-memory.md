@@ -31,7 +31,7 @@ source_interaction: []
 - Related files:
 - Validation:
 - Risk:
-- Suggested file: `data-query-work/knowledge/semantic-memory/YYYY-MM-DD__domain__topic__semantic-memory.md`
+- Suggested file: `data-query-work/knowledge/candidates/YYYY-MM-DD__domain__topic__candidate-<id>.md`
 
 ## Reusable Knowledge
 

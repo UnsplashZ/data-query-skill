@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-06-02T00:00:00+00:00",
+  "source": "fixture",
+  "tables": {
+    "clickhouse": {
+      "dm.orders": {
+        "engine": "clickhouse",
+        "profile": "default",
+        "database": "dm",
+        "table": "orders",
+        "comment": "fixture table",
+        "columns": [
+          {"name": "id", "type": "UInt64", "ordinal": 1},
+          {"name": "updated_at", "type": "DateTime", "ordinal": 2},
+          {"name": "app_secret", "type": "String", "ordinal": 3}
+        ]
+      },
+      "dm.drh_users": {
+        "engine": "clickhouse",
+        "profile": "default",
+        "database": "dm",
+        "table": "drh_users",
+        "comment": "fixture drh table",
+        "columns": [
+          {"name": "user_id", "type": "UInt64", "ordinal": 1},
+          {"name": "_sign", "type": "Int8", "ordinal": 2},
+          {"name": "dt", "type": "String", "ordinal": 3}
+        ]
+      },
+      "dm.events_local": {
+        "engine": "clickhouse",
+        "profile": "default",
+        "database": "dm",
+        "table": "events_local",
+        "comment": "local table skipped by default",
+        "columns": [
+          {"name": "event_time", "type": "DateTime", "ordinal": 1}
+        ]
+      }
+    }
+  },
+  "version": 1
+}

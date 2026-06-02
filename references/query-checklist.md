@@ -15,6 +15,7 @@
 
 - [ ] Current repository/workspace has been searched.
 - [ ] External schema index, live metadata, or target-repo data catalog has been searched when available.
+- [ ] Scoped schema refresh has been run with `--table-list` when the question is limited to known tables.
 - [ ] External historical SQL index has been searched when available.
 - [ ] Target-repo runbooks or business docs have been searched when available.
 - [ ] Recommended and rejected sources are listed.
@@ -38,6 +39,7 @@
 ## Execution
 
 - [ ] Schema/dry-run/metadata check completed.
+- [ ] `sample_tables.py` dry-run or sample completed when schema-index table examples are needed.
 - [ ] Small-range or `LIMIT` query completed.
 - [ ] Enum/status distribution checked.
 - [ ] Join cardinality checked.
@@ -63,3 +65,4 @@
 - [ ] Verification performed is stated.
 - [ ] Remaining risks and follow-up checks are stated.
 - [ ] Reusable outputs are saved under `data-query-work/` or the user-selected local folder.
+- [ ] Exports and sample outputs are masked before writing; residual sensitive scan has no high-risk findings.
