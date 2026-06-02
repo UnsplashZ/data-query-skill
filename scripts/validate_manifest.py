@@ -9,7 +9,13 @@ import json
 from pathlib import Path
 
 IGNORED_DIRS = {".git", ".github", "__pycache__", "data-query-work", "dist", "docs"}
-IGNORED_NAMES = {".DS_Store", ".gitignore"}
+IGNORED_NAMES = {
+    ".DS_Store",
+    ".gitignore",
+    ".release-please-manifest.json",
+    "CHANGELOG.md",
+    "release-please-config.json",
+}
 IGNORED_SUFFIXES = {".pyc", ".pyo"}
 
 

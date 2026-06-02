@@ -70,7 +70,7 @@ Follow these rules for every task:
 
 ## Default Output Directory
 
-For any repository, create a local folder named `data-query-work/` unless the user gives another path:
+When this skill is installed once and then used while working inside another repository, treat that repository's current working directory as the task workspace. For any repository, create a local folder named `data-query-work/` unless the user gives another path:
 
 ```text
 data-query-work/
@@ -90,6 +90,8 @@ Default saves:
 - Discovery Report: `data-query-work/discovery-reports/<date>_<topic>.md`
 - Requirement Gap: `data-query-work/requirement-gaps/<date>_<topic>.md`
 - Query output/export: `data-query-work/exports/<date>_<topic>.*`
+
+This folder is for per-user process artifacts, exports, drafts, and local reviews. It is not the shared knowledge source by default. If a finding should become reusable team knowledge, capture it as a `data-query-knowledge/` candidate and move it through review/promotion before syncing it through the shared repository. Keep raw exports, credentials, and personal config local.
 
 If the repository has its own docs, analytics, notebook, or reports folder, use it only when the user asks or it is clearly the local convention.
 

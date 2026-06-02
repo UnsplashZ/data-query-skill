@@ -1,0 +1,60 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Release Please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+      - name: Check out repository
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate manifest
+        if: ${{ steps.release.outputs.release_created }}
+        run: python scripts/validate_manifest.py
+
+      - name: Scan for sensitive information
+        if: ${{ steps.release.outputs.release_created }}
+        run: python scripts/scan_sensitive_info.py .
+
+      - name: Run offline eval pack
+        if: ${{ steps.release.outputs.release_created }}
+        run: python scripts/eval_skill_pack.py --allow-blocked
+
+      - name: Package skill
+        if: ${{ steps.release.outputs.release_created }}
+        run: python scripts/package_skill.py --json
+
+      - name: Upload release assets
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag_name }}
+        run: |
+          gh release upload "${RELEASE_TAG}" \
+            dist/internal-data-query-skill.zip \
+            dist/internal-data-query-skill.zip.sha256 \
+            --clobber

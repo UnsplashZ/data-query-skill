@@ -2,6 +2,7 @@
   "name": "internal-data-query",
   "generated_at": "2026-06-02",
   "skill_name": "internal-data-query",
+  "version": "0.1.0",
   "root_directory": "internal-data-query",
   "default_output_dir": "data-query-work/",
   "scope": "repository-agnostic internal data query skill",
@@ -13,17 +14,17 @@
   "connection_templates": true,
   "unified_query_runner": true,
   "metabase_scripts": true,
-  "file_count": 267,
+  "file_count": 268,
   "files": [
     {
       "path": "README.md",
-      "bytes": 5159,
-      "sha256": "0468c1ab656de4bc1538e20767635b4454ea3ce1adfbabd98b33664575d566b6"
+      "bytes": 5662,
+      "sha256": "68cbc4828c1a32b61e3504a3f18c7f09a5572a694961975b247f62be2ddbb79b"
     },
     {
       "path": "SKILL.md",
-      "bytes": 14487,
-      "sha256": "920a7bb89d271442885ebdf12d656feaba246e02a325881d10fd2d1943dff288"
+      "bytes": 15029,
+      "sha256": "c50ddfcf92ebc5f01448356710c8ceb8c80f7d77b0f40b4556d4301e6c3b2564"
     },
     {
       "path": "data-query-knowledge/OWNERS.yaml",
@@ -1252,8 +1253,8 @@
     },
     {
       "path": "scripts/validate_manifest.py",
-      "bytes": 2790,
-      "sha256": "77ce7499ccdb35dfb4f8884c39ecd199ae7e80c4aedc48c8689b28641b346eea"
+      "bytes": 2892,
+      "sha256": "1030c7a4478ba548013be7e1de7ee3a95d948ec359d03e1024bd85d4adf54e26"
     },
     {
       "path": "scripts/validate_query_knowledge.py",
@@ -1349,6 +1350,11 @@
       "path": "templates/sql-review.md",
       "bytes": 499,
       "sha256": "1eb1d5dc7beb02a06742aae24917a61a06cccea26c1ce00e6cedbb52922688cb"
+    },
+    {
+      "path": "version.txt",
+      "bytes": 6,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
     }
   ],
   "query_static_check": "scripts/query_static_check.py",
