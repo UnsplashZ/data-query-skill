@@ -4,12 +4,14 @@
 
 ## 1. 执行前决策
 
-1. 先检索当前仓库、用户提供的外部 schema index / historical SQL index、Metabase card/dashboard、目标仓库 runbook、`data-query-work/knowledge/`。
-2. 先选定 engine/profile，再写 SQL；不能静默切换 ClickHouse、ODPS、MySQL 或 Metabase。
-3. SQL 必须只读。默认禁止 DDL、DML、权限、导出、过程执行、维护类语句。
-4. 每个查询必须声明时间字段、时间范围、统计粒度、状态过滤、金额单位和业务 scope。
-5. 执行路径必须是 `static check -> sample -> validation -> full scope`。无法执行 full scope 时，结果只能标为 `partially_verified` 或 `unverified`。
-6. 若只需要指定表，先用 `refresh_schema.py --table-list` 定向刷新 metadata；若需要表样例，优先用 `sample_tables.py --dry-run` 生成 SQL/status，再在用户允许真实查询后执行。
+1. 先做需求澄清闸门：如果指标/实体、时间范围、时间字段、统计粒度、过滤范围、输出形态或结果用途不清楚，先向用户提出 1-3 个会改变结果的问题并停止；不得通过大范围搜 schema、翻历史 SQL、刷新 metadata 或执行查询来替用户猜业务逻辑。
+2. 只有用户确认最小查询意图后，才检索当前仓库、用户提供的外部 schema index / historical SQL index、Metabase card/dashboard、目标仓库 runbook、`data-query-work/knowledge/`。
+3. 如果用户明确只要求在口径未定时做数据源探索，必须标记为 `source_discovery_only`，只输出候选 source、字段线索和风险，不输出最终指标结果。
+4. 先选定 engine/profile，再写 SQL；不能静默切换 ClickHouse、ODPS、MySQL 或 Metabase。
+5. SQL 必须只读。默认禁止 DDL、DML、权限、导出、过程执行、维护类语句。
+6. 每个查询必须声明时间字段、时间范围、统计粒度、状态过滤、金额单位和业务 scope。
+7. 执行路径必须是 `static check -> sample -> validation -> full scope`。无法执行 full scope 时，结果只能标为 `partially_verified` 或 `unverified`。
+8. 若只需要指定表，先用 `refresh_schema.py --table-list` 定向刷新 metadata；若需要表样例，优先用 `sample_tables.py --dry-run` 生成 SQL/status，再在用户允许真实查询后执行。
 
 ## 2. Dialect 策略
 

@@ -12,6 +12,14 @@
 
 -
 
+## Clarification Gate
+
+- Status: `needs_clarification / clarified / source_discovery_only`
+- Blocking ambiguity:
+- Questions asked:
+- User-confirmed answer:
+- Assumptions allowed by user:
+
 ## Metric / Entity
 
 -

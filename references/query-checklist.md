@@ -10,6 +10,8 @@
 - [ ] Output shape is clear: SQL, result table, CSV/XLSX, dashboard input, report.
 - [ ] Result use is clear: one-off answer, meeting, dashboard, recurring report, API design, QA.
 - [ ] Ambiguous choices are either clarified or written as assumptions.
+- [ ] If ambiguity changes the result, user clarification was requested before schema exploration, SQL drafting, metadata refresh, or query execution.
+- [ ] If the user only wants exploration while logic is unclear, the work is labeled `source_discovery_only` and no metric result is presented as final.
 
 ## Source Explorer
 

@@ -3,10 +3,10 @@ name: internal-data-query
 description: 通用内部数据查询 skill，适用于安装/配置内部数据查询能力、配置 Metabase/ClickHouse/ODPS/MaxCompute/MySQL 只读账号、刷新 schema/DDL/metadata、查数据、写只读 SQL、搜索 Metabase card/dashboard、找表字段、导出数据、验证报表口径、沉淀 data-query-work 知识。安装或配置时必须把凭证写入用户本机 data-sources.yaml，不得写入 skill 包、业务仓库或聊天记录；刷新 schema/DDL 前必须先说明会拉取的元数据范围并取得用户同意。
 license: Internal Use Only
 metadata:
-  version: 0.1.3
+  version: 0.1.4
   author: Hermes Agent
   hermes:
-    version: 0.1.3
+    version: 0.1.4
     author: Hermes Agent
     tags: [sql, data-query, odps, clickhouse, metabase, mysql, internal-data, schema-kb]
 ---
@@ -148,7 +148,11 @@ Do not add a blanket `data-query-work/` entry to the target repo `.gitignore` by
 
 For every data question:
 
-1. Clarify metric/entity, time range, grain, filters/scope, output shape, and use of result.
+0. Run the clarification gate before exploration or execution. If metric/entity, time range, grain, filters/scope, output shape, or result use is unclear, ask the user 1-3 concrete questions and stop. Do not over-explore schemas, historical SQL, dashboards, or live data to guess the business logic.
+   - Ask about the ambiguity that changes the answer, such as metric definition, inclusion/exclusion rules, time field, aggregation grain, status filters, currency/amount unit, organization/project scope, or whether the result is for one-off analysis, dashboarding, QA, or API design.
+   - It is OK to do only lightweight repo-local reading when needed to phrase better questions, but do not connect to data sources, refresh metadata, draft final SQL, or execute queries until the minimum query intent is clear.
+   - If the user explicitly asks for exploratory source discovery despite unclear logic, label the work as `source_discovery_only` and avoid presenting any metric result as final.
+1. Restate the clarified metric/entity, time range, grain, filters/scope, output shape, and use of result.
 2. Search existing evidence before writing SQL:
    - current repo docs, SQL, scripts, reports, notebooks, data catalogs
    - `data-query-work/schema/unified_schema_index.json`
