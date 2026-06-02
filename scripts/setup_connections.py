@@ -99,6 +99,56 @@ def yaml_dump(data: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def load_existing_config(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {"profiles": {}}
+    try:
+        import yaml  # type: ignore
+    except ImportError as exc:
+        raise RuntimeError(
+            "PyYAML is required for --merge/--add-sources. Install dependencies with: "
+            "python -m pip install -r requirements.txt"
+        ) from exc
+    loaded = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    if not isinstance(loaded, dict):
+        raise RuntimeError(f"Existing config is not a YAML mapping: {path}")
+    profiles = loaded.setdefault("profiles", {})
+    if not isinstance(profiles, dict):
+        raise RuntimeError(f"Existing config profiles is not a mapping: {path}")
+    return loaded
+
+
+def missing_sources_for_merge(existing: dict[str, Any], sources: list[str], profile: str) -> tuple[list[str], list[str]]:
+    profiles = existing.get("profiles") or {}
+    missing: list[str] = []
+    skipped: list[str] = []
+    for source in sources:
+        engine_profiles = profiles.get(source) or {}
+        if isinstance(engine_profiles, dict) and profile in engine_profiles:
+            skipped.append(source)
+        else:
+            missing.append(source)
+    return missing, skipped
+
+
+def merge_configs(existing: dict[str, Any], additions: dict[str, Any]) -> tuple[dict[str, Any], list[str], list[str]]:
+    merged = dict(existing)
+    profiles = dict(merged.get("profiles") or {})
+    merged["profiles"] = profiles
+    added: list[str] = []
+    skipped: list[str] = []
+    for source, source_profiles in (additions.get("profiles") or {}).items():
+        target_profiles = dict(profiles.get(source) or {})
+        profiles[source] = target_profiles
+        for profile, values in (source_profiles or {}).items():
+            if profile in target_profiles:
+                skipped.append(f"{source}/{profile}")
+                continue
+            target_profiles[profile] = values
+            added.append(f"{source}/{profile}")
+    return merged, added, skipped
+
+
 def build_placeholder(sources: list[str], profile: str) -> dict[str, Any]:
     data: dict[str, Any] = {"profiles": {}}
     for source in sources:
@@ -155,19 +205,36 @@ def main() -> int:
     parser.add_argument("--profile", default="default")
     parser.add_argument(
         "--sources",
-        default="metabase,clickhouse,odps,mysql",
+        default=None,
         help="Comma-separated sources: metabase,clickhouse,odps,mysql",
     )
     parser.add_argument("--non-interactive", action="store_true", help="Write placeholder profiles without prompting.")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing output file.")
+    parser.add_argument("--merge", action="store_true", help="Merge missing source profiles into an existing config without overwriting existing profiles.")
+    parser.add_argument(
+        "--add-sources",
+        help="Comma-separated sources to add to an existing config. Implies --merge.",
+    )
     args = parser.parse_args()
 
     output = args.output.expanduser()
-    sources = [item.strip().lower() for item in args.sources.split(",") if item.strip()]
+    if args.add_sources and args.sources:
+        raise RuntimeError("--add-sources is equivalent to --sources <list> --merge; do not pass both.")
+    source_text = args.add_sources or args.sources or "metabase,clickhouse,odps,mysql"
+    sources = [item.strip().lower() for item in source_text.split(",") if item.strip()]
+    if args.add_sources:
+        args.merge = True
+    if args.merge and args.overwrite:
+        raise RuntimeError("--merge and --overwrite are mutually exclusive.")
     unknown = [item for item in sources if item not in SOURCE_FIELDS]
     if unknown:
         raise RuntimeError(f"Unknown source(s): {', '.join(unknown)}")
-    if output.exists() and not args.overwrite:
+    existing: dict[str, Any] = {"profiles": {}}
+    skipped_sources: list[str] = []
+    if args.merge:
+        existing = load_existing_config(output)
+        sources, skipped_sources = missing_sources_for_merge(existing, sources, args.profile)
+    elif output.exists() and not args.overwrite:
         raise RuntimeError(f"Output already exists: {output}. Pass --overwrite to replace it.")
 
     if args.non_interactive:
@@ -179,9 +246,15 @@ def main() -> int:
         )
     else:
         data = build_interactive(sources, args.profile)
+    added_profiles: list[str] = []
+    skipped_profiles = [f"{source}/{args.profile}" for source in skipped_sources]
+    if args.merge:
+        data, added_profiles, merge_skipped = merge_configs(existing, data)
+        skipped_profiles.extend(merge_skipped)
     wrote_placeholder = bool(args.non_interactive)
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(yaml_dump(data), encoding="utf-8")
+    if not (args.merge and not added_profiles):
+        output.write_text(yaml_dump(data), encoding="utf-8")
     chmod_applied = False
     try:
         os.chmod(output, 0o600)
@@ -190,10 +263,13 @@ def main() -> int:
         pass
 
     configured_sources = sorted(data.get("profiles", {}).keys())
-    mode = "placeholder" if wrote_placeholder else "interactive"
+    mode = "merge" if args.merge else ("placeholder" if wrote_placeholder else "interactive")
     print(f"OK: wrote local connection config: {output}")
     print(f"Mode: {mode}")
     print(f"Configured source sections: {', '.join(configured_sources) if configured_sources else 'none'}")
+    if args.merge:
+        print(f"Added source profiles: {', '.join(added_profiles) if added_profiles else 'none'}")
+        print(f"Skipped existing source profiles: {', '.join(sorted(set(skipped_profiles))) if skipped_profiles else 'none'}")
     print(f"Permissions: {'0600 applied' if chmod_applied else '0600 not confirmed; set it manually if required'}")
     print("")
     print("Status report:")

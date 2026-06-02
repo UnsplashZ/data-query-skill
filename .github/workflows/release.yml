@@ -46,6 +46,18 @@ jobs:
       - name: Package skill
         run: python scripts/package_skill.py --json
 
+      - name: Validate packaged zip
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp_dir="$(mktemp -d)"
+          unzip -q dist/internal-data-query-skill.zip -d "${tmp_dir}"
+          cd "${tmp_dir}/internal-data-query"
+          python scripts/validate_manifest.py
+          python scripts/scan_sensitive_info.py .
+          python scripts/eval_skill_pack.py --allow-blocked --skip-package-contract
+          python scripts/post_install_check.py --offline-ok
+
       - name: Resolve release metadata
         id: meta
         env:
@@ -80,8 +92,11 @@ jobs:
             echo '```bash'
             echo "python scripts/validate_manifest.py"
             echo "python scripts/scan_sensitive_info.py ."
-            echo "python scripts/setup_connections.py"
+            echo "python scripts/post_install_check.py --offline-ok"
+            echo "python scripts/setup_connections.py --add-sources odps,mysql --non-interactive"
             echo '```'
+            echo
+            echo "Restart Codex to pick up new skills."
           } > release-notes.md
 
       - name: Upload workflow artifact

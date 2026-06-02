@@ -2,7 +2,7 @@
   "name": "internal-data-query",
   "generated_at": "2026-06-02",
   "skill_name": "internal-data-query",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "root_directory": "internal-data-query",
   "default_output_dir": "data-query-work/",
   "scope": "repository-agnostic internal data query skill",
@@ -14,17 +14,17 @@
   "connection_templates": true,
   "unified_query_runner": true,
   "metabase_scripts": true,
-  "file_count": 258,
+  "file_count": 270,
   "files": [
     {
       "path": "README.md",
-      "bytes": 6301,
-      "sha256": "edf7901cce6e41a2b605b9a45c3b4f9d9eb4f409c6b1962764815d562ecd6b3f"
+      "bytes": 7234,
+      "sha256": "41e25a22407cfa9b991d2245cb85dd7d78045fd64a9e452555730bf96761bcf2"
     },
     {
       "path": "SKILL.md",
-      "bytes": 17375,
-      "sha256": "e472eef25ef4d036db5ad58f1aef1b606f1eba9402715a237e209424f2bf4005"
+      "bytes": 18684,
+      "sha256": "81efc081414109bae484f98622cd309c95c08e81c0c5362be4a91f222da9f8b0"
     },
     {
       "path": "evals/cases/eval-matrix.json",
@@ -33,8 +33,8 @@
     },
     {
       "path": "evals/expected/eval-skill-pack.expected.json",
-      "bytes": 619,
-      "sha256": "fe64e930bfe44a852881857997c89d1fea5c203f7a321ea4b359fce4de5ced60"
+      "bytes": 684,
+      "sha256": "d4e584bb8cc7776f744fdc86239b243459de5bf8471fb32ed85a3a9bf8a97c3d"
     },
     {
       "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/manifest.yaml",
@@ -65,6 +65,61 @@
       "path": "evals/fixtures/data-query-knowledge-old/reviews/refund-rate-review.md",
       "bytes": 298,
       "sha256": "2ee2792669ef90366304041cdd5eed2bd4d76eabc89b5aa3ac5ef972383666a9"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/OWNERS.yaml",
+      "bytes": 87,
+      "sha256": "9ede92e874f2e20b8c7c42d9e2ef9651c5a7eaac31d5d5250fa6d4adb5dc0901"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/candidates/observations/missing-review-candidate.md",
+      "bytes": 703,
+      "sha256": "2163eb144eeee4a9b532b6799cfb01e635464ae91b7a471d1ea9aa47e4c8dd8d"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/candidates/observations/refund-rate-candidate.md",
+      "bytes": 805,
+      "sha256": "285082256916966c3a0eeb4230980cb070511653f0acbcdc705ac7ddbfec98c8"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/deprecated/refund-rate-old.md",
+      "bytes": 815,
+      "sha256": "5fb4a3ee5d708ff055de930e79a3eacc8e9b7b10992c424110cf5199ec4505c8"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/golden-queries/refund-rate-monthly.md",
+      "bytes": 888,
+      "sha256": "17b1d87972660a1bceca9665c6a3bd839bf57d8eede7b0ddbbe967f853e3baeb"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/joins/refund-to-gmv.md",
+      "bytes": 744,
+      "sha256": "d9fa9951ab5aa98a5d3ef435f6be0f489e74303ca4757db7b9ad01f73447d5c8"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/manifest.yaml",
+      "bytes": 138,
+      "sha256": "de1234f5884e892c140413f6f6d84955218217ba6322141e0424b92ea1200143"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/metrics/refund-rate-approved.md",
+      "bytes": 801,
+      "sha256": "48aa1d9c1cedb6d138842937cf063a62341154136d8e05f5d8db2d10eb292aba"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/promotion-log.md",
+      "bytes": 1263,
+      "sha256": "96380e717cbedf66580c3caabd886a02530785eaa8a1dd960cb7c89a9514fc26"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/review-records/review-refund-rate-approved.md",
+      "bytes": 683,
+      "sha256": "7d919adea134f7e6728b8ffc5d5d5297679ca6dc54b8ac1fa70fe92ec6ba75d7"
+    },
+    {
+      "path": "evals/fixtures/data-query-work/knowledge/sources/refund-order-daily.md",
+      "bytes": 687,
+      "sha256": "c5a2e4d63b78332733bfce17ef54ba536ed58af97df33403bafefa7f3b611542"
     },
     {
       "path": "evals/fixtures/metabase-mock/card-321.json",
@@ -1033,8 +1088,8 @@
     },
     {
       "path": "scripts/eval_skill_pack.py",
-      "bytes": 29668,
-      "sha256": "d786d9a80221f2a73eef8363d1be4a23f8782d1c8fb01b793aee8162510609e8"
+      "bytes": 36413,
+      "sha256": "6afce4c72f91e6e91e7f1babfa9c5553ab159b7340c68f9dc351b19b260a2664"
     },
     {
       "path": "scripts/lib_data_sources.py",
@@ -1070,6 +1125,11 @@
       "path": "scripts/package_skill.py",
       "bytes": 3829,
       "sha256": "fb6016944fe530dcb856873e8bc4616abbf44bb7a9bb075a90083554af888cc3"
+    },
+    {
+      "path": "scripts/post_install_check.py",
+      "bytes": 7449,
+      "sha256": "90ae99acc393be4c41ab48c2b14b804f956b57c64258bb98ff72529a051ac3e6"
     },
     {
       "path": "scripts/promote_query_knowledge.py",
@@ -1113,8 +1173,8 @@
     },
     {
       "path": "scripts/setup_connections.py",
-      "bytes": 9796,
-      "sha256": "4c9bb2c6774ea0ddf2d2452a3f24c03f8356bed3eac0cb678b870bf7a3444ffa"
+      "bytes": 13328,
+      "sha256": "0c0e5233872090aa1a6ba12f00db0d8d545c6da215a2ee843e4f98c991e0b092"
     },
     {
       "path": "scripts/suggest_knowledge_capture.py",
@@ -1123,8 +1183,8 @@
     },
     {
       "path": "scripts/validate_manifest.py",
-      "bytes": 2909,
-      "sha256": "8e516c3f43a7add271411324c625446828d940a2e9f134e01a9abbe2e14e4bdd"
+      "bytes": 3039,
+      "sha256": "4e5bd8317cb7321e7a2a6bc63d6a4fe09296efca278d24373a7cd2043b972bad"
     },
     {
       "path": "scripts/validate_query_knowledge.py",
@@ -1304,7 +1364,7 @@
     {
       "path": "version.txt",
       "bytes": 6,
-      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
     }
   ],
   "query_static_check": "scripts/query_static_check.py",

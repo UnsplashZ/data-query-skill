@@ -7,6 +7,8 @@
     "no_real_credentials": true,
     "no_real_internal_urls": true,
     "package_zip_contract": true,
+    "post_install_check": true,
+    "setup_merge_sources": true,
     "no_mcp_server_dependency": true,
     "no_long_running_service": true,
     "no_heavy_platform_install": true,

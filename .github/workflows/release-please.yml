@@ -32,6 +32,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Python dependencies
+        if: ${{ steps.release.outputs.release_created }}
+        run: python -m pip install -r requirements.txt
+
       - name: Validate manifest
         if: ${{ steps.release.outputs.release_created }}
         run: python scripts/validate_manifest.py
@@ -47,6 +51,19 @@ jobs:
       - name: Package skill
         if: ${{ steps.release.outputs.release_created }}
         run: python scripts/package_skill.py --json
+
+      - name: Validate packaged zip
+        if: ${{ steps.release.outputs.release_created }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp_dir="$(mktemp -d)"
+          unzip -q dist/internal-data-query-skill.zip -d "${tmp_dir}"
+          cd "${tmp_dir}/internal-data-query"
+          python scripts/validate_manifest.py
+          python scripts/scan_sensitive_info.py .
+          python scripts/eval_skill_pack.py --allow-blocked --skip-package-contract
+          python scripts/post_install_check.py --offline-ok
 
       - name: Upload release assets
         if: ${{ steps.release.outputs.release_created }}

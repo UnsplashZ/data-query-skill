@@ -8,7 +8,8 @@ import hashlib
 import json
 from pathlib import Path
 
-IGNORED_DIRS = {".git", ".github", "__pycache__", "data-query-work", "dist", "docs"}
+IGNORED_TOP_LEVEL_DIRS = {".git", ".github", "data-query-work", "dist", "docs"}
+IGNORED_ANY_DIRS = {"__pycache__"}
 IGNORED_NAMES = {
     ".DS_Store",
     ".gitignore",
@@ -58,7 +59,9 @@ def main() -> int:
             continue
         if p.suffix in IGNORED_SUFFIXES:
             continue
-        if any(part in IGNORED_DIRS for part in rel_path.parts):
+        if rel_path.parts and rel_path.parts[0] in IGNORED_TOP_LEVEL_DIRS:
+            continue
+        if any(part in IGNORED_ANY_DIRS for part in rel_path.parts):
             continue
         actual_paths.append(rel)
     actual_paths = sorted(actual_paths)

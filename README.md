@@ -27,6 +27,27 @@
 
 这些信息只应配置到本机，默认配置路径是 `~/.internal-data-query/data-sources.yaml`。不要把 GitHub token、数据库密码、access key 或 session id 粘贴进聊天，也不要写入仓库文件。
 
+安装后建议先运行：
+
+```bash
+python scripts/post_install_check.py --offline-ok
+```
+
+如果本机已有部分数据源配置，补缺失源时不要覆盖整份配置：
+
+```bash
+python scripts/setup_connections.py --add-sources odps,mysql --non-interactive
+```
+
+状态口径：
+
+- `installed`：skill 包、manifest 和离线校验可用。
+- `configured`：本机配置存在，且至少有一个数据源 profile 字段完整、非占位。
+- `connected`：真实只读连接 smoke check 通过；默认离线验收会跳过。
+- `query_verified`：已有真实只读查询或明确 mock/card 证据，不能由配置解析成功自动推导。
+
+安装或覆盖 skill 后，重启 Codex 以稳定拾取新 skill。
+
 ## 🧩 能力
 
 | 能力 | 说明 |
@@ -122,11 +143,14 @@ agent 不应默认把整个 `data-query-work/` 加入目标业务仓库的 `.git
 如果同事已经用旧版数据 skill 查了一段时间，升级后不要把旧 SQL 或聊天结论直接标记为 approved truth。推荐流程：
 
 1. 安装新版 skill，并保留原来的只读数据源配置在本机。
-2. 在目标业务仓库使用 `data-query-work/` 存放过程产物和团队知识。
-3. 如果旧项目已有 `data-query-knowledge/`，把它作为只读来源迁到 `data-query-work/knowledge/`。
-4. 从旧查询记录、SQL review、结果总结或用户确认中生成 `candidate`。
-5. 人工补齐 domain、metric、source、grain、validation evidence。
-6. reviewer 复核后提升为 `reviewed`。
-7. 有真实查询证据和 approver 后再提升为 `approved`。
+2. 覆盖 skill 包后运行 `python scripts/post_install_check.py --offline-ok`。
+3. 用 `python scripts/setup_connections.py --add-sources <sources> --non-interactive` 补缺失源。
+4. 重启 Codex。
+5. 在目标业务仓库使用 `data-query-work/` 存放过程产物和团队知识。
+6. 如果旧项目已有 `data-query-knowledge/`，把它作为只读来源迁到 `data-query-work/knowledge/`。
+7. 从旧查询记录、SQL review、结果总结或用户确认中生成 `candidate`。
+8. 人工补齐 domain、metric、source、grain、validation evidence。
+9. reviewer 复核后提升为 `reviewed`。
+10. 有真实查询证据和 approver 后再提升为 `approved`。
 
 原则：旧经验可以加速定位表、字段和指标口径；进入共享知识库时先是 candidate；只有重新完成当前验证、review 和 approval 后，才可以作为团队可复用的 approved knowledge。

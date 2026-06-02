@@ -3,10 +3,10 @@ name: internal-data-query
 description: 通用内部数据查询 skill，适用于任意仓库或 AI 助手。Use when the user asks to 查数据, 写 SQL, 看 Metabase, 搜看板/卡片, 找字段, 接页面字段到表, 导出订单/退款/GMV, 验证报表口径, 选择数据源, 搜索 schema KB 或历史 SQL, 编写只读 Metabase/ODPS/MaxCompute/ClickHouse/MySQL SQL, 复核查询假设, 保存 Query Brief/SQL 草案/复核/发现报告/本地导出, 或安装/配置数据查询 skill、配置内部数据源账号。安装或配置时，必须引导用户把 Metabase、ClickHouse、ODPS/MaxCompute、MySQL 等只读凭证写入本机 data-sources.yaml，不得写入 skill 包或仓库。
 license: Internal Use Only
 metadata:
-  version: 0.1.0
+  version: 0.1.1
   author: Hermes Agent
   hermes:
-    version: 0.1.0
+    version: 0.1.1
     author: Hermes Agent
     tags: [sql, data-query, odps, clickhouse, metabase, mysql, internal-data, schema-kb]
 ---
@@ -24,9 +24,11 @@ receive zip/link
 -> unpack into the AI tool's skills directory or a user-selected local directory
 -> confirm SKILL.md, manifest.json, and scripts/setup_connections.py exist
 -> run package validation and sensitive-info scan when available
+-> run post-install check when available
 -> ask which readonly data sources the user wants to configure
 -> create a local data-sources.yaml
 -> run a smoke check
+-> tell the user to restart Codex
 -> tell the user they can trigger queries with natural language
 ```
 
@@ -37,8 +39,11 @@ Required installation behavior:
 - If the user agrees and a TTY is available, run `python scripts/setup_connections.py`.
 - If no TTY is available, run `python scripts/setup_connections.py --non-interactive --output <local-path> --overwrite` only for a local user-owned path, then ask the user to edit the placeholders locally.
 - The default local config path is `~/.internal-data-query/data-sources.yaml`; the setup script should set file permissions to `0600` where the OS allows it.
+- If a local config already exists, use `python scripts/setup_connections.py --add-sources <sources>` or `--merge` to add missing source profiles. Do not use `--overwrite` unless the user explicitly wants to replace the full local config.
 - Never write credentials into `SKILL.md`, README, manifests, shared zip files, generated SQL, repository docs, or chat transcripts.
+- Run `python scripts/post_install_check.py --offline-ok` when available and report its `installed`, `configured`, `connected`, and `query_verified` states.
 - After config, run at least one non-sensitive smoke check such as `python scripts/setup_connections.py --help`, `python scripts/search_schema.py refund --limit 3`, `python scripts/check_connections.py --config <path> --offline-ok` if available, `python scripts/discover_data_sources.py --config <path>` if available, `select 1`, or a Metabase search.
+- After installing or replacing this skill, tell the user: `Restart Codex to pick up new skills.`
 
 Suggested user-facing activation message:
 
@@ -134,6 +139,7 @@ When available, run:
 ```bash
 python scripts/validate_manifest.py
 python scripts/scan_sensitive_info.py
+python scripts/post_install_check.py --offline-ok
 ```
 
 If those checks cannot run, say so in the installation status report instead of silently skipping them.
@@ -146,6 +152,12 @@ python scripts/setup_connections.py
 
 This writes a local profile to `~/.internal-data-query/data-sources.yaml` by default. Query scripts read this path automatically. The user can also set `INTERNAL_DATA_QUERY_CONFIG` or pass `--config <path>`.
 
+If the local config already exists and the user only needs missing sources, do not overwrite it. Use:
+
+```bash
+python scripts/setup_connections.py --add-sources odps,mysql --non-interactive
+```
+
 If the assistant cannot open an interactive terminal, ask the user which source accounts to configure in chat, then either help them fill `templates/connections/data-sources.yaml.example` into a local path or run `python scripts/setup_connections.py --non-interactive` and edit the generated YAML. Do not stop at "installed" when the user's goal is to use real data.
 
 After setup, report:
@@ -156,7 +168,15 @@ After setup, report:
 - credential boundary
 - whether the config file was set to `0600`
 - smoke checks run
+- status level: `installed`, `configured`, `connected`, `query_verified`
 - what still needs user input before real queries can execute
+
+Status meanings:
+
+- `installed`: package files, manifest, and offline checks are present.
+- `configured`: at least one local source profile has required fields and no placeholders.
+- `connected`: real readonly connectivity smoke passed. Offline parsing is not enough.
+- `query_verified`: a real readonly query, or explicit mock/card evidence, verified the query path. Configuration parsing alone must not set this state.
 
 Ask them to provide the accounts or access material needed for actual queries:
 

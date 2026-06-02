@@ -20,6 +20,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+import yaml
+
 
 PASS = "PASS"
 FAIL = "FAIL"
@@ -227,6 +229,7 @@ def eval_sensitive_sample_detection(root: Path) -> EvalResult:
 def eval_package_zip_contract(root: Path) -> EvalResult:
     with tempfile.TemporaryDirectory(prefix="dqk-package-eval-") as tmp:
         dist_dir = Path(tmp) / "dist"
+        extract_dir = Path(tmp) / "extract"
         package = subprocess.run(
             [
                 sys.executable,
@@ -272,6 +275,25 @@ def eval_package_zip_contract(root: Path) -> EvalResult:
             has_workspace_template = any(name.startswith("internal-data-query/templates/workspace/knowledge/") for name in names)
             if not has_workspace_template:
                 return EvalResult("package_zip_contract", FAIL, "zip 缺少 templates/workspace/knowledge 知识骨架")
+            has_eval_workspace_fixture = any(name.startswith("internal-data-query/evals/fixtures/data-query-work/knowledge/") for name in names)
+            if not has_eval_workspace_fixture:
+                return EvalResult("package_zip_contract", FAIL, "zip 缺少 evals/fixtures/data-query-work/knowledge fixture")
+            zf.extractall(extract_dir)
+
+        extracted_root = extract_dir / (summary.get("package_dir") or "internal-data-query")
+        checks = [
+            [sys.executable, "scripts/validate_manifest.py"],
+            [sys.executable, "scripts/scan_sensitive_info.py", "."],
+            [sys.executable, "scripts/eval_skill_pack.py", "--allow-blocked", "--skip-package-contract"],
+        ]
+        for command in checks:
+            proc = subprocess.run(command, cwd=extracted_root, text=True, capture_output=True, check=False)
+            if proc.returncode != 0:
+                return EvalResult(
+                    "package_zip_contract",
+                    FAIL,
+                    f"解压包复测失败 `{ ' '.join(command) }`: {shorten(proc.stdout + proc.stderr)}",
+                )
     return EvalResult("package_zip_contract", PASS, "zip 路径合同通过，无旧顶层目录或本地/CI 元数据")
 
 
@@ -316,10 +338,140 @@ def eval_install_config_flow(root: Path) -> EvalResult:
     return EvalResult("install_config_flow", PASS, "setup/check/discover 安装配置链路离线通过")
 
 
+def eval_setup_merge_sources(root: Path) -> EvalResult:
+    with tempfile.TemporaryDirectory(prefix="dq-merge-eval-") as tmp:
+        config = Path(tmp) / "data-sources.yaml"
+        config.write_text(
+            """
+profiles:
+  clickhouse:
+    default:
+      host: keep-clickhouse
+      port: 9000
+      database: keep_db
+      username: keep_user
+      password: KEEP_EXISTING_PW_SENTINEL
+      readonly: true
+  metabase:
+    default:
+      base_url: https://metabase.example.invalid
+      api_key: KEEP_API_SENTINEL
+      readonly: true
+""".lstrip(),
+            encoding="utf-8",
+        )
+        before = yaml.safe_load(config.read_text(encoding="utf-8"))
+        merge = subprocess.run(
+            [
+                sys.executable,
+                "scripts/setup_connections.py",
+                "--output",
+                str(config),
+                "--non-interactive",
+                "--add-sources",
+                "odps,mysql",
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if merge.returncode != 0:
+            return EvalResult("setup_merge_sources", FAIL, f"merge 失败: {shorten(merge.stdout + merge.stderr)}")
+        after = yaml.safe_load(config.read_text(encoding="utf-8"))
+        for engine in ("clickhouse", "metabase"):
+            if after["profiles"][engine]["default"] != before["profiles"][engine]["default"]:
+                return EvalResult("setup_merge_sources", FAIL, f"{engine}/default 被 merge 覆盖")
+        for engine in ("odps", "mysql"):
+            if engine not in after["profiles"] or "default" not in after["profiles"][engine]:
+                return EvalResult("setup_merge_sources", FAIL, f"缺少新增 profile: {engine}/default")
+
+        conflict = subprocess.run(
+            [
+                sys.executable,
+                "scripts/setup_connections.py",
+                "--output",
+                str(config),
+                "--non-interactive",
+                "--sources",
+                "metabase",
+                "--add-sources",
+                "odps",
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if conflict.returncode == 0 or "do not pass both" not in (conflict.stdout + conflict.stderr):
+            return EvalResult("setup_merge_sources", FAIL, "--sources 与 --add-sources 同传应失败")
+    return EvalResult("setup_merge_sources", PASS, "--add-sources 只新增缺失源且保留已有 profile")
+
+
+def eval_post_install_check(root: Path) -> EvalResult:
+    with tempfile.TemporaryDirectory(prefix="dq-post-install-eval-") as tmp:
+        missing_config = Path(tmp) / "missing.yaml"
+        proc = subprocess.run(
+            [
+                sys.executable,
+                "scripts/post_install_check.py",
+                "--offline-ok",
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        output = proc.stdout + proc.stderr
+        required = ["installed: ok", "configured:", "connected:", "query_verified:", "Restart Codex to pick up new skills."]
+        missing = [item for item in required if item not in output]
+        if proc.returncode != 0 or missing:
+            return EvalResult("post_install_check", FAIL, f"post-install 输出缺失 {missing}: {shorten(output)}")
+
+        offline_missing = subprocess.run(
+            [
+                sys.executable,
+                "scripts/post_install_check.py",
+                "--offline-ok",
+                "--config",
+                str(missing_config),
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        offline_output = offline_missing.stdout + offline_missing.stderr
+        if offline_missing.returncode != 0 or "config_error:" not in offline_output or "Traceback" in offline_output:
+            return EvalResult("post_install_check", FAIL, f"缺失 config 离线验收不应 traceback: {shorten(offline_output)}")
+
+        real_missing = subprocess.run(
+            [
+                sys.executable,
+                "scripts/post_install_check.py",
+                "--real-smoke",
+                "--offline-ok",
+                "--config",
+                str(missing_config),
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        real_output = real_missing.stdout + real_missing.stderr
+        if real_missing.returncode == 0 or "connected: missing_config" not in real_output or "Traceback" in real_output:
+            return EvalResult("post_install_check", FAIL, f"真实 smoke 缺失 config 应清晰失败: {shorten(real_output)}")
+    return EvalResult("post_install_check", PASS, "post-install 离线验收输出状态分级和重启提示")
+
+
 def eval_knowledge_capture_write_validate_search(root: Path) -> EvalResult:
     with tempfile.TemporaryDirectory(prefix="dqk-capture-eval-") as tmp:
         tmp_root = Path(tmp)
-        shutil.copytree(root / "evals" / "fixtures" / "data-query-work", tmp_root / "data-query-work")
+        fixture = root / "evals" / "fixtures" / "data-query-work"
+        if not fixture.exists():
+            return EvalResult("knowledge_capture_write_validate_search", FAIL, f"missing fixture: {fixture.relative_to(root).as_posix()}")
+        shutil.copytree(fixture, tmp_root / "data-query-work")
         text = (
             "- Metric: refund_capture_eval\n"
             "SELECT count(*) FROM refund_order_daily "
@@ -565,14 +717,15 @@ def eval_run_query_help(root: Path) -> EvalResult:
     return EvalResult("run_query_help_contract", PASS, "run_query help 与 mock 成功输出契约均通过")
 
 
-def build_results(root: Path) -> list[EvalResult]:
+def build_results(root: Path, *, skip_package_contract: bool = False) -> list[EvalResult]:
     py = sys.executable
     results = [
         run_command(root, "manifest", [py, "scripts/validate_manifest.py"]),
         run_command(root, "sensitive_scan", [py, "scripts/scan_sensitive_info.py"]),
         eval_sensitive_sample_detection(root),
-        eval_package_zip_contract(root),
         eval_install_config_flow(root),
+        eval_setup_merge_sources(root),
+        eval_post_install_check(root),
         run_command(
             root,
             "sql_readonly",
@@ -671,6 +824,8 @@ def build_results(root: Path) -> list[EvalResult]:
         eval_lightweight_boundary(root),
         eval_fixture_sensitivity(root),
     ]
+    if not skip_package_contract:
+        results.insert(3, eval_package_zip_contract(root))
     return results
 
 
@@ -698,10 +853,15 @@ def main() -> int:
         action="store_true",
         help="Return 0 when only BLOCKED checks remain. FAIL still returns non-zero.",
     )
+    parser.add_argument(
+        "--skip-package-contract",
+        action="store_true",
+        help="Skip zip packaging/unpack recursion. Used when running eval inside an already extracted package.",
+    )
     args = parser.parse_args()
 
     root = args.root.resolve()
-    results = build_results(root)
+    results = build_results(root, skip_package_contract=args.skip_package_contract)
     if args.json:
         print(
             json.dumps(
