@@ -1,9 +1,15 @@
-# Feature Data Dependency
+# YYYY-MM-DD / domain / topic / feature data dependency
 
+- Status: `draft / confirmed / blocked`
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/requirement-gaps/YYYY-MM-DD__domain__topic__feature-data-dependency.md`
 - Feature:
 - Requester:
 - Date:
-- Status: `draft / confirmed / blocked`
 
 ## User-Facing Need
 

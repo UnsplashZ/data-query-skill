@@ -23,7 +23,15 @@ capture_trigger: promotion-request
 source_interaction: []
 ---
 
-# Promotion Request
+# YYYY-MM-DD / domain / topic / promotion request
+
+- Status: candidate
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/knowledge/review-records/YYYY-MM-DD__domain__topic__promotion-request.md`
 
 ## Target Status
 

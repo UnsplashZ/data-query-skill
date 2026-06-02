@@ -1,5 +1,7 @@
 # internal-data-query skill 一次性迭代计划
 
+> Status: superseded by `docs/single-workspace-migration-plan.md` for workspace layout. Current implementation uses one target-repo workspace, `data-query-work/`; reusable query knowledge lives under `data-query-work/knowledge/`.
+
 ## 目标
 
 把当前 `internal-data-query` 从“可安装的数据查询 skill 包”升级为“安装后能被自然触发、能主动引导配置、能接入既有数据知识库、能连接多类数据源、能完成可靠 SQL 查数闭环、能沉淀可复用查询知识”的内部数据查询能力。
@@ -52,7 +54,7 @@
 - 包内 schema KB：`references/sql-query-method-internal/references/schema-kb/`。
 - 包内历史 SQL：`references/historical-sql-index.md` 与 `references/old-sql/sql/`。
 - 包内 method references：`references/sql-query-method-internal/references/method-skills/`。
-- 仓库级共享知识：`data-query-knowledge/`。
+- 仓库级共享知识：`data-query-work/knowledge/`。
 - 未来用户新增的本地知识库路径，通过配置声明后纳入检索。
 
 检索规则必须是证据优先：
@@ -169,7 +171,7 @@ next_actions:
 
 ## 仓库协作与知识库自我成长
 
-`data-query-knowledge/` 必须设计成 repo-native、可 review、可 diff、可同步的知识库。多人协作时，它通过仓库文件同步，而不是依赖某台机器的本地缓存或个人配置。
+`data-query-work/knowledge/` 必须设计成 repo-native、可 review、可 diff、可同步的知识库。多人协作时，它通过仓库文件同步，而不是依赖某台机器的本地缓存或个人配置。
 
 ### 1. 同步原则
 
@@ -214,14 +216,14 @@ draft
 - A 在仓库中新增某指标口径，B 拉到同一仓库后能检索、验证、继续晋升。
 - A 和 B 对同一指标产生不同 candidate，系统能同时保留并标冲突，而不是互相覆盖。
 - 某个 approved 口径过期后，新查询默认降级并提示需要复核。
-- 不同 AI 助手安装同一 skill 后，都能读取同一套 `data-query-knowledge/` 文件并遵守相同状态语义。
+- 不同 AI 助手安装同一 skill 后，都能读取同一套 `data-query-work/knowledge/` 文件并遵守相同状态语义。
 - 仓库同步产生冲突时，脚本能报告冲突文件、冲突 ID、冲突字段和建议处理方式。
 
 ### 4. 版本与迁移
 
 知识库需要有版本兼容机制：
 
-- 根目录保留 `data-query-knowledge/manifest.yaml`，记录 `schema_version`、domains、owners、last_validated_at。
+- 根目录保留 `data-query-work/knowledge/manifest.yaml`，记录 `schema_version`、domains、owners、last_validated_at。
 - 每类模板记录自身 `schema_version`。
 - 新版 skill 读取旧版知识库时，必须能给出兼容性报告。
 - 必要时提供 migration script，把旧字段补齐到新 schema，但不得静默删除旧证据。
@@ -262,7 +264,7 @@ observed
 建议新增共享候选区：
 
 ```text
-data-query-knowledge/
+data-query-work/knowledge/
 ├── candidates/
 │   ├── observations/
 │   ├── user-assertions/
@@ -285,7 +287,7 @@ data-query-knowledge/
 2. refund_order 与 pay_order 可用 order_no 关联，但可能一对多
 3. Metabase card 123 可作为 GMV 日报参考看板
 
-是否写入 data-query-knowledge/candidates/ 作为 candidate？不会标记为 approved。
+是否写入 data-query-work/knowledge/candidates/ 作为 candidate？不会标记为 approved。
 ```
 
 不触发沉淀的情况：
@@ -316,7 +318,7 @@ data-query-knowledge/
 
 本 skill 的轻量落法：
 
-- `data-query-knowledge/` 做 MDL-lite，而不是部署 WrenAI。
+- `data-query-work/knowledge/` 做 MDL-lite，而不是部署 WrenAI。
 - 用 `metric-definition.md`、`source-profile.md`、`join-contract.md`、`golden-query.md` 表达语义和口径。
 - 只保留必要字段：owner、status、grain、time field、filters、join、metric formula、validation evidence。
 
@@ -463,7 +465,7 @@ internal-data-query 已安装。要执行真实查询，还需要配置只读数
 
 新增或强化这些规则：
 
-- 先搜当前仓库、Metabase、schema KB、历史 SQL、method references、`data-query-knowledge/`，再写新 SQL。
+- 先搜当前仓库、Metabase、schema KB、历史 SQL、method references、`data-query-work/knowledge/`，再写新 SQL。
 - 先选数据源，再写 SQL；不能静默切换数据源。
 - 历史 SQL 只能当证据，不能当当前真源。
 - Metabase card / dashboard 是正式 source；能匹配时优先复用并运行看板取数。
@@ -490,7 +492,7 @@ internal-data-query 已安装。要执行真实查询，还需要配置只读数
   - 根据 engine 给出方言风险提示。
 
 - `scripts/search_query_knowledge.py`
-  - 检索仓库级 `data-query-knowledge/`。
+  - 检索仓库级 `data-query-work/knowledge/`。
   - 支持按 `status`、`domain`、`metric`、`grain`、`source`、`confidence` 过滤。
   - 默认排除 `candidate`、`deprecated`、`expired`。
 
@@ -515,7 +517,7 @@ internal-data-query 已安装。要执行真实查询，还需要配置只读数
   - 安装后和每次复杂查询前都可运行，用来告诉 AI 当前能查什么、缺什么。
 
 - `scripts/report_query_knowledge_sync.py`
-  - 检查 `data-query-knowledge/` 的新增、过期、冲突、重复 ID、schema version 和 promotion log 状态。
+  - 检查 `data-query-work/knowledge/` 的新增、过期、冲突、重复 ID、schema version 和 promotion log 状态。
   - 输出适合代码 review 的同步报告，不执行 git 操作。
 
 - `scripts/migrate_query_knowledge.py`
@@ -548,7 +550,7 @@ data-query-work/
 新增标准仓库共享知识区。个人临时查数不强制创建该目录，但 skill 实现必须支持它；一旦仓库存在该目录或用户要求团队复用，就必须按共享知识规则执行。
 
 ```text
-data-query-knowledge/
+data-query-work/knowledge/
 ├── manifest.yaml
 ├── OWNERS.yaml
 ├── candidates/
@@ -565,9 +567,9 @@ data-query-knowledge/
 硬规则：
 
 - `data-query-work/` 默认是个人过程产物，不可直接当团队真源。
-- `data-query-knowledge/` 才是共享知识区。
+- `data-query-work/knowledge/` 才是共享知识区。
 - AI 自动生成的知识默认只能是 `draft` 或 `candidate`。
-- 查数过程中的隐性记录默认进入 `data-query-knowledge/candidates/` 或 `data-query-work/knowledge-candidates/`，不得直接进入 approved 区。
+- 查数过程中的隐性记录默认进入 `data-query-work/knowledge/candidates/` 或 `data-query-work/knowledge-candidates/`，不得直接进入 approved 区。
 - `approved` 必须有 reviewer、validation evidence 和明确适用范围。
 - `deprecated`、`expired`、`conflicts_with` 默认不参与普通检索。
 - 共享知识必须是可 diff、可 review、可仓库同步的文本资产，不能依赖个人本地数据库。
@@ -647,8 +649,8 @@ evals/
 - 安装配置脚本在 non-interactive 模式能生成本地占位配置。
 - ClickHouse / ODPS / MySQL / Metabase 四类 profile 的配置解析和连接 smoke check。
 - Metabase card search / get / run 的 mock eval。
-- schema KB、历史 SQL、data-query-knowledge 多知识源冲突时必须降级 confidence。
-- `data-query-knowledge/` 多人协作同步检查：重复 ID、过期 approved、冲突 candidate、旧 schema version。
+- schema KB、历史 SQL、data-query-work/knowledge 多知识源冲突时必须降级 confidence。
+- `data-query-work/knowledge/` 多人协作同步检查：重复 ID、过期 approved、冲突 candidate、旧 schema version。
 - migration eval：旧版知识文件迁移后保留原证据和 supersedes / conflicts_with 关系。
 - 渐进式知识沉淀 eval：早期查询不打扰，稳定结果后给出候选沉淀建议，未 review 不得晋升 approved。
 - 轻量化边界 eval：确认本轮不依赖 MCP server、不启动常驻服务、不要求安装重型平台。
@@ -658,18 +660,18 @@ evals/
 ```bash
 python scripts/validate_manifest.py
 python scripts/scan_sensitive_info.py
-python scripts/setup_connections.py --non-interactive --output data-query-work/config/internal-data-query-check.yaml --overwrite
-python scripts/check_connections.py --config data-query-work/config/internal-data-query-check.yaml --offline-ok
-python scripts/discover_data_sources.py --config data-query-work/config/internal-data-query-check.yaml
+python scripts/setup_connections.py --non-interactive --output ~/.internal-data-query/internal-data-query-check.yaml --overwrite
+python scripts/check_connections.py --config ~/.internal-data-query/internal-data-query-check.yaml --offline-ok
+python scripts/discover_data_sources.py --config ~/.internal-data-query/internal-data-query-check.yaml
 python scripts/search_schema.py refund --limit 3
 python scripts/search_old_sql.py 退款 --limit 3
 python scripts/query_static_check.py --sql-file evals/fixtures/readonly.sql --engine clickhouse
 python scripts/query_static_check.py --sql-file evals/fixtures/reject-dml.sql --engine mysql
-python scripts/validate_query_knowledge.py --root evals/fixtures/data-query-knowledge
-python scripts/search_query_knowledge.py refund --root evals/fixtures/data-query-knowledge --status approved
-python scripts/report_query_knowledge_sync.py --root evals/fixtures/data-query-knowledge
+python scripts/validate_query_knowledge.py --root evals/fixtures/data-query-work/knowledge
+python scripts/search_query_knowledge.py refund --root evals/fixtures/data-query-work/knowledge --status approved
+python scripts/report_query_knowledge_sync.py --root evals/fixtures/data-query-work/knowledge
 python scripts/migrate_query_knowledge.py --root evals/fixtures/data-query-knowledge-old --dry-run
-python scripts/capture_query_knowledge.py --input evals/fixtures/query-case.md --root evals/fixtures/data-query-knowledge --dry-run
+python scripts/capture_query_knowledge.py --input evals/fixtures/query-case.md --root evals/fixtures/data-query-work/knowledge --dry-run
 python scripts/suggest_knowledge_capture.py --input evals/fixtures/query-session.json
 python scripts/eval_skill_pack.py
 ```
@@ -680,7 +682,7 @@ python scripts/eval_skill_pack.py
 - 不把真实凭证、真实内部 URL、个人配置打进 zip。
 - 不默认创建 git commit、push、PR 或切分支。
 - 不把 AI candidate memory 当作 confirmed source。
-- 不强制所有用户使用仓库级 `data-query-knowledge/`；个人查数默认仍只用 `data-query-work/`。
+- 不强制所有用户使用仓库级 `data-query-work/knowledge/`；个人查数默认仍只用 `data-query-work/`。
 - 不把 WrenAI、DB-GPT、Vanna、Dataherald、MindsDB、Cube、PandasAI、LangChain 作为默认依赖。
 - 本轮不做 MCP；后续如需要再单独设计。
 
@@ -699,7 +701,7 @@ python scripts/eval_skill_pack.py
    - 把 SQL 验证、失败修正、confidence 输出写成硬规则。
 
 3. **Knowledge Collaboration Pack**
-   - 新增 `data-query-knowledge/` 规范。
+   - 新增 `data-query-work/knowledge/` 规范。
    - 新增 query-knowledge 模板。
    - 新增 search / validate / promotion 脚本。
 

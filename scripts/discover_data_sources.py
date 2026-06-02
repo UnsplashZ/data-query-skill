@@ -18,6 +18,7 @@ from lib_data_sources import (
     profile_missing_fields,
     profile_placeholder_fields,
 )
+from lib_workspace import resolve_knowledge_root
 
 DRIVERS = {
     "clickhouse": "clickhouse_driver",
@@ -98,10 +99,13 @@ def historical_sql_status(root: Path) -> dict[str, Any]:
 
 
 def query_knowledge_status(root: Path) -> dict[str, Any]:
-    kb = root / "data-query-knowledge"
+    selection = resolve_knowledge_root(root, mode="read")
+    kb = selection.path
     status: dict[str, Any] = {
         "path": str(kb),
         "exists": kb.exists(),
+        "path_kind": "legacy" if selection.is_legacy else "workspace",
+        "warning": selection.warning,
         "file_count": 0,
         "status_counts": {},
         "confidence_counts": {},
@@ -138,7 +142,9 @@ def build_next_actions(local_config: dict[str, Any], available_sources: list[dic
     if not offline_knowledge["schema_kb"].get("exists"):
         actions.append("缺少 schema KB，写 SQL 前需要从业务文档或用户确认表字段。")
     if not offline_knowledge["data_query_knowledge"].get("exists"):
-        actions.append("未发现 data-query-knowledge；只能使用 schema KB/历史 SQL/当前用户证据，不能标记共享知识 verified。")
+        actions.append("未发现 data-query-work/knowledge；只能使用 schema KB/历史 SQL/当前用户证据，不能标记共享知识 verified。")
+    elif offline_knowledge["data_query_knowledge"].get("path_kind") == "legacy":
+        actions.append("当前只发现旧 data-query-knowledge；它只作为只读兼容来源，写入前先迁到 data-query-work/knowledge。")
     if not actions:
         actions.append("复杂查询前先运行 search_schema/search_old_sql，再执行 query_static_check 与 sample 查询。")
     return actions
@@ -158,7 +164,10 @@ def print_text(result: dict[str, Any]) -> None:
     dqk = result["offline_knowledge"]["data_query_knowledge"]
     print(f"- schema_kb: exists={schema['exists']} tables={schema.get('tables', {})}")
     print(f"- historical_sql: index_count={hist['index_count']} sql_file_count={hist['sql_file_count']}")
-    print(f"- data_query_knowledge: exists={dqk['exists']} file_count={dqk['file_count']}")
+    print(
+        f"- data_query_knowledge: exists={dqk['exists']} "
+        f"path_kind={dqk.get('path_kind')} file_count={dqk['file_count']}"
+    )
     print("next_actions:")
     for action in result["next_actions"]:
         print(f"- {action}")

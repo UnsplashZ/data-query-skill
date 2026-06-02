@@ -4,7 +4,7 @@
 
 ## 1. 执行前决策
 
-1. 先检索当前仓库、schema KB、历史 SQL、Metabase card/dashboard、method references、`data-query-knowledge/`。
+1. 先检索当前仓库、schema KB、历史 SQL、Metabase card/dashboard、method references、`data-query-work/knowledge/`。
 2. 先选定 engine/profile，再写 SQL；不能静默切换 ClickHouse、ODPS、MySQL 或 Metabase。
 3. SQL 必须只读。默认禁止 DDL、DML、权限、导出、过程执行、维护类语句。
 4. 每个查询必须声明时间字段、时间范围、统计粒度、状态过滤、金额单位和业务 scope。

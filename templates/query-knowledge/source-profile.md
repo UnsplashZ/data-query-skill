@@ -23,7 +23,15 @@ capture_trigger: manual
 source_interaction: []
 ---
 
-# Source Profile
+# YYYY-MM-DD / domain / topic / source profile
+
+- Status: draft
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/knowledge/sources/YYYY-MM-DD__domain__topic__source-profile.md`
 
 ## Purpose
 

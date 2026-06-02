@@ -56,3 +56,6 @@
 - Discovery Report: `data-query-work/discovery-reports/`
 - Requirement Gap: `data-query-work/requirement-gaps/`
 - Export: `data-query-work/exports/`
+- Reusable Knowledge: `data-query-work/knowledge/`
+
+过程文件和知识条目统一使用 `YYYY-MM-DD__domain__topic__artifact-type.ext`，Markdown 首标题使用 `# YYYY-MM-DD / domain / topic / artifact type`。

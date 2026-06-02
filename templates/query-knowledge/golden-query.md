@@ -23,7 +23,15 @@ capture_trigger: manual
 source_interaction: []
 ---
 
-# Golden Query
+# YYYY-MM-DD / domain / topic / golden query
+
+- Status: draft
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/knowledge/golden-queries/YYYY-MM-DD__domain__topic__golden-query.md`
 
 ## Use Case
 

@@ -3,10 +3,10 @@ name: internal-data-query
 description: 通用内部数据查询 skill，适用于任意仓库或 AI 助手。Use when the user asks to 查数据, 写 SQL, 看 Metabase, 搜看板/卡片, 找字段, 接页面字段到表, 导出订单/退款/GMV, 验证报表口径, 选择数据源, 搜索 schema KB 或历史 SQL, 编写只读 Metabase/ODPS/MaxCompute/ClickHouse/MySQL SQL, 复核查询假设, 保存 Query Brief/SQL 草案/复核/发现报告/本地导出, 或安装/配置数据查询 skill、配置内部数据源账号。安装或配置时，必须引导用户把 Metabase、ClickHouse、ODPS/MaxCompute、MySQL 等只读凭证写入本机 data-sources.yaml，不得写入 skill 包或仓库。
 license: Internal Use Only
 metadata:
-  version: 1.0.0
+  version: 0.1.0
   author: Hermes Agent
   hermes:
-    version: 1.0.0
+    version: 0.1.0
     author: Hermes Agent
     tags: [sql, data-query, odps, clickhouse, metabase, mysql, internal-data, schema-kb]
 ---
@@ -79,19 +79,41 @@ data-query-work/
 ├── sql-drafts/
 ├── discovery-reports/
 ├── requirement-gaps/
-└── exports/
+├── exports/
+└── knowledge/
+    ├── candidates/
+    ├── metrics/
+    ├── sources/
+    ├── joins/
+    ├── golden-queries/
+    ├── semantic-memory/
+    ├── review-records/
+    └── deprecated/
 ```
 
 Default saves:
 
-- Query Brief: `data-query-work/briefs/<date>_<topic>.md`
-- Query Review: `data-query-work/reviews/<date>_<topic>-review.md`
-- SQL Draft: `data-query-work/sql-drafts/<date>_<topic>.sql`
-- Discovery Report: `data-query-work/discovery-reports/<date>_<topic>.md`
-- Requirement Gap: `data-query-work/requirement-gaps/<date>_<topic>.md`
-- Query output/export: `data-query-work/exports/<date>_<topic>.*`
+- Query Brief: `data-query-work/briefs/YYYY-MM-DD__domain__topic__brief.md`
+- Query Review: `data-query-work/reviews/YYYY-MM-DD__domain__topic__sql-review.md`
+- SQL Draft: `data-query-work/sql-drafts/YYYY-MM-DD__domain__topic__draft.sql`
+- Discovery Report: `data-query-work/discovery-reports/YYYY-MM-DD__domain__topic__discovery.md`
+- Requirement Gap: `data-query-work/requirement-gaps/YYYY-MM-DD__domain__topic__gap.md`
+- Query output/export: `data-query-work/exports/YYYY-MM-DD__domain__topic__sample.*`
+- Query Knowledge Candidate: `data-query-work/knowledge/candidates/<maturity>/YYYY-MM-DD__domain__topic__candidate-<id>.md`
 
-This folder is for per-user process artifacts, exports, drafts, and local reviews. It is not the shared knowledge source by default. If a finding should become reusable team knowledge, capture it as a `data-query-knowledge/` candidate and move it through review/promotion before syncing it through the shared repository. Keep raw exports, credentials, and personal config local.
+Use this Markdown title pattern for generated process files and knowledge candidates:
+
+```text
+# YYYY-MM-DD / domain / topic / artifact type
+```
+
+The top metadata block must include `Status`, `Owner`, `Source`, `Related files`, `Validation`, and `Risk`.
+
+`data-query-work/` is the only default top-level workspace for this skill inside a business repository. Process artifacts and reusable knowledge both live under it. Keep raw exports, credentials, and personal config local. If a finding should become reusable team knowledge, capture it as a `data-query-work/knowledge/` candidate and move it through review/promotion before syncing it through the shared repository.
+
+Do not add a blanket `data-query-work/` entry to the target repository's `.gitignore` by default. The workspace is meant to contain reviewable process records and reusable team knowledge. If local exports or temporary files are sensitive, ignore only those concrete files or an agreed local-only subpath.
+
+Legacy `data-query-knowledge/` may appear in older projects. Treat it as read-only compatibility input or migration source only. New capture, promotion, and migration writes must go to `data-query-work/knowledge/`; do not create a new top-level `data-query-knowledge/`.
 
 If the repository has its own docs, analytics, notebook, or reports folder, use it only when the user asks or it is clearly the local convention.
 
@@ -104,6 +126,8 @@ For zip/link installs, the AI assistant should first unpack the package into the
 - `SKILL.md`
 - `manifest.json`
 - `scripts/setup_connections.py`
+
+For private GitHub repository links, prefer installing the latest release asset `internal-data-query-skill.zip`. If a release asset is unavailable, clone the repository into a temporary directory, run `python scripts/package_skill.py --json`, and install the generated `dist/internal-data-query-skill.zip`. Do not copy `.git/`, `.github/`, release metadata, `docs/`, `dist/`, or local generated files into the final skills directory. Use only the user's existing GitHub app/session/`gh auth`; never ask the user to paste a GitHub token into chat.
 
 When available, run:
 
@@ -120,7 +144,7 @@ After unpacking or installing the skill, the AI assistant must ask whether the u
 python scripts/setup_connections.py
 ```
 
-This writes a local profile to `~/.internal-data-query/data-sources.yaml` by default. Query scripts read this path automatically. The user can also set `INTERNAL_DATA_QUERY_CONFIG`, pass `--config <path>`, or use a copied template such as `data-query-work/config/data-sources.yaml`.
+This writes a local profile to `~/.internal-data-query/data-sources.yaml` by default. Query scripts read this path automatically. The user can also set `INTERNAL_DATA_QUERY_CONFIG` or pass `--config <path>`.
 
 If the assistant cannot open an interactive terminal, ask the user which source accounts to configure in chat, then either help them fill `templates/connections/data-sources.yaml.example` into a local path or run `python scripts/setup_connections.py --non-interactive` and edit the generated YAML. Do not stop at "installed" when the user's goal is to use real data.
 
@@ -238,6 +262,8 @@ Return:
 - assumptions, limitations, and next checks
 
 Persist reusable work in `data-query-work/` using the default layout.
+
+When upgrading users from an older data skill, keep old credentials local and convert prior SQL reviews, result summaries, or user-confirmed metric notes into `data-query-work/knowledge/` candidates first. If an older repository already has top-level `data-query-knowledge/`, use it only as read-only migration input. Use `scripts/capture_query_knowledge.py --root <target-repo>` for candidate capture, then require reviewer/approver evidence through `scripts/promote_query_knowledge.py` before anything becomes approved shared knowledge.
 
 ## Role-Based Use
 

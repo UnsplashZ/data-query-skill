@@ -23,10 +23,16 @@ capture_trigger: manual
 source_interaction: []
 ---
 
-# Query Knowledge Candidate
+# YYYY-MM-DD / domain / topic / query knowledge candidate
 
 - Candidate ID:
 - Status: candidate
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/knowledge/candidates/query-verified/YYYY-MM-DD__domain__topic__candidate.md`
 - Maturity: `observed / user_asserted / query_verified / reused / ready_for_candidate / ready_for_review`
 - Capture trigger:
 - Source interaction:

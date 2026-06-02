@@ -15,6 +15,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -79,6 +80,16 @@ def shorten(text: str, limit: int = 500) -> str:
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def file_snapshot(path: Path) -> list[tuple[str, int, int]]:
+    if not path.exists():
+        return []
+    return sorted(
+        (p.relative_to(path).as_posix(), p.stat().st_size, p.stat().st_mtime_ns)
+        for p in path.rglob("*")
+        if p.is_file()
+    )
 
 
 def eval_metabase_mock(root: Path) -> EvalResult:
@@ -213,6 +224,57 @@ def eval_sensitive_sample_detection(root: Path) -> EvalResult:
     return EvalResult("sensitive_sample_detection", PASS, "scanner 命中 token/JDBC/Feishu URL 样例")
 
 
+def eval_package_zip_contract(root: Path) -> EvalResult:
+    with tempfile.TemporaryDirectory(prefix="dqk-package-eval-") as tmp:
+        dist_dir = Path(tmp) / "dist"
+        package = subprocess.run(
+            [
+                sys.executable,
+                str(root / "scripts" / "package_skill.py"),
+                "--dist-dir",
+                str(dist_dir),
+                "--json",
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if package.returncode != 0:
+            return EvalResult("package_zip_contract", FAIL, f"package 失败: {shorten(package.stdout + package.stderr)}")
+        try:
+            summary = json.loads(package.stdout)
+        except json.JSONDecodeError:
+            return EvalResult("package_zip_contract", FAIL, f"package JSON 无法解析: {shorten(package.stdout + package.stderr)}")
+        zip_path = Path(summary["zip"])
+        if not zip_path.exists():
+            return EvalResult("package_zip_contract", FAIL, f"zip 不存在: {zip_path}")
+
+        with zipfile.ZipFile(zip_path) as zf:
+            names = sorted(zf.namelist())
+            forbidden_prefixes = (
+                "internal-data-query/.github/",
+                "internal-data-query/docs/",
+                "internal-data-query/data-query-knowledge/",
+                "internal-data-query/data-query-work/",
+            )
+            forbidden_names = (".DS_Store", "AGENTS.md")
+            blocked = [
+                name
+                for name in names
+                if name.startswith(forbidden_prefixes) or any(name.endswith("/" + item) or name.endswith(item) for item in forbidden_names)
+            ]
+            if blocked:
+                return EvalResult("package_zip_contract", FAIL, f"zip 包含禁止路径: {', '.join(blocked[:8])}")
+            manifest = json.loads(zf.read("internal-data-query/manifest.json"))
+            if manifest.get("query_knowledge") != "data-query-work/knowledge/":
+                return EvalResult("package_zip_contract", FAIL, f"manifest query_knowledge 错误: {manifest.get('query_knowledge')}")
+            has_workspace_template = any(name.startswith("internal-data-query/templates/workspace/knowledge/") for name in names)
+            if not has_workspace_template:
+                return EvalResult("package_zip_contract", FAIL, "zip 缺少 templates/workspace/knowledge 知识骨架")
+    return EvalResult("package_zip_contract", PASS, "zip 路径合同通过，无旧顶层目录或本地/CI 元数据")
+
+
 def eval_install_config_flow(root: Path) -> EvalResult:
     with tempfile.TemporaryDirectory(prefix="dq-install-eval-") as tmp:
         config = Path(tmp) / "data-sources.yaml"
@@ -257,7 +319,7 @@ def eval_install_config_flow(root: Path) -> EvalResult:
 def eval_knowledge_capture_write_validate_search(root: Path) -> EvalResult:
     with tempfile.TemporaryDirectory(prefix="dqk-capture-eval-") as tmp:
         tmp_root = Path(tmp)
-        shutil.copytree(root / "evals" / "fixtures" / "data-query-knowledge", tmp_root / "data-query-knowledge")
+        shutil.copytree(root / "evals" / "fixtures" / "data-query-work", tmp_root / "data-query-work")
         text = (
             "- Metric: refund_capture_eval\n"
             "SELECT count(*) FROM refund_order_daily "
@@ -283,6 +345,15 @@ def eval_knowledge_capture_write_validate_search(root: Path) -> EvalResult:
         written_path = tmp_root / written
         if not written or not written_path.exists() or not written_path.read_text(encoding="utf-8").startswith("---\n"):
             return EvalResult("knowledge_capture_write_validate_search", FAIL, f"写入 candidate 缺少 YAML frontmatter: {written}")
+        if not written.startswith("data-query-work/knowledge/candidates/"):
+            return EvalResult("knowledge_capture_write_validate_search", FAIL, f"candidate 写入路径不是 data-query-work/knowledge: {written}")
+        if (tmp_root / "data-query-knowledge").exists():
+            return EvalResult("knowledge_capture_write_validate_search", FAIL, "capture 不应创建顶层 data-query-knowledge")
+        body = written_path.read_text(encoding="utf-8")
+        required_body = ["# ", "- Status:", "- Owner:", "- Source:", "- Related files:", "- Validation:", "- Risk:"]
+        missing_body = [item for item in required_body if item not in body]
+        if missing_body:
+            return EvalResult("knowledge_capture_write_validate_search", FAIL, f"candidate 缺少共享标题/元信息: {', '.join(missing_body)}")
 
         validate = subprocess.run(
             [sys.executable, str(root / "scripts" / "validate_query_knowledge.py"), "--root", str(tmp_root)],
@@ -312,6 +383,115 @@ def eval_knowledge_capture_write_validate_search(root: Path) -> EvalResult:
         if search.returncode != 0 or "kcap-" not in output or "candidate" not in output:
             return EvalResult("knowledge_capture_write_validate_search", FAIL, f"search 未识别写入 candidate: {shorten(output)}")
     return EvalResult("knowledge_capture_write_validate_search", PASS, "candidate 非 dry-run 写入后可被 validate/search 识别")
+
+
+def eval_legacy_knowledge_read_only(root: Path) -> EvalResult:
+    with tempfile.TemporaryDirectory(prefix="dqk-legacy-eval-") as tmp:
+        tmp_root = Path(tmp)
+        legacy_root = tmp_root / "data-query-knowledge"
+        shutil.copytree(root / "evals" / "fixtures" / "data-query-knowledge-old" / "data-query-knowledge", legacy_root)
+        before_legacy = file_snapshot(legacy_root)
+
+        search = subprocess.run(
+            [
+                sys.executable,
+                str(root / "scripts" / "search_query_knowledge.py"),
+                "refund",
+                "--root",
+                str(tmp_root),
+                "--include-draft",
+                "--include-candidate",
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        output = search.stdout + search.stderr
+        if search.returncode != 0 or "legacy" not in output.lower():
+            return EvalResult("legacy_knowledge_read_only", FAIL, f"旧路径读取未提示 legacy 兼容: {shorten(output)}")
+
+        promote = subprocess.run(
+            [
+                sys.executable,
+                str(root / "scripts" / "promote_query_knowledge.py"),
+                "legacy.refund_rate.monthly",
+                "--to",
+                "reviewed",
+                "--actor",
+                "eval",
+                "--reviewer",
+                "eval-reviewer",
+                "--evidence",
+                "eval evidence",
+                "--root",
+                str(tmp_root),
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if promote.returncode == 0 or "refusing to write to legacy" not in (promote.stdout + promote.stderr):
+            return EvalResult("legacy_knowledge_read_only", FAIL, f"旧路径 promote 应拒绝写入: {shorten(promote.stdout + promote.stderr)}")
+
+        migrate = subprocess.run(
+            [
+                sys.executable,
+                str(root / "scripts" / "migrate_query_knowledge.py"),
+                "--root",
+                str(tmp_root),
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if migrate.returncode == 0 or "read-only compatibility input" not in (migrate.stdout + migrate.stderr):
+            return EvalResult("legacy_knowledge_read_only", FAIL, f"旧路径 migrate 应拒绝写入: {shorten(migrate.stdout + migrate.stderr)}")
+
+        capture = subprocess.run(
+            [
+                sys.executable,
+                str(root / "scripts" / "capture_query_knowledge.py"),
+                "--root",
+                str(tmp_root),
+                "--text",
+                "- Metric: refund_legacy_capture\nSELECT count(*) FROM refund_order_daily WHERE dt >= '2026-06-01'",
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        written = capture.stdout.strip().splitlines()[-1] if capture.stdout.strip() else ""
+        if capture.returncode != 0 or not written.startswith("data-query-work/knowledge/candidates/"):
+            return EvalResult("legacy_knowledge_read_only", FAIL, f"旧目录存在时 capture 应写新路径: {shorten(capture.stdout + capture.stderr)}")
+        if not (tmp_root / written).exists():
+            return EvalResult("legacy_knowledge_read_only", FAIL, f"capture 声明路径不存在: {written}")
+
+        capture_again = subprocess.run(
+            [
+                sys.executable,
+                str(root / "scripts" / "capture_query_knowledge.py"),
+                "--root",
+                str(tmp_root),
+                "--text",
+                "- Metric: refund_dual_path_capture\nSELECT count(*) FROM refund_order_daily WHERE dt >= '2026-06-01'",
+            ],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        written_again = capture_again.stdout.strip().splitlines()[-1] if capture_again.stdout.strip() else ""
+        if capture_again.returncode != 0 or not written_again.startswith("data-query-work/knowledge/candidates/"):
+            return EvalResult("legacy_knowledge_read_only", FAIL, f"新旧并存时 capture 应继续写新路径: {shorten(capture_again.stdout + capture_again.stderr)}")
+
+        after_legacy = file_snapshot(legacy_root)
+        if before_legacy != after_legacy:
+            return EvalResult("legacy_knowledge_read_only", FAIL, "旧路径兼容读取/写入验证后旧目录发生变化")
+    return EvalResult("legacy_knowledge_read_only", PASS, "旧 data-query-knowledge 仅可读；capture 写新路径，promote/migrate 拒写旧路径")
 
 
 def eval_knowledge_conflict_search(root: Path) -> EvalResult:
@@ -391,6 +571,7 @@ def build_results(root: Path) -> list[EvalResult]:
         run_command(root, "manifest", [py, "scripts/validate_manifest.py"]),
         run_command(root, "sensitive_scan", [py, "scripts/scan_sensitive_info.py"]),
         eval_sensitive_sample_detection(root),
+        eval_package_zip_contract(root),
         eval_install_config_flow(root),
         run_command(
             root,
@@ -470,6 +651,7 @@ def build_results(root: Path) -> list[EvalResult]:
             output_must_contain="candidate",
         ),
         eval_knowledge_capture_write_validate_search(root),
+        eval_legacy_knowledge_read_only(root),
         eval_knowledge_conflict_search(root),
         eval_run_query_help(root),
         run_command(

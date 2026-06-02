@@ -9,9 +9,10 @@ from typing import Any
 
 import yaml
 
+from lib_workspace import resolve_knowledge_root, warn_if_needed
+
 
 CURRENT_SCHEMA_VERSION = "1.0"
-KNOWLEDGE_DIR = "data-query-knowledge"
 SKIP_NAMES = {"manifest.yaml", "OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
 DEFAULTS: dict[str, Any] = {
     "schema_version": CURRENT_SCHEMA_VERSION,
@@ -56,7 +57,9 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 
 def iter_paths(root: Path) -> list[Path]:
-    knowledge_root = root / KNOWLEDGE_DIR
+    selection = resolve_knowledge_root(root, mode="read")
+    warn_if_needed(selection)
+    knowledge_root = selection.path
     if not knowledge_root.exists():
         return []
     return [
@@ -79,7 +82,7 @@ def migrate_data(data: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Migrate data-query-knowledge files by adding missing fields.")
+    parser = argparse.ArgumentParser(description="Migrate data-query-work/knowledge files by adding missing fields.")
     parser.add_argument("--dry-run", action="store_true", help="Report changes without writing files.")
     parser.add_argument(
         "--root",
@@ -90,6 +93,14 @@ def main() -> int:
     args = parser.parse_args()
 
     root = args.root.resolve()
+    selection = resolve_knowledge_root(root, mode="read")
+    if selection.is_legacy and not args.dry_run:
+        print(
+            "FAIL: legacy data-query-knowledge/ is read-only compatibility input. "
+            "Copy it to data-query-work/knowledge/ before running an in-place migration."
+        )
+        return 1
+
     changed_count = 0
     for path in iter_paths(root):
         if path.suffix.lower() == ".md":

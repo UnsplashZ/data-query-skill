@@ -17,7 +17,7 @@ conflicts_with:
   - metric.refund_rate.monthly.v1
 validation_evidence:
   - type: migration_fixture
-    path: evals/fixtures/data-query-knowledge-old/metrics/refund-rate-legacy.md
+    path: evals/fixtures/data-query-knowledge-old/data-query-knowledge/metrics/refund-rate-legacy.md
 last_verified_at: 2025-12-31
 sync_notes: []
 maturity: deprecated

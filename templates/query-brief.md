@@ -1,9 +1,12 @@
-# Query Brief
+# YYYY-MM-DD / domain / topic / query brief
 
-- Request:
-- Owner / audience:
-- Result use:
-- Output path:
+- Status: draft
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/briefs/YYYY-MM-DD__domain__topic__brief.md`
 
 ## Business Question
 

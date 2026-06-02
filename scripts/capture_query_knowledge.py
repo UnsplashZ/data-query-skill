@@ -14,6 +14,8 @@ from typing import Any
 
 import yaml
 
+from lib_workspace import warn_if_needed, writable_knowledge_root
+
 
 SENSITIVE_PATTERNS: list[re.Pattern[str]] = [
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
@@ -28,15 +30,12 @@ METRIC_RE = re.compile(r"(?im)^-\s*Metric:\s*(.+)$")
 STATUS_RE = re.compile(r"(?im)^-\s*Status:\s*`?([^`\n]+)`?")
 
 
-def knowledge_root_for(root: Path) -> Path:
-    if (root / "manifest.yaml").exists() and (root / "OWNERS.yaml").exists():
-        return root
-    return root / "data-query-knowledge"
-
-
 @dataclass
 class Candidate:
     candidate_id: str
+    operation_date: str
+    domain: str
+    topic: str
     status: str
     maturity: str
     capture_trigger: str
@@ -148,13 +147,38 @@ def summarize(source_type: str, text: str) -> tuple[str, str, list[str], list[st
     return title, summary, evidence, risks
 
 
+def slugify(value: str, *, fallback: str) -> str:
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", value.lower()).strip("-")
+    return slug[:48] or fallback
+
+
+def infer_domain(text: str) -> str:
+    lowered = text.lower()
+    for key in ("refund", "gmv", "cashflow", "cost", "handover", "renewal", "order", "user-relationship"):
+        if key in lowered:
+            return key
+    return "general"
+
+
+def infer_topic(title: str, summary: str, evidence: list[str]) -> str:
+    source = " ".join([title, summary, " ".join(evidence[:3])])
+    topic = re.sub(r"(?i)\b(metric|source|observation|tables?|card|query|knowledge)\b", " ", source)
+    return slugify(topic, fallback="query-knowledge")
+
+
 def make_candidate(text: str, source_type: str, source_path: Path | None) -> Candidate:
     if has_sensitive_value(text):
         text = "\n".join(clean_line(line) for line in text.splitlines())
     title, summary, evidence, risks = summarize(source_type, text)
     digest = hashlib.sha1((source_type + "\n" + summary + "\n" + "\n".join(evidence)).encode("utf-8")).hexdigest()[:12]
+    operation_date = datetime.now(timezone.utc).date().isoformat()
+    domain = infer_domain("\n".join([title, summary, "\n".join(evidence)]))
+    topic = infer_topic(title, summary, evidence)
     return Candidate(
         candidate_id=f"kcap-{digest}",
+        operation_date=operation_date,
+        domain=domain,
+        topic=topic,
         status="candidate",
         maturity=maturity_for(source_type, text),
         capture_trigger=trigger_for(source_type, text),
@@ -183,7 +207,7 @@ def frontmatter_for(candidate: Candidate) -> dict[str, Any]:
         "created_by": "capture_query_knowledge",
         "reviewed_by": [],
         "approved_by": [],
-        "domain": "",
+        "domain": candidate.domain,
         "metric": [],
         "grain": "",
         "source": [],
@@ -212,10 +236,15 @@ def render_candidate(candidate: Candidate) -> str:
 {frontmatter}
 ---
 
-# Query Knowledge Candidate
+# {candidate.operation_date} / {candidate.domain} / {candidate.topic} / query knowledge candidate
 
 - Candidate ID: {candidate.candidate_id}
 - Status: candidate
+- Owner:
+- Source: {candidate.source_interaction}
+- Related files:
+- Validation:
+- Risk: medium
 - Maturity: {candidate.maturity}
 - Capture trigger: {candidate.capture_trigger}
 - Source interaction: {candidate.source_interaction}
@@ -252,7 +281,9 @@ def read_inputs(paths: list[Path], inline_text: str | None) -> list[tuple[Path |
 
 
 def output_subdir(root: Path, candidate: Candidate) -> Path:
-    knowledge_root = knowledge_root_for(root)
+    selection = writable_knowledge_root(root)
+    warn_if_needed(selection)
+    knowledge_root = selection.path
     mapping = {
         "observed": knowledge_root / "candidates" / "observations",
         "user_asserted": knowledge_root / "candidates" / "user-assertions",
@@ -292,7 +323,8 @@ def main() -> int:
     for candidate in candidates:
         directory = output_subdir(root, candidate)
         directory.mkdir(parents=True, exist_ok=True)
-        path = directory / f"{candidate.candidate_id}.md"
+        filename = f"{candidate.operation_date}__{candidate.domain}__{candidate.topic}__candidate-{candidate.candidate_id}.md"
+        path = directory / filename
         path.write_text(render_candidate(candidate), encoding="utf-8")
         written.append(path)
 

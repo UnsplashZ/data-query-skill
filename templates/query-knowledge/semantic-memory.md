@@ -23,7 +23,15 @@ capture_trigger: manual
 source_interaction: []
 ---
 
-# Semantic Memory
+# YYYY-MM-DD / domain / topic / semantic memory
+
+- Status: draft
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/knowledge/semantic-memory/YYYY-MM-DD__domain__topic__semantic-memory.md`
 
 ## Reusable Knowledge
 

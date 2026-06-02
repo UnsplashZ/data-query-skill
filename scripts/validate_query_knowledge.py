@@ -11,9 +11,10 @@ from typing import Any
 
 import yaml
 
+from lib_workspace import resolve_knowledge_root, warn_if_needed
+
 
 CURRENT_SCHEMA_VERSION = "1.0"
-KNOWLEDGE_DIR = "data-query-knowledge"
 SKIP_NAMES = {"manifest.yaml", "OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
 VALID_STATUS = {"draft", "candidate", "reviewed", "approved", "deprecated"}
 VALID_CONFIDENCE = {"low", "medium", "high"}
@@ -37,12 +38,6 @@ REQUIRED_FIELDS = [
     "capture_trigger",
     "source_interaction",
 ]
-
-
-def knowledge_root_for(root: Path) -> Path:
-    if (root / "manifest.yaml").exists() and (root / "OWNERS.yaml").exists():
-        return root
-    return root / KNOWLEDGE_DIR
 
 
 def parse_date(value: Any) -> date | None:
@@ -92,7 +87,9 @@ def load_item(path: Path) -> dict[str, Any] | None:
 
 
 def iter_items(root: Path) -> list[dict[str, Any]]:
-    knowledge_root = knowledge_root_for(root)
+    selection = resolve_knowledge_root(root, mode="read")
+    warn_if_needed(selection)
+    knowledge_root = selection.path
     if not knowledge_root.exists():
         return []
     items = []
@@ -105,7 +102,8 @@ def iter_items(root: Path) -> list[dict[str, Any]]:
 
 
 def parse_promotion_log(root: Path) -> set[tuple[str, str]]:
-    log_path = knowledge_root_for(root) / "promotion-log.md"
+    selection = resolve_knowledge_root(root, mode="read")
+    log_path = selection.path / "promotion-log.md"
     if not log_path.exists():
         return set()
     entries: set[tuple[str, str]] = set()
@@ -119,7 +117,7 @@ def parse_promotion_log(root: Path) -> set[tuple[str, str]]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate data-query-knowledge files.")
+    parser = argparse.ArgumentParser(description="Validate data-query-work/knowledge files.")
     parser.add_argument(
         "--root",
         type=Path,
@@ -134,12 +132,12 @@ def main() -> int:
     promotion_entries = parse_promotion_log(root)
     ok = True
 
-    knowledge_root = knowledge_root_for(root)
+    knowledge_root = resolve_knowledge_root(root, mode="read").path
     if not (knowledge_root / "manifest.yaml").exists():
-        print("FAIL: data-query-knowledge/manifest.yaml missing")
+        print("FAIL: data-query-work/knowledge/manifest.yaml missing")
         ok = False
     if not (knowledge_root / "OWNERS.yaml").exists():
-        print("FAIL: data-query-knowledge/OWNERS.yaml missing")
+        print("FAIL: data-query-work/knowledge/OWNERS.yaml missing")
         ok = False
 
     seen: dict[str, Path] = {}

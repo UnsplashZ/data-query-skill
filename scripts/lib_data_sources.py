@@ -69,9 +69,9 @@ def default_config_candidates() -> list[Path]:
         candidates.append(Path(env_path).expanduser())
     candidates.extend(
         [
-            Path("data-query-work/config/data-sources.yaml"),
-            Path("local/data-sources.yaml"),
             Path.home() / ".internal-data-query" / "data-sources.yaml",
+            Path("local/data-sources.yaml"),
+            Path("data-query-work/config/data-sources.yaml"),
         ]
     )
     return candidates
@@ -198,8 +198,7 @@ def load_profile(engine: str, profile: str, config_path: Path | None, env_file: 
         raise RuntimeError(
             f"No config found for engine={engine} profile={profile}.\n"
             "Run: python scripts/setup_connections.py\n"
-            "Then retry, or pass --config data-query-work/config/data-sources.yaml / "
-            "--config ~/.internal-data-query/data-sources.yaml.\n"
+            "Then retry, or pass --config ~/.internal-data-query/data-sources.yaml.\n"
             "Scripts also read $INTERNAL_DATA_QUERY_CONFIG, local/data-sources.yaml, engine .env files, "
             "or process environment variables."
         )

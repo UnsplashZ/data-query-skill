@@ -1,9 +1,14 @@
-# SQL Review
+# YYYY-MM-DD / domain / topic / sql review
 
+- Status: `PASS / PASS_WITH_RISKS / FAIL`
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/reviews/YYYY-MM-DD__domain__topic__sql-review.md`
 - SQL file:
 - Engine:
-- Source:
-- Review status: `PASS / PASS_WITH_RISKS / FAIL`
 
 ## Checks
 

@@ -23,7 +23,15 @@ capture_trigger: manual
 source_interaction: []
 ---
 
-# Join Contract
+# YYYY-MM-DD / domain / topic / join contract
+
+- Status: draft
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/knowledge/joins/YYYY-MM-DD__domain__topic__join-contract.md`
 
 ## Join Keys
 

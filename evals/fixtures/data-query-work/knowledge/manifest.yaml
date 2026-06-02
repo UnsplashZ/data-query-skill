@@ -1,5 +1,5 @@
 schema_version: 1
-knowledge_root: data-query-knowledge
+knowledge_root: data-query-work/knowledge
 domains:
   - refund
 owners:

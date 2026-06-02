@@ -79,7 +79,8 @@ data-query-work/
 ├── sql-drafts/
 ├── discovery-reports/
 ├── requirement-gaps/
-└── exports/
+├── exports/
+└── knowledge/
 ```
 
 不要强制创建任何项目专属目录。
@@ -96,13 +97,14 @@ Use `data-sources.yaml.example` for multi-engine profiles, or engine-specific en
 
 1. `--config <yaml>`
 2. `INTERNAL_DATA_QUERY_CONFIG`
-3. `data-query-work/config/data-sources.yaml`
+3. `~/.internal-data-query/data-sources.yaml`
 4. `local/data-sources.yaml`
-5. `~/.internal-data-query/data-sources.yaml`
-6. `--env-file <env>`
-7. process environment variables
+5. `--env-file <env>`
+6. process environment variables
 
 Never write filled credentials back into this package.
+
+Compatibility note: scripts may still read an existing `data-query-work/config/data-sources.yaml` from older local setups. Do not create it for new projects, do not document it as a team workspace directory, and do not commit it.
 
 ## Execution And Metabase Scripts
 

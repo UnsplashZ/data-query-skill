@@ -86,7 +86,7 @@ def main() -> int:
         "suggest_capture": suggest,
         "reason": reason,
         "low_interruption_prompt": (
-            "这条口径已经复用并验证过。我可以把它写成 data-query-knowledge candidate，等待 review 后再进入共享知识库。"
+            "这条口径已经复用并验证过。我可以把它写成 data-query-work/knowledge candidate，等待 review 后再进入共享知识库。"
             if suggest
             else ""
         ),

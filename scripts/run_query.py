@@ -180,7 +180,7 @@ def main() -> int:
     parser.add_argument(
         "--config",
         type=Path,
-        help="YAML config. Defaults: $INTERNAL_DATA_QUERY_CONFIG, data-query-work/config/data-sources.yaml, local/data-sources.yaml, ~/.internal-data-query/data-sources.yaml.",
+        help="YAML config. Defaults: $INTERNAL_DATA_QUERY_CONFIG, ~/.internal-data-query/data-sources.yaml, local/data-sources.yaml.",
     )
     parser.add_argument("--env-file", type=Path, help="Optional .env file.")
     parser.add_argument("--sql")

@@ -23,7 +23,15 @@ capture_trigger: manual
 source_interaction: []
 ---
 
-# Metric Definition
+# YYYY-MM-DD / domain / topic / metric definition
+
+- Status: draft
+- Owner:
+- Source:
+- Related files:
+- Validation:
+- Risk:
+- Suggested file: `data-query-work/knowledge/metrics/YYYY-MM-DD__domain__topic__metric.md`
 
 ## Business Meaning
 

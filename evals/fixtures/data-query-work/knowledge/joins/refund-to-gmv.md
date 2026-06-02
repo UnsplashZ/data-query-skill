@@ -16,7 +16,7 @@ supersedes: []
 conflicts_with: []
 validation_evidence:
   - type: review_record
-    path: evals/fixtures/data-query-knowledge/reviews/review-refund-rate-approved.md
+    path: evals/fixtures/data-query-work/knowledge/review-records/review-refund-rate-approved.md
 last_verified_at: 2026-06-01
 sync_notes: []
 maturity: query_verified

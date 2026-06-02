@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Report sync health for data-query-knowledge."""
+"""Report sync health for data-query-work/knowledge."""
 
 from __future__ import annotations
 
@@ -11,18 +11,13 @@ from typing import Any
 
 import yaml
 
+from lib_workspace import resolve_knowledge_root, warn_if_needed
+
 
 CURRENT_SCHEMA_VERSION = "1.0"
-KNOWLEDGE_DIR = "data-query-knowledge"
 SKIP_NAMES = {"manifest.yaml", "OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
 CONFIDENCE_ORDER = {"low": 1, "medium": 2, "high": 3}
 ORDER_CONFIDENCE = {value: key for key, value in CONFIDENCE_ORDER.items()}
-
-
-def knowledge_root_for(root: Path) -> Path:
-    if (root / "manifest.yaml").exists() and (root / "OWNERS.yaml").exists():
-        return root
-    return root / KNOWLEDGE_DIR
 
 
 def parse_date(value: Any) -> date | None:
@@ -79,14 +74,17 @@ def load_item(path: Path) -> dict[str, Any] | None:
 
 
 def iter_items(root: Path) -> list[dict[str, Any]]:
-    knowledge_root = knowledge_root_for(root)
+    selection = resolve_knowledge_root(root, mode="read")
+    warn_if_needed(selection)
+    knowledge_root = selection.path
     if not knowledge_root.exists():
         return []
     return [item for p in sorted(knowledge_root.rglob("*")) if p.is_file() for item in [load_item(p)] if item]
 
 
 def parse_promotion_log(root: Path) -> set[tuple[str, str]]:
-    log_path = knowledge_root_for(root) / "promotion-log.md"
+    selection = resolve_knowledge_root(root, mode="read")
+    log_path = selection.path / "promotion-log.md"
     if not log_path.exists():
         return set()
     entries: set[tuple[str, str]] = set()
@@ -100,7 +98,7 @@ def parse_promotion_log(root: Path) -> set[tuple[str, str]]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Report data-query-knowledge sync health.")
+    parser = argparse.ArgumentParser(description="Report data-query-work/knowledge sync health.")
     parser.add_argument(
         "--root",
         type=Path,
@@ -110,7 +108,7 @@ def main() -> int:
     args = parser.parse_args()
 
     root = args.root.resolve()
-    knowledge_root = knowledge_root_for(root)
+    knowledge_root = resolve_knowledge_root(root, mode="read").path
     items = iter_items(root)
     by_id: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for item in items:

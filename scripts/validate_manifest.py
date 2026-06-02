@@ -13,6 +13,7 @@ IGNORED_NAMES = {
     ".DS_Store",
     ".gitignore",
     ".release-please-manifest.json",
+    "AGENTS.md",
     "CHANGELOG.md",
     "release-please-config.json",
 }

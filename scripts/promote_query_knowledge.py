@@ -10,16 +10,26 @@ from typing import Any
 
 import yaml
 
+from lib_workspace import LegacyKnowledgeWriteError, resolve_knowledge_root, warn_if_needed, writable_knowledge_root
 
-KNOWLEDGE_DIR = "data-query-knowledge"
+
 VALID_TARGETS = {"reviewed", "approved", "deprecated"}
 SKIP_NAMES = {"manifest.yaml", "OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
 
 
-def knowledge_root_for(root: Path) -> Path:
-    if (root / "manifest.yaml").exists() and (root / "OWNERS.yaml").exists():
-        return root
-    return root / KNOWLEDGE_DIR
+def is_relative_to(path: Path, parent: Path) -> bool:
+    try:
+        path.resolve().relative_to(parent.resolve())
+        return True
+    except ValueError:
+        return False
+
+
+def is_legacy_item_path(root: Path, path: Path) -> bool:
+    if is_relative_to(path, root / "data-query-knowledge"):
+        return True
+    selection = resolve_knowledge_root(root, mode="read")
+    return selection.is_legacy and is_relative_to(path, selection.path)
 
 
 def as_list(value: Any) -> list[str]:
@@ -63,7 +73,9 @@ def find_item(root: Path, item_or_path: str) -> tuple[Path, dict[str, Any], str 
     if candidate_path.exists() and candidate_path.is_file():
         paths = [candidate_path]
     else:
-        paths = [p for p in sorted(knowledge_root_for(root).rglob("*")) if p.is_file() and p.name not in SKIP_NAMES]
+        selection = resolve_knowledge_root(root, mode="read")
+        warn_if_needed(selection)
+        paths = [p for p in sorted(selection.path.rglob("*")) if p.is_file() and p.name not in SKIP_NAMES]
     for path in paths:
         if path.suffix.lower() == ".md":
             data, body = load_markdown(path)
@@ -86,8 +98,9 @@ def append_unique(values: list[str], additions: list[str]) -> list[str]:
 
 
 def append_log(root: Path, item_id: str, old_status: str, new_status: str, actor: str, reviewer: str, evidence: str, notes: str) -> None:
-    log_path = knowledge_root_for(root) / "promotion-log.md"
-    log_path.parent.mkdir(parents=True, exist_ok=True)
+    selection = writable_knowledge_root(root)
+    warn_if_needed(selection)
+    log_path = selection.path / "promotion-log.md"
     if not log_path.exists():
         log_path.write_text(
             "# Query Knowledge Promotion Log\n\n"
@@ -102,7 +115,7 @@ def append_log(root: Path, item_id: str, old_status: str, new_status: str, actor
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Promote one data-query-knowledge item.")
+    parser = argparse.ArgumentParser(description="Promote one data-query-work/knowledge item.")
     parser.add_argument("item", help="Knowledge id or file path.")
     parser.add_argument("--to", required=True, choices=sorted(VALID_TARGETS), help="Target status.")
     parser.add_argument("--actor", required=True, help="Person or agent requesting the promotion.")
@@ -153,11 +166,22 @@ def main() -> int:
     if args.dry_run:
         return 0
 
+    if is_legacy_item_path(root, path):
+        print(
+            "FAIL: refusing to write to legacy data-query-knowledge/. "
+            "Move the item to data-query-work/knowledge/ and retry."
+        )
+        return 1
+
     if path.suffix.lower() == ".md":
         dump_markdown(path, data, body or "")
     else:
         dump_yaml(path, data)
-    append_log(root, item_id, old_status, args.to, args.actor, ",".join(reviewers), "; ".join(args.evidence), args.notes)
+    try:
+        append_log(root, item_id, old_status, args.to, args.actor, ",".join(reviewers), "; ".join(args.evidence), args.notes)
+    except LegacyKnowledgeWriteError as exc:
+        print(f"FAIL: {exc}")
+        return 1
     print("PASS: promotion applied and promotion-log updated.")
     return 0
 

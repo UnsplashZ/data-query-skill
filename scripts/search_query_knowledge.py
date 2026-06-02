@@ -10,19 +10,14 @@ from typing import Any
 
 import yaml
 
+from lib_workspace import resolve_knowledge_root, warn_if_needed
+
 
 CURRENT_SCHEMA_VERSION = "1.0"
 DEFAULT_EXCLUDED_STATUS = {"draft", "candidate", "deprecated"}
-KNOWLEDGE_DIR = "data-query-knowledge"
 SKIP_NAMES = {"manifest.yaml", "OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
 CONFIDENCE_ORDER = {"low": 1, "medium": 2, "high": 3}
 ORDER_CONFIDENCE = {value: key for key, value in CONFIDENCE_ORDER.items()}
-
-
-def knowledge_root_for(root: Path) -> Path:
-    if (root / "manifest.yaml").exists() and (root / "OWNERS.yaml").exists():
-        return root
-    return root / KNOWLEDGE_DIR
 
 
 def parse_date(value: Any) -> date | None:
@@ -79,7 +74,9 @@ def load_item(path: Path) -> tuple[dict[str, Any], str] | None:
 
 
 def iter_items(root: Path) -> list[tuple[dict[str, Any], str]]:
-    knowledge_root = knowledge_root_for(root)
+    selection = resolve_knowledge_root(root, mode="read")
+    warn_if_needed(selection)
+    knowledge_root = selection.path
     if not knowledge_root.exists():
         return []
     items = []
@@ -147,7 +144,7 @@ def conflict_summary(item: dict[str, Any], by_id: dict[str, dict[str, Any]], roo
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Search data-query-knowledge.")
+    parser = argparse.ArgumentParser(description="Search data-query-work/knowledge.")
     parser.add_argument("query", nargs="?", default="", help="Keyword to search.")
     parser.add_argument("--status", help="Filter by lifecycle status.")
     parser.add_argument("--domain", help="Filter by domain.")

@@ -14,97 +14,17 @@
   "connection_templates": true,
   "unified_query_runner": true,
   "metabase_scripts": true,
-  "file_count": 268,
+  "file_count": 258,
   "files": [
     {
       "path": "README.md",
-      "bytes": 5662,
-      "sha256": "68cbc4828c1a32b61e3504a3f18c7f09a5572a694961975b247f62be2ddbb79b"
+      "bytes": 6301,
+      "sha256": "edf7901cce6e41a2b605b9a45c3b4f9d9eb4f409c6b1962764815d562ecd6b3f"
     },
     {
       "path": "SKILL.md",
-      "bytes": 15029,
-      "sha256": "c50ddfcf92ebc5f01448356710c8ceb8c80f7d77b0f40b4556d4301e6c3b2564"
-    },
-    {
-      "path": "data-query-knowledge/OWNERS.yaml",
-      "bytes": 553,
-      "sha256": "60932ed0a3455c49ea15e5765de4e99e90ab277bd3a89fdad9d7dd98ea215ab8"
-    },
-    {
-      "path": "data-query-knowledge/README.md",
-      "bytes": 701,
-      "sha256": "f88cda9eb4ab44c5b76524cc22b91d859583fddc11ffd1736ee9f0b0b06e8ce9"
-    },
-    {
-      "path": "data-query-knowledge/candidates/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/candidates/observations/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/candidates/query-verified/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/candidates/reusable-patterns/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/candidates/user-assertions/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/deprecated/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/golden-queries/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/joins/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/manifest.yaml",
-      "bytes": 969,
-      "sha256": "be93d0c746be56b74d5e71a97f04260095a74031fdf774a776eb40e0d0e21e92"
-    },
-    {
-      "path": "data-query-knowledge/metrics/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/promotion-log.md",
-      "bytes": 254,
-      "sha256": "c5e2bb2d42a27c8db690b33258d29e3e577b8a38944992b8686b66f688db3a04"
-    },
-    {
-      "path": "data-query-knowledge/reviews/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/semantic-memory/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-    },
-    {
-      "path": "data-query-knowledge/sources/.gitkeep",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      "bytes": 17375,
+      "sha256": "e472eef25ef4d036db5ad58f1aef1b606f1eba9402715a237e209424f2bf4005"
     },
     {
       "path": "evals/cases/eval-matrix.json",
@@ -113,8 +33,8 @@
     },
     {
       "path": "evals/expected/eval-skill-pack.expected.json",
-      "bytes": 545,
-      "sha256": "55d3349999b7803ae691fa181ba7721abac4089575acf05f8736a11a4196a124"
+      "bytes": 619,
+      "sha256": "fe64e930bfe44a852881857997c89d1fea5c203f7a321ea4b359fce4de5ced60"
     },
     {
       "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/manifest.yaml",
@@ -145,61 +65,6 @@
       "path": "evals/fixtures/data-query-knowledge-old/reviews/refund-rate-review.md",
       "bytes": 298,
       "sha256": "2ee2792669ef90366304041cdd5eed2bd4d76eabc89b5aa3ac5ef972383666a9"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/OWNERS.yaml",
-      "bytes": 87,
-      "sha256": "9ede92e874f2e20b8c7c42d9e2ef9651c5a7eaac31d5d5250fa6d4adb5dc0901"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/candidates/observations/missing-review-candidate.md",
-      "bytes": 703,
-      "sha256": "2163eb144eeee4a9b532b6799cfb01e635464ae91b7a471d1ea9aa47e4c8dd8d"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/candidates/observations/refund-rate-candidate.md",
-      "bytes": 805,
-      "sha256": "285082256916966c3a0eeb4230980cb070511653f0acbcdc705ac7ddbfec98c8"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/deprecated/refund-rate-old.md",
-      "bytes": 794,
-      "sha256": "d417fe02b7012b9ef5ba7527c43acaadf117f31df8f7d8a9e2e8cde02caeb4b8"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/golden-queries/refund-rate-monthly.md",
-      "bytes": 888,
-      "sha256": "17b1d87972660a1bceca9665c6a3bd839bf57d8eede7b0ddbbe967f853e3baeb"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/joins/refund-to-gmv.md",
-      "bytes": 732,
-      "sha256": "78cb01771cb6d1deca10d9419b18f5358beb80de266ad4f342b211b8000031d1"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/manifest.yaml",
-      "bytes": 133,
-      "sha256": "9aec43dbabc7254c25a9010e47e4e7ebecf38bb7bd12b43bc7663818c7532fd3"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/metrics/refund-rate-approved.md",
-      "bytes": 801,
-      "sha256": "48aa1d9c1cedb6d138842937cf063a62341154136d8e05f5d8db2d10eb292aba"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/promotion-log.md",
-      "bytes": 1206,
-      "sha256": "abeace195fb01511546ca63be85fa23952140eb9f9b6b1a383844a71893884db"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/reviews/review-refund-rate-approved.md",
-      "bytes": 683,
-      "sha256": "7d919adea134f7e6728b8ffc5d5d5297679ca6dc54b8ac1fa70fe92ec6ba75d7"
-    },
-    {
-      "path": "evals/fixtures/data-query-knowledge/sources/refund-order-daily.md",
-      "bytes": 687,
-      "sha256": "c5a2e4d63b78332733bfce17ef54ba536ed58af97df33403bafefa7f3b611542"
     },
     {
       "path": "evals/fixtures/metabase-mock/card-321.json",
@@ -263,8 +128,8 @@
     },
     {
       "path": "references/bundled-assets.md",
-      "bytes": 3442,
-      "sha256": "88eaca3302087a5c981de52e41b81b5acb8de8f1f0d464c918b13c475fca013e"
+      "bytes": 3648,
+      "sha256": "ac845a95f02012615f3a8b5af56b100dd7e4e679c8e1bf70d60ca865aba4ef26"
     },
     {
       "path": "references/historical-sql-index.md",
@@ -748,8 +613,8 @@
     },
     {
       "path": "references/query-execution-contract.md",
-      "bytes": 6501,
-      "sha256": "61a9c4625fcbfbd2d8b88ad458ed9de56c3902ae17addcef21446958d8325945"
+      "bytes": 6506,
+      "sha256": "4086faeeb35047b403e1b2b1fd32a93d2b361ac8e87b710fe22c99fbacbca092"
     },
     {
       "path": "references/sql-query-method-internal/README.md",
@@ -1143,8 +1008,8 @@
     },
     {
       "path": "references/sql-query-method-overlay.md",
-      "bytes": 2363,
-      "sha256": "3567b9b798bf6194e6aae1f452c762618bd23ea8cb278fb3d9ff5e43beec4463"
+      "bytes": 2580,
+      "sha256": "444efffaaad07c8f4d2d80a63a42227a0703379ec8ec25935e385d3e2428c68f"
     },
     {
       "path": "requirements.txt",
@@ -1153,8 +1018,8 @@
     },
     {
       "path": "scripts/capture_query_knowledge.py",
-      "bytes": 10288,
-      "sha256": "29f9f8cd3605d8ddf6f23abcffdc03eefe2c1bdd7bf0ece9f8d3a7a5b201f52c"
+      "bytes": 11539,
+      "sha256": "b05820474b389b009e6ec0f62f5669545a126e55a171441904c2261b1f8272b5"
     },
     {
       "path": "scripts/check_connections.py",
@@ -1163,38 +1028,43 @@
     },
     {
       "path": "scripts/discover_data_sources.py",
-      "bytes": 8574,
-      "sha256": "6f6b9b6928824cfbbef4ec8f314bb17dba69e50a6aee06d88bc3ffa090935b25"
+      "bytes": 9069,
+      "sha256": "badc8bacb1d7a0f4ccd8f09f5005658bb5cdf1a4fc0bb26658a5b85c187cb16b"
     },
     {
       "path": "scripts/eval_skill_pack.py",
-      "bytes": 21118,
-      "sha256": "f2111e3361f72f1aadb1d0a8179a9d912f315f0ee7e5a25df3fdd8ab21ab3324"
+      "bytes": 29668,
+      "sha256": "d786d9a80221f2a73eef8363d1be4a23f8782d1c8fb01b793aee8162510609e8"
     },
     {
       "path": "scripts/lib_data_sources.py",
-      "bytes": 13670,
-      "sha256": "2ef9b0a2c0d2562fcc8ca770e6382e098381da2a963ec9ca68915f9585c89554"
+      "bytes": 13603,
+      "sha256": "27384230597cc523fc25d8a56e9440c1c8664aca59b3ab9ed06123d9874ff7cc"
+    },
+    {
+      "path": "scripts/lib_workspace.py",
+      "bytes": 4825,
+      "sha256": "bb6738e452de3a7d9e13c83347565e0b2d85ee20c7e952842baa8d1c765be58b"
     },
     {
       "path": "scripts/metabase_get_card.py",
-      "bytes": 5366,
-      "sha256": "d6f26eb1e0d023e65b06f8e862ee03e89ff43443c541f92aff1025cbf582edc1"
+      "bytes": 5324,
+      "sha256": "a6522c9cd7dab5af1a2abbc2a5f3df75b88deaa3693b0e8ac9ca8b82b1dc5caf"
     },
     {
       "path": "scripts/metabase_run_card.py",
-      "bytes": 9783,
-      "sha256": "39d4ea0f1d476c1a7752e050fb1813cb0a6599dedb0fbd9ce9e541d228d629ce"
+      "bytes": 9741,
+      "sha256": "11e2aad3c29a5cac2bc60286b72c343c7c8bde67b316db59234eb1904c454a5d"
     },
     {
       "path": "scripts/metabase_search.py",
-      "bytes": 4065,
-      "sha256": "b6663afaa437a4932ebf70c017116dc49b340ba6dba6fb111ea6696a7be1170b"
+      "bytes": 4023,
+      "sha256": "5132920a43d317725fd7ee945e8cb24e5e04c5c50b5ed3ac8b7d4147b0c28a57"
     },
     {
       "path": "scripts/migrate_query_knowledge.py",
-      "bytes": 4252,
-      "sha256": "04cad7def7159aba05ebb7df8546f5544f5b5b86ce3210b88fab20b023cebef0"
+      "bytes": 4690,
+      "sha256": "92908d05f6b134bb4c167c5f7f4dc6702f04a7a53b1227007d08fac079e93720"
     },
     {
       "path": "scripts/package_skill.py",
@@ -1203,8 +1073,8 @@
     },
     {
       "path": "scripts/promote_query_knowledge.py",
-      "bytes": 6846,
-      "sha256": "390a4b0329efc07b7807a7bae9638b480a97a6c3ee2e4450d41b41628f8970d8"
+      "bytes": 7631,
+      "sha256": "93cbfa4dead8183a48f4d1b467c2f33c53804d2b1054c9a02ac26293a032784e"
     },
     {
       "path": "scripts/query_static_check.py",
@@ -1213,13 +1083,13 @@
     },
     {
       "path": "scripts/report_query_knowledge_sync.py",
-      "bytes": 5989,
-      "sha256": "173e6dcea403dbfef4c911630c75dbbc0908909e04d958b0c8881152e7dca139"
+      "bytes": 5998,
+      "sha256": "9572a1887f439294360b09829991519e9995b6e17bcb7d55731c4aff12bfe84d"
     },
     {
       "path": "scripts/run_query.py",
-      "bytes": 10606,
-      "sha256": "abed13b5182f9046e6dffcf3e9c257696b66768c92b1b8be5ba99c6657d86868"
+      "bytes": 10564,
+      "sha256": "3bac23803ecedc222387bb176d2a731194d401770c877203266de3a4b4db068c"
     },
     {
       "path": "scripts/scan_sensitive_info.py",
@@ -1233,8 +1103,8 @@
     },
     {
       "path": "scripts/search_query_knowledge.py",
-      "bytes": 7754,
-      "sha256": "3ce112dd9b0a5c9ddc644a34dc7ab6ed0a6d24c81b7d4e02e04392c0003cc88e"
+      "bytes": 7688,
+      "sha256": "a66946c5d494b89535568d8b21712f2f0c17d151a347fa5ca2ed71769c502ab8"
     },
     {
       "path": "scripts/search_schema.py",
@@ -1248,18 +1118,18 @@
     },
     {
       "path": "scripts/suggest_knowledge_capture.py",
-      "bytes": 4335,
-      "sha256": "7035f057f10abda6b6219dfb5968277d117e5d2ca936d1fd66ca12efd6270475"
+      "bytes": 4340,
+      "sha256": "2a292b68fa93bad493fb98ffd419e6f3f829c34a9de88066fa346976fa42b1b8"
     },
     {
       "path": "scripts/validate_manifest.py",
-      "bytes": 2892,
-      "sha256": "1030c7a4478ba548013be7e1de7ee3a95d948ec359d03e1024bd85d4adf54e26"
+      "bytes": 2909,
+      "sha256": "8e516c3f43a7add271411324c625446828d940a2e9f134e01a9abbe2e14e4bdd"
     },
     {
       "path": "scripts/validate_query_knowledge.py",
-      "bytes": 7251,
-      "sha256": "f0f8c06a68115c33a7fdc3d06054196db9f4a354a49a72986950fd62da02bc97"
+      "bytes": 7265,
+      "sha256": "b0c9bf8ce68d9e8b1ab13aa4ecc5ebe80b4a57aa0ad363b85ed8c27f8965b908"
     },
     {
       "path": "templates/connections/clickhouse.env.example",
@@ -1288,13 +1158,13 @@
     },
     {
       "path": "templates/feature-data-dependency.md",
-      "bytes": 452,
-      "sha256": "b468aa4d1e72ac1706e371934a7ee0dfaf7ce894946726347a72daf410eb4093"
+      "bytes": 647,
+      "sha256": "78f20fd24b8a743820e0511f05f7a58b3f3433128ac99485832aea1729b73676"
     },
     {
       "path": "templates/query-brief.md",
-      "bytes": 396,
-      "sha256": "c5eb6660f7c8f2213b71adc2572b5f06ee5ad760dc8999c2ebca90d5addd5c17"
+      "bytes": 519,
+      "sha256": "c6ee0c16ce8b3ca2b42ee7857be05e352a6548202749e49e88fbf32813a8ef90"
     },
     {
       "path": "templates/query-knowledge/OWNERS.yaml.example",
@@ -1303,53 +1173,133 @@
     },
     {
       "path": "templates/query-knowledge/golden-query.md",
-      "bytes": 495,
-      "sha256": "bf951a49c23bb0a045d1823fbec754b282086b12cca513181ae74314b41a477f"
+      "bytes": 704,
+      "sha256": "0b3045d277c8e841b53563766ceee6911e70b77ae52fecd7c147f08d86d16802"
     },
     {
       "path": "templates/query-knowledge/join-contract.md",
-      "bytes": 457,
-      "sha256": "f82ed7600e38425fcfd4d0da8a6560760f4b5f5a4d357c98bdef8af6ff2dae1c"
+      "bytes": 658,
+      "sha256": "4917b789294175dc6195bb09b253868859471134eb895f5fd7ef63ac8f708aed"
     },
     {
       "path": "templates/query-knowledge/knowledge-candidate.md",
-      "bytes": 863,
-      "sha256": "620d11936ec4ec8b80a9116fdbf63cf9078d0e7cb9c9cc5926111de23887356c"
+      "bytes": 1063,
+      "sha256": "bf8043d21e1a7fdf60b01b09afea2faa44681e1d469fbe5f6e9452cdf4f60f27"
     },
     {
       "path": "templates/query-knowledge/metric-definition.md",
-      "bytes": 471,
-      "sha256": "de7bdd1f5f63cf5bbe958258c2332d4be5ad815c240d2d355712b283df559699"
+      "bytes": 667,
+      "sha256": "0d4e738ecfed501d754e76283896589aeca076cdbdf16528e927575dea4b1262"
     },
     {
       "path": "templates/query-knowledge/promotion-request.md",
-      "bytes": 488,
-      "sha256": "09c7894dbcce8124965959165424e7a365d7a568a392cb1fda9dba9b5a1cf0cb"
+      "bytes": 706,
+      "sha256": "339662d9531247a3672161b0364904469859943ecc0332a642719c3b4db12306"
     },
     {
       "path": "templates/query-knowledge/review-record.md",
-      "bytes": 456,
-      "sha256": "8c9f5a90e42a8236b17e5a2b1a5295b5ed8fa4d29a239beabdbb5eb2285e107e"
+      "bytes": 675,
+      "sha256": "b7d42be462b7fde5abddb89bdf285f766d840b433ffd3fcc0379ce61b2e04a71"
     },
     {
       "path": "templates/query-knowledge/semantic-memory.md",
-      "bytes": 469,
-      "sha256": "84dab1b73d031365da553ab25a6af072a707b3fab3c873535b200ef5c23b6973"
+      "bytes": 682,
+      "sha256": "19481c70cd5ce330edd223b8264c31be6cbbab8e8099a25012f0802d0fe2bd1d"
     },
     {
       "path": "templates/query-knowledge/source-profile.md",
-      "bytes": 464,
-      "sha256": "f520914c2b5abcdc85dae80e76e5c68d04544883ad53a8341bd172be8b614384"
+      "bytes": 668,
+      "sha256": "7ce1bcc858a2288967da6b187604823ba4f3f538d28a9ae0b77c250d7e6f2d6d"
     },
     {
       "path": "templates/result-summary.md",
-      "bytes": 316,
-      "sha256": "3e6c023876329e47e58eb1b33c052114255ee01782b2d0ee1c5822b1ca638465"
+      "bytes": 493,
+      "sha256": "e665111d0ddb3fec41f525e04f7354047365ef8e1ea2d4fdcb5663234eb4da5e"
     },
     {
       "path": "templates/sql-review.md",
-      "bytes": 499,
-      "sha256": "1eb1d5dc7beb02a06742aae24917a61a06cccea26c1ce00e6cedbb52922688cb"
+      "bytes": 655,
+      "sha256": "7583afb9eda208060096080cefddda3da445d119e69e6c0951c8b65a4e857b08"
+    },
+    {
+      "path": "templates/workspace/knowledge/OWNERS.yaml",
+      "bytes": 553,
+      "sha256": "60932ed0a3455c49ea15e5765de4e99e90ab277bd3a89fdad9d7dd98ea215ab8"
+    },
+    {
+      "path": "templates/workspace/knowledge/README.md",
+      "bytes": 701,
+      "sha256": "f88cda9eb4ab44c5b76524cc22b91d859583fddc11ffd1736ee9f0b0b06e8ce9"
+    },
+    {
+      "path": "templates/workspace/knowledge/candidates/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/candidates/observations/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/candidates/query-verified/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/candidates/reusable-patterns/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/candidates/user-assertions/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/deprecated/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/golden-queries/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/joins/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/manifest.yaml",
+      "bytes": 974,
+      "sha256": "71706bfce2852384eceff688bd289db972c844276050e0fdb5638aa6aee7d20e"
+    },
+    {
+      "path": "templates/workspace/knowledge/metrics/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/promotion-log.md",
+      "bytes": 254,
+      "sha256": "c5e2bb2d42a27c8db690b33258d29e3e577b8a38944992b8686b66f688db3a04"
+    },
+    {
+      "path": "templates/workspace/knowledge/review-records/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/semantic-memory/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "templates/workspace/knowledge/sources/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     {
       "path": "version.txt",
@@ -1360,8 +1310,9 @@
   "query_static_check": "scripts/query_static_check.py",
   "check_connections": "scripts/check_connections.py",
   "discover_data_sources": "scripts/discover_data_sources.py",
-  "query_knowledge": "data-query-knowledge/",
+  "query_knowledge": "data-query-work/knowledge/",
   "query_knowledge_templates": "templates/query-knowledge/",
   "eval_pack": "scripts/eval_skill_pack.py",
-  "query_execution_contract": "references/query-execution-contract.md"
+  "query_execution_contract": "references/query-execution-contract.md",
+  "workspace_knowledge_template": "templates/workspace/knowledge/"
 }

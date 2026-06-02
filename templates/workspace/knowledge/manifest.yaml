@@ -1,5 +1,5 @@
 schema_version: "1.0"
-knowledge_root: data-query-knowledge
+knowledge_root: data-query-work/knowledge
 description: >
   Repo-native shared query knowledge base. Keep only reviewable Markdown,
   YAML, and JSON knowledge assets here. Local credentials, exports, temporary
