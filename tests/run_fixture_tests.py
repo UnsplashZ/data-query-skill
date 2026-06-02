@@ -25,7 +25,7 @@ from query_static_check import check_sql  # noqa: E402
 
 
 def run(args: list[str], *, cwd: Path = REPO) -> subprocess.CompletedProcess[str]:
-    proc = subprocess.run([PYTHON, *args], cwd=cwd, text=True, capture_output=True, check=False, env=SUBPROCESS_ENV)
+    proc = subprocess.run([PYTHON, *args], cwd=cwd, text=True, encoding="utf-8", capture_output=True, check=False, env=SUBPROCESS_ENV)
     if proc.returncode != 0:
         raise AssertionError(f"command failed: {' '.join(args)}\nSTDOUT:\n{proc.stdout}\nSTDERR:\n{proc.stderr}")
     return proc
@@ -287,6 +287,7 @@ def test_scan_field_risk_flags() -> None:
         [PYTHON, "scripts/scan_sensitive_info.py", str(FIXTURES / "schema-index" / "unified_schema_index.json"), "--fail-on-sensitive-field-name"],
         cwd=REPO,
         text=True,
+        encoding="utf-8",
         capture_output=True,
         check=False,
         env=SUBPROCESS_ENV,
@@ -308,6 +309,7 @@ def test_dependency_degrade_config_path() -> None:
         ],
         cwd=REPO,
         text=True,
+        encoding="utf-8",
         capture_output=True,
         check=False,
         env=SUBPROCESS_ENV,
@@ -330,6 +332,7 @@ def test_dependency_degrade_config_path() -> None:
         ],
         cwd=REPO,
         text=True,
+        encoding="utf-8",
         capture_output=True,
         check=False,
         env=SUBPROCESS_ENV,
