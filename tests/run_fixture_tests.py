@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -14,6 +15,7 @@ REPO = Path(__file__).resolve().parents[1]
 SCRIPTS = REPO / "scripts"
 FIXTURES = REPO / "tests" / "fixtures"
 PYTHON = sys.executable
+SUBPROCESS_ENV = {**os.environ, "PYTHONIOENCODING": "utf-8"}
 
 sys.path.insert(0, str(SCRIPTS))
 
@@ -23,7 +25,7 @@ from query_static_check import check_sql  # noqa: E402
 
 
 def run(args: list[str], *, cwd: Path = REPO) -> subprocess.CompletedProcess[str]:
-    proc = subprocess.run([PYTHON, *args], cwd=cwd, text=True, capture_output=True, check=False)
+    proc = subprocess.run([PYTHON, *args], cwd=cwd, text=True, capture_output=True, check=False, env=SUBPROCESS_ENV)
     if proc.returncode != 0:
         raise AssertionError(f"command failed: {' '.join(args)}\nSTDOUT:\n{proc.stdout}\nSTDERR:\n{proc.stderr}")
     return proc
@@ -287,6 +289,7 @@ def test_scan_field_risk_flags() -> None:
         text=True,
         capture_output=True,
         check=False,
+        env=SUBPROCESS_ENV,
     )
     assert fail.returncode == 1
 
@@ -307,6 +310,7 @@ def test_dependency_degrade_config_path() -> None:
         text=True,
         capture_output=True,
         check=False,
+        env=SUBPROCESS_ENV,
     )
     assert proc.returncode == 0, proc.stderr
     result = json.loads(proc.stdout)
@@ -328,6 +332,7 @@ def test_dependency_degrade_config_path() -> None:
         text=True,
         capture_output=True,
         check=False,
+        env=SUBPROCESS_ENV,
     )
     assert post.returncode == 0, post.stderr
     post_result = json.loads(post.stdout)

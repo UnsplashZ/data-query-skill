@@ -21,6 +21,8 @@ permissions:
 
 jobs:
   fixture-smoke:
+    env:
+      PYTHONIOENCODING: utf-8
     strategy:
       fail-fast: false
       matrix:
