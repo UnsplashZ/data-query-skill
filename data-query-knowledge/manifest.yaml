@@ -1,0 +1,44 @@
+schema_version: "1.0"
+knowledge_root: data-query-knowledge
+description: >
+  Repo-native shared query knowledge base. Keep only reviewable Markdown,
+  YAML, and JSON knowledge assets here. Local credentials, exports, temporary
+  SQL, and personal process artifacts belong in data-query-work/ or local-only
+  paths.
+status_flow:
+  - draft
+  - candidate
+  - reviewed
+  - approved
+  - deprecated
+default_search:
+  exclude_status:
+    - draft
+    - candidate
+    - deprecated
+  exclude_expired: true
+domains: []
+owners:
+  - data-query-maintainers
+required_fields:
+  - id
+  - schema_version
+  - status
+  - created_by
+  - reviewed_by
+  - approved_by
+  - source_status
+  - confidence
+  - risk_level
+  - expires_at
+  - supersedes
+  - conflicts_with
+  - validation_evidence
+  - last_verified_at
+  - sync_notes
+  - maturity
+  - capture_trigger
+  - source_interaction
+last_validated_at: null
+sync_notes:
+  - "Initial shared knowledge layout. No real credentials or internal URLs."

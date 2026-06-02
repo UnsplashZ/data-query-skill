@@ -1,0 +1,39 @@
+profiles:
+  clickhouse:
+    default:
+      host: clickhouse.example.internal
+      port: 9000
+      database: analytics
+      username: readonly_user
+      password: ${CLICKHOUSE_PASSWORD}
+      secure: false
+      readonly: true
+
+  odps:
+    default:
+      endpoint: https://service.cn-hangzhou.maxcompute.aliyun.com/api
+      project: your_project
+      access_id: ${ODPS_ACCESS_ID}
+      access_key: ${ODPS_ACCESS_KEY}
+      tunnel_endpoint:
+      readonly: true
+
+  metabase:
+    default:
+      base_url: https://metabase.example.internal
+      api_key: ${METABASE_API_KEY}
+      session_id:
+      username:
+      password:
+      readonly: true
+
+  mysql:
+    default:
+      host: mysql.example.internal
+      port: 3306
+      database: app_readonly
+      username: readonly_user
+      password: ${MYSQL_PASSWORD}
+      charset: utf8mb4
+      ssl_disabled: true
+      readonly: true

@@ -1,0 +1,3457 @@
+{
+  "generated_at": "2026-04-17 18:11:23",
+  "source": "odps",
+  "database": "drh_prod_odps",
+  "tables": {
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240314162323_done_": {
+      "inventory_signature": "b297dc83dd6537d4bf9ed423377acedf169a254b",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-14 16:27:32"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240325141240_done_": {
+      "inventory_signature": "746fb88988cf631199a2c0b4c0e903151948f6c1",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-25 14:14:42"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240325143235_done_": {
+      "inventory_signature": "a42bade98e9da9a47e15835db46164380b69ffb9",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-25 14:33:55"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240325151850_done_": {
+      "inventory_signature": "90a386bb29db140a1919438f864260b9f9232b49",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-25 15:20:08"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240327163718_done_": {
+      "inventory_signature": "b07dae62c79cba0b8de06663c2437ccbdaaf72d1",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-27 16:38:54"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240327164426_done_": {
+      "inventory_signature": "7dd9a540e7ee5950bdd7abedb0320c40e52944a2",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-27 16:45:38"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240327180148_done_": {
+      "inventory_signature": "db4bc3574b99a53b1561f9aab1afc5158f74980e",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-27 18:03:51"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240327182827_done_": {
+      "inventory_signature": "7354c57275880e3076250fad828765c64b52e1ad",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-27 18:30:41"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240327183400_done_": {
+      "inventory_signature": "13110416b2e7ba01350e33edc7f08007847c8f6c",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-27 18:35:21"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328131922_done_": {
+      "inventory_signature": "8f247762bbe8551d698aabc8f644bab7bec9dbcb",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 13:23:24"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328133418_done_": {
+      "inventory_signature": "9d0fd82135dd2e0df3585abcbcf5e07244d72c2a",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 13:43:49"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328140606_done_": {
+      "inventory_signature": "b38fb23abe54265b5b6b2f0415e9879a37aa6ad8",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 14:10:31"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328144215_done_": {
+      "inventory_signature": "3fd3a822c52a6abfb9976497656a3d9e89254db9",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 14:43:33"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328173239_done_": {
+      "inventory_signature": "2a9d8005a82e797a6361da8acb041662aee41066",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 17:33:50"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328174447_done_": {
+      "inventory_signature": "fe3c7e72a30dd039e33939ba70b84a00ad0517fa",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 17:49:53"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328185625_done_": {
+      "inventory_signature": "8ffe7caa81b46d0f9a92a6f38cbb110fd98eb58a",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 18:57:53"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328211000_done_": {
+      "inventory_signature": "252c7ac4c2039840e650258b96002bb6105bcd9b",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 21:12:11"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328211415_done_": {
+      "inventory_signature": "6a392e984f80094c05af0c824938cf2f7cc5d798",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 21:15:32"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240328211806_done_": {
+      "inventory_signature": "b0bd14a5fc0e5d0b76c621c54169657a459c1f0d",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-28 21:21:07"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240329142331_done_": {
+      "inventory_signature": "a7ab553231fa51288876fd59195ebde42e3f35b1",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-29 14:24:46"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240329142725_done_": {
+      "inventory_signature": "c7871b42ea209c05cd01984ed484f1f09483212a",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-03-29 14:28:39"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240403161810_done_": {
+      "inventory_signature": "f5c91b3e4a01f9df3d7d969707546bb53a8b9ec4",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-04-03 16:20:09"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240415173402_done_": {
+      "inventory_signature": "2f55f6c595cc8fabbe0b117d510c77c83a8dbeb6",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-04-15 17:35:56"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240415204946_done_": {
+      "inventory_signature": "efa7b5ba47db4cf27e0ab32ab21bcaccc7cea4df",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-04-15 20:51:09"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240428170337_done_": {
+      "inventory_signature": "ed88f8c903da1c13b5a249548df09eb241434344",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-04-28 17:08:26"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240429153305_done_": {
+      "inventory_signature": "163f71bc9daa21af0e117fd82db7c5cf33dc1ad4",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-04-29 15:35:12"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240508175132_done_": {
+      "inventory_signature": "ef2cbb6782999ca2c54e210728200685339118c5",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-05-08 17:52:47"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240508175550_done_": {
+      "inventory_signature": "c1af694c9a47fa561f7135ddf7ebb579992a6770",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-05-08 18:12:16"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240521190411_done_": {
+      "inventory_signature": "ad0d405668cfe294c7ce218a2b8d03bdeac70fa6",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-05-21 19:06:42"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240522123256_done_": {
+      "inventory_signature": "3ac616d0d35307aae77e7040eb8fc8c712e7ea67",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-05-22 12:34:19"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240528215524_done_": {
+      "inventory_signature": "f2925fd841fee719b5f726a5f5a9d23952709abb",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-05-28 21:58:10"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240619143749_done_": {
+      "inventory_signature": "67a2c6d3abed27be02dcbcb6e5e3d69a76bc9bc1",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-19 14:39:18"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240619150842_done_": {
+      "inventory_signature": "3fc25bde0fb25492204fca660de4076caeb6828d",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-19 15:10:02"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240619155913_done_": {
+      "inventory_signature": "59bc0495af6efda21623ae9c571c4ddb4cf78b25",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-19 16:00:40"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240619164337_done_": {
+      "inventory_signature": "0fd0945432bdeb2a12733925b9cc9de39a24f93c",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-19 16:48:56"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240619224828_done_": {
+      "inventory_signature": "3426596f92fc2326607980e877cb4dfc1b97aeb6",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-19 22:49:52"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240619225112_done_": {
+      "inventory_signature": "0b20c00fcf3e8ff9fb77938ad11d1e978501a5ee",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-19 22:52:30"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240620165420_done_": {
+      "inventory_signature": "a53f0ea9a3ce763c0755b2f3bd2438844274baa9",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-20 16:55:43"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240621170244_done_": {
+      "inventory_signature": "07ec60e9bbfab9581c90d9acf5bb0a158f75e1ab",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-21 17:04:09"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240628162938_done_": {
+      "inventory_signature": "129d550ff0ae68095d9cfc180ba43ad5b8493024",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-06-28 16:31:55"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240701220552_done_": {
+      "inventory_signature": "87b8713e3de3bc9e127534c4d27574742ecb6fed",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-07-01 22:07:54"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240715182322_done_": {
+      "inventory_signature": "251dfca1d8743f7c4f55fa35d3cb286b6a7e8e66",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-07-15 18:24:44"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240726161251_done_": {
+      "inventory_signature": "82972853662117aaaaa0244c766050664c018db4",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-07-26 16:16:00"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240806222100_done_": {
+      "inventory_signature": "a0fa5c296319f99c3c9f6289b4c8889024f57d4a",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-08-06 22:22:42"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240809133614_done_": {
+      "inventory_signature": "134c55da09f05dbd0b9f0cb301290ec3bdd25f39",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-08-09 13:37:12"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240814210533_done_": {
+      "inventory_signature": "0917535e898994d98b9ea4dd5361f67c0b4155a6",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-08-14 21:06:59"
+    },
+    "_oneclickodps_drh_prod_to_drh_prod_dataset_drh_prod_dataset_20240910105541_done_": {
+      "inventory_signature": "defbb71627e9ebc0de19889d0ac89efc95b58ae5",
+      "schema_fingerprint": "de1e6fd469927c1b227f2208338968bf76a822db",
+      "last_modified_time": "2024-09-10 10:56:54"
+    },
+    "ban_word_data": {
+      "inventory_signature": "d6c0ca45ffe2ee4252971e8d72113356048cc5c4",
+      "schema_fingerprint": "835bdecd9dd081d5df6aae5607b0a35b90d5dc32",
+      "last_modified_time": "2025-04-15 16:11:18"
+    },
+    "data_temp": {
+      "inventory_signature": "e9c49a48aa3c0c509941652b56a59d1451729247",
+      "schema_fingerprint": "418b84a4b4c71058023d058437156d65d96ed692",
+      "last_modified_time": "2026-03-24 15:44:53"
+    },
+    "date_temp": {
+      "inventory_signature": "7fd231b20573a223bd73e71e7cdfdc64898c1682",
+      "schema_fingerprint": "cf050e2c88bb6e14f5c3a0b953b594f604bac474",
+      "last_modified_time": "2025-12-26 14:49:49"
+    },
+    "dbps_proj_auth_menu": {
+      "inventory_signature": "04b2dc891d12649327ab2ddbd51851a4e03d3354",
+      "schema_fingerprint": "9790eaaadf96cb78284ccf612d492dee3a6c32a9",
+      "last_modified_time": "2025-05-26 14:26:02"
+    },
+    "dbps_proj_emp_role": {
+      "inventory_signature": "329d8be99c47a9d44b3704e4a509b1492df27f1c",
+      "schema_fingerprint": "d09ed43382a1f22878f057b9d9fb89f48f7d1921",
+      "last_modified_time": "2025-05-26 14:28:59"
+    },
+    "dbps_proj_role": {
+      "inventory_signature": "015dcc4920708683b65717af97d306135ee729ff",
+      "schema_fingerprint": "be36138576f449a19aac0a5b73a9a74a1d92dc05",
+      "last_modified_time": "2025-05-26 14:31:12"
+    },
+    "dev_daily_staff_config": {
+      "inventory_signature": "365b15fb416fecf9c44a4298ec9a82735781e8c2",
+      "schema_fingerprint": "ec36f8de56baca428b2af3165687338b01fe4107",
+      "last_modified_time": "2025-11-09 14:17:38"
+    },
+    "dim_applet_lch_account_view": {
+      "inventory_signature": "34227ae1d403f06c0d3ae50d9f90847831f62239",
+      "schema_fingerprint": "c6ef56bdf8c5b2e7b3a3760c6b5b1dec74b632ea",
+      "last_modified_time": "2025-12-17 17:10:07"
+    },
+    "dim_applet_lch_channel3_view": {
+      "inventory_signature": "b0a66a60bb51b50188ea318d393add24b9046cdf",
+      "schema_fingerprint": "08251f04f3d798a062ccbebef97a4f9e40bceca5",
+      "last_modified_time": "2025-12-11 16:15:21"
+    },
+    "dim_applet_lch_site_view": {
+      "inventory_signature": "c48dc87b62849806aa93a5964ac9b074a84caba7",
+      "schema_fingerprint": "df361ee6336a422b6d56027804e1b1f5700e0771",
+      "last_modified_time": "2025-12-15 11:09:19"
+    },
+    "dim_applet_originally_channel_view": {
+      "inventory_signature": "abeafab19f2f5d5d305e93759959d2fa1adc257e",
+      "schema_fingerprint": "2b4de53d78810400997e7b4511240783cce6c5ef",
+      "last_modified_time": "2025-12-25 14:24:43"
+    },
+    "dim_camp": {
+      "inventory_signature": "d162063905d9ab17f69757c98d93508f02b29530",
+      "schema_fingerprint": "868c8627d2d012f60c5e11198e7b7aec149c953b",
+      "last_modified_time": "2026-04-17 02:01:36"
+    },
+    "dim_camp_df": {
+      "inventory_signature": "17d98323711a29614676154c03b749acf3f1f44b",
+      "schema_fingerprint": "7fe863116f6f7fc93ee0ff5690f5f6ec9fdc9603",
+      "last_modified_time": "2026-04-17 00:03:40"
+    },
+    "dim_camp_view": {
+      "inventory_signature": "4b3218b5407b04a5bf2bbd7d267c3be87c7d5854",
+      "schema_fingerprint": "b8d1b91f5b97f036a2ad3cb90edbf168d03fb5dc",
+      "last_modified_time": "2026-03-04 16:05:35"
+    },
+    "dim_common_date": {
+      "inventory_signature": "2cd4636b3caa407e4322f19ca61ecbe906e5eac0",
+      "schema_fingerprint": "2462e29baa286db05253de6e60b30bcfb5c66cc8",
+      "last_modified_time": "2026-03-24 15:53:57"
+    },
+    "dim_common_date_test": {
+      "inventory_signature": "06a803a2899358e720baef1abdfe20365e6d999d",
+      "schema_fingerprint": "53aef2285b666b06dc3b84f8ae8a5e8119cc7d86",
+      "last_modified_time": "2026-03-24 15:45:46"
+    },
+    "dim_common_dict": {
+      "inventory_signature": "82dfe17af7ad8536cca1ffd81c8dbdd254a53129",
+      "schema_fingerprint": "2f3f8e96d866f7543a69006fb14b66dc7ddb07c5",
+      "last_modified_time": "2026-03-05 14:44:47"
+    },
+    "dim_emp_account_view": {
+      "inventory_signature": "18f7148bffc5f6aa5361f8c907045c280e87b971",
+      "schema_fingerprint": "1fd16207a88b880f42126c973c8bb08ae4d77522",
+      "last_modified_time": "2025-11-14 18:46:45"
+    },
+    "dim_emp_fs_org_view": {
+      "inventory_signature": "cab82c3f1eb16e5171ef8fde975a9886eeea87c8",
+      "schema_fingerprint": "c40419e01d4f0a768767a5d8bcfeb8b70a189727",
+      "last_modified_time": "2026-03-09 18:36:30"
+    },
+    "dim_feikong_cci_view": {
+      "inventory_signature": "d2c71285e17112abb15eba47da73da94b8209f0e",
+      "schema_fingerprint": "b00697eb04d5238f3dd0ce8e5f59546b12c9dac8",
+      "last_modified_time": "2026-01-06 19:38:56"
+    },
+    "dim_goods_view": {
+      "inventory_signature": "f8c3d2ebfb23155fe076b750388682982d9581ee",
+      "schema_fingerprint": "9a435d3e9b06a35a8b4cbba0c1442c1cf2d04832",
+      "last_modified_time": "2026-02-27 19:33:01"
+    },
+    "dim_kk_emp_zip": {
+      "inventory_signature": "a3f6be6e4045ee9180ccd3ee62ea988a14df3587",
+      "schema_fingerprint": "f9a551a870002c4cdd3c968931c8a59ff18e6185",
+      "last_modified_time": "2026-04-17 00:10:47"
+    },
+    "dim_parameter": {
+      "inventory_signature": "cedb19ef8e4a91fd656f8cf4816f1c3cecbbe1ff",
+      "schema_fingerprint": "49e3885467124021720e14937a3f7c876f6bd112",
+      "last_modified_time": "2026-04-17 16:00:52"
+    },
+    "dim_user_type": {
+      "inventory_signature": "c1220a1646b1cd790e7541bd7de0bca47340ab05",
+      "schema_fingerprint": "31f57f04c9c175cc310ce1563a1e18970b328310",
+      "last_modified_time": "2026-04-17 00:13:27"
+    },
+    "dim_user_type_pdf": {
+      "inventory_signature": "ccf9d93f46b6429b19aca7faef7cd69766be9d66",
+      "schema_fingerprint": "988eecc624601bdecd03f7d455bfaef084eddd8d",
+      "last_modified_time": "2026-04-17 00:27:37"
+    },
+    "drh_active_code": {
+      "inventory_signature": "1d9c32d40f8e4520e3b7d10a5e4d6386193b5b95",
+      "schema_fingerprint": "dec1f2b10c901a19c351f66b9046be876543b847",
+      "last_modified_time": "2026-04-17 17:52:50"
+    },
+    "drh_active_code_teacher": {
+      "inventory_signature": "d581aef28f8f777e71266daa720f3334c9d47cd8",
+      "schema_fingerprint": "61407a28b146f37660657c26b07b4102c844a63c",
+      "last_modified_time": "2026-03-10 15:51:33"
+    },
+    "drh_ad_account": {
+      "inventory_signature": "caa6d4ec2a6a41d743a26d1b98649a7a71a8ec29",
+      "schema_fingerprint": "59c83858789460a20ac131f84fd18a7e6a6c209b",
+      "last_modified_time": "2026-04-17 18:03:14"
+    },
+    "drh_ad_channel_type": {
+      "inventory_signature": "643c354f923b047b8c57553b142b06d107f5819e",
+      "schema_fingerprint": "c2ea1761445c5ebda8356c9b492c78e1bab6c43c",
+      "last_modified_time": "2025-11-27 21:44:21"
+    },
+    "drh_ad_channel_type_di": {
+      "inventory_signature": "19fd514df2ac6ddc8349d4271d9c9982e68bc547",
+      "schema_fingerprint": "6cc6e3b62f84cdbe66f12f35708f7c84759fa0fc",
+      "last_modified_time": "2024-01-31 14:01:52"
+    },
+    "drh_ad_cost": {
+      "inventory_signature": "21526837f8f70acc27301173db5619882ef16060",
+      "schema_fingerprint": "b3161fc9532f197ae05115aa7e21a3433ec42ff2",
+      "last_modified_time": "2026-04-17 18:03:12"
+    },
+    "drh_ad_cost_day": {
+      "inventory_signature": "0b37973f6fca19e5b0ee448f1b84150e91366e8c",
+      "schema_fingerprint": "33efc8f5b7c78fac1a4cfc74d1d2cee426821461",
+      "last_modified_time": "2026-04-17 18:08:23"
+    },
+    "drh_ad_cost_di": {
+      "inventory_signature": "749b558812388cddff0afebe55ddf1330a7fc902",
+      "schema_fingerprint": "fb0d3bad2269387d9dd4101217c51d78c9f8d0c7",
+      "last_modified_time": "2024-08-21 00:35:18"
+    },
+    "drh_ad_cost_minutes": {
+      "inventory_signature": "32e9a367a08b00bff106c4f1b05fcf1a43f65cbe",
+      "schema_fingerprint": "5780a216b6a987ec3fbe1061f5ff7f3373f9739a",
+      "last_modified_time": "2026-04-17 18:03:13"
+    },
+    "drh_ad_cost_time": {
+      "inventory_signature": "1cb6185f49dd5b64fff9b4e592c35cb3440b91ce",
+      "schema_fingerprint": "9fcaff9234487dc056f8abc9023335ca53ab7c25",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_ad_creative": {
+      "inventory_signature": "f42d1b6549005409430eaf66fb3c1b3af24d7e50",
+      "schema_fingerprint": "f7ba7fec524d23b32af9b5fec976a20eb763825f",
+      "last_modified_time": "2026-04-17 18:03:12"
+    },
+    "drh_ad_creative_di": {
+      "inventory_signature": "f382bd36b66ad7093a0404678cd75ce7015c03f7",
+      "schema_fingerprint": "f0770a4556e58565cee4c2f62258e7bc9761d888",
+      "last_modified_time": "2026-04-17 00:13:07"
+    },
+    "drh_ad_day_export": {
+      "inventory_signature": "00e8a38a2f0194c9dee3844c6095f95252270a7c",
+      "schema_fingerprint": "50d6055ea85c96826e114f63c103f50c2b58f3c6",
+      "last_modified_time": "2025-05-29 09:22:10"
+    },
+    "drh_ad_day_export_v2": {
+      "inventory_signature": "6109426f081674ac2c5a3051b494705c0a200a30",
+      "schema_fingerprint": "9e09cdb868bcc52f4c43625acbf493c491c4c645",
+      "last_modified_time": "2026-04-17 03:25:31"
+    },
+    "drh_ad_day_export_v2_pred": {
+      "inventory_signature": "41f57028f5bea9ae75cc3b96eb05bb0bf3075c16",
+      "schema_fingerprint": "42b4df9779dd8d8d4a4d63e682a1128b63056aca",
+      "last_modified_time": "2026-04-17 03:38:59"
+    },
+    "drh_ad_group_site": {
+      "inventory_signature": "316f56f1978f5fc102807c1a349245de10bdc564",
+      "schema_fingerprint": "c9b0ba2ed77d8d2c23f3d276fb0957ae479ee7bb",
+      "last_modified_time": "2026-02-28 12:04:22"
+    },
+    "drh_ad_launch_type": {
+      "inventory_signature": "9a29346e84972c8268e4731be4ae5c0af29d4701",
+      "schema_fingerprint": "298f09882461faac70eb52b1d9457ff03793c459",
+      "last_modified_time": "2025-11-27 21:44:21"
+    },
+    "drh_ad_month_export": {
+      "inventory_signature": "edf98661796ac237c990f6f1a3f84541b1d7be3e",
+      "schema_fingerprint": "2d3b28874b1dd36527f9a3e376c8eff653ca488c",
+      "last_modified_time": "2024-08-01 07:13:17"
+    },
+    "drh_ad_pic": {
+      "inventory_signature": "a0cc5b4c98a143ac210b9dd3d9669868ddfe9892",
+      "schema_fingerprint": "50614b624e882b47a46d3e8df76ab37851da07f3",
+      "last_modified_time": "2026-04-17 17:47:37"
+    },
+    "drh_ad_type": {
+      "inventory_signature": "10bb62fbb11f469b8335f6f23a624a6125a9cf96",
+      "schema_fingerprint": "4bed1107a73bdc7c7c7c468507a00cb422989755",
+      "last_modified_time": "2025-11-29 01:46:48"
+    },
+    "drh_ad_user_encrypt": {
+      "inventory_signature": "5c040d4791ea41bb364de97ca75396d76448d09d",
+      "schema_fingerprint": "eb364ca1a046e47206b61105385e805e094f4ef2",
+      "last_modified_time": "2024-09-10 00:41:00"
+    },
+    "drh_ad_user_pic": {
+      "inventory_signature": "7dbb8c01a77fd6329456341c13062c1d66102dc3",
+      "schema_fingerprint": "eebe187281f342b5765bb2ef2d321b661bec8e44",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_ad_user_pic_di": {
+      "inventory_signature": "70b1d5ccbc8cff03e8e4d3f87f0e9f1e3a705e02",
+      "schema_fingerprint": "eebe187281f342b5765bb2ef2d321b661bec8e44",
+      "last_modified_time": "2024-08-21 00:26:01"
+    },
+    "drh_ad_view": {
+      "inventory_signature": "4f0c1e521fa23f64422663475922015ae2728162",
+      "schema_fingerprint": "e218d4cc60aac282981e9de9d57bba941cd44c3f",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_ads_creative_v3_di": {
+      "inventory_signature": "9104b3a654c09878548fbdfa3dde538d021f1960",
+      "schema_fingerprint": "eede44baa66a20f695cb69d2e795eef8a8b0cbd1",
+      "last_modified_time": "2024-05-21 19:56:49"
+    },
+    "drh_ali_pay_order": {
+      "inventory_signature": "f51eb60c8e9b4e41e44208d8ec0ce69e4de6cee4",
+      "schema_fingerprint": "054c5fbad8ea5e7e53ce7a455c8bd2e600c88e29",
+      "last_modified_time": "2024-09-10 00:41:05"
+    },
+    "drh_app_circle_content": {
+      "inventory_signature": "8a5de78877f949bd64646a02ff159e490eb76b63",
+      "schema_fingerprint": "1568fc2c9ffba0f0ec4f6ead5e15322dc4a36b82",
+      "last_modified_time": "2026-04-17 18:03:12"
+    },
+    "drh_app_info": {
+      "inventory_signature": "877787b625715bbea6838768dce4962658ec2a50",
+      "schema_fingerprint": "34eb8178c30b5a90b56555c6bcdfe362de3874c1",
+      "last_modified_time": "2026-04-17 18:03:12"
+    },
+    "drh_app_passport": {
+      "inventory_signature": "38a8fcbf6107f24f946668c171f1976cb2fb6699",
+      "schema_fingerprint": "41af14b813770a42e640c7b6988e00cc712919bf",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_app_position_definition": {
+      "inventory_signature": "93b2b098aac1c3a10b7e49d7b631bec3f7559678",
+      "schema_fingerprint": "96871955e70cf44b271e0527677c6b81f9874528",
+      "last_modified_time": "2026-04-16 15:27:36"
+    },
+    "drh_applet_activity_like": {
+      "inventory_signature": "c7e52bdc99ae849c0bbb2b52f459be1b7708fea6",
+      "schema_fingerprint": "2f645281ac9e588e42330c3da8ee53109f25dec5",
+      "last_modified_time": "2024-10-18 14:40:41"
+    },
+    "drh_applet_black_list": {
+      "inventory_signature": "e48810ea9c308b15e9e10183690c1b3a112a1966",
+      "schema_fingerprint": "ee8c7199fb038049812dca4ca36f0df99a5e2966",
+      "last_modified_time": "2024-09-10 00:41:03"
+    },
+    "drh_applet_fup": {
+      "inventory_signature": "78d628c18488460d8a73b5edefc642d2ae7f18b1",
+      "schema_fingerprint": "4834477f06160b279083e9be30c8988211b502ff",
+      "last_modified_time": "2024-09-10 00:41:05"
+    },
+    "drh_applet_user": {
+      "inventory_signature": "33ac1eb809795123bf324b87e1988a3f7d45a02a",
+      "schema_fingerprint": "68b69b52f869a474b77958e14b7d8027b104708c",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_applet_user_di": {
+      "inventory_signature": "8b8e75983fae6ee8f01fe6b695782c35946950eb",
+      "schema_fingerprint": "8b76a933218429a69357136ae20206a2f6d090b2",
+      "last_modified_time": "2024-08-21 00:16:25"
+    },
+    "drh_applet_user_pool": {
+      "inventory_signature": "0748dd7926f405222b2036558b940d419784fef0",
+      "schema_fingerprint": "ad2ac80ac49560ea16a0a185895b9049b1e43827",
+      "last_modified_time": "2026-04-17 18:10:55"
+    },
+    "drh_applet_user_pred": {
+      "inventory_signature": "6a87d569976128e904781798f1c5accda211d460",
+      "schema_fingerprint": "5280ad1668dc5bbbb71a5b16a09d23ebe2516136",
+      "last_modified_time": "2025-11-27 21:44:22"
+    },
+    "drh_applet_user_pred_di": {
+      "inventory_signature": "3e54c5d9c1cc6f7557fc8d4642aa248ef2406d71",
+      "schema_fingerprint": "15a11aa74ce129580ee9a5439c03cbd92722297d",
+      "last_modified_time": "2024-06-26 20:42:04"
+    },
+    "drh_asset_account": {
+      "inventory_signature": "c0cca1c55a0d9eb42fb1d27bf0d029a1826974e6",
+      "schema_fingerprint": "bda84085c0ba898abc6976333f38b2bc0674a5d8",
+      "last_modified_time": "2026-03-17 22:13:25"
+    },
+    "drh_asset_agent": {
+      "inventory_signature": "57a460b1c0f7b52c85b2584f2e46857b107f5b62",
+      "schema_fingerprint": "19aa52e08e215d3e98f47d474383192174b14e2d",
+      "last_modified_time": "2026-02-04 10:56:34"
+    },
+    "drh_back_event_record": {
+      "inventory_signature": "42752a13a492fa9de06bf7fe24dab233e450342e",
+      "schema_fingerprint": "e98573f25cd9501a96e36635c97cd23bc9744933",
+      "last_modified_time": "2024-09-10 00:42:05"
+    },
+    "drh_book_question_record": {
+      "inventory_signature": "085367799342bc3c96de310d688e013689e25285",
+      "schema_fingerprint": "6de4af547091ae3961965d89a7f7e73d67a634fc",
+      "last_modified_time": "2026-04-17 18:10:55"
+    },
+    "drh_bucket_test_task_user": {
+      "inventory_signature": "28f7e506cf68cd68a3a39b4b677e887c017ea477",
+      "schema_fingerprint": "08106ab25513fd86a7cba493db0ad383797b6885",
+      "last_modified_time": "2025-03-24 19:19:08"
+    },
+    "drh_business_line": {
+      "inventory_signature": "87991c0044e63f0c3b6f61799e8accee1daa745f",
+      "schema_fingerprint": "2aad9c53f219e43774dd05990c9d695f1e64b722",
+      "last_modified_time": "2026-04-16 15:35:07"
+    },
+    "drh_business_line_di": {
+      "inventory_signature": "782129a7eb8deb0796f6c5f40bbe9b5e3019cb54",
+      "schema_fingerprint": "f4e3ba5142835e963fe0a6b5795e4295aa18986a",
+      "last_modified_time": "2024-08-21 00:29:51"
+    },
+    "drh_camp_flow": {
+      "inventory_signature": "dffbfd031fc5e897a2e83cec91f798f44f33e5b8",
+      "schema_fingerprint": "e7ec93ab8de59dfdd1db3c3c6c580274b5143852",
+      "last_modified_time": "2026-04-17 17:47:37"
+    },
+    "drh_camp_info_v2": {
+      "inventory_signature": "186558390d5acfbb9a8f33853336bb4030ed9218",
+      "schema_fingerprint": "986a96ba4a5000a1f9dd59725747d11944d6ef0f",
+      "last_modified_time": "2026-03-31 19:49:32"
+    },
+    "drh_camp_transfer_date": {
+      "inventory_signature": "0ef475a725ba96e6ef2d570c609f6ada84dd5eef",
+      "schema_fingerprint": "ed791f87827cb9d532809e4075d4c70a3c110440",
+      "last_modified_time": "2026-04-17 16:51:09"
+    },
+    "drh_channel_data": {
+      "inventory_signature": "82a05bd31c4b38054968bb900a5a8b2da23952f3",
+      "schema_fingerprint": "5f655b0d31dad041fd62ce5e6ff8daed241de3bd",
+      "last_modified_time": "2026-03-30 19:04:31"
+    },
+    "drh_channel_data_test": {
+      "inventory_signature": "a04dc3440d8027c552f838afc105a4a53785c837",
+      "schema_fingerprint": "5f655b0d31dad041fd62ce5e6ff8daed241de3bd",
+      "last_modified_time": "2026-03-30 19:05:21"
+    },
+    "drh_channel_emp": {
+      "inventory_signature": "889199d8a7d884a1cdf6adb8a2c07ec57829e672",
+      "schema_fingerprint": "d7cf90dfec280decb11c359247624b2e05de34f0",
+      "last_modified_time": "2026-04-17 17:42:22"
+    },
+    "drh_channel_emp_di": {
+      "inventory_signature": "f8a53e91d09885566777fbfda7da1786e0431b14",
+      "schema_fingerprint": "3b0228e8296dd79277b8592ebc659cc8d2c8e99c",
+      "last_modified_time": "2024-08-21 00:25:07"
+    },
+    "drh_channel_emp_studio_log": {
+      "inventory_signature": "4de2f05baf00357c772c1bf8deb96f9225ac0596",
+      "schema_fingerprint": "a4596b89a93987134bb388b95894e7d8634e73ff",
+      "last_modified_time": "2026-04-16 11:07:36"
+    },
+    "drh_channel_lock": {
+      "inventory_signature": "6b11c9edafc864a044994f5c75323376ab18f41e",
+      "schema_fingerprint": "6db69796d8f65321953a41b4c4fe78917a73596a",
+      "last_modified_time": "2026-04-16 20:19:37"
+    },
+    "drh_china": {
+      "inventory_signature": "9337f468988dca91edd9d6e8f893cc91319c4661",
+      "schema_fingerprint": "2790374867cc102c15e422e840d760413b7dac50",
+      "last_modified_time": "2025-05-25 03:44:50"
+    },
+    "drh_city_level_di": {
+      "inventory_signature": "ec55e2d8d13a9454a85965a374f7de533400505d",
+      "schema_fingerprint": "1e59f085518a37bffc2714a4a2234fcfa1df7e54",
+      "last_modified_time": "2024-07-24 13:38:35"
+    },
+    "drh_class_user": {
+      "inventory_signature": "da30630850ca34b9fe645e7499c8280592c99664",
+      "schema_fingerprint": "ae40bb27478ecc74c16590079b6d11f5afcda1b5",
+      "last_modified_time": "2026-04-17 18:10:55"
+    },
+    "drh_class_user_permission": {
+      "inventory_signature": "a80cea55d367f23cba581f780afff5b413f230d2",
+      "schema_fingerprint": "c997113d4541ae3bbb4fdb95cc8535c6dd64c853",
+      "last_modified_time": "2026-04-17 18:10:55"
+    },
+    "drh_collect_goods_order": {
+      "inventory_signature": "049704f16102cbb396190e7973c4a8e19e171854",
+      "schema_fingerprint": "3fe130abe39a4c9a0c71713325e958de734c1404",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_collect_order": {
+      "inventory_signature": "74093fb1f98f3cd3b9ea7a62e925aa3b4166fddd",
+      "schema_fingerprint": "67471e526ff2b8f7dae53b29abab976d1f65338c",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_common_order": {
+      "inventory_signature": "74a291ad7428d0306cdf677241d88a69b052ec6a",
+      "schema_fingerprint": "d8e94c0f480900c2b1c875b2f4cbc94f74511ac2",
+      "last_modified_time": "2026-04-17 17:57:59"
+    },
+    "drh_content_comment": {
+      "inventory_signature": "2ad8427e8e42f655538763d8422ded641a402239",
+      "schema_fingerprint": "9298baba33fed626ca74db422107bf24fce5cb95",
+      "last_modified_time": "2026-04-17 18:03:12"
+    },
+    "drh_cost_approval_box_v2": {
+      "inventory_signature": "a4754bfeaac355f4a26548ccee38a599c8f71867",
+      "schema_fingerprint": "4c1214fff2cc0f0c7a73d9f25e4dcd1b19b21e9b",
+      "last_modified_time": "2026-04-17 14:06:08"
+    },
+    "drh_cost_approval_record_detail": {
+      "inventory_signature": "5ca92725d64fbf72c4f934a7244a56c4d5ca24df",
+      "schema_fingerprint": "e1eb36aa45452fefc3067add137f0217662ea7a0",
+      "last_modified_time": "2026-04-17 14:42:01"
+    },
+    "drh_cost_camp_site": {
+      "inventory_signature": "5d8104fd52d4527c8588e661cde78117baf56b49",
+      "schema_fingerprint": "75bda74fc54eef82d07f769551bdd9bcbbec40d4",
+      "last_modified_time": "2026-04-17 18:03:12"
+    },
+    "drh_cost_site": {
+      "inventory_signature": "cbdd73723ca64c50c0b41382870dc2d279093bdf",
+      "schema_fingerprint": "29b52c7df7ca964e84ad011edb1e1b67a89cfacb",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_coupon": {
+      "inventory_signature": "41c9d955e31ef74b3cbd5c844e6bee6844a8c4f4",
+      "schema_fingerprint": "89eb53cdcb12b9319152148b2ee4b9ce2878ec69",
+      "last_modified_time": "2024-09-10 00:41:00"
+    },
+    "drh_coupon_get_user": {
+      "inventory_signature": "faedad2394d83b30264d35f75f4e1520fa616524",
+      "schema_fingerprint": "f44275d549a958b78f075d75b150ab3f62142045",
+      "last_modified_time": "2024-09-10 00:41:01"
+    },
+    "drh_course_di": {
+      "inventory_signature": "16770008147ad9c340ca26de9b3aec06fd46cc11",
+      "schema_fingerprint": "e40156f80399a09375b467b2169ed59e7b77c445",
+      "last_modified_time": "2024-05-11 17:17:24"
+    },
+    "drh_creative_plan": {
+      "inventory_signature": "97b711ac219b5d69a62737cd09622255121c0292",
+      "schema_fingerprint": "3f11666fde1980608ffadc6cfd62f7bbccd272d9",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_creative_plan_di": {
+      "inventory_signature": "2bffc61a225c4e76b4e5388c56b41116362742b1",
+      "schema_fingerprint": "524ac529ec3f1affb0845a0d1f3ecfa89ce479fb",
+      "last_modified_time": "2024-08-21 00:27:02"
+    },
+    "drh_creative_site": {
+      "inventory_signature": "0ac38ce52c623d870deece2b03eca7c179970766",
+      "schema_fingerprint": "b88ce7bec26ea29aea938d4f5ddc1fe851e7867d",
+      "last_modified_time": "2026-04-16 22:09:46"
+    },
+    "drh_dd_shop": {
+      "inventory_signature": "69f4c691872bc935cf05f683cfaf84f948c3a066",
+      "schema_fingerprint": "47011ccfaabef6d25e872f3c2957640de6aee550",
+      "last_modified_time": "2026-04-07 15:45:38"
+    },
+    "drh_device_info_di": {
+      "inventory_signature": "6575133fdfa7215cc1ea9b0c1f5d60729a3978fe",
+      "schema_fingerprint": "f002f24549e8edbe5bba3ba1a28e1c647eebfe28",
+      "last_modified_time": "2024-01-17 14:50:02"
+    },
+    "drh_device_info_total_di": {
+      "inventory_signature": "bc666f787e7171befba6841b30daa6bbba589118",
+      "schema_fingerprint": "dc032542415f49caa2d398dd099a3f74233c1231",
+      "last_modified_time": "2026-04-17 00:24:47"
+    },
+    "drh_device_info_v_di": {
+      "inventory_signature": "16769b370ffc7a3e80f49aa792368c72d36951da",
+      "schema_fingerprint": "f002f24549e8edbe5bba3ba1a28e1c647eebfe28",
+      "last_modified_time": "2024-01-19 14:37:04"
+    },
+    "drh_dict_config": {
+      "inventory_signature": "5f86df2ed66ebaa580347c732a0731542c269308",
+      "schema_fingerprint": "9d47e6f92b33a6b31342c8e86370c67eaf4d5b9f",
+      "last_modified_time": "2026-03-04 02:27:18"
+    },
+    "drh_drh_ad_account": {
+      "inventory_signature": "c30bf17e7fa8732a7bc7ff80de65400e86bd5f61",
+      "schema_fingerprint": "59c83858789460a20ac131f84fd18a7e6a6c209b",
+      "last_modified_time": "2025-05-22 23:21:22"
+    },
+    "drh_drh_ad_channel_type": {
+      "inventory_signature": "a48f02000983a01e162ca2a2247251214425dfc0",
+      "schema_fingerprint": "657658ad3dce806b5d95d978516d9346978a8f8e",
+      "last_modified_time": "2025-05-21 23:25:56"
+    },
+    "drh_drh_ad_cost": {
+      "inventory_signature": "6b565fc86b03474c8a8557eefa869be398b68178",
+      "schema_fingerprint": "b3161fc9532f197ae05115aa7e21a3433ec42ff2",
+      "last_modified_time": "2025-05-22 23:21:23"
+    },
+    "drh_drh_ad_cost_minutes": {
+      "inventory_signature": "2cbfd1e9abf14e9310070455ec38f512564d1f68",
+      "schema_fingerprint": "5780a216b6a987ec3fbe1061f5ff7f3373f9739a",
+      "last_modified_time": "2025-06-06 22:39:03"
+    },
+    "drh_drh_ad_creative": {
+      "inventory_signature": "ed7138193c893daa29858bef13db5982b542fd6d",
+      "schema_fingerprint": "f7ba7fec524d23b32af9b5fec976a20eb763825f",
+      "last_modified_time": "2025-05-22 23:21:22"
+    },
+    "drh_drh_ad_launch_type": {
+      "inventory_signature": "c6e533c1d31d412f6b32164152a6624bec94a001",
+      "schema_fingerprint": "298f09882461faac70eb52b1d9457ff03793c459",
+      "last_modified_time": "2025-05-22 23:21:21"
+    },
+    "drh_drh_ad_type": {
+      "inventory_signature": "a9273c615d697aaef94fca780a0e696547771d1c",
+      "schema_fingerprint": "4bed1107a73bdc7c7c7c468507a00cb422989755",
+      "last_modified_time": "2025-05-22 05:43:31"
+    },
+    "drh_drh_ad_user_pic": {
+      "inventory_signature": "c71c689ec8095b46010cd26a20d1cc29498785d3",
+      "schema_fingerprint": "eebe187281f342b5765bb2ef2d321b661bec8e44",
+      "last_modified_time": "2025-06-06 22:38:46"
+    },
+    "drh_drh_ad_view": {
+      "inventory_signature": "7d7b7f4f7535650c81ebfa93fc254981efee4284",
+      "schema_fingerprint": "f1bac2638cf9105e4274a7f1a43211e4333a0e10",
+      "last_modified_time": "2025-05-22 23:21:22"
+    },
+    "drh_drh_applet_user_pred": {
+      "inventory_signature": "a4ad50cc7d569e032ba3db0b689eb7104f46b84a",
+      "schema_fingerprint": "5280ad1668dc5bbbb71a5b16a09d23ebe2516136",
+      "last_modified_time": "2025-05-22 23:21:22"
+    },
+    "drh_drh_business_line": {
+      "inventory_signature": "68150ffbb05c918a6cf5ec9d5d6a3ea74ad1895c",
+      "schema_fingerprint": "2aad9c53f219e43774dd05990c9d695f1e64b722",
+      "last_modified_time": "2025-05-22 23:21:21"
+    },
+    "drh_drh_camp_flow": {
+      "inventory_signature": "130f8c3ac561083f17d28194422ff1475a6d8767",
+      "schema_fingerprint": "c11f553ed697f6fb6f967bc82dc29239bfeb002c",
+      "last_modified_time": "2025-05-22 23:21:21"
+    },
+    "drh_drh_china": {
+      "inventory_signature": "9796105271d53d73acf553fae0e138b71c304bde",
+      "schema_fingerprint": "2790374867cc102c15e422e840d760413b7dac50",
+      "last_modified_time": "2025-05-22 06:29:34"
+    },
+    "drh_drh_common_order": {
+      "inventory_signature": "522f24a4c5130cf0c0dc0e137a838f89a7a1794d",
+      "schema_fingerprint": "d8e94c0f480900c2b1c875b2f4cbc94f74511ac2",
+      "last_modified_time": "2025-05-22 23:21:23"
+    },
+    "drh_drh_creative_plan": {
+      "inventory_signature": "485f2c4acdc4d51f9cbcaaf1d4bd9f497a111be7",
+      "schema_fingerprint": "0ea1109d3997c317580c4a76880cb90b7385a96b",
+      "last_modified_time": "2025-06-06 22:38:48"
+    },
+    "drh_drh_emp_external_user": {
+      "inventory_signature": "cf01f6f2ddb74c7069162a77ed0b2ec5b59d69c4",
+      "schema_fingerprint": "23f00df0ba6bc948b4f4ee5b1103b12b2acced15",
+      "last_modified_time": "2025-06-06 22:38:48"
+    },
+    "drh_drh_emp_external_user_del": {
+      "inventory_signature": "cf24c8577bd5e417a6985fb55ca7bc52e4bedc07",
+      "schema_fingerprint": "b6f89da2969dabf2c548aec7b280ad7d8d8b06d6",
+      "last_modified_time": "2025-06-06 22:38:42"
+    },
+    "drh_drh_flow_rule_path": {
+      "inventory_signature": "cdacb41359813e9f1b5e7d98d87883cd96b4c72c",
+      "schema_fingerprint": "de6c7a2d6fcb58acae0526b579b843e067cc0100",
+      "last_modified_time": "2025-05-22 07:25:45"
+    },
+    "drh_drh_goods": {
+      "inventory_signature": "7f4b9cafbcc2f3c6375942c6a8c29e2e31305e1a",
+      "schema_fingerprint": "937912a66a9d2c9a94dd1c378f9658f3cb13bb38",
+      "last_modified_time": "2025-05-22 23:21:22"
+    },
+    "drh_drh_handover_plus": {
+      "inventory_signature": "46cc02e7ad4ff259c43f77e14e1acac8a1bf7e30",
+      "schema_fingerprint": "ff1e0b4a0911ac9f8f01268a432b0881f7ede1e5",
+      "last_modified_time": "2025-05-22 23:21:23"
+    },
+    "drh_drh_history_pic": {
+      "inventory_signature": "9960c44e1d367ea8421f318cbd13c30e4a2d9326",
+      "schema_fingerprint": "f14d805ded7f2704ad24cf955e4149b98698bc64",
+      "last_modified_time": "2025-06-06 22:38:46"
+    },
+    "drh_drh_kk_group_emp": {
+      "inventory_signature": "09ad5e92cbba94243d3d658f076f97a6c0865d2c",
+      "schema_fingerprint": "56020d8c568fb8522e2bbacb3c927c325f2b88f9",
+      "last_modified_time": "2025-05-22 07:46:29"
+    },
+    "drh_drh_kk_group_team": {
+      "inventory_signature": "40c5c9ce57584681d73741395f3ba2415a123161",
+      "schema_fingerprint": "34b3de5461f880b792f983b75a157140194c2668",
+      "last_modified_time": "2025-05-22 23:21:22"
+    },
+    "drh_drh_live": {
+      "inventory_signature": "1c032685f9dd630d465ef791eb100b15e7a53414",
+      "schema_fingerprint": "8547323cff911f22db7fe2d3171c255ae9de6047",
+      "last_modified_time": "2025-05-22 23:21:23"
+    },
+    "drh_drh_live_camp": {
+      "inventory_signature": "825224d8768da020c8b56690610eea46c2a08e96",
+      "schema_fingerprint": "194ea627a7ec2e493aa4445fcd09af4ec87fab93",
+      "last_modified_time": "2025-05-22 23:21:23"
+    },
+    "drh_drh_live_camp_convert": {
+      "inventory_signature": "702949a00a132d6eeb5294e41a89c31f253648bf",
+      "schema_fingerprint": "0bdcb48420f0c28830188edfe8bc9ed681ecada0",
+      "last_modified_time": "2025-05-22 07:46:29"
+    },
+    "drh_drh_live_camp_date": {
+      "inventory_signature": "edca9ef9aa6f4bba27f2ff7d8167e5cdc4c4bc8f",
+      "schema_fingerprint": "4e48ba78886d173a0c1a8ba411af9a6af3f44a73",
+      "last_modified_time": "2025-05-22 23:21:23"
+    },
+    "drh_drh_live_camp_group": {
+      "inventory_signature": "5d2846fbd929268e31767e92ab5b7b59c2c00879",
+      "schema_fingerprint": "6aae90da6ffa9a9f976823d6376783929037aff6",
+      "last_modified_time": "2025-05-22 23:21:22"
+    },
+    "drh_drh_live_user": {
+      "inventory_signature": "c14d3f3eedb414c7d224f0aad2a377a7cb756e00",
+      "schema_fingerprint": "c86a1412502a81e0512688a35de6bf2db9ff5741",
+      "last_modified_time": "2025-06-06 22:38:44"
+    },
+    "drh_drh_living_message": {
+      "inventory_signature": "61e56eac3a821ed0610c4c254d897ccfb5ce68a9",
+      "schema_fingerprint": "7f1e4c325742e3f3fd46ed49a495224a675065ad",
+      "last_modified_time": "2025-06-06 22:40:06"
+    },
+    "drh_drh_living_study_info": {
+      "inventory_signature": "b0b819fc0753c157e68d66169b7f1f11cd55f545",
+      "schema_fingerprint": "b5f8d4341783ec58db697b365787defa0811029d",
+      "last_modified_time": "2025-06-06 22:38:48"
+    },
+    "drh_drh_order_refund": {
+      "inventory_signature": "6956f689b9563c1a2dc8c715151c149e2847f12c",
+      "schema_fingerprint": "de8e585f6d84eff049f35e7fc3e4112ddf03d771",
+      "last_modified_time": "2025-05-22 23:21:23"
+    },
+    "drh_drh_process_data": {
+      "inventory_signature": "8bf003615d39e8de73547f83377d95b3436e8c82",
+      "schema_fingerprint": "1c2f46254b72e5c279ee5d6e82ea873ddcc76645",
+      "last_modified_time": "2025-05-22 23:21:23"
+    },
+    "drh_drh_qw_tag": {
+      "inventory_signature": "4e6f327d5654f5839fec08ca1a03882ba0ab58fa",
+      "schema_fingerprint": "0557d84a902396da90ec519f2bfda4cbd6b8a42f",
+      "last_modified_time": "2025-05-22 23:21:25"
+    },
+    "drh_drh_speaker": {
+      "inventory_signature": "73b57ecfa481b7effeca14d4327104163fb054dd",
+      "schema_fingerprint": "357a59ffd13573270a8299cbdc2f817cd03d7b8e",
+      "last_modified_time": "2025-05-22 23:21:25"
+    },
+    "drh_drh_union_tag": {
+      "inventory_signature": "a3446a73ecd460e0e34e10b24770009d362a7f15",
+      "schema_fingerprint": "e2565ebdb5ca6f128f43f616acd402c9732df004",
+      "last_modified_time": "2025-06-06 22:38:43"
+    },
+    "drh_drh_user_form": {
+      "inventory_signature": "3d3db5657bec535e3f4ce9a19f020352eb98006d",
+      "schema_fingerprint": "f7edd26b8bd8fe842b7f7d5f1b7ff5b52e59069d",
+      "last_modified_time": "2025-05-22 23:21:25"
+    },
+    "drh_drh_works_pic": {
+      "inventory_signature": "cd39e19e3bef2ba3d9b753ffa7f93c6b030cff25",
+      "schema_fingerprint": "b1bc978396a487a853f794358607d86faf9fa112",
+      "last_modified_time": "2025-06-06 22:38:43"
+    },
+    "drh_drh_xe_order": {
+      "inventory_signature": "70725c3f6b9bb28bffa3cb10db370865887b26f8",
+      "schema_fingerprint": "3324cc673f7e5a4462c620baeb01080d17d0a230",
+      "last_modified_time": "2025-05-22 23:21:26"
+    },
+    "drh_emp_cost": {
+      "inventory_signature": "f44e74c75e1aa2751b4172e67d75010e09a3a740",
+      "schema_fingerprint": "04bf67c9f54ef462105a7bb2752683c26b2bf97b",
+      "last_modified_time": "2026-03-11 20:02:27"
+    },
+    "drh_emp_external_tag": {
+      "inventory_signature": "16a7ae4b1ed78dadf5757e74e742af63a2158226",
+      "schema_fingerprint": "f63c223befa0f6c337584d917c3d2496205c3cda",
+      "last_modified_time": "2025-02-13 18:41:27"
+    },
+    "drh_emp_external_user": {
+      "inventory_signature": "d9fb63cb1be6be32085a13f860d037907dbd6b39",
+      "schema_fingerprint": "23f00df0ba6bc948b4f4ee5b1103b12b2acced15",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_emp_external_user_del": {
+      "inventory_signature": "0b32c6dd44f73f981a634052be6bd2a3053799ca",
+      "schema_fingerprint": "b6f89da2969dabf2c548aec7b280ad7d8d8b06d6",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_emp_external_user_di": {
+      "inventory_signature": "b90713a46c65d833c4a3a300e9c0458ea7f90ab7",
+      "schema_fingerprint": "78e950ccd1e1fddc4d1f825a6c05363744140ea1",
+      "last_modified_time": "2024-01-29 19:50:01"
+    },
+    "drh_emp_real_time": {
+      "inventory_signature": "0f77e0409445bb7fedbeb9945d8e2a6db11d405f",
+      "schema_fingerprint": "0e2df8cc9b9c23efa98ba6d2eadfc1934c3e3271",
+      "last_modified_time": "2025-09-19 14:26:03"
+    },
+    "drh_evaluation_answer": {
+      "inventory_signature": "3f72ccd76fec341ec6e157afcb17e1f7bafd6199",
+      "schema_fingerprint": "ac669b0b3926fc35340077927b458926a343e6c5",
+      "last_modified_time": "2025-04-12 12:16:36"
+    },
+    "drh_export_v_di": {
+      "inventory_signature": "5118e52df806bcc040604ac0e19486b4f8d75d64",
+      "schema_fingerprint": "1e5ad7707ae0545226307134e2174c9bd1c21316",
+      "last_modified_time": "2024-01-21 11:48:47"
+    },
+    "drh_external_ad_export_day": {
+      "inventory_signature": "5c22d73b03172430fd13c7e2bce73a05e9c77388",
+      "schema_fingerprint": "76996f726cc6b90583f244cd4a45338d9c203c01",
+      "last_modified_time": "2024-08-09 10:55:56"
+    },
+    "drh_feedback_info": {
+      "inventory_signature": "7070e0b206c2af0ecf78475b0a4865673efe18ed",
+      "schema_fingerprint": "395f498f41dd94c883af1db521ef6724dedd187c",
+      "last_modified_time": "2024-09-10 00:41:04"
+    },
+    "drh_floor_page": {
+      "inventory_signature": "83b30d9628a27abc535a89297034e5cca1a42269",
+      "schema_fingerprint": "363e1cea3ded46d41f6568b1905ed2e860bdd1eb",
+      "last_modified_time": "2026-04-17 15:18:11"
+    },
+    "drh_floor_page_config": {
+      "inventory_signature": "beae6fdbfff04023bba92095085d9de93c968149",
+      "schema_fingerprint": "9230cba0cfb734a87bc52437f9c849604ed71a3b",
+      "last_modified_time": "2024-09-10 00:41:01"
+    },
+    "drh_flow_rule_path": {
+      "inventory_signature": "c8b280b5a9e61493b44a690bf40497d70e9b44ca",
+      "schema_fingerprint": "de6c7a2d6fcb58acae0526b579b843e067cc0100",
+      "last_modified_time": "2026-04-16 21:54:21"
+    },
+    "drh_flow_rule_sale": {
+      "inventory_signature": "37a00709d40422b3d518d56c70c9a05ab382a7b4",
+      "schema_fingerprint": "9d4b33354013f2f9023872c092c3e5f918d5a298",
+      "last_modified_time": "2026-04-17 16:51:08"
+    },
+    "drh_front_emp_class": {
+      "inventory_signature": "4667963792890b369bfc950faf4bac9b89b8933a",
+      "schema_fingerprint": "fd226710b0b220ec8222eb554d18d7f769393eb2",
+      "last_modified_time": "2025-06-22 01:01:36"
+    },
+    "drh_front_emp_class_order": {
+      "inventory_signature": "c4e6dc2f77fa412e35d80398ea170c24b2762b74",
+      "schema_fingerprint": "ff93695de2c687f7fe0042931043b5c536fde062",
+      "last_modified_time": "2026-04-17 02:01:35"
+    },
+    "drh_goods": {
+      "inventory_signature": "0f6602d1f2b76ad6e04c6829dc7ddbd99f1b62b6",
+      "schema_fingerprint": "937912a66a9d2c9a94dd1c378f9658f3cb13bb38",
+      "last_modified_time": "2026-04-17 16:56:12"
+    },
+    "drh_goods_base": {
+      "inventory_signature": "86eaa2b539fdc1b7380a26aaad82f55e8304cb0a",
+      "schema_fingerprint": "685858ff768d638dcd5e50d584d323fbb640501a",
+      "last_modified_time": "2026-04-17 14:11:15"
+    },
+    "drh_goods_di": {
+      "inventory_signature": "579e507a239e49809f25c7ae72634bc6ec3f506b",
+      "schema_fingerprint": "400802d5b5033a3cd866465e1756816cdfcca3a2",
+      "last_modified_time": "2024-01-29 14:20:58"
+    },
+    "drh_h5_order": {
+      "inventory_signature": "3d4e17f639c2ac49c152b0952fff3c5ed58abde2",
+      "schema_fingerprint": "b7cc0a6784bed49a71a257b907fc707a55b6eea0",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_handover": {
+      "inventory_signature": "63635dbde278f69c3452da6f7673b61a8e1163be",
+      "schema_fingerprint": "927c98360046972e2ea04f85e2349a0aae344505",
+      "last_modified_time": "2024-09-10 00:41:10"
+    },
+    "drh_handover_plus": {
+      "inventory_signature": "375399a9e672c40f4d536e0742444ef4c0bf2bd7",
+      "schema_fingerprint": "fa35746cc015e54ebc50f6d1c42a5518c22da27a",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_handover_plus_del": {
+      "inventory_signature": "99b6aaa0e325dc059146e0ba93181686e10c2e0a",
+      "schema_fingerprint": "36087849bbef5974b10ee27a590db65f1e89578c",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_history_pic": {
+      "inventory_signature": "4fb6acabed32e401d53c0dbf94fa951f2f882050",
+      "schema_fingerprint": "f14d805ded7f2704ad24cf955e4149b98698bc64",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_huacai_coin_record": {
+      "inventory_signature": "0c31533e07e79ffb0ce73f4f0b10987da88a636a",
+      "schema_fingerprint": "83a5d4a069c4586453984a93a5ac0ce03df09fa6",
+      "last_modified_time": "2025-03-04 11:36:00"
+    },
+    "drh_increase_ab_creative": {
+      "inventory_signature": "25c75d31c04b4ac21c81810a1bf83e26ebe15239",
+      "schema_fingerprint": "23674907c7f08a3ec4dadce424091cf5842aa444",
+      "last_modified_time": "2026-04-14 15:13:57"
+    },
+    "drh_increase_ab_plan": {
+      "inventory_signature": "ac35edaaa0002e482f25f8e29bed48ca69ac2ecb",
+      "schema_fingerprint": "c7f1a23a6169dd2f6320ec01dcc331c2ee9a4ea0",
+      "last_modified_time": "2026-04-02 02:26:32"
+    },
+    "drh_increase_ab_unit": {
+      "inventory_signature": "535048c491344b708b055881d032ff486814a3ee",
+      "schema_fingerprint": "8e495c235917f14bc1a7d3d6e44c3c7ccea7f980",
+      "last_modified_time": "2026-03-13 11:43:34"
+    },
+    "drh_information_site": {
+      "inventory_signature": "86c1ba4e12468bd83d7df9bf1f8e411d106d1ba2",
+      "schema_fingerprint": "eab630976ba78fa81d8f9786c7660fad17cf292c",
+      "last_modified_time": "2026-04-13 15:57:21"
+    },
+    "drh_ip_city_list": {
+      "inventory_signature": "fadf9c58ab4d3c18619ad4c4f1543b1100466edd",
+      "schema_fingerprint": "30c2c947adff745c048fa88c93891d04a5d2e14a",
+      "last_modified_time": "2024-01-17 10:57:03"
+    },
+    "drh_ip_list": {
+      "inventory_signature": "60c0ccf75b54ba76a961359fd0a72294d80f093e",
+      "schema_fingerprint": "df638b8c1a01385c4d4ed70630b8f9ab4e4efdf6",
+      "last_modified_time": "2025-11-26 13:03:34"
+    },
+    "drh_kk_depart": {
+      "inventory_signature": "5f990351eb58e50bac6449a2adac5ac276df93e0",
+      "schema_fingerprint": "83d6356a49f0a51c5d131509516ced3bd9f75509",
+      "last_modified_time": "2025-11-06 14:30:58"
+    },
+    "drh_kk_emp": {
+      "inventory_signature": "2544584845b9bb9121da72d42b3f20e2c5161f89",
+      "schema_fingerprint": "3ca7f93175ff47742b4654ca0715916dc48f24ca",
+      "last_modified_time": "2026-04-17 17:37:18"
+    },
+    "drh_kk_group_emp": {
+      "inventory_signature": "f011d2e238caefaa1c22ab0c70a90b08b849a9a9",
+      "schema_fingerprint": "56020d8c568fb8522e2bbacb3c927c325f2b88f9",
+      "last_modified_time": "2026-04-17 10:01:41"
+    },
+    "drh_kk_group_emp_oss": {
+      "inventory_signature": "ab396e4eff727195727dc7d13e84b0f25605d8a4",
+      "schema_fingerprint": "56020d8c568fb8522e2bbacb3c927c325f2b88f9",
+      "last_modified_time": "2025-06-12 10:01:52"
+    },
+    "drh_kk_group_team": {
+      "inventory_signature": "c1036f18157abef10e3ada1364c5b78889aa40e8",
+      "schema_fingerprint": "74f558b940c1813603087d599fa4561a35b24fd6",
+      "last_modified_time": "2026-04-17 14:11:15"
+    },
+    "drh_kk_one_emp": {
+      "inventory_signature": "a767f4c9a5e142e7078de303520f0092b344d845",
+      "schema_fingerprint": "5523fb31694a77de3cf2de2758c046c355698523",
+      "last_modified_time": "2026-04-17 17:37:18"
+    },
+    "drh_kk_operation_di": {
+      "inventory_signature": "15167534dc99bf095dbebcbb701cb4656a87a5fd",
+      "schema_fingerprint": "34819dba0804ec08794ba2b17f7a6d6cf07d651f",
+      "last_modified_time": "2024-03-08 15:12:34"
+    },
+    "drh_kk_qw_company": {
+      "inventory_signature": "a808fa8399e11c3fb32ba7f4f47c1f0796d6f683",
+      "schema_fingerprint": "242c64a3d3a2074a89994793b1da758295f52787",
+      "last_modified_time": "2026-03-28 19:22:44"
+    },
+    "drh_koc": {
+      "inventory_signature": "7fda983525147eaeff67a4a91d611d862a836d5f",
+      "schema_fingerprint": "9d9bf510eb27bab160f51443585b6c200262a412",
+      "last_modified_time": "2026-04-15 17:42:02"
+    },
+    "drh_lch_channel": {
+      "inventory_signature": "ca37e140fa66bce2876111d16785341346cb5e22",
+      "schema_fingerprint": "ca8a76a52665a77a2248a96e6a88fb8dc41e144f",
+      "last_modified_time": "2026-04-02 19:27:17"
+    },
+    "drh_lch_channel_type": {
+      "inventory_signature": "488cfa8303ae65646ea89712599a0d01e6e8b62a",
+      "schema_fingerprint": "07277508d308f0643b3061ba378d441fa203578f",
+      "last_modified_time": "2025-12-03 19:11:15"
+    },
+    "drh_lin_qq_dsb": {
+      "inventory_signature": "38dab7e70c077acf9ab7f5ed86347af4419c2d55",
+      "schema_fingerprint": "5b123c93e2f567e6e9b14d338c8baf8f3eb7c93b",
+      "last_modified_time": "2026-04-17 01:02:36"
+    },
+    "drh_live": {
+      "inventory_signature": "24e272a9caed2b8e4fb9a2a4a970d1310da9b9d6",
+      "schema_fingerprint": "8216bcf319fa0ee4b1dbae8720ce6b44246495a7",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_live_camp": {
+      "inventory_signature": "71cf3478b36d53a89d0b8dc3c6af5e9fd9298ae8",
+      "schema_fingerprint": "1a751bf6c205ab44539caa108a14e0fe05f75125",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_live_camp_commission": {
+      "inventory_signature": "9d23921c5475b77ffdcb312d8c0285988085e1d5",
+      "schema_fingerprint": "7559b27ea565ff4c69f05371e5d543a733e6bea5",
+      "last_modified_time": "2026-02-06 18:05:04"
+    },
+    "drh_live_camp_convert": {
+      "inventory_signature": "dddc6b261ae95709ac09fce9391552b9243d1feb",
+      "schema_fingerprint": "0bdcb48420f0c28830188edfe8bc9ed681ecada0",
+      "last_modified_time": "2026-04-17 14:47:10"
+    },
+    "drh_live_camp_course_data": {
+      "inventory_signature": "3e0ad182fc169f87ceb5185b606dbebf549a3168",
+      "schema_fingerprint": "0dc37a86f7fb15e6de1cbfc2059154a5e00d5755",
+      "last_modified_time": "2026-01-16 16:15:18"
+    },
+    "drh_live_camp_date": {
+      "inventory_signature": "b4d9995f2732e09cb331e63917969b7f1cb3b03d",
+      "schema_fingerprint": "49a3b325a60aafd00f87ebfb90eb195dead88992",
+      "last_modified_time": "2026-04-17 16:51:08"
+    },
+    "drh_live_camp_date_di": {
+      "inventory_signature": "65b21f018077ee293174e0527c801b7dcebfac39",
+      "schema_fingerprint": "02a1175d90b05f1aab9765e306c98e9dbea3a693",
+      "last_modified_time": "2024-08-21 00:35:36"
+    },
+    "drh_live_camp_emp": {
+      "inventory_signature": "9b2a37a9cb699ed1cd4123391b1a8bfbb8fabc2c",
+      "schema_fingerprint": "f88a31286dd8709da15edb3ad2ee3b90914850a6",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_live_camp_emp_leads_detail": {
+      "inventory_signature": "226c1570821a196076e3e5bf52feecbda0132958",
+      "schema_fingerprint": "dc1852b7e930dabb8a9661d3946a3d365ede8978",
+      "last_modified_time": "2026-01-28 18:41:47"
+    },
+    "drh_live_camp_group": {
+      "inventory_signature": "25520d1343101e71f7f874ef69e116786f69238e",
+      "schema_fingerprint": "809008791b8f50e3fed4f708a59c706ebee24d26",
+      "last_modified_time": "2026-04-17 15:49:06"
+    },
+    "drh_live_camp_group_goods": {
+      "inventory_signature": "856cb72ce0e6112d3339cbf37da742774d78566a",
+      "schema_fingerprint": "8d02fb1595c0af29c09e5f68be95d6c1d839e4f8",
+      "last_modified_time": "2024-09-10 00:41:00"
+    },
+    "drh_live_camp_manager": {
+      "inventory_signature": "dfd0ac3fd76963afd3d9e4a3144dd392558d50f5",
+      "schema_fingerprint": "4b640f70a80f197abbc96d31000d9cb83b4a6e18",
+      "last_modified_time": "2026-02-25 18:39:51"
+    },
+    "drh_live_camp_manager_comission": {
+      "inventory_signature": "693c479076220f2602e83637f24db99b9c1589e2",
+      "schema_fingerprint": "7ed5f9697661b04c12ea497579d334cbbbb469f7",
+      "last_modified_time": "2026-01-19 19:12:33"
+    },
+    "drh_live_camp_manager_examine": {
+      "inventory_signature": "7ed72bc83fba473d85d9ab2d6f2b67122aff756d",
+      "schema_fingerprint": "dc99fee11ad06061e971c55123850dae4afc15d7",
+      "last_modified_time": "2026-02-09 18:56:07"
+    },
+    "drh_live_camp_performance": {
+      "inventory_signature": "9cee7787c4dd3a4d794f3e48c588bb6ea21fa870",
+      "schema_fingerprint": "64b7f6df7208ef3f61c806402fc756578f57a68f",
+      "last_modified_time": "2026-01-20 14:08:02"
+    },
+    "drh_live_camp_sku_arpu": {
+      "inventory_signature": "9eb76c7931293aab5bad21bbe1cc0bf1e172b68f",
+      "schema_fingerprint": "6e792a1a62eabf8a240d5bcdda03bec217008da0",
+      "last_modified_time": "2026-02-06 18:05:03"
+    },
+    "drh_live_camp_transfer_target": {
+      "inventory_signature": "333ced9d31232fb96a21dfb92f032b646d043734",
+      "schema_fingerprint": "4db5ad89fad56ad7c29530011cecf8d473bc5154",
+      "last_modified_time": "2026-04-02 16:33:41"
+    },
+    "drh_live_camp_user": {
+      "inventory_signature": "238e813a6e6830f15a78baa0506c107a8134e2a4",
+      "schema_fingerprint": "0eda1edd07e7448dc5d3c11a40d746e936b649f6",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_live_di": {
+      "inventory_signature": "17187870f2735d72a0d529ae8c595f13218a5fb3",
+      "schema_fingerprint": "a45b3c75af5a47d5a5d8f85bead083c9f3b91612",
+      "last_modified_time": "2024-08-21 01:05:27"
+    },
+    "drh_live_engagement_camp": {
+      "inventory_signature": "e1c14330ecf3757f1e3f9299d6c5d43cb3d369bf",
+      "schema_fingerprint": "20cace86917afea21c8f69f80ba25153669957e8",
+      "last_modified_time": "2026-04-17 05:00:46"
+    },
+    "drh_live_engagement_merge": {
+      "inventory_signature": "b642405bda8a7e3da396f3fc493872c07b98b754",
+      "schema_fingerprint": "577dc04955f88d0d7720f81c5dbbbf86f1f16dc3",
+      "last_modified_time": "2026-04-17 05:00:30"
+    },
+    "drh_live_engagement_parameter": {
+      "inventory_signature": "8ebb5bd1a14a804b6a5da4de9fab89091a45d65a",
+      "schema_fingerprint": "d32794248a0ba7aa4032bdf6b6a2ad281099e7a1",
+      "last_modified_time": "2026-02-04 19:37:06"
+    },
+    "drh_live_engagement_user": {
+      "inventory_signature": "54c479a3dd144a505f11edb96b71cc4a773bc311",
+      "schema_fingerprint": "e276a27e8612ae620131a8b4cd7241f526e02794",
+      "last_modified_time": "2026-04-17 05:08:59"
+    },
+    "drh_live_user": {
+      "inventory_signature": "154c886b0ce3777a5a17cbfe9ace05b4eb6f38fb",
+      "schema_fingerprint": "6dd0c4c63abb67ec35f1884b2e318dcd0d4a4b77",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_live_user_20240121": {
+      "inventory_signature": "c4451aff0c6d6b171b7430d33f24a64dc4e45df4",
+      "schema_fingerprint": "26db73ed00a9e8eb5879d1fa96ef102437ac13b1",
+      "last_modified_time": "2024-01-21 17:00:05"
+    },
+    "drh_live_user_di": {
+      "inventory_signature": "a7835aa9c41c52847dca614782dfaf795803f85b",
+      "schema_fingerprint": "afc99afc947be2796d055caa813346deee73bfb3",
+      "last_modified_time": "2024-01-02 16:09:11"
+    },
+    "drh_live_user_subscribe": {
+      "inventory_signature": "612fd2f97f7da11edd4df7cc346e50e43cca49c6",
+      "schema_fingerprint": "3efd2ea108115d8d8db241ffbf844bdabf859e15",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_live_works_user": {
+      "inventory_signature": "676d05007091858022b81e6c367f4cc58833401b",
+      "schema_fingerprint": "a0d15d6fc185a1556c4b215b459aa9f27695e176",
+      "last_modified_time": "2024-09-10 00:41:05"
+    },
+    "drh_living_message": {
+      "inventory_signature": "ed1f00ab0d3113817766ec93f62b0a2df139cf47",
+      "schema_fingerprint": "67691045411d609e5b8590edea0bc6cc45d82799",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_living_message_di": {
+      "inventory_signature": "5fc38fb8db74aef48eeb25fe4b19ca2564438be7",
+      "schema_fingerprint": "4017a3f96879c4c70e7a0eddf5e4e759158a0d04",
+      "last_modified_time": "2024-08-21 01:12:35"
+    },
+    "drh_living_study_info": {
+      "inventory_signature": "539576cd4f5b02ce6741fb6be5b9fd234081bfc3",
+      "schema_fingerprint": "b5f8d4341783ec58db697b365787defa0811029d",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_living_user_status": {
+      "inventory_signature": "92443d128a9f1f1dc984489529e378dc5b4db271",
+      "schema_fingerprint": "80edbde985fab23ff80ce0a02140c78015840fad",
+      "last_modified_time": "2025-05-12 21:02:15"
+    },
+    "drh_meter_header": {
+      "inventory_signature": "161e71e1fdcf4b87223b82418298ec2aa6c86639",
+      "schema_fingerprint": "928c75d708adc5fe48738b7a9d89f15e126132f1",
+      "last_modified_time": "2026-04-17 18:03:12"
+    },
+    "drh_meter_header_data": {
+      "inventory_signature": "9567c376129769d446a54c7e0626203383c88b63",
+      "schema_fingerprint": "4491020dabfe86693b72e5fab1791270e4bc6fbb",
+      "last_modified_time": "2026-04-17 17:21:57"
+    },
+    "drh_mindset_test_result": {
+      "inventory_signature": "be9c5ec468b4f705c362c9644fb9a6598d2ed838",
+      "schema_fingerprint": "856ba8c788ca5c2927389ebcea2c70e43c5f15e2",
+      "last_modified_time": "2025-07-01 18:01:30"
+    },
+    "drh_model_price_di": {
+      "inventory_signature": "b74e533eb9aa6a773e1b0a7d847e2223b73077f5",
+      "schema_fingerprint": "ea8066a439538b87c4460d90b223b8a37c42e48a",
+      "last_modified_time": "2024-01-30 17:52:04"
+    },
+    "drh_my_callback_status": {
+      "inventory_signature": "bd75663ceb98b48adabb357f8ced667a4490d496",
+      "schema_fingerprint": "f17cf068c3a03a3aaafba11afbfcffbca439ad12",
+      "last_modified_time": "2024-04-15 19:47:23"
+    },
+    "drh_my_click": {
+      "inventory_signature": "b912cda2612cd813b30857962338d01e198f8de4",
+      "schema_fingerprint": "fcaf1761c468d33e480d95eb402f42dc6ec4a36b",
+      "last_modified_time": "2024-09-10 00:41:07"
+    },
+    "drh_my_label_encrypt_di": {
+      "inventory_signature": "6088bb5ce0cdb3fe3d97b6fa8f8e3c9e633d1d64",
+      "schema_fingerprint": "9a03cf2814b8fed00d83117b4b45ebd062a9135b",
+      "last_modified_time": "2024-08-19 17:38:07"
+    },
+    "drh_my_tracking_di": {
+      "inventory_signature": "065a078eb048b886fad13ee79642b1b2a48b73fe",
+      "schema_fingerprint": "80f31fb5d030738e615d88c7ae404e44f99bd97c",
+      "last_modified_time": "2025-06-22 00:31:47"
+    },
+    "drh_odps_camp_live_study_data_rate": {
+      "inventory_signature": "8a81fcfa6cd8439a0bab793d872c2002da5a6244",
+      "schema_fingerprint": "2008732a24bc9ae0d7330516fc04e0190e5b88fe",
+      "last_modified_time": "2026-04-17 18:02:17"
+    },
+    "drh_odps_camp_refund_rate": {
+      "inventory_signature": "8c07b62dd02489a65c408eca3ad343368e8ac47b",
+      "schema_fingerprint": "b606b34aad5d3669487ef6a745bc24bc18fc7752",
+      "last_modified_time": "2026-04-17 18:00:56"
+    },
+    "drh_odps_camp_study_data_rate": {
+      "inventory_signature": "97118e6eb890248087317a09785db2617bd9f54d",
+      "schema_fingerprint": "cfcef266bcc3f7457c4c5b7d79398cbc5069304b",
+      "last_modified_time": "2026-04-17 18:02:19"
+    },
+    "drh_odps_group_live_study_data_rate": {
+      "inventory_signature": "96fbbf999087f0f211a72d315d98c38c6dfc6846",
+      "schema_fingerprint": "d31b6522c703fc2f7505bad104cfa616f9c03186",
+      "last_modified_time": "2026-04-17 18:02:18"
+    },
+    "drh_odps_group_study_data_rate": {
+      "inventory_signature": "1dc370912372dcdfd163359b4b6fbf6bca0016e9",
+      "schema_fingerprint": "7f31a562aa70bdcab81a2d780b1438e31d5188d0",
+      "last_modified_time": "2026-04-17 18:02:19"
+    },
+    "drh_odps_live_study": {
+      "inventory_signature": "8300080cdb922911e458777123cbef9006013196",
+      "schema_fingerprint": "8ddfd19ebd0078d588d93346ee96548f1d1e06bc",
+      "last_modified_time": "2026-04-17 18:01:29"
+    },
+    "drh_odps_sls_page": {
+      "inventory_signature": "f5f527c58aaafba4173f0bb3f7b58e0809a5acad",
+      "schema_fingerprint": "0cfc851d6a10783b3612abf9bfb3f54f6610509e",
+      "last_modified_time": "2026-04-17 18:06:37"
+    },
+    "drh_odps_sys_emp_page": {
+      "inventory_signature": "91acb6e8e2d9c552acc2d89be0f62e982d11d951",
+      "schema_fingerprint": "83c5cc006299168fce0f677596e1aa239b8caccc",
+      "last_modified_time": "2026-04-17 06:30:48"
+    },
+    "drh_odps_update_user_info": {
+      "inventory_signature": "5bf0a06f4c2b96bfd4851357b5786e7f81725307",
+      "schema_fingerprint": "1e09b71c8033367b1df06463b1a1dd3518bc01df",
+      "last_modified_time": "2026-04-17 02:01:04"
+    },
+    "drh_odps_user_learning_report": {
+      "inventory_signature": "2ac200d1ef0c425cece2aee1c3ec4cae8c7d9aba",
+      "schema_fingerprint": "b7b193786386e816569a3306a3e773fcb9917fc1",
+      "last_modified_time": "2025-01-14 13:40:33"
+    },
+    "drh_odps_user_learning_report_camp": {
+      "inventory_signature": "aa88f8607c736acab146150dd9ec6cb22c185103",
+      "schema_fingerprint": "bd4f15f4affb516677f444f29c5453f4302399f5",
+      "last_modified_time": "2025-03-01 23:01:36"
+    },
+    "drh_order": {
+      "inventory_signature": "328d08ab4552b2c9d5ca1679aa3161e6a8f542ae",
+      "schema_fingerprint": "3e71baa9ecb3d586e4131692e17ab1c96e136511",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_order_di": {
+      "inventory_signature": "38b3c983b049d29be7ba5b53a0200d5ecef684bc",
+      "schema_fingerprint": "ea18cb3e94698c43d13e4eba8c2b6f07a6864154",
+      "last_modified_time": "2024-08-21 00:26:10"
+    },
+    "drh_order_emp": {
+      "inventory_signature": "e52f1471adddf3d53e42d05017ba0251ef0cf3ed",
+      "schema_fingerprint": "9defbeffb663be52a268423d320c751d40479e38",
+      "last_modified_time": "2024-09-10 00:41:05"
+    },
+    "drh_order_refund": {
+      "inventory_signature": "91b3a837ef9c79f138f890aca1eb3e1f8ffa76f0",
+      "schema_fingerprint": "de8e585f6d84eff049f35e7fc3e4112ddf03d771",
+      "last_modified_time": "2026-04-17 18:08:23"
+    },
+    "drh_order_refund_record": {
+      "inventory_signature": "315f3dbb84dac37d05a8756a7f0eeac65f892c6f",
+      "schema_fingerprint": "ca1428a1d1a174645cb9b98deda4a37bf218d035",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_order_tmp": {
+      "inventory_signature": "48e9c47d2506978695d50ec3bc72bf96aca0e622",
+      "schema_fingerprint": "f7c8ef246d8ed55784d90134351ee8ee51e0cdb1",
+      "last_modified_time": "2025-12-22 20:27:02"
+    },
+    "drh_order_wx_order": {
+      "inventory_signature": "02bef883394248f61f5cc74572bd8d6be888f214",
+      "schema_fingerprint": "d56e38a2d66138ea2023bb7e1c0e4ab3cdaaad38",
+      "last_modified_time": "2024-09-10 00:41:06"
+    },
+    "drh_partition_test": {
+      "inventory_signature": "c283fcd294f12a1b7628c9f516fd14c9404f1ffd",
+      "schema_fingerprint": "30ee1504cc8578db486c3191fcfe4aec046f32e9",
+      "last_modified_time": "2026-02-02 23:17:25"
+    },
+    "drh_partition_test_view": {
+      "inventory_signature": "0ae821698dc22a07a47176557e68ed4e3df283fa",
+      "schema_fingerprint": "7223fc220d8aeeadfe7c093171114ed5b4d1792a",
+      "last_modified_time": "2025-10-31 13:42:32"
+    },
+    "drh_permission_owner": {
+      "inventory_signature": "bce0ba0722ac7f6e75c965bdf5629c345a7bc82d",
+      "schema_fingerprint": "8155b72134f6b34c77cdd4d662b7d9ef6be2c3d1",
+      "last_modified_time": "2026-04-17 10:01:20"
+    },
+    "drh_permission_total": {
+      "inventory_signature": "06819c7375efb2edab10d9a8caa693bf99df4953",
+      "schema_fingerprint": "db337d2e1d52bca3a97f25461ea6c6ec78704762",
+      "last_modified_time": "2026-04-17 10:01:15"
+    },
+    "drh_process_data": {
+      "inventory_signature": "9c8ab569eefc06342c95f1b215e0b1ec40f6050c",
+      "schema_fingerprint": "1c2f46254b72e5c279ee5d6e82ea873ddcc76645",
+      "last_modified_time": "2026-04-17 16:51:08"
+    },
+    "drh_process_data_di": {
+      "inventory_signature": "6b9beb51ec3ab6993ff9395011ede4c22034afa4",
+      "schema_fingerprint": "1c2f46254b72e5c279ee5d6e82ea873ddcc76645",
+      "last_modified_time": "2024-08-21 00:19:30"
+    },
+    "drh_prod_drh_drh_partition_test": {
+      "inventory_signature": "22dd2923f32bf0323bc1e169b464571a7db8bc43",
+      "schema_fingerprint": "48db4d8a7bc0c7926f3a1bb78217245854317330",
+      "last_modified_time": "2025-11-10 18:04:09"
+    },
+    "drh_prod_drh_prod_dataset_log": {
+      "inventory_signature": "e325951646450c25a6749a0e1d2ff8a9a0d0af38",
+      "schema_fingerprint": "ee5831752251ded8ad8bf479626c48499dffa049",
+      "last_modified_time": "2024-12-20 03:02:59"
+    },
+    "drh_proj_channel_manager": {
+      "inventory_signature": "4b1d79b52da93dd5255f0955389657da0f86f3b7",
+      "schema_fingerprint": "f7f3977ca63f0b902c5145c224b44c254b276449",
+      "last_modified_time": "2025-04-14 17:26:03"
+    },
+    "drh_public_account": {
+      "inventory_signature": "f729beadaddfca3997ee70371236b235f57f9b0a",
+      "schema_fingerprint": "7954cf7b7a7e102ec426a1f925eb06aa6e826c01",
+      "last_modified_time": "2025-11-13 18:45:42"
+    },
+    "drh_question_record_di": {
+      "inventory_signature": "2f5ecfdc42c1f2e5d6b14f9f994e91678f824fd8",
+      "schema_fingerprint": "d057cbae8a017b7b541d45331052852f8434c05f",
+      "last_modified_time": "2024-05-29 00:33:51"
+    },
+    "drh_qw_group": {
+      "inventory_signature": "0b88e12cd978900597b063cfeb9d2f1a48eeeb52",
+      "schema_fingerprint": "4fdbec0581fe13844db505a28b6580a2847af86d",
+      "last_modified_time": "2026-04-16 17:37:37"
+    },
+    "drh_qw_tag": {
+      "inventory_signature": "530a8d8b966e0bccaf92125090e9346f22c88e4a",
+      "schema_fingerprint": "83c277375f2730449394f9c50d7765eff20236be",
+      "last_modified_time": "2026-04-17 16:15:02"
+    },
+    "drh_refund_approval_detail": {
+      "inventory_signature": "e103b6601e0b6efd8e81a7c7722c4a245ff107d5",
+      "schema_fingerprint": "70c19e1cffb1b0eeb4faa2e26ada10dd4dea2beb",
+      "last_modified_time": "2026-04-17 15:43:52"
+    },
+    "drh_refund_reason": {
+      "inventory_signature": "e532241c39995860ad213d6cc83bca63da140fe2",
+      "schema_fingerprint": "cda4c3a326e326f72f3ce8c7917242ff9c414797",
+      "last_modified_time": "2024-09-10 00:40:59"
+    },
+    "drh_sale_pay_link": {
+      "inventory_signature": "54d64612133c6bdafe4f24db5a5602aa0c79fcce",
+      "schema_fingerprint": "9f4636cdcb3adeaf88cf7f13133ebbcd5ace0d9f",
+      "last_modified_time": "2024-09-10 00:41:10"
+    },
+    "drh_sale_roi_rank": {
+      "inventory_signature": "a0b57977065c24a535d101d69fdb1d1f53a28d97",
+      "schema_fingerprint": "e3156b062fc7bfee0952e8e003692927b97d547a",
+      "last_modified_time": "2026-04-17 00:03:35"
+    },
+    "drh_sku_cash_account_view": {
+      "inventory_signature": "215c42628c719b376554342a91272f8f04ba876f",
+      "schema_fingerprint": "ff502b81187a1adaaa6d6aadc860c2dac42ad633",
+      "last_modified_time": "2026-03-23 19:08:15"
+    },
+    "drh_songfan_pred": {
+      "inventory_signature": "643c89453dfdcee5949e66e271dc485dae70687d",
+      "schema_fingerprint": "21e60f80083ea7368f6d32f68109da4d283a92a2",
+      "last_modified_time": "2026-04-17 04:01:06"
+    },
+    "drh_speaker": {
+      "inventory_signature": "ad7c46498faab3ffe6679ee107df71b2e9c02e1a",
+      "schema_fingerprint": "2fc0690f95c6fa7836bcecf31886fcbd00506551",
+      "last_modified_time": "2026-04-17 15:02:43"
+    },
+    "drh_speaker_di": {
+      "inventory_signature": "2715210a9a8cba7673d1a689cf1d8b82d30a6f1d",
+      "schema_fingerprint": "88ddee30e7d6c5d298eb85e586634501cc27ef59",
+      "last_modified_time": "2024-08-21 00:33:26"
+    },
+    "drh_special_user_click_record": {
+      "inventory_signature": "b30a43a858b41d74d6b8e00db6285bb43926c6c1",
+      "schema_fingerprint": "2638f6c0731733254e9ce8b28a56b21b13c5e393",
+      "last_modified_time": "2025-12-17 23:45:05"
+    },
+    "drh_special_user_reach_strategy": {
+      "inventory_signature": "34964e26d7ace5e07561966a836ad678334bef45",
+      "schema_fingerprint": "b6ec69cfdadcc1d0eaac2479525a4021e28ab100",
+      "last_modified_time": "2025-12-18 00:18:08"
+    },
+    "drh_special_user_reach_strategy_cdqv": {
+      "inventory_signature": "e575f44186186664f04a07d1d3f527157971bb2d",
+      "schema_fingerprint": "d12e3e1517f2f12ed205994c51aa83e35fb58e66",
+      "last_modified_time": "2025-12-15 14:15:50"
+    },
+    "drh_special_user_reach_strategy_condition": {
+      "inventory_signature": "a5183659ed1e3d7d7a2b6568f5f019a3692eb0c0",
+      "schema_fingerprint": "33c41d7a35bf5e373353a76b786038d1458c8ab1",
+      "last_modified_time": "2025-12-15 12:27:23"
+    },
+    "drh_special_user_reach_strategy_send_log": {
+      "inventory_signature": "ad62a25b7a82bcf08f7a41db8e3fb4572e8d325d",
+      "schema_fingerprint": "04648a6f90aeec5c06a3865c447c7543f890d80c",
+      "last_modified_time": "2025-12-17 23:45:05"
+    },
+    "drh_sph_supplier_detail_info": {
+      "inventory_signature": "dfc2c0dcda693ec36a561dbc32ec07b1e6e6146e",
+      "schema_fingerprint": "a68333de63cf1fd3983c8ba260c42514def8bfbf",
+      "last_modified_time": "2026-04-17 18:03:12"
+    },
+    "drh_sph_supplier_info": {
+      "inventory_signature": "0b3cc3cea94987ffe43031e9483e5e2b486773dc",
+      "schema_fingerprint": "fcfb13eff1abd466bfd9a8cb636dbe8252dfb462",
+      "last_modified_time": "2026-04-17 15:59:25"
+    },
+    "drh_studio": {
+      "inventory_signature": "d18aeaf29305ffd4a27bd086431cf2a26ac98078",
+      "schema_fingerprint": "9fd276ff0a18336a4daf0ceb2e8fef57cc5eee58",
+      "last_modified_time": "2026-03-11 17:40:42"
+    },
+    "drh_tracking_detail_di": {
+      "inventory_signature": "b8b41c32cb09b8a7cc8e06b30b910c1f41108907",
+      "schema_fingerprint": "3b15ae635e295dc00c643f619f952d98e51aab7f",
+      "last_modified_time": "2026-04-17 03:20:29"
+    },
+    "drh_union_tag": {
+      "inventory_signature": "c27b61108f20bc8cf84edf368f643b2abcf22c18",
+      "schema_fingerprint": "e2565ebdb5ca6f128f43f616acd402c9732df004",
+      "last_modified_time": "2026-04-17 17:16:44"
+    },
+    "drh_user_change_camp_record": {
+      "inventory_signature": "c7d10f9c7473cb145596b9b27aa1565501826921",
+      "schema_fingerprint": "810a6d21952d3f438586c1eceba7933ba05ece40",
+      "last_modified_time": "2026-04-17 18:10:55"
+    },
+    "drh_user_form": {
+      "inventory_signature": "58745e1b4bc9fb87e5af23440b1d2bc343920cbc",
+      "schema_fingerprint": "f7edd26b8bd8fe842b7f7d5f1b7ff5b52e59069d",
+      "last_modified_time": "2026-04-17 17:57:59"
+    },
+    "drh_user_form_di": {
+      "inventory_signature": "90baed18d665d7c2224c7d4f7c41fcff30e7ee29",
+      "schema_fingerprint": "324ea1edd97c4c2478cbc9c30c9ec57568ba1c14",
+      "last_modified_time": "2024-08-21 00:11:41"
+    },
+    "drh_user_koc_follow": {
+      "inventory_signature": "f59e31683c13f7cb7aac9ee16018a3d2569f6502",
+      "schema_fingerprint": "7c0ac71caf1c4f5fc0f536fc34ef423a80ed9085",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_user_label0523": {
+      "inventory_signature": "e1f9a11d86141a252288f0243b3d67bebb993292",
+      "schema_fingerprint": "71eb75bdb6f252fff87f2c1306f2808ec6edca33",
+      "last_modified_time": "2024-05-23 21:38:24"
+    },
+    "drh_user_label_20230122": {
+      "inventory_signature": "d7a21aff618440ffb7113b12a59ee0102554bcf7",
+      "schema_fingerprint": "71eb75bdb6f252fff87f2c1306f2808ec6edca33",
+      "last_modified_time": "2024-01-22 08:28:44"
+    },
+    "drh_user_question": {
+      "inventory_signature": "f86f963cc6c421e3073cebd92972071d08d89e33",
+      "schema_fingerprint": "6ff9e4e3ca54f3ec2423c536566c73f45ed37ef4",
+      "last_modified_time": "2026-04-17 16:30:37"
+    },
+    "drh_user_question_detail": {
+      "inventory_signature": "e6176c428d6ba756a4b5aa707254206c3c45a43f",
+      "schema_fingerprint": "700933bfef322e0028f1c42fb6a3f5ef2f0407b6",
+      "last_modified_time": "2026-04-17 16:30:37"
+    },
+    "drh_user_question_tpl": {
+      "inventory_signature": "189edc242fe98d98ffcd89f0ab87a9cbd46e620a",
+      "schema_fingerprint": "0bf3cadc5a2f564a8bc226e5b9952c21656f8f7a",
+      "last_modified_time": "2026-04-02 14:23:34"
+    },
+    "drh_user_question_tpl_detail": {
+      "inventory_signature": "02b3e72ee8386a9cc0ffcfabdb6cdb8353c139a7",
+      "schema_fingerprint": "028cbbd42202f9d320166e1f018774ead7d5111a",
+      "last_modified_time": "2026-04-02 16:07:45"
+    },
+    "drh_works_news": {
+      "inventory_signature": "3c01c1a353304a54bc3694d35d337867d02c9c33",
+      "schema_fingerprint": "0b404929c725b84fba93b20bf84c36b8a7a535ac",
+      "last_modified_time": "2024-09-10 00:41:06"
+    },
+    "drh_works_pic": {
+      "inventory_signature": "f90fbdd3f7a72585403d73a683b3f2f89f6c673f",
+      "schema_fingerprint": "4d0d72701744f8226f0ffb8828acb0117913bca2",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "drh_xe_order": {
+      "inventory_signature": "3cb5b4da2a36285a2a0b6904cf9f4298029e7884",
+      "schema_fingerprint": "ab51806930cedf259ac92f160b57dcceaa9cc68b",
+      "last_modified_time": "2026-04-17 18:08:22"
+    },
+    "dwa_app_order_jx_detail_df": {
+      "inventory_signature": "49fc2c6143f59c9a8bcd556a69afb020055f9f87",
+      "schema_fingerprint": "43d9357612198006d70223775754c0db92622aa5",
+      "last_modified_time": "2026-04-17 00:27:00"
+    },
+    "dwa_app_plan_md_pdi": {
+      "inventory_signature": "c58de240962ba46218ba0dc9c43a7fad9c9fbf98",
+      "schema_fingerprint": "12345e472197fd0a4d5379d853a4a367b0555333",
+      "last_modified_time": "2026-01-29 10:52:03"
+    },
+    "dwa_app_qz_df": {
+      "inventory_signature": "887489de6edc61275eb86b8983840110b74361f1",
+      "schema_fingerprint": "7950b7d0040d0815744fd5cd6bf109606a96fc9b",
+      "last_modified_time": "2026-01-30 16:14:50"
+    },
+    "dwa_app_user_active_df": {
+      "inventory_signature": "199ee4e2759b76e682208423606c7bd26ac9b4b6",
+      "schema_fingerprint": "4f473447e5376bb005161e7df5f20adc40a1d9f7",
+      "last_modified_time": "2026-04-17 02:16:21"
+    },
+    "dwa_mo_user_active_df": {
+      "inventory_signature": "560cbd3604c0622edb9e1f1658e95bca9f610a07",
+      "schema_fingerprint": "3c2bb565b7755b1cec484565da1ed7421138d990",
+      "last_modified_time": "2026-04-17 01:24:53"
+    },
+    "dwa_ots_test_user_base_infomation_df": {
+      "inventory_signature": "1cde26c54b9e670a4aa1eebf119516d33bf29140",
+      "schema_fingerprint": "9b5b21483cc636f5388d6f54a12805c399edbbe6",
+      "last_modified_time": "2025-10-10 14:29:27"
+    },
+    "dwa_ots_user_base_infomation_df": {
+      "inventory_signature": "578c9f35e5665713e7b47d0616e978dc1e67ba36",
+      "schema_fingerprint": "9b5b21483cc636f5388d6f54a12805c399edbbe6",
+      "last_modified_time": "2025-10-10 14:28:52"
+    },
+    "dwa_sku_cash_account": {
+      "inventory_signature": "0920ebe6b530d7b2a55f932ed31ebdc3b87233b2",
+      "schema_fingerprint": "9d23b1e9945452a4705ef177aac24d0e916d824a",
+      "last_modified_time": "2026-04-17 01:30:16"
+    },
+    "dwa_user_package_df": {
+      "inventory_signature": "661b62b9f7dd3e5beedb903d9e352a7d1eb8c56c",
+      "schema_fingerprint": "2f3d72d48bbb8fe700f84eb52793fea8c2562c3c",
+      "last_modified_time": "2025-11-19 11:09:29"
+    },
+    "dwa_user_package_df_test": {
+      "inventory_signature": "ca0fd027cbcb0412a3f97a4936eb452997bef539",
+      "schema_fingerprint": "2f3d72d48bbb8fe700f84eb52793fea8c2562c3c",
+      "last_modified_time": "2025-11-21 11:42:46"
+    },
+    "dwd_ad_pic_zip": {
+      "inventory_signature": "f099a784c664fcfeb314aa15f5ae4c629d2aa286",
+      "schema_fingerprint": "e44ff4ac41558dc3dea0fbd95d7f3122cf088f9e",
+      "last_modified_time": "2026-04-17 00:21:39"
+    },
+    "dwd_app_active_user_pdi": {
+      "inventory_signature": "c5fe9a72be1364bee53a5692237f11a31bafa432",
+      "schema_fingerprint": "fe33682627ee56be0beb3370143969aa213072dc",
+      "last_modified_time": "2026-04-17 00:50:28"
+    },
+    "dwd_app_tracking_action_pdi": {
+      "inventory_signature": "e2789ba0ef9be1a29b0673ead62b513aaf41e789",
+      "schema_fingerprint": "4f3956196a2abfe0c7001a0b5f6766c55f9f027c",
+      "last_modified_time": "2026-04-17 00:41:00"
+    },
+    "dwd_app_tracking_pdi": {
+      "inventory_signature": "3bc7c330f27404945f230e65468978c310c92c06",
+      "schema_fingerprint": "b92569df05ab69744d0bb7ba3d20ccdbf653424f",
+      "last_modified_time": "2026-04-17 00:21:41"
+    },
+    "dwd_app_user_detail_info_df": {
+      "inventory_signature": "2c8cfcc8bc90c8ffdd2308c0944eda87b868d2af",
+      "schema_fingerprint": "fff38d33d1de412dcdb39f55833bf471ecbf0969",
+      "last_modified_time": "2026-04-17 03:30:47"
+    },
+    "dwd_applet_main_df": {
+      "inventory_signature": "92ca53481ce8b66db4d0d483ab02281bdf489db8",
+      "schema_fingerprint": "1ea47532391f62040cbcc2ad6a302d678b4223da",
+      "last_modified_time": "2026-04-17 00:10:28"
+    },
+    "dwd_applet_main_repeat_df": {
+      "inventory_signature": "972b04f094bbd111cd537c760fb886215062cb78",
+      "schema_fingerprint": "d247b312b28e59e47025a2f1f830e0e28ac84629",
+      "last_modified_time": "2026-04-14 15:52:38"
+    },
+    "dwd_applet_main_repeat_pdf": {
+      "inventory_signature": "6743cce44b63cc11e373295670f747175c4e4a84",
+      "schema_fingerprint": "cc326ded9c7bde9eaca4f2845482abe74dfa706d",
+      "last_modified_time": "2026-04-17 00:12:20"
+    },
+    "dwd_applet_originally_channel_cost_df": {
+      "inventory_signature": "fc0a978a53af3c5ac18fccbe1d812075f86442d3",
+      "schema_fingerprint": "af3400c8afa43288086cc4000a391e44e579401c",
+      "last_modified_time": "2026-04-17 00:14:32"
+    },
+    "dwd_applet_sale_plan_df": {
+      "inventory_signature": "e414f537391bdad126854db80969dd63c6612752",
+      "schema_fingerprint": "d0f3288b725200e6d4ead9a7109d51aa9b2dc830",
+      "last_modified_time": "2026-04-17 00:35:13"
+    },
+    "dwd_applet_site_day_cost_df": {
+      "inventory_signature": "fcf1e50314e9e9a0b04da51dd8dc056bc9d93957",
+      "schema_fingerprint": "631bb8f168c5360a927610b9d19ee557bc6afbe7",
+      "last_modified_time": "2025-12-19 16:16:14"
+    },
+    "dwd_course_info_df": {
+      "inventory_signature": "8f6171f9606632994c106795e0c4ffbea4d0dbd5",
+      "schema_fingerprint": "81de96de9f8103029682b8406de2a6661e79aafd",
+      "last_modified_time": "2026-04-17 00:03:28"
+    },
+    "dwd_course_study_df": {
+      "inventory_signature": "cabb33d07403037e753441b788ab877416a1001b",
+      "schema_fingerprint": "32528fbcfcceb98e4ac37297cf54ac5d84d65b09",
+      "last_modified_time": "2026-04-17 00:40:53"
+    },
+    "dwd_edu_pay_user_df": {
+      "inventory_signature": "190fc871f255b22c45f1189475ecb0d09507efe8",
+      "schema_fingerprint": "6684e037b4dfbb22138d5dee7c32a3e251fef113",
+      "last_modified_time": "2026-04-17 00:24:07"
+    },
+    "dwd_edu_user_study_info_df": {
+      "inventory_signature": "57dbadfd73849d71d27f9c3bfa17161cdfc8a2ec",
+      "schema_fingerprint": "913124dc110d5b032f1ac2e3cae58cad372f013a",
+      "last_modified_time": "2026-04-17 00:18:46"
+    },
+    "dwd_edu_user_study_info_pdi": {
+      "inventory_signature": "e55c73faaaf6922a1f010b46d47c9e6fe0f36f88",
+      "schema_fingerprint": "0a0f7dcb2f4ee380f529ac04541097c514190a05",
+      "last_modified_time": "2025-12-06 16:20:58"
+    },
+    "dwd_finance_cash_cost_md_pdf": {
+      "inventory_signature": "88468597d9f8d626bbc6de3eadbef51651dad562",
+      "schema_fingerprint": "61a427616d36de85d52a4f854afbbdc8aeb2cfaa",
+      "last_modified_time": "2026-04-17 00:16:17"
+    },
+    "dwd_finance_cci_rate_pdf": {
+      "inventory_signature": "853ee554dd50af538334815c93ae3bc077d119b9",
+      "schema_fingerprint": "cfaa8d447342a489090360f54183562f19abfb51",
+      "last_modified_time": "2026-04-17 00:15:30"
+    },
+    "dwd_finance_cost_prepayment_rate_pdf": {
+      "inventory_signature": "2c552e5683b1f6bd572c20aaa1fcb91d5262eaac",
+      "schema_fingerprint": "36c11a330b076fe84de30bbca61d6525d9fc75a4",
+      "last_modified_time": "2025-11-12 11:25:22"
+    },
+    "dwd_finance_feikong_crop_prepay_all_d": {
+      "inventory_signature": "2f5dbea39da04ea798913926c619a476b56ce270",
+      "schema_fingerprint": "a52ecb2a248d170142f81c8370509eba127a7149",
+      "last_modified_time": "2026-04-17 00:03:55"
+    },
+    "dwd_finance_feikong_crop_prepay_df": {
+      "inventory_signature": "4bd7f89e48ed3c84436b2c32c9f62ec1020b1100",
+      "schema_fingerprint": "1210be4e090cde134a417102cc6b616bde8c70bf",
+      "last_modified_time": "2025-11-27 11:43:15"
+    },
+    "dwd_finance_feikong_expense_all_d": {
+      "inventory_signature": "92f70a4ed71f5d2317120bdc3e6daba7e444fa6f",
+      "schema_fingerprint": "470f4da9a1b1c40147ec56a7dab259a38dd1c730",
+      "last_modified_time": "2026-04-17 00:03:42"
+    },
+    "dwd_h5_app_user_emp_pdf": {
+      "inventory_signature": "434f7a2718b21e05454a7ab7cdeedabd44892e03",
+      "schema_fingerprint": "da7602082b72cc13efd208037b4ddf8405243320",
+      "last_modified_time": "2026-04-17 00:06:58"
+    },
+    "dwd_handover_plus_pdf": {
+      "inventory_signature": "258b04319fb928e3da4798d45931dd8863bc7203",
+      "schema_fingerprint": "8299806c819aeca102dfd761da13fc4dc32ebb3c",
+      "last_modified_time": "2026-04-17 00:06:21"
+    },
+    "dwd_mo_tracking_pdi": {
+      "inventory_signature": "5a42f061c3229812694c86ad8362d2820355f433",
+      "schema_fingerprint": "45a92a7222a48b16d66ab6932d8ecfc182af5afc",
+      "last_modified_time": "2026-04-17 01:00:44"
+    },
+    "dwd_mo_tracking_pdi_bak": {
+      "inventory_signature": "bd3c62459400943ecfc0681ccc50c493bcb94d7c",
+      "schema_fingerprint": "c9a99cfeaca0a8531eec42f2ee0c585229b49e55",
+      "last_modified_time": "2026-02-25 14:53:30"
+    },
+    "dwd_mo_tracking_plus_pdi": {
+      "inventory_signature": "da53a65ce30d75e3ec9864867ed2014b859fcefc",
+      "schema_fingerprint": "e94b630b767a15ed099fb7cc2e1bddd076d2d7e5",
+      "last_modified_time": "2026-04-17 01:02:08"
+    },
+    "dwd_money_class_user_agg_df": {
+      "inventory_signature": "ba0274207fcf93b6f730c6f1b49f21af56f99b4c",
+      "schema_fingerprint": "38c77a35c0bf71055592b01a690863729ff7695b",
+      "last_modified_time": "2025-11-13 20:46:53"
+    },
+    "dwd_order_common_df": {
+      "inventory_signature": "fff5423aa19b7b3ed51c4215e19e342ddb32c0f0",
+      "schema_fingerprint": "a68cb640c18eb74f7f89711be0f46618ff9772cb",
+      "last_modified_time": "2026-04-17 00:11:30"
+    },
+    "dwd_order_flow_df": {
+      "inventory_signature": "15999ed934b300dd491557beb469e91b120b6e72",
+      "schema_fingerprint": "786f3a2be38aa4fc15122a45b0b041717f7a80b0",
+      "last_modified_time": "2026-04-17 14:01:47"
+    },
+    "dwd_order_h5_df": {
+      "inventory_signature": "af71f414be1fe15ee0d749f672af59bfa9362bd2",
+      "schema_fingerprint": "5089de20fcbf913228f1091ac2a62c8e66f3a153",
+      "last_modified_time": "2026-04-17 00:04:10"
+    },
+    "dwd_order_handover_df": {
+      "inventory_signature": "c2692fc4a988ca22997d0d55f167a422113f1026",
+      "schema_fingerprint": "17c747a707e1bb4cafcd983f73414a8091f4ef36",
+      "last_modified_time": "2026-04-17 00:35:27"
+    },
+    "dwd_order_receipt_refund_md_pdf": {
+      "inventory_signature": "2cc85a1abe089f8c1d40da2247c60c36b3e1f519",
+      "schema_fingerprint": "02ab60c458010d5758e284c64e4ce80d4a695e63",
+      "last_modified_time": "2026-04-17 00:36:52"
+    },
+    "dwd_order_refund_df": {
+      "inventory_signature": "9a0c46c98535f16fa5f8b03409169bde8a9a0645",
+      "schema_fingerprint": "fb607e2e362a5d9ae0bd1f865ce7f67d7c3547a4",
+      "last_modified_time": "2026-04-17 00:12:55"
+    },
+    "dwd_ots_channel_data": {
+      "inventory_signature": "bf753782946ab480e3e72a6e5b892d590ac2a4ca",
+      "schema_fingerprint": "bcb4159f4d4e512ad7d2e27b25bb77676fae5167",
+      "last_modified_time": "2025-10-28 23:55:55"
+    },
+    "dwd_ots_test_user_order_all_df": {
+      "inventory_signature": "b53071eb9b348f0389406066b6c9f41c10e92bb8",
+      "schema_fingerprint": "048e1c513fc3943496f8a596d14a3d811a3be031",
+      "last_modified_time": "2025-10-11 18:05:02"
+    },
+    "dwd_ots_test_user_tip_all_df": {
+      "inventory_signature": "d269fe4a4185bfd0ce484141b95e79e73142437e",
+      "schema_fingerprint": "7c05a31d2f721e1e235641575ce4741fb28c490e",
+      "last_modified_time": "2025-10-11 15:15:49"
+    },
+    "dwd_ots_user_order_all_df": {
+      "inventory_signature": "d498614c73397df844bc894d726153eda1355ff4",
+      "schema_fingerprint": "048e1c513fc3943496f8a596d14a3d811a3be031",
+      "last_modified_time": "2025-10-11 15:46:22"
+    },
+    "dwd_ots_user_tip_all_df": {
+      "inventory_signature": "6bad2a02a189d6e11fbdb52f674aa330a85c9cc2",
+      "schema_fingerprint": "7c05a31d2f721e1e235641575ce4741fb28c490e",
+      "last_modified_time": "2025-10-11 15:12:29"
+    },
+    "dwd_test_ots_user_order_all_df": {
+      "inventory_signature": "c43beb75b9005b8e5c6c339531ae394197fae259",
+      "schema_fingerprint": "1c9208b95ef7ed7eec21f369d64627d29231fc6e",
+      "last_modified_time": "2025-10-09 11:01:37"
+    },
+    "dwd_user_basic_detail_all_d": {
+      "inventory_signature": "92ddac7d5288aa41a67896149c6cfe75508717e9",
+      "schema_fingerprint": "3746a8bca5a471417c2d94dfdd002ba2b6035115",
+      "last_modified_time": "2026-04-17 02:21:03"
+    },
+    "dwd_user_course_all_d": {
+      "inventory_signature": "22671afef97cfe25f6e7694f28c82f84db6443d6",
+      "schema_fingerprint": "d92cf302089ec5ea02fb4c0793a3102c0a8d9845",
+      "last_modified_time": "2025-09-24 13:24:45"
+    },
+    "dwd_user_live_source_pdi": {
+      "inventory_signature": "0cc8a70cb57b7086b5f2a807a71e80e1de41f7e5",
+      "schema_fingerprint": "18b7ac556f4cc6e028ff4d324fbc4d3f386557ba",
+      "last_modified_time": "2026-04-17 00:26:39"
+    },
+    "dwd_user_order_all_df": {
+      "inventory_signature": "88d2ccd06f500af8212abbfdb0dffc5d1ab82752",
+      "schema_fingerprint": "84109688f5ebd9094a8d02eb2fb6ed54d6c57b25",
+      "last_modified_time": "2025-10-06 23:18:26"
+    },
+    "dwd_user_tip_all_df": {
+      "inventory_signature": "30d0845ef91bc6ea0d31b77f20f78d53a7242551",
+      "schema_fingerprint": "288fbfe7723da1cc137c7bea7b36f2143f5b6a0b",
+      "last_modified_time": "2025-10-06 22:40:50"
+    },
+    "dws_app_active_user_pdi": {
+      "inventory_signature": "ed2dd71710bcdddfe0e4fc482bfde1d44caebdc6",
+      "schema_fingerprint": "d996afe3ac64e3b44a5a814453049a3ad42d6dd8",
+      "last_modified_time": "2026-04-17 00:50:45"
+    },
+    "dws_app_ads_tracking_d_pdi": {
+      "inventory_signature": "ce0187e8abf75879dd4a5eff2c06600cce1f764a",
+      "schema_fingerprint": "84b5d266ff071d0895fdc312bfffd3199882fa8e",
+      "last_modified_time": "2026-04-17 02:01:07"
+    },
+    "dws_app_agg_tracking_d_pdi": {
+      "inventory_signature": "b70a03cf424db448d249fbc23bdaf848b0d1cf09",
+      "schema_fingerprint": "259d00e5018657726327d24aa2e127c6b8583a9c",
+      "last_modified_time": "2026-04-17 02:01:06"
+    },
+    "dws_app_course_tracking_d_pdi": {
+      "inventory_signature": "0f7a6d9f193a54485aaac2c7833d30376bf255c1",
+      "schema_fingerprint": "02f890ea32239a780a7e5ea82ac64883a0066afd",
+      "last_modified_time": "2026-04-17 02:01:05"
+    },
+    "dws_app_order_flow_md_pdf": {
+      "inventory_signature": "a3975b09e55d714916a67e25c5c2a6489a77f3ef",
+      "schema_fingerprint": "41816e46261f7ef863c3877e84b2c0b9e199b9e1",
+      "last_modified_time": "2026-04-17 00:41:53"
+    },
+    "dws_app_tracking_circle_content_d_pdi": {
+      "inventory_signature": "fb4e02567c463e547f291b9be82e367be554c549",
+      "schema_fingerprint": "6a7d564fd2efb8e475a6c4b3c41968bdcb1f8ddf",
+      "last_modified_time": "2026-04-17 03:00:31"
+    },
+    "dws_app_tracking_d_pdi": {
+      "inventory_signature": "25b8632b10e739486465f5f5d2501ef82e339e8b",
+      "schema_fingerprint": "fbb3c9a0972a4096b49e776728e53c14f6a96fc8",
+      "last_modified_time": "2026-04-17 00:41:24"
+    },
+    "dws_app_tracking_qz_d_pdi": {
+      "inventory_signature": "66b6e943c6b89965aa281421fe70a0869379c8ad",
+      "schema_fingerprint": "9be36ab382d09ce403d09aec8d30b1cde3eb4e68",
+      "last_modified_time": "2026-04-17 00:41:20"
+    },
+    "dws_app_user_koc_follow_pdf": {
+      "inventory_signature": "b93c76c1d86a2d05fdcfee9aac142bf2a861e417",
+      "schema_fingerprint": "190765db914060f143a91c5d563f0e897f4ce455",
+      "last_modified_time": "2026-04-17 00:50:40"
+    },
+    "dws_app_work_tracking_d_pdi": {
+      "inventory_signature": "3545ba29e6c54791545888eeafe2e8c58dcd87e9",
+      "schema_fingerprint": "a37ffe4f01d02cab4bbf9ac9151bb9f7a57717d1",
+      "last_modified_time": "2026-04-17 02:00:58"
+    },
+    "dws_applet_detail_df": {
+      "inventory_signature": "0d9904eabc136b3ac0c565f8214249dd50504857",
+      "schema_fingerprint": "3d3a4bf33afed0b554f327f62db5df5f5f71d758",
+      "last_modified_time": "2026-04-17 00:41:58"
+    },
+    "dws_camp_all_df": {
+      "inventory_signature": "7ddf01ce34746485de6a7d2b8d33e5151e434a25",
+      "schema_fingerprint": "ac8f52cec404304a6da98e50885fbfa87efb9d82",
+      "last_modified_time": "2025-10-07 01:40:58"
+    },
+    "dws_cash_account_debt_df": {
+      "inventory_signature": "5ac73aca084d8007857d59b6e5d9bc2382a2443d",
+      "schema_fingerprint": "48655c44c9e4cfa32d6ad2d9def684cdf61a21a4",
+      "last_modified_time": "2026-04-17 02:26:33"
+    },
+    "dws_cash_account_debt_md_pdi": {
+      "inventory_signature": "bc879a8fc38792321638297c0ba048abdff0d763",
+      "schema_fingerprint": "550053269ecc710e9bbdcb8db9accff460b8d1b9",
+      "last_modified_time": "2026-04-17 02:26:14"
+    },
+    "dws_cash_account_indicators_md_pdf": {
+      "inventory_signature": "7eb8d616163ec6680ec8c7d35f014e3628ca69da",
+      "schema_fingerprint": "1025b68f4d71af54432e3c78cf543c23a07924ce",
+      "last_modified_time": "2026-04-17 00:37:54"
+    },
+    "dws_cash_account_md_pdf": {
+      "inventory_signature": "9c52ed15caf908b1f7a63fe7b1589d5fedbfc754",
+      "schema_fingerprint": "631695823f6ce829545617cfcfcb689a60e4d211",
+      "last_modified_time": "2026-04-17 00:37:42"
+    },
+    "dws_cash_account_md_pdf_test": {
+      "inventory_signature": "a138ac1153f4ece2b6e977c5e755266eb6b75881",
+      "schema_fingerprint": "ef271e865b2bcdbdb5c697250e51edadf4511842",
+      "last_modified_time": "2026-03-26 17:53:54"
+    },
+    "dws_mo_tracking_pdi": {
+      "inventory_signature": "007b718253ca8f341a4189940b851e820249b107",
+      "schema_fingerprint": "943e7bc729fe3f780ae340d8cf3c970e3701583d",
+      "last_modified_time": "2026-04-17 02:03:40"
+    },
+    "dws_mo_tracking_plus_pdi": {
+      "inventory_signature": "d191fda30c7d5d5c640c1cd1e3f44eb0e62a4942",
+      "schema_fingerprint": "2eddf55bf44a5891d335539fd3b748d62ac9646e",
+      "last_modified_time": "2026-04-17 02:00:23"
+    },
+    "dws_netcashflow_core_indicators_md_pdf": {
+      "inventory_signature": "078f97776c8b195b83c4d0600daa08d0d6919d58",
+      "schema_fingerprint": "ec30ce49b09a44fce301e86df341dd857bf5181e",
+      "last_modified_time": "2026-04-17 00:17:45"
+    },
+    "dws_netcashflow_core_indicators_md_pdf_test": {
+      "inventory_signature": "cd3d8b22dd4f553a8420e59d6549995f566576a2",
+      "schema_fingerprint": "be3bc1b60c4cfc2b0ebe3481f8bba175985918ac",
+      "last_modified_time": "2026-01-28 19:29:41"
+    },
+    "dws_netcashflow_cost_df": {
+      "inventory_signature": "b7919ca740196df2aa5a97eaff37537750a92a8a",
+      "schema_fingerprint": "afa10b58eb1a86f67349c8af5ce781644aec32c1",
+      "last_modified_time": "2026-04-17 00:15:50"
+    },
+    "dws_netcashflow_cost_df_test": {
+      "inventory_signature": "76ef43ff758fccc8f4fc4f8d9d568c8c8fd2732d",
+      "schema_fingerprint": "2adf5a30ac2515aca316b82c8c44af4909b85768",
+      "last_modified_time": "2026-02-05 13:56:44"
+    },
+    "dws_netcashflow_cost_pdf": {
+      "inventory_signature": "e66ba210c7b4e9acf5fefae4f89492608d06425a",
+      "schema_fingerprint": "afa10b58eb1a86f67349c8af5ce781644aec32c1",
+      "last_modified_time": "2026-02-05 13:13:19"
+    },
+    "dws_netcashflow_gmv_df": {
+      "inventory_signature": "8250174d279e0514255999fdc2745dc5c7bf0464",
+      "schema_fingerprint": "6ea76ceb179b5f0e5121ea3b7d5f18aef605af1d",
+      "last_modified_time": "2026-04-17 00:14:54"
+    },
+    "dws_netcashflow_order_gmv_df": {
+      "inventory_signature": "47dfb98554ad331205203779cbbcf819ea704f70",
+      "schema_fingerprint": "ba6a3550af267455f2459b630fd874ca94e3638a",
+      "last_modified_time": "2026-03-14 11:16:50"
+    },
+    "dws_netcashflow_refund_order_gmv_df": {
+      "inventory_signature": "31c491ba995323f9de234c230dd64ba51e3c3f86",
+      "schema_fingerprint": "79fb533e8bed2b36c618239252aa5fdcfbb0f3c9",
+      "last_modified_time": "2026-03-14 12:01:33"
+    },
+    "dws_ots_camp_all_df": {
+      "inventory_signature": "546b14949494bc9556a50728e72f0799adde87c3",
+      "schema_fingerprint": "3dcbe2bacb06b0005441c99a56d426cc715e0235",
+      "last_modified_time": "2025-10-13 20:28:36"
+    },
+    "dws_ots_test_camp_all_df": {
+      "inventory_signature": "435bd14f645a6c83b2c3fe736fa33af04b9f5553",
+      "schema_fingerprint": "2df126205393ffac9785a85a4d583bca389a872a",
+      "last_modified_time": "2025-10-07 12:04:57"
+    },
+    "dws_ots_test_user_camp_all_df": {
+      "inventory_signature": "34bee4bace35592cc1a0777f0b32b8da99188aef",
+      "schema_fingerprint": "94a8e76ca596a780b045ed83cba1b8de8d108c85",
+      "last_modified_time": "2025-10-07 11:31:30"
+    },
+    "dws_ots_test_user_live_all_df": {
+      "inventory_signature": "14250218550877dcfa521fd4b5e0aaa1838db0e8",
+      "schema_fingerprint": "02dfe10133013f1f2b6839f9a27fbfe9969d09b3",
+      "last_modified_time": "2025-10-09 13:28:15"
+    },
+    "dws_ots_user_camp_all_df": {
+      "inventory_signature": "cd973a4b1b7e7b396dbb87369b0b1e05cc3ca08a",
+      "schema_fingerprint": "d5a8790d1633531ff317b17a29ee02cb068538f6",
+      "last_modified_time": "2025-10-13 20:12:28"
+    },
+    "dws_ots_user_live_all_df": {
+      "inventory_signature": "c69e9bb8f6860bdc85feceee929a68cc7f7a9d35",
+      "schema_fingerprint": "02dfe10133013f1f2b6839f9a27fbfe9969d09b3",
+      "last_modified_time": "2025-10-09 13:27:53"
+    },
+    "dws_pl_core_indicators_md_pdf": {
+      "inventory_signature": "2e9e39a7661cd84ab30f45bf9942504c52a5568b",
+      "schema_fingerprint": "3a2e335a194b66769b503d04dea36710dc99a346",
+      "last_modified_time": "2026-04-17 00:28:32"
+    },
+    "dws_pl_cost_md_pdf": {
+      "inventory_signature": "1875e8858832769596dfc4c22eecc7ed2f152a42",
+      "schema_fingerprint": "29b29c64cd3c5c93b15b629838e419ded590a952",
+      "last_modified_time": "2026-04-17 00:27:51"
+    },
+    "dws_pl_kpi_md_pdf": {
+      "inventory_signature": "be934e160daf844f857fcdba80f942b26f4d5908",
+      "schema_fingerprint": "c2ff327bb8c149b974efb403c4d4a42f4dc26562",
+      "last_modified_time": "2026-04-17 00:46:08"
+    },
+    "dws_pl_kpi_md_pdf_1": {
+      "inventory_signature": "0ec171e978010e526169ac1e05eb5fecb825df6a",
+      "schema_fingerprint": "a59adf7f12a0f94be8bbc677d9b4ea1d2154a49e",
+      "last_modified_time": "2026-01-23 19:05:36"
+    },
+    "dws_pl_kpi_mtd_pdf": {
+      "inventory_signature": "79be85d9fda76f16931284eaeed2edfb8affccfd",
+      "schema_fingerprint": "56bcc60dba0aa70425f21a106c1104aa8d66f502",
+      "last_modified_time": "2026-01-20 19:47:15"
+    },
+    "dws_test_user_course_all_df": {
+      "inventory_signature": "abce43e62bc55384dcc616bafb5a7808b247eb3d",
+      "schema_fingerprint": "3f7b832c78512af347fb977d90ce07fcb4d9beb7",
+      "last_modified_time": "2025-10-11 17:15:58"
+    },
+    "dws_user_camp_all_df": {
+      "inventory_signature": "564141c139e0f777b7171aaf99b7d96ef431a400",
+      "schema_fingerprint": "bc98bd2a87ebb56d2cd256cb7d6284b7f556e70a",
+      "last_modified_time": "2025-10-07 01:32:30"
+    },
+    "dws_user_cityall_df": {
+      "inventory_signature": "fafdfa6a058619ed1d6866aaa3815f8804e69220",
+      "schema_fingerprint": "dabf57124b832264541742c6f494f8e94b6bc694",
+      "last_modified_time": "2026-01-29 17:02:04"
+    },
+    "dws_user_course_all_df": {
+      "inventory_signature": "69d1d3e8edd258bfa8da257e80b7c55aa3d84be6",
+      "schema_fingerprint": "3f7b832c78512af347fb977d90ce07fcb4d9beb7",
+      "last_modified_time": "2025-10-11 12:37:27"
+    },
+    "employee": {
+      "inventory_signature": "0ddbf9cd014f96db38814e9344f1b642eee69cc5",
+      "schema_fingerprint": "372c688fbc76da6fe67d703a02002d6ca8816939",
+      "last_modified_time": "2026-01-04 15:21:26"
+    },
+    "employees": {
+      "inventory_signature": "f442706f3d4a5d92aeac075cd9138c621a6b8d7a",
+      "schema_fingerprint": "551aa8376c47310f9d72bb35bca686f375c9df5e",
+      "last_modified_time": "2026-01-13 13:16:39"
+    },
+    "end_word_data": {
+      "inventory_signature": "8a9252682bfe5c3dad25a0fc4a6d131d5eec56da",
+      "schema_fingerprint": "5eb6530e4d22e262be46f446adbb928a54cbf8f2",
+      "last_modified_time": "2025-04-15 16:07:07"
+    },
+    "export_emp_qv_chat_info": {
+      "inventory_signature": "bd8834fe280fe29f5f80b10824ad13f419fba75e",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 17:47:14"
+    },
+    "export_table_example": {
+      "inventory_signature": "3d26c0fe512311dfddff2bc88f344c955babce37",
+      "schema_fingerprint": "c581fa2c4550e1f199ef2764bb847f127facc008",
+      "last_modified_time": "2024-08-05 15:21:27"
+    },
+    "feikong_corp_exp_detail_report": {
+      "inventory_signature": "1a988a695ff5de1e581f7c8f3c60fd80c706b4ff",
+      "schema_fingerprint": "0587f4f33b5665dd5669c2b6474227f3a3608943",
+      "last_modified_time": "2025-08-25 13:10:51"
+    },
+    "feikong_corp_exp_prepayment_report": {
+      "inventory_signature": "03a62858e9358e7d3783a4075ee47a6916c971a3",
+      "schema_fingerprint": "ac3bab84c0097b59f8b316db76b84cc2ee8e9a72",
+      "last_modified_time": "2025-08-22 13:04:27"
+    },
+    "feikong_expense_details": {
+      "inventory_signature": "8a5b1a9b728994cf1fa09377a3c4e1ca485f95f1",
+      "schema_fingerprint": "d32407a0f9e4758811fab6a7e20fe03eeaaf86d5",
+      "last_modified_time": "2025-08-25 13:14:07"
+    },
+    "feikong_reimbursement": {
+      "inventory_signature": "0d1b25bd961a58c590e9a8d48c8c2fa008022d15",
+      "schema_fingerprint": "ee75d75ec4abf91dcbffd3d8f99e9bb9233c87df",
+      "last_modified_time": "2025-08-22 13:00:31"
+    },
+    "juzi_private_message": {
+      "inventory_signature": "50596254c8ba66d52a5a0dcb6eebd1b95a4f8473",
+      "schema_fingerprint": "b685376a2343d64a7d7bd05e5e20dc5d91dabe25",
+      "last_modified_time": "2025-09-08 21:18:09"
+    },
+    "juzi_user_chat_group": {
+      "inventory_signature": "79a8ccfc046cbf2199c3a86de684184173055877",
+      "schema_fingerprint": "0f760149fbfefa9699e968386992683237b6b413",
+      "last_modified_time": "2025-09-29 11:40:42"
+    },
+    "juzi_user_chat_group_detail": {
+      "inventory_signature": "e9b1eae5f2412e3a2abbb1c861aa46e0758283d1",
+      "schema_fingerprint": "29fe43154d7b4c3fe37f4cfbf3729dd42c3ca0aa",
+      "last_modified_time": "2025-09-25 15:51:25"
+    },
+    "kk_page_id": {
+      "inventory_signature": "7b7c108135bc00c05f8391e803e12163ce2efff9",
+      "schema_fingerprint": "0c56246c6d2554bcecec5447663569756058fc17",
+      "last_modified_time": "2024-08-06 21:41:28"
+    },
+    "living_study_status_di": {
+      "inventory_signature": "2d53997d165cb876330062516e22ec5a7d63ef2e",
+      "schema_fingerprint": "355ad80b369e74153635a41fa6e878f768a4f46b",
+      "last_modified_time": "2026-04-17 01:01:58"
+    },
+    "log_ad_landing_page": {
+      "inventory_signature": "4152d57cb7730332098a04f23f80ccd2ad61cf06",
+      "schema_fingerprint": "7229eb4ab097db50c034982f2d0ad078a86c01ce",
+      "last_modified_time": "2026-04-17 18:08:18"
+    },
+    "log_ad_landing_page_di": {
+      "inventory_signature": "a3b6ebaf4ba12c49d0c3edfcf2ea4e7b70afb094",
+      "schema_fingerprint": "dc1d288ecbe4dcfbe48bc29f6207dae99172c701",
+      "last_modified_time": "2026-04-17 01:02:06"
+    },
+    "log_h5_web_tracking": {
+      "inventory_signature": "7ce32a94c48e1d913b02f93cd6b14aedfcabee60",
+      "schema_fingerprint": "b785c5d00538371202c5038c74e3a49e744020ac",
+      "last_modified_time": "2026-04-17 18:07:49"
+    },
+    "log_os_web_tracking": {
+      "inventory_signature": "826ff4253ae61ed6065bfb9aa0b49f5020f6477a",
+      "schema_fingerprint": "6800f865af720a1e51b49b101913ec776ac288ae",
+      "last_modified_time": "2026-04-17 18:07:21"
+    },
+    "mamayuyu_biaoqian": {
+      "inventory_signature": "e3941fc8269e3222e0798074ab60ab7af1036c41",
+      "schema_fingerprint": "ee24ac7f849e06d232cdb69b61c09e30dc4e4fcd",
+      "last_modified_time": "2026-04-09 13:56:42"
+    },
+    "max_page_top_di": {
+      "inventory_signature": "e21c7e0065eace3c4babcae23e2aacc876a8a77c",
+      "schema_fingerprint": "06a4e52ff0b990f0a8ad70e6fffa0d871e25c906",
+      "last_modified_time": "2024-08-07 00:28:46"
+    },
+    "mayu_tag_list": {
+      "inventory_signature": "3697f66b85b7dc208575771ad9329c71cc9c719a",
+      "schema_fingerprint": "336e2969879348b9f4479c1edaf7d8e10631d681",
+      "last_modified_time": "2026-03-25 20:54:29"
+    },
+    "mc_max_csv_test": {
+      "inventory_signature": "2c59af6d635a06b3cd76b8559a9093e133ea7a16",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 10:36:43"
+    },
+    "mc_oss_csv": {
+      "inventory_signature": "d9307f29e4f02fcc8ebc1209ab1bf896595863f7",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-13 18:43:19"
+    },
+    "mc_oss_csv_661723704641025max": {
+      "inventory_signature": "b04b6e373b9676dc2ceec35ec3b9fd3799ec36a2",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 14:50:42"
+    },
+    "mc_oss_csv_661723704715774": {
+      "inventory_signature": "2cb7a17b79e51d8c6930f5bbc573f5a2d5970689",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 14:51:56"
+    },
+    "mc_oss_csv_661723704715774max": {
+      "inventory_signature": "706e45d309d151749c1b0d68113ad51193aff024",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 14:52:06"
+    },
+    "mc_oss_csv_661723704850669": {
+      "inventory_signature": "6da007b1a56828f3b1d36e9de0be34879a461b96",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 14:54:11"
+    },
+    "mc_oss_csv_661723704850669max": {
+      "inventory_signature": "8f53e6b30da08499ac2085d7cc99d1435fa3bfa6",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 14:54:21"
+    },
+    "mc_oss_csv_661723708081440": {
+      "inventory_signature": "f76c30b6107cb39d68e64d00006c6373e4d1a140",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 15:48:02"
+    },
+    "mc_oss_csv_661723708081440max": {
+      "inventory_signature": "22a1480542438f112de575a65e2844620f195bfb",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 15:48:02"
+    },
+    "mc_oss_csv_external6": {
+      "inventory_signature": "9234317973465c34aaf08b142d17ac1a03bed4dc",
+      "schema_fingerprint": "c581fa2c4550e1f199ef2764bb847f127facc008",
+      "last_modified_time": "2024-08-12 16:34:41"
+    },
+    "mc_oss_csv_external661723704641025": {
+      "inventory_signature": "98a15144c4cac74bca55270b3448cb7feccaefe1",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-15 14:50:41"
+    },
+    "mc_oss_csv_external7": {
+      "inventory_signature": "d4371ebd938810e42e1bd8f3a146a1160bf51c14",
+      "schema_fingerprint": "c581fa2c4550e1f199ef2764bb847f127facc008",
+      "last_modified_time": "2024-08-05 19:45:41"
+    },
+    "mc_oss_csv_test": {
+      "inventory_signature": "4801b0404ae19d0ddfbc48879bab34b087270d7c",
+      "schema_fingerprint": "b00b1832c674f25d646c6c0b8af529319575e9b6",
+      "last_modified_time": "2024-08-14 19:12:38"
+    },
+    "obps_proj2_auth_menu": {
+      "inventory_signature": "41a228bad7e3f1c043fb2c7cc6d65883bbb3e6db",
+      "schema_fingerprint": "9790eaaadf96cb78284ccf612d492dee3a6c32a9",
+      "last_modified_time": "2026-04-17 18:01:02"
+    },
+    "obps_proj2_emp_role": {
+      "inventory_signature": "0d5e045dc82a2bd48981a2e5a14d6eea17a3f470",
+      "schema_fingerprint": "d09ed43382a1f22878f057b9d9fb89f48f7d1921",
+      "last_modified_time": "2026-02-03 13:00:46"
+    },
+    "obps_proj2_role": {
+      "inventory_signature": "1f2a0b8f93eab5ba5bea9a3a4feeb17e4be1c9da",
+      "schema_fingerprint": "be36138576f449a19aac0a5b73a9a74a1d92dc05",
+      "last_modified_time": "2026-03-24 15:00:47"
+    },
+    "odps_auth_emp_count": {
+      "inventory_signature": "ede81ca086423151591d269162acb1e15ea8fc9e",
+      "schema_fingerprint": "ce891d54bc3336738402a5195f8155b310fe5dbb",
+      "last_modified_time": "2026-04-17 18:00:51"
+    },
+    "odps_camp_refund_fenzi": {
+      "inventory_signature": "451b6ca9e75bd2f32417ad0f25f3495b8ef18b3b",
+      "schema_fingerprint": "bc037a7a72897a35c0ad465ac4eba896edd9e1d8",
+      "last_modified_time": "2026-04-17 18:00:50"
+    },
+    "odps_camp_user_fenmu": {
+      "inventory_signature": "02af5b8f4bf24f5b0a6504e1dc2fc43bcfb60dab",
+      "schema_fingerprint": "b3f9151682bad274fa010fce1af10c7f392ffcac",
+      "last_modified_time": "2026-04-17 18:00:28"
+    },
+    "odps_camp_user_study_data_femzi": {
+      "inventory_signature": "5e16589da7583e27e3aab92ffc730273403c686a",
+      "schema_fingerprint": "635ff90b3482c2bba69ae7b9f9c931e2833cdbc3",
+      "last_modified_time": "2026-04-17 18:01:59"
+    },
+    "odps_function_empnum_ossext_df": {
+      "inventory_signature": "a504d180c43744318dff45978f7335d7c86aa7cd",
+      "schema_fingerprint": "5c0f00e817fd63a1e0d6417beff5cb398ca6de7e",
+      "last_modified_time": "2025-06-12 10:02:09"
+    },
+    "odps_function_proj2_auth_empcount_ossext_df": {
+      "inventory_signature": "caf90b4faef52e9db0bcbf1a841349e789dd2a51",
+      "schema_fingerprint": "b3c0fe1772463165000b8ecddd874dfabd6a72a6",
+      "last_modified_time": "2025-05-26 17:56:53"
+    },
+    "odps_kk_emp_ossext_df": {
+      "inventory_signature": "1e506e76e7d10638523e3deb05e0d12c6a7cf0c1",
+      "schema_fingerprint": "86ad4c4c491fb88eb3111b568c7255a086e930b7",
+      "last_modified_time": "2025-06-12 10:02:17"
+    },
+    "ods_applet_info_all_d": {
+      "inventory_signature": "e9927f304a9bd1791f669edccca99bcb7371ff0a",
+      "schema_fingerprint": "00512068a96fa449f3ffb6c51fa8278a8258b65f",
+      "last_modified_time": "2026-04-17 01:07:55"
+    },
+    "ods_drh_ad_cost_day_pdf": {
+      "inventory_signature": "2529a3fe0231e413cefa5dfd837a64185aba0217",
+      "schema_fingerprint": "fc6d15b2a043d6b4979e5edfc1116e2056ec6c35",
+      "last_modified_time": "2026-04-17 00:05:17"
+    },
+    "ods_drh_ad_cost_time_pdf": {
+      "inventory_signature": "765f581e283c07d530eed65074843b5dba7150b8",
+      "schema_fingerprint": "e29c590dcf1416428df71fb9403c4b1e3623d43a",
+      "last_modified_time": "2026-04-17 00:03:36"
+    },
+    "ods_drh_ad_pic_pdf": {
+      "inventory_signature": "d12cf00507ca867eca559c9eef2e3826099dbce6",
+      "schema_fingerprint": "92ba24c070cbb997116277b4c0fec43c66ce52c6",
+      "last_modified_time": "2026-04-17 00:08:26"
+    },
+    "ods_drh_ad_pic_pdf_test": {
+      "inventory_signature": "bcd0bd5fd9fb62d5c2eeb4f397e70e31063d105b",
+      "schema_fingerprint": "110f9c441557b2b647bc5710b1d218ba9c216379",
+      "last_modified_time": "2026-01-21 10:21:36"
+    },
+    "ods_drh_ad_view_pdf": {
+      "inventory_signature": "17290ab600b299556ce18a26a3b774faa90e74db",
+      "schema_fingerprint": "e8c4a82cb8ae1f97e44a1cdf8f7c7767d488f0ff",
+      "last_modified_time": "2026-04-17 00:06:33"
+    },
+    "ods_drh_applet_user_pdf": {
+      "inventory_signature": "4182ea1c9f6d3466ec52cf9e9bd01252eede5944",
+      "schema_fingerprint": "98816a9cee6f0d586d56348d2b430b26bcd70c77",
+      "last_modified_time": "2026-04-17 01:00:08"
+    },
+    "ods_drh_applet_user_pdi": {
+      "inventory_signature": "faf3afa8c3ae051cf72c6834d671bff89832fc72",
+      "schema_fingerprint": "4a82d34fa6d8d18d81441c83082dcf500e3b8687",
+      "last_modified_time": "2026-04-17 18:11:03"
+    },
+    "ods_drh_emp_real_time_df": {
+      "inventory_signature": "171335796f88ebda37b6b73cd7e4e7013bf9aedf",
+      "schema_fingerprint": "67e3f07e7c4efbbb63df6dd19319260a4252c800",
+      "last_modified_time": "2026-04-17 01:21:07"
+    },
+    "ods_drh_handover_plus_pdi": {
+      "inventory_signature": "9aa4dd5fa67c0c8a4e8285e271db31a2b62b290b",
+      "schema_fingerprint": "ee46d059044b24baa27d965cbf6319e14c3423df",
+      "last_modified_time": "2026-04-17 18:10:59"
+    },
+    "ods_drh_kk_emp_pdi": {
+      "inventory_signature": "9f87bacd4b760f07fa69970d3740f4c94f96878c",
+      "schema_fingerprint": "f4e12b264cba9b0fcfb2ca5068e65f55eb561069",
+      "last_modified_time": "2026-04-17 17:35:09"
+    },
+    "ods_drh_living_study_info_pdi": {
+      "inventory_signature": "c2dc87a64f144bc485925535642cae1a4cc6b7e0",
+      "schema_fingerprint": "0a067e4966c53af90b58da191ea9d984393075cf",
+      "last_modified_time": "2026-04-17 18:11:05"
+    },
+    "ods_drh_order_pdi": {
+      "inventory_signature": "cd038d1429a8ddbc9feee011ca8cb3356f167a8b",
+      "schema_fingerprint": "9b70b4b60f200676fe705cc3db8960a3a3324cb5",
+      "last_modified_time": "2026-04-17 18:10:59"
+    },
+    "ods_drh_user_koc_follow_pdf": {
+      "inventory_signature": "a91d84ebdd25e6b2ba47933e83ffe46ed3461f6b",
+      "schema_fingerprint": "1db84a3f50aa70504e1386c556ca64243e16b717",
+      "last_modified_time": "2026-04-17 00:26:13"
+    },
+    "ods_feishu_refund_approval_detail_all_d": {
+      "inventory_signature": "67db7a62cc132819f1261e7b65352c8a67312e8d",
+      "schema_fingerprint": "f9a3e5489a44e9218126e9a2a26fef7c4e484732",
+      "last_modified_time": "2026-04-17 00:09:21"
+    },
+    "ods_feishu_refund_approval_detail_all_d_test": {
+      "inventory_signature": "bdaf62b8f005dda2c4d2612552e61d25d9d6de9d",
+      "schema_fingerprint": "38b077b06b2634ec918fcda5987412d0afb92184",
+      "last_modified_time": "2025-12-08 11:20:45"
+    },
+    "ods_finance_out_trade_test": {
+      "inventory_signature": "1b653f65993d0ddfda1c41fac8c10f9a7ea2fa32",
+      "schema_fingerprint": "22366caa39726771b0b3ce5d28e6554380bc2a4f",
+      "last_modified_time": "2026-04-14 18:13:57"
+    },
+    "ods_juzi_user_chat_group_cleannew_all_d": {
+      "inventory_signature": "032d66bfe1168658e1f2e5e95f240f0eb2f436f2",
+      "schema_fingerprint": "114f9889506d59e59b95eb286c93d7981fbab4ef",
+      "last_modified_time": "2026-04-17 02:16:12"
+    },
+    "ods_odps_dd_bill_detail_rf": {
+      "inventory_signature": "fcad76eec506c166150049640483e976854fb2f6",
+      "schema_fingerprint": "c76160256de3f534bc5fed5c72ee466587dcd188",
+      "last_modified_time": "2026-04-17 00:05:31"
+    },
+    "ods_odps_dd_bill_plus_rf": {
+      "inventory_signature": "b777a65927d2b2cbb8272bb0c2db1929a27a160f",
+      "schema_fingerprint": "80d3946664f6f4bc124427a1d17e7703d36e1112",
+      "last_modified_time": "2026-04-17 00:05:49"
+    },
+    "ods_odps_qw_bill_detail_plus_rf": {
+      "inventory_signature": "e942c7e84e15e45602a8fefec7ee9adbfedf41de",
+      "schema_fingerprint": "2bfa341e25016aaa2d3d31fc5d4537ab60b74581",
+      "last_modified_time": "2026-04-17 00:04:50"
+    },
+    "ods_odps_qw_bill_detail_rf": {
+      "inventory_signature": "11438fde625bdb790e0ad15bee57420a59e52c97",
+      "schema_fingerprint": "5f112fd52eb55691ca19396fe72526789c0594d0",
+      "last_modified_time": "2026-04-17 00:04:58"
+    },
+    "ods_odps_wd_bill_detail_rf": {
+      "inventory_signature": "b2b581d6f08fb681ff7c4edcdfa8ccc32127caf5",
+      "schema_fingerprint": "471d1e97e4ac3d0b2b92f90a667a019c4b2ff8b5",
+      "last_modified_time": "2026-04-17 00:06:28"
+    },
+    "ods_odps_wx_bill_detail_rf": {
+      "inventory_signature": "d89622676dd9f6139e3f27c28875653a50d484ac",
+      "schema_fingerprint": "40ca6574c05ba1959dc8723ca5c7e5177baa795a",
+      "last_modified_time": "2026-04-17 00:04:43"
+    },
+    "ods_odps_xet_bill_detail_plus_rf": {
+      "inventory_signature": "d823a249c94c4db9cf0188d06b7ebb3186578626",
+      "schema_fingerprint": "d0200e2d5bc1f80c321f488f5a147208bffb8b28",
+      "last_modified_time": "2026-04-17 00:05:19"
+    },
+    "ods_odps_xet_bill_detail_rf": {
+      "inventory_signature": "80b45bec40890a70c61ce163e128c490b68f82a6",
+      "schema_fingerprint": "5e41a126239271e3640c659c48eee2384eb6ba78",
+      "last_modified_time": "2026-04-17 00:05:04"
+    },
+    "ods_odps_zfb_bill_detail_plus_rf": {
+      "inventory_signature": "b59e1ad971739ea61ba6f711e565cd1d72d583da",
+      "schema_fingerprint": "287e9ba2639dee6bd86c2d8a7d7ef13baa7283ea",
+      "last_modified_time": "2026-04-17 00:05:38"
+    },
+    "ods_odps_zfb_bill_detail_rf": {
+      "inventory_signature": "4f98e7ee44dd709011f06f54ffb6773b9c43c51a",
+      "schema_fingerprint": "df838a5c497d3764f643cfca91150ba3f4dcb451",
+      "last_modified_time": "2026-04-17 00:05:25"
+    },
+    "ods_offline_app_engagement_parameter": {
+      "inventory_signature": "93087f891a8f6a2a86eb1c65790b785e695beef3",
+      "schema_fingerprint": "bd096ef084b9a25705be3ff918dcc4e1b69d5198",
+      "last_modified_time": "2026-02-04 19:36:21"
+    },
+    "ods_offline_buget_studio_df": {
+      "inventory_signature": "6a0d21f78b4fc16b99ceb9876c208b9da65c99c2",
+      "schema_fingerprint": "a87d40c9fe38b5eff20070e8199863a92f35749f",
+      "last_modified_time": "2025-12-10 17:43:51"
+    },
+    "ods_offline_cash_account_labor_cost_df": {
+      "inventory_signature": "1d126e01af87f52337f32d3b198fd9ad46cea764",
+      "schema_fingerprint": "7993ce25c44c42a96133d5bf5907ee13832d9a78",
+      "last_modified_time": "2026-04-17 10:45:19"
+    },
+    "ods_offline_cash_account_loan_pdf": {
+      "inventory_signature": "d3834e575c38b5d1fad7d3907d0ff116d2812b4f",
+      "schema_fingerprint": "dfa819b11c2a9041cee688737b09b43483b29921",
+      "last_modified_time": "2026-04-10 17:41:33"
+    },
+    "ods_offline_cci2_org_relation_all_d": {
+      "inventory_signature": "9285a61de664f0ab9b80824f919217f935471b68",
+      "schema_fingerprint": "cc2263187412dcb8df64dc84990aa4d040c503f4",
+      "last_modified_time": "2026-03-18 15:23:42"
+    },
+    "ods_offline_cost_avg_zip": {
+      "inventory_signature": "76a0ad522a251cf17270c3563ea92fb348b8abd9",
+      "schema_fingerprint": "f64becd9ec7be881f20bb9649e94017af42e922c",
+      "last_modified_time": "2026-01-09 15:59:28"
+    },
+    "ods_offline_cost_type_all_d": {
+      "inventory_signature": "53d965446ea66862982bc18699867e189bf03d8e",
+      "schema_fingerprint": "15f5739e05728a3080119a3df5ee681f3f2d17c2",
+      "last_modified_time": "2025-08-30 14:51:37"
+    },
+    "ods_offline_employee_org_relation_temp": {
+      "inventory_signature": "fd99d796ccfa38c1ebc3dc20a329683f3c9c2718",
+      "schema_fingerprint": "62479814a4653e093d28347862fca18b2ca18457",
+      "last_modified_time": "2025-09-20 17:22:48"
+    },
+    "ods_offline_feishu_employee_p_temp": {
+      "inventory_signature": "cdd8797ab06e95bc0e1d74ad026f0b4d23342434",
+      "schema_fingerprint": "03bfcca0c63645f530d2259df501f6c2dccca7af",
+      "last_modified_time": "2025-09-20 17:23:20"
+    },
+    "ods_offline_feishu_employee_temp": {
+      "inventory_signature": "92b86899da81a2bd9beaf2f7fc61d9f79638129f",
+      "schema_fingerprint": "d3a2dd4818e563486ee8048f357fc9cf07cf23ad",
+      "last_modified_time": "2025-09-22 11:07:54"
+    },
+    "ods_offline_feishu_org_temp": {
+      "inventory_signature": "b206ff7e68d37c679b03c9ec9f4288c551ea1a8a",
+      "schema_fingerprint": "52def1cdb9566e57de504303c4beb5cfbd73d288",
+      "last_modified_time": "2025-09-20 17:20:04"
+    },
+    "ods_offline_finance_subject_df": {
+      "inventory_signature": "920aed86c48814a80ff3f3e7c89ac3adb335b57e",
+      "schema_fingerprint": "8d796211791c7dff2631493e0b63ebabcff479d9",
+      "last_modified_time": "2025-11-13 15:36:13"
+    },
+    "ods_offline_gmv_project2_df": {
+      "inventory_signature": "4f786271ea70566ba39df0f128a16cc4efb8a667",
+      "schema_fingerprint": "b29e01c94595f826d230a4763340d3fb6f0cb36b",
+      "last_modified_time": "2026-04-17 00:16:08"
+    },
+    "ods_offline_isdelete_feishu_refund_all_d": {
+      "inventory_signature": "daed2d62b4964aa5bf537bee2a26b9e0d1e49910",
+      "schema_fingerprint": "db5935cf32dcefe3d50c55e10d966c9e3f786151",
+      "last_modified_time": "2026-03-31 17:41:19"
+    },
+    "ods_offline_net_final_pdf": {
+      "inventory_signature": "f40f4a460e69cf0d1602b7b68a269f4a52db11a4",
+      "schema_fingerprint": "5ace395fd00eaaab1684f9a05a2470e35d6ff0f8",
+      "last_modified_time": "2026-04-09 18:18:27"
+    },
+    "ods_offline_question_clean_all_d": {
+      "inventory_signature": "f274575c1f7e462499c983ca19634c5285868e02",
+      "schema_fingerprint": "64807abf528a28352baff3d76ee00bc188683920",
+      "last_modified_time": "2026-02-27 15:20:43"
+    },
+    "ods_offline_systag_owner_all_d": {
+      "inventory_signature": "ed6cbf0648e39f41bff61cd1a8663e82c23f5132",
+      "schema_fingerprint": "8619670614f291c0570c58dee728048bd59e55e0",
+      "last_modified_time": "2025-10-08 14:09:56"
+    },
+    "ods_offline_traffic_studio_all_m": {
+      "inventory_signature": "3dcf1e0b116490e0afe6590ee5d332622ea9dd54",
+      "schema_fingerprint": "9ba155e31f68f97d851d8811a517866afc0770a0",
+      "last_modified_time": "2026-03-26 14:35:25"
+    },
+    "ods_offline_traffic_studio_empnum_all_m": {
+      "inventory_signature": "e9edf95cd0be89d9723ce787b6118ffd68b68a80",
+      "schema_fingerprint": "737285b9da43da35b7fe31d96ce721e30c0ff73b",
+      "last_modified_time": "2025-11-07 17:42:46"
+    },
+    "ods_offline_traffic_studio_empnum_df": {
+      "inventory_signature": "042fe4e4e94c3e08dc7fe72ce1c053fbfb52b5d7",
+      "schema_fingerprint": "0ddac5af08fa6b1ae56e6713afa0a486f04beda6",
+      "last_modified_time": "2025-11-13 15:35:38"
+    },
+    "ods_orgname2_empnum_df": {
+      "inventory_signature": "7832dac663e263affd537268dc4860634869ce22",
+      "schema_fingerprint": "8ffbbe20d10335e560d22156672a3abbb5f8b1cb",
+      "last_modified_time": "2025-11-13 15:35:12"
+    },
+    "ods_ots_dd_bill_detail_rf": {
+      "inventory_signature": "d947167adb73c0bdc1ca4066f9b2c2c8cf3a15bd",
+      "schema_fingerprint": "09730559298441f67523fb151d7b0762db5b6184",
+      "last_modified_time": "2026-01-26 13:44:01"
+    },
+    "ods_ots_dd_bill_plus_rf": {
+      "inventory_signature": "538a932276036265620f13948bfa55bc84a34bf8",
+      "schema_fingerprint": "80d3946664f6f4bc124427a1d17e7703d36e1112",
+      "last_modified_time": "2026-01-06 14:20:04"
+    },
+    "ods_ots_dgzz_bill_detail_rf": {
+      "inventory_signature": "2cebd1f5101c60a4ec2cf6a23c569905cd2e06bb",
+      "schema_fingerprint": "429843c63672018e0772b1d6cbd3f65b3e220801",
+      "last_modified_time": "2025-11-18 15:04:16"
+    },
+    "ods_ots_qw_bill_detail_plus_rf": {
+      "inventory_signature": "d0c20322c70f6e0c497362524c5c088c1a747173",
+      "schema_fingerprint": "2bfa341e25016aaa2d3d31fc5d4537ab60b74581",
+      "last_modified_time": "2025-12-28 23:28:42"
+    },
+    "ods_ots_qw_bill_detail_rf": {
+      "inventory_signature": "5039d62d7fbe65041b7d2019b76fc16ecbd46adf",
+      "schema_fingerprint": "3c5183257cd73f325ebbd448d88481eff6c2f148",
+      "last_modified_time": "2025-12-15 23:32:36"
+    },
+    "ods_ots_tlzf_bill_detail_rf": {
+      "inventory_signature": "fb95eacbbf524a46751187cc0f9eca42e0f52d2f",
+      "schema_fingerprint": "4369f86967154626a2887830f07cf0a77f401ddf",
+      "last_modified_time": "2025-11-18 15:21:00"
+    },
+    "ods_ots_wd_bill_detail_rf": {
+      "inventory_signature": "e39ce9e8e128fabc36d26e2336bf21470c01e9a9",
+      "schema_fingerprint": "471d1e97e4ac3d0b2b92f90a667a019c4b2ff8b5",
+      "last_modified_time": "2026-01-08 16:18:14"
+    },
+    "ods_ots_wx_bill_detail_rf": {
+      "inventory_signature": "73a5873835ded272d6c4e5e38b48549b6d52839b",
+      "schema_fingerprint": "1431ad824daa7b7a42f3b3602f414497ae10d1c6",
+      "last_modified_time": "2025-12-26 18:29:17"
+    },
+    "ods_ots_xet_bill_detail_plus_rf": {
+      "inventory_signature": "d3ab2699bdcf237009549aace0dcba111721cb48",
+      "schema_fingerprint": "d0200e2d5bc1f80c321f488f5a147208bffb8b28",
+      "last_modified_time": "2026-01-13 19:42:38"
+    },
+    "ods_ots_xet_bill_detail_rf": {
+      "inventory_signature": "0929fc18bb1942fb924ee0eecf93cd346f65fefc",
+      "schema_fingerprint": "4517ca3c173f82fc32b89ff1b9619e0dd95ce88d",
+      "last_modified_time": "2025-12-15 23:35:17"
+    },
+    "ods_ots_zfb_bill_detail_plus_rf": {
+      "inventory_signature": "4b8dc896955bde44a19b46a3cdc8f9f158659f4b",
+      "schema_fingerprint": "287e9ba2639dee6bd86c2d8a7d7ef13baa7283ea",
+      "last_modified_time": "2026-01-04 20:30:17"
+    },
+    "ods_ots_zfb_bill_detail_rf": {
+      "inventory_signature": "48490c093c2d3cb0e6c3195b0e26f10b757ca307",
+      "schema_fingerprint": "e82274474a8e8479717c7135118a384dc520b194",
+      "last_modified_time": "2025-12-23 19:36:41"
+    },
+    "ods_sls_app_tracking_phi": {
+      "inventory_signature": "61791e2d7412e72b1da5ba2085c4ccde82cb8a3a",
+      "schema_fingerprint": "e92c794602aeffde93ad11025b2347ef064a8d3d",
+      "last_modified_time": "2026-04-17 18:08:21"
+    },
+    "ods_sls_h5_app_tracking_pdi": {
+      "inventory_signature": "8bf0e581d23227ccf631184f754f3e3854a0cbcc",
+      "schema_fingerprint": "c7d45ced635fce837aeba316241d8995cc4ed53b",
+      "last_modified_time": "2026-04-17 18:07:19"
+    },
+    "ods_user_question_all_d": {
+      "inventory_signature": "2b2f94caad804fe74709541cf2262e8be8b4d8a2",
+      "schema_fingerprint": "2958072b7131e46d41db4c8fa0b8008cba270554",
+      "last_modified_time": "2026-04-17 00:03:55"
+    },
+    "open_callback_config": {
+      "inventory_signature": "42eb311593d738fc188d21ca6798da65698f5abc",
+      "schema_fingerprint": "7bb9196360c1853acb513ac6f19a1b2d634077c6",
+      "last_modified_time": "2024-09-10 00:41:01"
+    },
+    "open_callback_param": {
+      "inventory_signature": "1f3e31d604dccf7636ee413b1bc8e21dbb8d33a8",
+      "schema_fingerprint": "7e2863e4fcf7eb3fe55ef7bc817e27f48ec2f549",
+      "last_modified_time": "2024-09-10 00:41:16"
+    },
+    "os_web_tacking": {
+      "inventory_signature": "c951d30f003a2c36696f9eadcde838e6b1b61ac9",
+      "schema_fingerprint": "d37475191ffba7ad05fa50f317a11860ec5ed580",
+      "last_modified_time": "2024-09-14 16:17:49"
+    },
+    "oss_ad_user_pic": {
+      "inventory_signature": "a1c37b43bcd8480bb1ea54a8e194b24abddf3aa9",
+      "schema_fingerprint": "3626f678e3fa3b4d4224548bc3d8b57898343ae1",
+      "last_modified_time": "2026-04-17 01:00:43"
+    },
+    "oss_applet_fup": {
+      "inventory_signature": "a759092f5af73e154bcd1a8201d665d7a2974414",
+      "schema_fingerprint": "23e5736d97233f999f4c30ec69d8e6425d9c3a8d",
+      "last_modified_time": "2026-04-17 01:01:05"
+    },
+    "oss_applet_user": {
+      "inventory_signature": "d22d8563b8a5a0279ca4eab83551732970fd1779",
+      "schema_fingerprint": "aab6db1504f008089d3cc1f0a380ed5a102a7d71",
+      "last_modified_time": "2026-04-17 01:01:53"
+    },
+    "oss_back_event_record": {
+      "inventory_signature": "6ca2abb8479f2e6a76e5f1b1094d3cea0491010b",
+      "schema_fingerprint": "69309cbd52730b627175cca166952674c4992f30",
+      "last_modified_time": "2026-04-17 01:00:21"
+    },
+    "oss_channel_emp": {
+      "inventory_signature": "d5671ccfebfcd509060b6c0125c35fe6a0879ad2",
+      "schema_fingerprint": "4e31b5f10716ab8df8701eb93f54085815012f01",
+      "last_modified_time": "2026-04-17 01:01:25"
+    },
+    "oss_creative_plan": {
+      "inventory_signature": "7d23d2e1675d0b7edb30aa1ad8b58a19376f6a30",
+      "schema_fingerprint": "43f1b3dbbfbe7f99d3402b2ced597929c70311e5",
+      "last_modified_time": "2026-04-17 01:01:12"
+    },
+    "oss_feedback_info": {
+      "inventory_signature": "bc31d243e3282c74d6eb4276c797a4800e1b8833",
+      "schema_fingerprint": "6badc93317efee718077115c9217a7996c6bb3c4",
+      "last_modified_time": "2026-04-17 01:01:48"
+    },
+    "oss_kk_emp": {
+      "inventory_signature": "a09c7f2770cbd8e1af8f54f516fc07625c707a35",
+      "schema_fingerprint": "bc0fba228f67981c51e341e645441e8bae5ed6b8",
+      "last_modified_time": "2026-04-17 01:01:30"
+    },
+    "oss_live_camp": {
+      "inventory_signature": "46c1aa044e8ae61c558cdec21ef836df1164cdf6",
+      "schema_fingerprint": "9d85897359e3d8671e7887756a17cfca90ce765c",
+      "last_modified_time": "2026-04-17 01:01:40"
+    },
+    "oss_live_camp_date": {
+      "inventory_signature": "0ed133829ace4d5d989fd2929ff7d02dfedf183a",
+      "schema_fingerprint": "effefcd3460c4b4300b3759ed97de5e7845cba66",
+      "last_modified_time": "2026-04-17 01:01:34"
+    },
+    "oss_live_info": {
+      "inventory_signature": "d7e724788224fc683de1f43c478dbcf0b61eb1be",
+      "schema_fingerprint": "53f50d2b9c3132f1cd36a5507e7838ce9cc23bcc",
+      "last_modified_time": "2026-04-17 01:00:42"
+    },
+    "oss_living_message": {
+      "inventory_signature": "2a3effa9285226d1c2769bc47adbf65b4a60c40a",
+      "schema_fingerprint": "a24c26c5a1466f86efd86f50db21d520a7c47b32",
+      "last_modified_time": "2026-04-17 01:01:14"
+    },
+    "oss_my_click": {
+      "inventory_signature": "2fdf100da1ac3636bea0d4d5f67fd2cce0a5c0fb",
+      "schema_fingerprint": "1517c3846d213ef37222786f0fa575f995bae36b",
+      "last_modified_time": "2026-04-17 01:01:26"
+    },
+    "oss_order": {
+      "inventory_signature": "6a400c862f87756fa13fe6c6ed886eeb1748e4d5",
+      "schema_fingerprint": "57cb2ca11ca4a92ed40c68d7618ba757030d3d89",
+      "last_modified_time": "2026-04-17 01:00:46"
+    },
+    "oss_order_refund_record": {
+      "inventory_signature": "75063e271840bcbba70b6b685bba38d37b07ee7b",
+      "schema_fingerprint": "2d430dc2a1db22ee0009d625dad3f1bf7ec0138b",
+      "last_modified_time": "2026-04-17 01:00:23"
+    },
+    "oss_page_config": {
+      "inventory_signature": "c5e729c7adbe4d193d697deebd06adcc628497d6",
+      "schema_fingerprint": "88572769af43a68e982a4f2dddb148b9a51c17cb",
+      "last_modified_time": "2026-04-17 01:01:46"
+    },
+    "oss_process_data": {
+      "inventory_signature": "ebcbe967467dbb55dbf1063aeb0db167788a2108",
+      "schema_fingerprint": "f8effd5f863164504e1329f565057788a463d61d",
+      "last_modified_time": "2026-04-17 01:01:15"
+    },
+    "oss_proj2_auth_emp_count": {
+      "inventory_signature": "0d617588b527c781ef631f24495f51d9e1376adb",
+      "schema_fingerprint": "65c208565023adadb016fea8eae21ec450707264",
+      "last_modified_time": "2025-06-12 00:05:13"
+    },
+    "ots_applet_user": {
+      "inventory_signature": "258f0415c8103f40275d4935bd67c0f3fdd2594a",
+      "schema_fingerprint": "04b7f7b99cee36cdd86dede2f6ea02e9cf95a6d3",
+      "last_modified_time": "2025-08-25 16:08:44"
+    },
+    "ots_channel_data": {
+      "inventory_signature": "1670b1c2307a23b1c22d1cb4cead5bb4b9fb2a75",
+      "schema_fingerprint": "fcd45b83d6fea821b419f6f1fa53434c7c8d7ecf",
+      "last_modified_time": "2025-07-10 18:19:56"
+    },
+    "ots_channel_supplier_data_cao": {
+      "inventory_signature": "5f0b1928d3bf7d7aed73737c36a9c154d73ca27b",
+      "schema_fingerprint": "be9a54bad726e08eab9b80b7771ba8f10861edd8",
+      "last_modified_time": "2025-08-25 16:03:01"
+    },
+    "ots_ip_list": {
+      "inventory_signature": "f9158367d7ad71ed564847f50eebeaaa38f75d09",
+      "schema_fingerprint": "0fecef1000b5ba25073914f488caabc22b321d02",
+      "last_modified_time": "2025-02-07 17:11:51"
+    },
+    "ots_landing_pop_question": {
+      "inventory_signature": "2af974d611aa8fbb100d48b63ff437b9cda5a674",
+      "schema_fingerprint": "88ba95f46e39f4cde5e09f04b55255006a11b366",
+      "last_modified_time": "2025-04-29 15:58:08"
+    },
+    "ots_monitor_link": {
+      "inventory_signature": "a98788ec36cff158a46a577ebc17a1f5a923f4fb",
+      "schema_fingerprint": "f3a5f37462a3de83933a3222fee90cd30f2c498d",
+      "last_modified_time": "2025-06-17 20:54:47"
+    },
+    "ots_monitor_link_di": {
+      "inventory_signature": "ab86e635f4f45a3a979080b225fae06fdcb8ef8d",
+      "schema_fingerprint": "c9badb389ac1ee8e99266b28d31669dc1d319ccc",
+      "last_modified_time": "2026-04-17 01:01:17"
+    },
+    "ots_oa_wechat_data": {
+      "inventory_signature": "c15a1997291d8297f173e00286b4b75c49f1253d",
+      "schema_fingerprint": "43826a5acf722bbbc53876fc301a062a5b1e1026",
+      "last_modified_time": "2025-10-24 12:17:19"
+    },
+    "phone_segment": {
+      "inventory_signature": "f270c63974cea2a635e15d63b552842dcbed2619",
+      "schema_fingerprint": "c18ad3603b4bac7ec5b2a39f59061cd98f7f361a",
+      "last_modified_time": "2025-05-23 20:14:23"
+    },
+    "phone_segment_di": {
+      "inventory_signature": "88ced91d45ffcf5a207ef01a9c29a641ae380aef",
+      "schema_fingerprint": "c18ad3603b4bac7ec5b2a39f59061cd98f7f361a",
+      "last_modified_time": "2024-02-19 11:32:24"
+    },
+    "proj_leads_distribution_base": {
+      "inventory_signature": "929a1042654d7cbbaac22f19cd2291badadc9edd",
+      "schema_fingerprint": "8479646720602f447854cd87d0300a19afac42ac",
+      "last_modified_time": "2026-04-17 00:07:31"
+    },
+    "proj_leads_distribution_config": {
+      "inventory_signature": "b34a5839eb10afc820e34e2e1ab768dea43d8ced",
+      "schema_fingerprint": "112edca000205f3d0981f91757a698834cec97ad",
+      "last_modified_time": "2026-04-17 01:01:36"
+    },
+    "proj_order": {
+      "inventory_signature": "1b831b5af5728de27a9bebce0c768267977d3fa7",
+      "schema_fingerprint": "c2fe07654ff1a26226fd6bad98678afbf2a80448",
+      "last_modified_time": "2026-04-17 00:23:33"
+    },
+    "proj_organization_di": {
+      "inventory_signature": "29d05d78dc6b922289b9da343c045dff2d5d1ec8",
+      "schema_fingerprint": "e1df77f087c5d8724e8286d41f3000f822e1a942",
+      "last_modified_time": "2026-04-17 01:01:42"
+    },
+    "qw_current_message_di": {
+      "inventory_signature": "4694e4fbae05d068fb88d30783d4d396b521e965",
+      "schema_fingerprint": "1eef24851e32cf67eb70746d4eb427c37dfb7a4d",
+      "last_modified_time": "2026-04-17 18:00:46"
+    },
+    "qw_message_detail": {
+      "inventory_signature": "dab169acd0b1c1b6a97398024c5e0fd207c7aa1a",
+      "schema_fingerprint": "0e470878f1022aee11855c663bd47b1c779f9a03",
+      "last_modified_time": "2024-08-08 11:42:31"
+    },
+    "qw_message_list_org_di": {
+      "inventory_signature": "f72c551a31bb50926d899f0e75aa40a73fbea86e",
+      "schema_fingerprint": "be9d87af8d2a2845960678a02722d6592da46338",
+      "last_modified_time": "2026-04-17 01:01:46"
+    },
+    "qw_message_private_chat_di": {
+      "inventory_signature": "0f4afb39a5fc29d640ab17e105d76fcfa6ea6095",
+      "schema_fingerprint": "12b6f4000d7a9ce95dbd460faa37a4e5bf34bd48",
+      "last_modified_time": "2026-04-17 01:10:51"
+    },
+    "qw_message_private_chat_history": {
+      "inventory_signature": "8b5e0b45e6bf3bcae38c715f8d2d06be888def2f",
+      "schema_fingerprint": "6ec1a9ec414ea5bb644858664057064a77631ae8",
+      "last_modified_time": "2024-07-09 14:35:32"
+    },
+    "qyvx_belong": {
+      "inventory_signature": "5f83a57087c6de35c138d9b41b0df7479b4fed49",
+      "schema_fingerprint": "6f2407d5eeaef944722382b33d34dbf0abf1ddd4",
+      "last_modified_time": "2026-04-07 18:09:48"
+    },
+    "sb_metabase_belong": {
+      "inventory_signature": "312dc8637729f800dbffc61d8538c9847147b058",
+      "schema_fingerprint": "4860f05637c63ffeaa0244dd1cd32fce30a742d4",
+      "last_modified_time": "2026-02-04 14:21:08"
+    },
+    "sb_qw_tag_name": {
+      "inventory_signature": "3f7a8e2a01fd5ad0df2b38007a52198417a9533b",
+      "schema_fingerprint": "34af8e596ae2f04df96fe2e0e7144f736f5c8156",
+      "last_modified_time": "2026-02-26 10:51:58"
+    },
+    "siyu_qw_tag_data_di": {
+      "inventory_signature": "2b402ef284bd83f6d48ef1d9719390c25affaa1b",
+      "schema_fingerprint": "447c523bb0101f388b0f27d83031d41ab3bf8f81",
+      "last_modified_time": "2026-04-17 08:05:36"
+    },
+    "sleep_user_temp": {
+      "inventory_signature": "1f3eccb98a9a4b27642c3e4fd9ad5cbe5d2bfb2f",
+      "schema_fingerprint": "da71bb1bd658b6abf95f408f90a44dfa7ffea1f6",
+      "last_modified_time": "2026-03-03 16:19:55"
+    },
+    "t_base_data_di": {
+      "inventory_signature": "901f13b7534b2931dcc17c30e83cfb6cc01aa8bd",
+      "schema_fingerprint": "b9aa6d63672fca1eef99d7e9ee0b0390d7bd1b26",
+      "last_modified_time": "2024-01-06 11:52:21"
+    },
+    "t_result_t1": {
+      "inventory_signature": "5f1b930842fe7daef496dabcc19d0bb667337c66",
+      "schema_fingerprint": "636d2a1b51566c1d97180cda6e0d832484b5009f",
+      "last_modified_time": "2024-01-12 11:58:27"
+    },
+    "temp_cf": {
+      "inventory_signature": "51906aaba16816a111a703d35cab2505eff44f2f",
+      "schema_fingerprint": "486927f05e79f6dfe1a6513b21c41ee7742f32cd",
+      "last_modified_time": "2025-10-14 16:52:36"
+    },
+    "temp_channel": {
+      "inventory_signature": "a9c2d8bf6037145c8d64c917981fe1db5de6fa60",
+      "schema_fingerprint": "57dc6b1b62f32f4437414a1a8f199ddae5d01155",
+      "last_modified_time": "2026-01-20 16:40:42"
+    },
+    "temp_cxx_20260203": {
+      "inventory_signature": "000e427f7c5da96f11c1b56be1c1400233d4cd37",
+      "schema_fingerprint": "3d18ae65ac16d11c4ac48c327e1ee2b43f1694f7",
+      "last_modified_time": "2026-02-04 10:47:02"
+    },
+    "temp_dwa_emp_link_df": {
+      "inventory_signature": "7ba9f81901613c2bd02075f33deea44e6995a3d4",
+      "schema_fingerprint": "0b9ba2cbaa08f72373c4f9ec861bc69519b85594",
+      "last_modified_time": "2026-04-17 03:22:15"
+    },
+    "temp_dwa_user_live_pdi": {
+      "inventory_signature": "190f07c99dd7906c988a139d269116373648f47d",
+      "schema_fingerprint": "edbf640838326a61cebd469c79b0a8ba30000299",
+      "last_modified_time": "2026-04-17 00:28:05"
+    },
+    "temp_old_channel": {
+      "inventory_signature": "1a211f4825ab4a4aa47afff7e002b58d272ad3b0",
+      "schema_fingerprint": "80ac13b9949d2d1949f4cfa33f176c355bc3f33b",
+      "last_modified_time": "2025-12-11 15:22:29"
+    },
+    "temp_person_level_zjk_2380_rate": {
+      "inventory_signature": "662cb0df8ad61aea6baa68f1bb74319773a16232",
+      "schema_fingerprint": "ff9b0030b1f866efc82b474e1e521df7246774e3",
+      "last_modified_time": "2026-02-04 18:03:55"
+    },
+    "temp_person_level_zjk_2380_rate_1": {
+      "inventory_signature": "b511fad17e354afc11f5cf30357d4730d1a6e147",
+      "schema_fingerprint": "ff9b0030b1f866efc82b474e1e521df7246774e3",
+      "last_modified_time": "2026-02-04 19:26:12"
+    },
+    "temp_tag": {
+      "inventory_signature": "b383f379fecd702d364f99d86c61cea2a2a9ebcc",
+      "schema_fingerprint": "2c01d9b10b105e65cfdcab6de3e01cebc5ec93c9",
+      "last_modified_time": "2025-10-14 16:48:12"
+    },
+    "temp_tag_company_relation": {
+      "inventory_signature": "862d46aeefa838f2d2655b12883425101a77631b",
+      "schema_fingerprint": "af382c2b4f94cd20821dbb4e23f6da8fb2c1f862",
+      "last_modified_time": "2025-10-14 16:48:35"
+    },
+    "temp_tag_group": {
+      "inventory_signature": "c8f3580d0cc8bb15bd23c21268d09ad6016b47db",
+      "schema_fingerprint": "18537653ad7654e0dee11be4393e4dbf86dcfa9f",
+      "last_modified_time": "2025-10-14 16:46:53"
+    },
+    "temp_tag_group_company_relation": {
+      "inventory_signature": "8174b8005b66571bd0c85151c9c01e895030762d",
+      "schema_fingerprint": "f4750a1dea58db776333c9b8153aefeed1f1a6ba",
+      "last_modified_time": "2025-10-14 16:47:23"
+    },
+    "temp_tag_group_dept_relation": {
+      "inventory_signature": "245cc721bd7923d1e1414d20c4cd24e93e23b8cc",
+      "schema_fingerprint": "caa54211cd213db2d559306ab296962aff0b0f57",
+      "last_modified_time": "2025-10-14 16:47:40"
+    },
+    "test": {
+      "inventory_signature": "d05e0b6965e9dd60e8e3548f8fb107ef96ae5074",
+      "schema_fingerprint": "ff7ad303c98fc8977d18f6b0aa939202580d9c08",
+      "last_modified_time": "2025-07-16 12:46:26"
+    },
+    "test01": {
+      "inventory_signature": "93efe3035f15df6f13c7dc3889358efffcccad89",
+      "schema_fingerprint": "cbe40b15a0b403f0d6edd33d834ebf54b445db25",
+      "last_modified_time": "2025-01-03 20:00:22"
+    },
+    "test_channel": {
+      "inventory_signature": "bb12abee1c5f397a3101400979fcdc5dd2f9d299",
+      "schema_fingerprint": "47466190ce8bcc294af70ca8ab5eea257891fbd4",
+      "last_modified_time": "2026-03-24 17:06:04"
+    },
+    "test_channel_data": {
+      "inventory_signature": "510554af215a91505b9610f1cf2b54467212f0fe",
+      "schema_fingerprint": "c34b18a6f384a85ba77a67923f02124d89471186",
+      "last_modified_time": "2025-07-31 17:53:33"
+    },
+    "testaaa": {
+      "inventory_signature": "8e27b74221aff6eea2f7727f5efa718b2b9057e3",
+      "schema_fingerprint": "24587694ec184dfa80bfb951ef552eb837740275",
+      "last_modified_time": "2025-07-16 13:24:34"
+    },
+    "tf_qw_tag_data_di": {
+      "inventory_signature": "0202ad047bdb40b640fa36bb79c80968f028f618",
+      "schema_fingerprint": "447c523bb0101f388b0f27d83031d41ab3bf8f81",
+      "last_modified_time": "2026-04-17 18:04:05"
+    },
+    "tmp_extract_last_name": {
+      "inventory_signature": "84e09f0f072fd96da09e1bcbae69a7d4e06f1cc4",
+      "schema_fingerprint": "b7e3b9215b634c2456f1e4d4b0cc6d1e10699e92",
+      "last_modified_time": "2025-09-20 18:17:38"
+    },
+    "tmp_unionid_list": {
+      "inventory_signature": "da46b6d33bffd73822e1fd142be8ca3eceeac14a",
+      "schema_fingerprint": "5ee8e6570287a016066035f6afb5f5931bb9c371",
+      "last_modified_time": "2026-04-07 11:43:58"
+    },
+    "to_ots_channel_supplier_data": {
+      "inventory_signature": "1f4c9c52b872d21dee047bd03a6dcb4e39a92e78",
+      "schema_fingerprint": "24587694ec184dfa80bfb951ef552eb837740275",
+      "last_modified_time": "2025-07-16 12:52:45"
+    },
+    "tock_account_cost_detail": {
+      "inventory_signature": "dc5755dbd7f0dd8c3e76e632e960275693b94928",
+      "schema_fingerprint": "2deb4cb5e9c8f94d433b6ab97d3bbb497b45d1bd",
+      "last_modified_time": "2026-04-17 01:19:53"
+    },
+    "tock_applet_day_num_index_pred": {
+      "inventory_signature": "3f6b0cdc447d3990387a7630260add239d0656ac",
+      "schema_fingerprint": "a30d9a6e035929044355cd4ab55fce3e43b12296",
+      "last_modified_time": "2026-04-17 04:06:20"
+    },
+    "tock_applet_living_data": {
+      "inventory_signature": "972d9df3834efe1acb18fc715ff4a332b78c783e",
+      "schema_fingerprint": "b57096efe8cdfd45353d4f7a38aebc08b76b531e",
+      "last_modified_time": "2026-04-17 14:33:05"
+    },
+    "tock_applet_user": {
+      "inventory_signature": "588ba0cf7d61c666152b11c6e5a82efb6cbe0b2e",
+      "schema_fingerprint": "55ada9225b4d800981b223b886d888d364ca1fd1",
+      "last_modified_time": "2026-04-17 02:10:52"
+    },
+    "tock_ast_camp_student_group_data": {
+      "inventory_signature": "13ba75b96e4dbf474ecc02d315a315c9648e14f4",
+      "schema_fingerprint": "ca8a87d8747ab9c58aa31a4d4a899854fc6a5b3a",
+      "last_modified_time": "2026-04-17 01:01:05"
+    },
+    "tock_ast_process_data": {
+      "inventory_signature": "929631e2fe8097b39bcf497e9051d42c5d843985",
+      "schema_fingerprint": "62565bbffc524f0083520f79a4a49f23e0b0bf11",
+      "last_modified_time": "2026-04-17 01:07:13"
+    },
+    "tock_budget_district_rate": {
+      "inventory_signature": "930601d36f62e8460b35f7e8a092b544e97ac2fb",
+      "schema_fingerprint": "69bc0fdbb496d1644fb0c80874a23262f7ce16b1",
+      "last_modified_time": "2026-04-01 03:00:35"
+    },
+    "tock_channel_id_belong": {
+      "inventory_signature": "06d370b1bf501e26b77d92e549018d08f25225bd",
+      "schema_fingerprint": "2bfa21fe5584fe6c1a745c6f0eaa21c8d1cd909c",
+      "last_modified_time": "2026-04-17 18:00:35"
+    },
+    "tock_channel_id_talk": {
+      "inventory_signature": "86ca4fddf7b5074a11dcd6cfee877a87d74adbb4",
+      "schema_fingerprint": "9fd6ea5d7bfcf1b7cf8820239c878bc88bc514ec",
+      "last_modified_time": "2026-04-17 18:01:41"
+    },
+    "tock_channel_ownership": {
+      "inventory_signature": "25e1abf63ca8e84e920cc71b01ab889526740c67",
+      "schema_fingerprint": "36ad02622d64cbe11e417fab84b863b3cb54d908",
+      "last_modified_time": "2024-06-17 23:50:21"
+    },
+    "tock_emp_channel_leads": {
+      "inventory_signature": "0f8683b37ee4cc9440f03d8e1e5c0733f77a95e4",
+      "schema_fingerprint": "91ff5ae7292b3ba5bfe10da8c25ebf8bf477e496",
+      "last_modified_time": "2026-04-17 18:01:12"
+    },
+    "tock_emp_con_leads": {
+      "inventory_signature": "b0957eb4836e820076e0ab18cfcf674b78502b4d",
+      "schema_fingerprint": "bf1dcdc3940282ee5284a2fe33917347e9ef81bd",
+      "last_modified_time": "2026-04-17 18:00:57"
+    },
+    "tock_emp_con_leads_new": {
+      "inventory_signature": "818ca92f9edde94b0eb4eb04d639ae130b7db73b",
+      "schema_fingerprint": "0f8045dc95708a5e5d61f24a36e2d72e802f783f",
+      "last_modified_time": "2025-11-21 21:03:44"
+    },
+    "tock_emp_con_leads_t": {
+      "inventory_signature": "f89ebc7d22d84465b452bfa1bf6dbf5b388fe2bd",
+      "schema_fingerprint": "bf1dcdc3940282ee5284a2fe33917347e9ef81bd",
+      "last_modified_time": "2026-01-08 13:26:40"
+    },
+    "tock_emp_external_user": {
+      "inventory_signature": "385b5742764c841106bd1997363c145f49cdf30c",
+      "schema_fingerprint": "b32c7f6b2ea1a3c15127772dc0fd5c83f4a31629",
+      "last_modified_time": "2026-04-17 03:05:25"
+    },
+    "tock_handover_plus": {
+      "inventory_signature": "e53ac1a128e4fafdaa44a91ea459cd4c5fd1e9bb",
+      "schema_fingerprint": "8d5c75c256171705b390c53dab15a10b40cdc225",
+      "last_modified_time": "2026-04-17 03:20:59"
+    },
+    "tock_handover_student_list": {
+      "inventory_signature": "b8892a6de33e48d7f85311fe11f00fbc7a724e3f",
+      "schema_fingerprint": "dd448ec480e3c2c4191c61c1814734787e1bc4f0",
+      "last_modified_time": "2026-04-17 01:08:47"
+    },
+    "tock_landing_page_data": {
+      "inventory_signature": "42b0cf0cb22595edb4649c75edd7d3ea455e53e5",
+      "schema_fingerprint": "1d00a21c0cd09dce26228f6048b502c1e957a35f",
+      "last_modified_time": "2026-04-17 01:04:33"
+    },
+    "tock_leads_base": {
+      "inventory_signature": "b0ae10425058f9666d2226b4e961c734b2be8c8a",
+      "schema_fingerprint": "83bd5162f8bccb2e7bc519cc957218bd444d49a4",
+      "last_modified_time": "2026-04-17 03:20:34"
+    },
+    "tock_leads_summary": {
+      "inventory_signature": "2a8a03c1c5115bdfbeef6aa450057973a6a687b4",
+      "schema_fingerprint": "506966c48c0f5aac7d0f123b526eca9993465fa6",
+      "last_modified_time": "2026-04-17 03:21:03"
+    },
+    "tock_living_message_minutes_count": {
+      "inventory_signature": "8c3c8686687a65ea3a56655c1dff3e85a18e8283",
+      "schema_fingerprint": "eeaf2d40d537715954895f9662649798fdbb3085",
+      "last_modified_time": "2026-04-17 03:02:47"
+    },
+    "tock_living_user_entry_quit_time": {
+      "inventory_signature": "c222aaa852db6ea444f46854638fe308c1ca7eb4",
+      "schema_fingerprint": "0d33ac69ea183887f08e4d97a3767283ddae0282",
+      "last_modified_time": "2026-04-17 01:02:27"
+    },
+    "tock_market_daily_data": {
+      "inventory_signature": "49e8c2e95d59dc279722115a3989a8d491913c87",
+      "schema_fingerprint": "8587245428f855b3bf64ea3372c4898b2c3a1c41",
+      "last_modified_time": "2026-04-17 02:12:35"
+    },
+    "tock_metabase_log": {
+      "inventory_signature": "61d791a709439909ea2c2bb572db9ffce5c46850",
+      "schema_fingerprint": "affe725eab688c86bc3d63953c8c9cceed6195a4",
+      "last_modified_time": "2026-04-17 00:30:40"
+    },
+    "tock_model_brand_memorysize": {
+      "inventory_signature": "8ea68bb526988b8ec54fc2a0561e2701d0317322",
+      "schema_fingerprint": "8c3aee5fee00104b6220881c7e26687316d4836b",
+      "last_modified_time": "2026-04-13 00:25:40"
+    },
+    "tock_oa_wechat_data": {
+      "inventory_signature": "40e9b5557cc2af056ce56f729f8fa2a11b406051",
+      "schema_fingerprint": "f5a4d9325a27226fa4c9d27589ddcef2ffd96cf7",
+      "last_modified_time": "2026-04-17 00:22:20"
+    },
+    "tock_order": {
+      "inventory_signature": "899efc6aab26e9082ab28cbb4d9c13dd43ecbdfb",
+      "schema_fingerprint": "bb338970a472485bfe22cfacde98cdcab16470c3",
+      "last_modified_time": "2026-04-17 01:11:37"
+    },
+    "tock_os_web_data": {
+      "inventory_signature": "be3de5b45d0d439b9c9c8c2095c40cee7870c0b4",
+      "schema_fingerprint": "75ae35ba8aa7938f8d4346cdbae725e6f8881b75",
+      "last_modified_time": "2026-04-17 02:32:05"
+    },
+    "tock_paying_student_path_detail": {
+      "inventory_signature": "1f9e0d66286c7c127ac59bc9110fcf406021e38e",
+      "schema_fingerprint": "fbb08f9fef3e1d0d6222bf3549bf6d6e2b19fe35",
+      "last_modified_time": "2024-09-11 01:09:09"
+    },
+    "tock_pred_level_snapshot": {
+      "inventory_signature": "c7fa88ef8ae79e4c9e615b9bde32e0eb097504c1",
+      "schema_fingerprint": "3143cfc10ca1a2c16fc97b3062c63e12b1342c23",
+      "last_modified_time": "2026-04-17 04:10:21"
+    },
+    "tock_qw_abnormal_record": {
+      "inventory_signature": "cd8413447a18fa1fca3d3b6e6caccfed63f6fe87",
+      "schema_fingerprint": "f6adf957f587f6a0753fb8eb8535d8f4e9b4b2cc",
+      "last_modified_time": "2026-04-17 02:02:42"
+    },
+    "tock_qw_message_res": {
+      "inventory_signature": "b7e3a294edd4f77dd18c0cc7e248ee0e345f9b33",
+      "schema_fingerprint": "ed3ad707ec1667b1e4911c46f74cb78f297da442",
+      "last_modified_time": "2026-04-17 02:14:58"
+    },
+    "tock_sale_process_data": {
+      "inventory_signature": "0b5c789febd315c71d56dc8b5a1429c20ebab46c",
+      "schema_fingerprint": "6b60bec5892b78098c5c9a2b6975e008570b00df",
+      "last_modified_time": "2026-04-17 18:01:44"
+    },
+    "tock_sop_message": {
+      "inventory_signature": "2197bddd8b613b14b35b9aafed5d0ab79129c485",
+      "schema_fingerprint": "75e37a2c98fd6c09ce50083085bdd7d2099cccd5",
+      "last_modified_time": "2026-04-17 03:00:35"
+    },
+    "tock_student_day_message": {
+      "inventory_signature": "ae93127a448be47572312fd64457c20c194ec3aa",
+      "schema_fingerprint": "2076dceea1fec46e022ef38d2a787ddb75187107",
+      "last_modified_time": "2026-04-17 02:01:42"
+    },
+    "tomysql_applet_pred": {
+      "inventory_signature": "84745be5f0871490916da0954bd915a4301726b7",
+      "schema_fingerprint": "0f90093df1ef07883c639bb69980607e3bf4bdf5",
+      "last_modified_time": "2026-04-17 04:00:33"
+    },
+    "tomysql_drh_fbook_emp_org": {
+      "inventory_signature": "8f1569f6b566b8620bf07ce554adc0397a49d6cd",
+      "schema_fingerprint": "9fb0fa67a791f42fd368fda32c2dfcec1bb9cfda",
+      "last_modified_time": "2026-04-17 03:01:10"
+    },
+    "tomysql_emp_leads": {
+      "inventory_signature": "4bda8447467365d8a89d3f40d090df7fa8ed6c86",
+      "schema_fingerprint": "ff1f0ba98530405eb0f00dfa92e9280d53c5a725",
+      "last_modified_time": "2026-04-17 16:00:50"
+    },
+    "tomysql_emp_leads_plan": {
+      "inventory_signature": "1cab25c185edf12c02d086881ca63bef7f3f6d7b",
+      "schema_fingerprint": "4b68359cc7411382730df7bbd4736b2e1e0321c8",
+      "last_modified_time": "2026-04-17 01:02:18"
+    },
+    "tomysql_emp_rate": {
+      "inventory_signature": "9db1e0463ed1af60d3a26e021562db0c9c579a63",
+      "schema_fingerprint": "47effdbb4556f94491649e201c5470579a64bcb0",
+      "last_modified_time": "2024-12-03 14:43:38"
+    },
+    "tomysql_live_camp_course_data": {
+      "inventory_signature": "19fd50f81106a2c28c667ca8aa27a35160541b04",
+      "schema_fingerprint": "0f15d3d75efb7aa3dc33a02196b5d65309730eda",
+      "last_modified_time": "2026-04-17 18:02:03"
+    },
+    "tomysql_live_camp_emp_leads_detail": {
+      "inventory_signature": "a4fe77941f62d57350ec6aa8e488bdd602c46f0d",
+      "schema_fingerprint": "182149aeed1c8e03b1119d9e13d4eeb2429dcf26",
+      "last_modified_time": "2026-04-17 18:01:30"
+    },
+    "tomysql_live_camp_manager_comission": {
+      "inventory_signature": "1958cbb67c1489769ba2909329f7025f1d8bac8b",
+      "schema_fingerprint": "7ed5f9697661b04c12ea497579d334cbbbb469f7",
+      "last_modified_time": "2026-04-17 18:02:21"
+    },
+    "tomysql_live_camp_performance": {
+      "inventory_signature": "b2ecdcff331d27246b86063cd6d09f3b0d463cbd",
+      "schema_fingerprint": "b671ce0109e080a6e654790db37d8372b8d13bb8",
+      "last_modified_time": "2026-04-17 18:01:57"
+    },
+    "tomysql_live_camp_transfer_target_column": {
+      "inventory_signature": "9436b25bbecf046a7edaebcf219ba6342d8e7e58",
+      "schema_fingerprint": "ec71d7fd3749e2f6a8f845ced31fde833ad37f94",
+      "last_modified_time": "2026-04-17 00:27:39"
+    },
+    "tomysql_live_camp_transfer_target_column_t": {
+      "inventory_signature": "f8f1ae00149434692e4531729e3730bfaa58b5d2",
+      "schema_fingerprint": "ec71d7fd3749e2f6a8f845ced31fde833ad37f94",
+      "last_modified_time": "2026-02-10 13:51:06"
+    },
+    "toodps_date_type": {
+      "inventory_signature": "7151a4a8b3e35a627ca266d61437febe99a66c02",
+      "schema_fingerprint": "d6c80e1311f6f99ff178cd139f7d0b8abed5cbd8",
+      "last_modified_time": "2024-09-02 18:48:41"
+    },
+    "toodps_goods": {
+      "inventory_signature": "b6311fa3b411e624c02ca0c827e228e73910a079",
+      "schema_fingerprint": "c620ba4bcd5d66638188fd4c63d11350277ee568",
+      "last_modified_time": "2024-07-19 20:46:09"
+    },
+    "toodps_landing_pop_question": {
+      "inventory_signature": "d8c3a9b17a61f899e30101303b54847aa559284b",
+      "schema_fingerprint": "f945e5bed1b26a141b0806260ecda4169eb5e001",
+      "last_modified_time": "2026-04-17 01:00:28"
+    },
+    "toodps_metabase_log": {
+      "inventory_signature": "e690d4576ebcdcdd26061301f5aaed1f82c024bf",
+      "schema_fingerprint": "1fa4f7f0a633b57f0c2c6f4f18ef9992e1566efb",
+      "last_modified_time": "2026-04-17 18:07:21"
+    },
+    "toodps_sale_team": {
+      "inventory_signature": "e987eecebe34c9235886dd2552d3e0ebb4a07ed2",
+      "schema_fingerprint": "0d25afcd2f57876ca1685d1036667a2a19338f91",
+      "last_modified_time": "2024-08-05 21:52:23"
+    },
+    "tooss_58154526_1": {
+      "inventory_signature": "30fa98d06636187d39a06cd514812d9e4c450131",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:00:36"
+    },
+    "tooss_58154526_10": {
+      "inventory_signature": "724b3ef414b0996341ce6976fda3b87bc63d469d",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:02:50"
+    },
+    "tooss_58154526_11": {
+      "inventory_signature": "d57d91a262e8164843c9b695414434d622273486",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:03:03"
+    },
+    "tooss_58154526_12": {
+      "inventory_signature": "2220eaa816dde7e540a6448b6f2ef2e97d0aeeca",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:03:16"
+    },
+    "tooss_58154526_13": {
+      "inventory_signature": "0dd29863fc011aef8c17d2c801ec00ad15e53692",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:03:28"
+    },
+    "tooss_58154526_14": {
+      "inventory_signature": "c183341c18369fae85588cf970a8c7d0bf744858",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:03:41"
+    },
+    "tooss_58154526_15": {
+      "inventory_signature": "1e5431e86d9d24c7edbb977ad888577d8e1618be",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:03:57"
+    },
+    "tooss_58154526_16": {
+      "inventory_signature": "d260774c7446a5cee4bf2d3d35ae04f8779bb477",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2025-06-24 01:03:29"
+    },
+    "tooss_58154526_17": {
+      "inventory_signature": "bcfca78913b2c0ff8aaf9a37c97b51b980420ab5",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2025-06-24 01:03:48"
+    },
+    "tooss_58154526_2": {
+      "inventory_signature": "dde9e698f48b6efd88f87e208349e07269a2dfbf",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:00:55"
+    },
+    "tooss_58154526_21": {
+      "inventory_signature": "99c00405e6af6efbda2304b31dd5967d3f207424",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:05:49"
+    },
+    "tooss_58154526_3": {
+      "inventory_signature": "9f842342a305d972cd90594c259e0125cf5e93b3",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:01:07"
+    },
+    "tooss_58154526_4": {
+      "inventory_signature": "ab96be54e7176da84f60cbab1ed168dafad2816a",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:01:22"
+    },
+    "tooss_58154526_5": {
+      "inventory_signature": "54189d1854b3a0ae84fea7a4da2aeb6e21eaba05",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:01:33"
+    },
+    "tooss_58154526_6": {
+      "inventory_signature": "2eb99d27c68b9bfbeb22ce821558cd82fe570ddd",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:02:06"
+    },
+    "tooss_58154526_7": {
+      "inventory_signature": "a9e7155891cbf2dc6cf8b714b02c11351aed0b1e",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:02:17"
+    },
+    "tooss_58154526_8": {
+      "inventory_signature": "ada4dd476a616d42f2e74e6856d8b0ad4c5629da",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:02:28"
+    },
+    "tooss_58154526_9": {
+      "inventory_signature": "f25029856f152bb4ba41dcfad63da4e33355f511",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:02:39"
+    },
+    "tooss_61903674_16": {
+      "inventory_signature": "52e18a92b70ce8298a6c378bd5cc324327952ad1",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:04:11"
+    },
+    "tooss_61903674_17": {
+      "inventory_signature": "f8bde57c29a555ad2d1f1e6d4548b152ceca60ee",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:04:28"
+    },
+    "tooss_64681486_18": {
+      "inventory_signature": "a9fd4d80ef9d9a08b9cba0d536572fd04c351f20",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:04:41"
+    },
+    "tooss_64681486_19": {
+      "inventory_signature": "6718223e6c405916470d858e27bf785b91fa2472",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:05:17"
+    },
+    "tooss_64681486_20": {
+      "inventory_signature": "1e4f99023c353f425ff292eb5de4ae267c36c485",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:04:56"
+    },
+    "tooss_67948883_22": {
+      "inventory_signature": "6214b496219e036ff970e9e06cc5a69db950ef25",
+      "schema_fingerprint": "e6398a4912095dea3d45c0cec7607d0a70d68194",
+      "last_modified_time": "2026-04-17 01:06:03"
+    },
+    "union_test": {
+      "inventory_signature": "73f442eeb378a3bffcc7819b5615ab631e36fd2d",
+      "schema_fingerprint": "3c931fa2593d45a8015d4fb9cf788fdfec298ca6",
+      "last_modified_time": "2026-03-24 14:05:47"
+    },
+    "view_menu_role_count": {
+      "inventory_signature": "66566c621a263189918dfdbbff763a2a4334e2a4",
+      "schema_fingerprint": "325c2ba3717b9d31aef521ca1987cfda6b7c4dc0",
+      "last_modified_time": "2025-05-26 16:39:55"
+    },
+    "wangafang_biaoqian": {
+      "inventory_signature": "eb268a5b1a3d349b1dc3361474a058998a2105b2",
+      "schema_fingerprint": "ee24ac7f849e06d232cdb69b61c09e30dc4e4fcd",
+      "last_modified_time": "2026-04-01 11:59:56"
+    },
+    "wangafang_tag_table": {
+      "inventory_signature": "8ed0fa593b74ca4e358e516bcfbe254e7d9cfdbb",
+      "schema_fingerprint": "802e944a5d80401ddbf8c83a1f4811dc0f03138a",
+      "last_modified_time": "2025-12-15 15:24:12"
+    },
+    "wangyu_qw_tag_data_di": {
+      "inventory_signature": "00960bd08f7f1220c1b9a0d06ad27775cd86d3c8",
+      "schema_fingerprint": "447c523bb0101f388b0f27d83031d41ab3bf8f81",
+      "last_modified_time": "2026-04-17 07:06:52"
+    },
+    "zm_gmv_daily_badget": {
+      "inventory_signature": "56bcb327220e1617a0a0c1ef75221792c15a99aa",
+      "schema_fingerprint": "b4342a313ba809ed099300b2365d8727dde9a60b",
+      "last_modified_time": "2026-04-10 11:44:34"
+    },
+    "zm_refund_order": {
+      "inventory_signature": "3680ee6563a1f85cd9cd61ecd847420fde9c14f3",
+      "schema_fingerprint": "4f870eda2975f8584690e5b65f9d23a235a95ecb",
+      "last_modified_time": "2025-11-14 15:52:41"
+    },
+    "zm_refund_sp": {
+      "inventory_signature": "5bcbaa13addfa80c05c9c23d61a7422ee8136233",
+      "schema_fingerprint": "b8034e0b8dc8e4338665695888a0ffb008a5e4de",
+      "last_modified_time": "2025-11-14 15:02:39"
+    }
+  }
+}

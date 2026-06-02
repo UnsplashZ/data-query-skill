@@ -1,0 +1,16 @@
+{
+  "expected": {
+    "help_command": "python scripts/eval_skill_pack.py --help exits 0",
+    "offline": true,
+    "metabase_mock": "uses local JSON fixtures only",
+    "missing_dependencies": "reported as BLOCKED, not PASS",
+    "no_real_credentials": true,
+    "no_real_internal_urls": true,
+    "no_mcp_server_dependency": true,
+    "no_long_running_service": true,
+    "no_heavy_platform_install": true,
+    "candidate_write_validate_search": true,
+    "conflict_effective_confidence": true,
+    "run_query_execution_stage_help": true
+  }
+}

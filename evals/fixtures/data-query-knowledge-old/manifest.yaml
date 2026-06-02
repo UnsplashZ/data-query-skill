@@ -1,0 +1,5 @@
+schema_version: 0
+knowledge_root: data-query-knowledge
+domains:
+  - refund
+last_validated_at: 2025-12-31

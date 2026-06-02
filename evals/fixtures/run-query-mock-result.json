@@ -1,0 +1,12 @@
+[
+  {
+    "refund_date": "2026-05-01",
+    "sku_name": "demo-sku-a",
+    "refund_amount": 1200.5
+  },
+  {
+    "refund_date": "2026-05-02",
+    "sku_name": "demo-sku-b",
+    "refund_amount": 880.0
+  }
+]

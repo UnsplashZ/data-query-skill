@@ -1,0 +1,5 @@
+pyyaml
+clickhouse-driver
+pymysql
+pyodps
+openpyxl

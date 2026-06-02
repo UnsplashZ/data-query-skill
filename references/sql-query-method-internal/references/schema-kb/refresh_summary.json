@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-04-17 18:11:39",
+  "odps": {
+    "database": "drh_prod_odps",
+    "table_count": 690,
+    "refresh_mode": "incremental",
+    "added_count": 0,
+    "changed_count": 88,
+    "removed_count": 0,
+    "added_preview": [],
+    "changed_preview": [
+      "drh_active_code",
+      "drh_ad_account",
+      "drh_ad_cost",
+      "drh_ad_cost_day",
+      "drh_ad_cost_minutes",
+      "drh_ad_cost_time",
+      "drh_ad_creative",
+      "drh_ad_pic",
+      "drh_ad_user_pic",
+      "drh_ad_view",
+      "drh_app_circle_content",
+      "drh_app_info",
+      "drh_app_passport",
+      "drh_applet_user",
+      "drh_applet_user_pool",
+      "drh_book_question_record",
+      "drh_camp_flow",
+      "drh_channel_emp",
+      "drh_class_user",
+      "drh_class_user_permission"
+    ],
+    "removed_preview": []
+  },
+  "clickhouse": {
+    "database": "drh",
+    "table_count": 1092,
+    "refresh_mode": "incremental",
+    "added_count": 0,
+    "changed_count": 0,
+    "removed_count": 0,
+    "added_preview": [],
+    "changed_preview": [],
+    "removed_preview": []
+  },
+  "mapping_counts": {
+    "odps_total": 690,
+    "clickhouse_total": 1092,
+    "exact_name_matches": 168,
+    "odps_only": 522,
+    "clickhouse_only": 924,
+    "rename_candidates": 171
+  }
+}

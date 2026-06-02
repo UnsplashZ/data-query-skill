@@ -1,0 +1,20 @@
+schema_version: "1.0"
+default_owners:
+  - data-query-maintainers
+review_policy:
+  candidate:
+    reviewed_by_required: false
+    validation_evidence_required: false
+  reviewed:
+    reviewed_by_required: true
+    validation_evidence_required: true
+  approved:
+    reviewed_by_required: true
+    approved_by_required: true
+    validation_evidence_required: true
+domains:
+  example-domain:
+    owners:
+      - example-owner
+    reviewers:
+      - example-reviewer

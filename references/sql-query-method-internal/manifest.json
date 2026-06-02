@@ -1,0 +1,395 @@
+{
+  "name": "sql-query-method-internal-reference-assets",
+  "generated_at": "2026-06-01",
+  "scope": "reference assets embedded inside internal-data-query; not a standalone installable skill",
+  "path_encoding": "ASCII filenames; UTF-8 file contents",
+  "single_skill_package_note": "Nested SKILL.md files are renamed to SKILL.reference.md to prevent recursive skill installation.",
+  "file_count": 77,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1394,
+      "sha256": "66561b510b9a83764496b4146286f7d30083029db8f9073ea26dec2c3d97ad3a"
+    },
+    {
+      "path": "SKILL.reference.md",
+      "bytes": 13610,
+      "sha256": "65f3d4afb64dd36bb49aca376b7dfa5b16740b92bc4e1435e60a7db1154d9966"
+    },
+    {
+      "path": "references/checklist.md",
+      "bytes": 1349,
+      "sha256": "0934d58513a5f5838e4e11cbdb1cfec91d66a24d712c2d1bed27d8cfa5071858"
+    },
+    {
+      "path": "references/method-skills/cohort-analysis-local/SKILL.reference.md",
+      "bytes": 5375,
+      "sha256": "918035049294f58cbce20af3d300902f84b67a94cfd1021a774d06768dde40e9"
+    },
+    {
+      "path": "references/method-skills/gmv-feishu-sync-maintenance/SKILL.reference.md",
+      "bytes": 3803,
+      "sha256": "8f55d5e3036f86e7bd00c33844264562fc9c0954072070572c786cbb3370565e"
+    },
+    {
+      "path": "references/method-skills/gmv-feishu-sync-maintenance/references/high-1plus3-zdw-month-course.md",
+      "bytes": 2169,
+      "sha256": "5c1871f26391b67ba6dc74bfdcf19b6f087984f0976d290d8c39800a1347e6a9"
+    },
+    {
+      "path": "references/method-skills/handover-realtime-sync-maintenance/SKILL.reference.md",
+      "bytes": 65201,
+      "sha256": "ff2f403bd22c655ccfa83d7d6b92d500a6e0afcec6eae06a4322b4772c242d08"
+    },
+    {
+      "path": "references/method-skills/handover-realtime-sync-maintenance/references/card-cache-callback-compatibility-2026-05.md",
+      "bytes": 4148,
+      "sha256": "bcc774d96295b88e54ef9617f123fcc615182dcff93b0d6b2852c8c31d774b61"
+    },
+    {
+      "path": "references/method-skills/handover-realtime-sync-maintenance/references/card-top-range-and-may-track-filter-2026-05.md",
+      "bytes": 4231,
+      "sha256": "1b9fa101ef56041af6cd3a444e65c0fc628d2d9ae818cd52f28c9419f1faa9d3"
+    },
+    {
+      "path": "references/method-skills/handover-realtime-sync-maintenance/references/refund-handover-docx-chart-correction-2026-05.md",
+      "bytes": 4702,
+      "sha256": "cdbb8c4846309fe421a90c75e7138d787495e17c69e4c9c0102c0be92eba0929"
+    },
+    {
+      "path": "references/method-skills/handover-realtime-sync-maintenance/references/rerun-after-pay-type-restore-2026-05.md",
+      "bytes": 3247,
+      "sha256": "f787739befae3b1b38d38d44310cabdeb33ee4fdfd20a51373380928b4216f13"
+    },
+    {
+      "path": "references/method-skills/handover-stats-report-method/SKILL.reference.md",
+      "bytes": 6851,
+      "sha256": "b4ea3a5de3b3780e35c92ad93b41d3d6fc19841e6060bf964998b83dee9cf43e"
+    },
+    {
+      "path": "references/method-skills/handover-stats-report-method/references/channel-camp-monthly-funnel-report.md",
+      "bytes": 4915,
+      "sha256": "103d28faefd4e5346d106675989e304479617e54822f2e187af27ab90625791d"
+    },
+    {
+      "path": "references/method-skills/handover-stats-report-method/references/channel-camp-monthly-funnel-review-checks.md",
+      "bytes": 3919,
+      "sha256": "c648a95b3d03c38bf474f72123fe65b43a34e0e386f31a61ee92e86b4f0f6ba2"
+    },
+    {
+      "path": "references/method-skills/handover-stats-report-method/references/handover-daily-card-kpi-sources.md",
+      "bytes": 2874,
+      "sha256": "e9101b5c3a0e4abb4666ceb972e0b2aa098ff6b5a8076dfa1c83081dde2ae930"
+    },
+    {
+      "path": "references/method-skills/high-handover-feishu-sync/SKILL.reference.md",
+      "bytes": 10137,
+      "sha256": "d44b7d7c931963125ae2be66a92f141226467d985e990478a643f136d1ec7c2b"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/SKILL.reference.md",
+      "bytes": 83775,
+      "sha256": "4d814feee70cdc00fffdc373e16c71dbb22ff907c679ebdb6565835642564f76"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/cash-account-indicators-and-dashboard-sql-review-20260512.md",
+      "bytes": 5954,
+      "sha256": "76c0917ca43239448ef05b5fd0203171efb96d3824e1b4f351a2df9b7e4b2117"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/clickhouse-user-relationship-export-20260519.md",
+      "bytes": 3372,
+      "sha256": "e5b62da72d1cd141435b627a4d0a79e5188fe09de66bd9766edfe4e8d2483c4d"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/clickhouse-user-relationship-export-userlevel-20260519.md",
+      "bytes": 2726,
+      "sha256": "c748c4023751dc2467dcf239c6fcb3961c7323105883da281ada37de2774f975"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/drh-order-current-1sql-left-join-followup.md",
+      "bytes": 2035,
+      "sha256": "69b7678879ab93ab08c395532fa1d0648c457a4d041c50fe44e0b303b83e35f7"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/drh-order-vs-dwd-order-flow-gmv-reconciliation.md",
+      "bytes": 3291,
+      "sha256": "823f4205c349c43d90dce947e60fe663562b3240673d505218f2b424eec017f7"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/first-payment-only-stop-freeze-report-20260429.md",
+      "bytes": 8351,
+      "sha256": "fa2d34123af69a72247226461f85f2220af4d3d6ffc5d139811cc6dc45b0da94"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/first-payment-stop-freeze-feishu-20260508.md",
+      "bytes": 8318,
+      "sha256": "a7e5942df64f9829af44c463561e4a3c49a114105aaf87d3d27261c29f0f8051"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/first-payment-stop-freeze-historical-combined-20260508.md",
+      "bytes": 4943,
+      "sha256": "89c79df454830166ae057f7db2dfb226ead1268f504b136f956e44c46c9f79ac"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/first-payment-stop-freeze-history-feishu-20260508-latest.md",
+      "bytes": 4584,
+      "sha256": "2be59a93b8ce6091569de0a45f0c0170722fdfbcab92543ce474e1c5962ad662"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/first-payment-stop-freeze-history-feishu-20260508.md",
+      "bytes": 11908,
+      "sha256": "075d6192b31dfabc25ee0c5b3954ddc0c0c7fabbe578c9db46e3b27f4efae4d6"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/order-keyword-detail-export.md",
+      "bytes": 2108,
+      "sha256": "2a7f62901c775eabb2bdab27a5a8e66d28061c492d69516ddd92ae77f4166d66"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/piano-stage-conversion-by-handover-camp-20260509.md",
+      "bytes": 4693,
+      "sha256": "f2e5897d9c761bcc465e7a701eca678c4d6ca50bab9f11af70a2b60ecd7f2fdf"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/piano-stage-source-purchase-price-people-20260509.md",
+      "bytes": 4223,
+      "sha256": "9573ccd090d3982ce2d7ce996efc9c934efafe7077ae2fca0459e0e020013c06"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/refund-approval-stage-and-backend-team-order-lookup-20260518.md",
+      "bytes": 5187,
+      "sha256": "6cc79cabc8b5575f7134e038aea9ad5f626b1073901afa9cffc406f8276a7057"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/refund-handover-effect-same-month-cohort.md",
+      "bytes": 3458,
+      "sha256": "3a9e9bfe38220fe693b6c87159d8e95a0e00eab937803d2ac5da2b3c27fb4f58"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/stage-source-package-price-by-previous-stage.md",
+      "bytes": 5271,
+      "sha256": "6043044ce0a8d4f98bd9352a721f9e77a2023074ef8ae2a3ad634d9e83434501"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/vocal-frontend-cohort-refund-chart-2026-05.md",
+      "bytes": 5799,
+      "sha256": "f8308e773d98aea82bf914c8082beed006b941005d73b5745d3436a8eb820bdc"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/vocal-frontend-cohort-refund-d90-chart.md",
+      "bytes": 3360,
+      "sha256": "1cd750c2508372d8a6a15bf802e7f4f832b9940c313e4c25c557aa6f585099b7"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/vocal-frontend-month-cohort-refund-heatmap-2026-05.md",
+      "bytes": 4697,
+      "sha256": "da7f59bc46c60ae058f9df6eed35cef948684871dcd6232a201575193bf6b362"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/vocal-frontend-same-day-cohort-refund-chart.md",
+      "bytes": 6099,
+      "sha256": "422216b801b1bb2f20d700c87debc60bda03c652dc2b7347a16ab6abb15657e7"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/vocal-gmv-refund-daily-month-course-stage-20260511.md",
+      "bytes": 11712,
+      "sha256": "a2cc8ce5afd142025194914f0f219e9fc55348498edf630d9d3dff02d738615a"
+    },
+    {
+      "path": "references/method-skills/local-cashflow-sql-querying/references/vocal-handover-refund-effect-analysis.md",
+      "bytes": 4724,
+      "sha256": "25a92410b81f9197d3b691246be79ae2c55c9c028b116fd94b0d303b540a8792"
+    },
+    {
+      "path": "references/method-skills/odps-clickhouse-schema-kb/SKILL.reference.md",
+      "bytes": 11695,
+      "sha256": "a7d327eca6722f9354737df03c11cccd137fe104f1a1e3eccbd460d85f258940"
+    },
+    {
+      "path": "references/method-skills/odps-clickhouse-schema-kb/references/clickhouse-order-dimension-relationship-export.md",
+      "bytes": 3646,
+      "sha256": "a0beb8790c49852ad91355c78b8051f0b3dbb26820418da1b368be531ce51aac"
+    },
+    {
+      "path": "references/method-skills/odps-clickhouse-schema-kb/references/clickhouse-user-relationship-export-session-20260519.md",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "references/method-skills/odps-clickhouse-schema-kb/references/clickhouse-user-relationship-export.md",
+      "bytes": 2321,
+      "sha256": "9afae9efb9aaf2e10246737332a7a8507e6579059022a815bab782e075d1956a"
+    },
+    {
+      "path": "references/method-skills/odps-clickhouse-schema-kb-workflow/SKILL.reference.md",
+      "bytes": 10204,
+      "sha256": "b26c4e8eda03e9ee90b9660c1c7eb0b891d56c47373593ff26ffa267815e3a9f"
+    },
+    {
+      "path": "references/method-skills/profitability-analysis-local/SKILL.reference.md",
+      "bytes": 1093,
+      "sha256": "97b9ff6456b2a7cffb0b92d80e10eec2394cfc08cace2c5a373b1b72db87519f"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/SKILL.reference.md",
+      "bytes": 14078,
+      "sha256": "7b1a2712c2bb486eb24cdab3353986be5d8780614585b3b304d31ea16d04de50"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/current-month-vs-cumulative-refund-rate-forecast-20260528.md",
+      "bytes": 2211,
+      "sha256": "aba72a1a0807d7dc16b5769055853d2308de2e2b49ff0bf5700d1d99cbe6e46f"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/feishu-docx-refund-report-style-audit-20260514.md",
+      "bytes": 2629,
+      "sha256": "673e3470ee4e9ae7e40386d5d389130826d684ddca115411f9b101dfb4c7bdb6"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/first-payment-freeze-analysis-method.md",
+      "bytes": 4004,
+      "sha256": "56fe2e232f9629e81bf9952909ea5fb1fa9206f5221125c41dda107064359c07"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/piano-cohort-refund-reason-20260520.md",
+      "bytes": 3577,
+      "sha256": "5ca56594670f46b72fc5888c8bc0518a2711e83a41b5d15307dc6de444de14dc"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/refund-doc-leader-summary-after-user-edits-20260514.md",
+      "bytes": 2748,
+      "sha256": "bae2fc3c837bd9b3c3d1dff852879dcc6748cae535e9fb3b72acf2248c8e4f23"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/sku-front-back-june-refund-forecast-workbook-20260527.md",
+      "bytes": 3134,
+      "sha256": "8207d15895f12fdfbe61371fabf649ac1e476cb0880b94e34f3edb61a6a2543a"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/sku-front-back-monthly-refund-forecast-excel-20260527.md",
+      "bytes": 3154,
+      "sha256": "9ba7025116264463f19488cb9c2c681066c973a9422a2e78330ec2f4314e4e53"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-backend-refund-detail-pay-month-trace-20260511.md",
+      "bytes": 5017,
+      "sha256": "06a6778426cd4f7c6fc3488e0127783103997cabdbfe61cc84e62898c491b062"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-april-docx-visual-report-20260513.md",
+      "bytes": 2695,
+      "sha256": "e8cf153939adbba6d3c49f4d818094379629be0f2e4492a317c3db3c04b33e23"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-channel-rate-comparison-20260514.md",
+      "bytes": 3738,
+      "sha256": "8ab4ed8c5316813aa3002f4e71d34e346a136fef13c5bb6a2bb418ccfbf1802c"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-docx-report-structure-iteration-20260514.md",
+      "bytes": 2818,
+      "sha256": "3ce07c4d9ff8a6e5ce8124c9103a808e65f06e3ca7a46bf5571ec71b2052d3c7"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-handover-refund-analysis-20260513.md",
+      "bytes": 3602,
+      "sha256": "333c9fe344a717db22feb54796cfcaf2d2811bedcc2e27cdc99f281e93d86169"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-march-april-m0-m1-diagnosis-20260513.md",
+      "bytes": 3474,
+      "sha256": "112b33479e9afc9c73cfb0d070befe3c01197a89f6c83fabb1c6a489047c3422"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-march-systemic-refund-diagnosis-20260514.md",
+      "bytes": 3815,
+      "sha256": "003d79f70e7c0973d2c46ee6ce526a52adaefe36d99115d6ce5f8fabfb1d69b1"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-refund-report-executive-upgrade-20260514.md",
+      "bytes": 3141,
+      "sha256": "c13b5fb800cb3826245cce61a70b999454df59f86ae2e248ff70d391b3202e06"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-refund-sheet-automation-pitfalls-20260513.md",
+      "bytes": 2332,
+      "sha256": "6ddb6f8cabe4e9dd96fa45f9f592988c23050801183e2f6ae9c5cbda1bf51d2c"
+    },
+    {
+      "path": "references/method-skills/refund-report-method/references/vocal-frontend-selected-period-refund-risk-20260514.md",
+      "bytes": 3390,
+      "sha256": "62e8809c9179b47cd1ffa36e2b82c2e2a52afbe374cc9fcc14f4f94e09912c67"
+    },
+    {
+      "path": "references/method-skills/renewal-forecast-vocal-method/SKILL.reference.md",
+      "bytes": 2281,
+      "sha256": "6c33c8f7a5851632d9c4e7fd6c2a99633b7d5d70dcc784139169950b362ff62d"
+    },
+    {
+      "path": "references/method-skills/track-renewal-dual-metric/SKILL.reference.md",
+      "bytes": 5019,
+      "sha256": "33a8863f4e92c5b04dd75652c505d3e3d2e68266ea2f9bb6d773c9585b056e51"
+    },
+    {
+      "path": "references/method-skills/track-renewal-dual-metric/references/vocal-selected-tracks-gmv-course-gmv-interval-20260511.md",
+      "bytes": 5375,
+      "sha256": "35058a51176f387ec40d435b81772cb0c28dc50391958c0430187b6c25bd0ee8"
+    },
+    {
+      "path": "references/method-skills-index.md",
+      "bytes": 7026,
+      "sha256": "ac8cffc210b7b3e9bdadf664e00a9374e8ecc36ef26ebd946b32333c0e9fb8e5"
+    },
+    {
+      "path": "references/old-sql/README.md",
+      "bytes": 218,
+      "sha256": "7a825911cf00c3e91677b0a89a1d1c6e99bb58b334d9b609de240033ca8280dc"
+    },
+    {
+      "path": "references/old-sql-index.md",
+      "bytes": 177,
+      "sha256": "645b787cf977fbb0ad15bbc94411335cb711a16eaca8754254b4bd4226d7d37f"
+    },
+    {
+      "path": "references/schema-kb/clickhouse_manifest_latest.json",
+      "bytes": 262946,
+      "sha256": "7cc8cc2bd8847af11582d16feba4c3efcf225d237d4144261fe03b15b80bc76a"
+    },
+    {
+      "path": "references/schema-kb/field_to_tables.json",
+      "bytes": 4383581,
+      "sha256": "4cdb7e706bc5978cb66d9d1d8def8fa7768dcc8275886084eba1cd47686e126d"
+    },
+    {
+      "path": "references/schema-kb/odps_manifest_latest.json",
+      "bytes": 163674,
+      "sha256": "18b6620cba8fb64af60e1730d23a782ebf3a78732dde74a16fa5853414547897"
+    },
+    {
+      "path": "references/schema-kb/refresh_summary.json",
+      "bytes": 1266,
+      "sha256": "676a16430d665702ada5182850c11e77fef49999880e3c3fbf71c562e3952999"
+    },
+    {
+      "path": "references/schema-kb/schema_kb.md",
+      "bytes": 16942,
+      "sha256": "e8297ab5ad2f865a81eea2d9f97b89f25d6723b823de4e8a81aa58b69316be43"
+    },
+    {
+      "path": "references/schema-kb/table_mapping.json",
+      "bytes": 529109,
+      "sha256": "2374296d211fb306d9b0fcac0bc77370cf8bcbfc52cc241154e83ac3add47401"
+    },
+    {
+      "path": "references/schema-kb/unified_schema_index.json",
+      "bytes": 10835117,
+      "sha256": "1c89045a14c4700afb9c5122252e00d495adce9249653df5ef13dd8b075fd244"
+    },
+    {
+      "path": "references/schema-kb-index.md",
+      "bytes": 503,
+      "sha256": "a8b2606f86e56cfa722c819b6d5b4ddcfe8fd128ec5988cbed9cd6f492fb857c"
+    }
+  ]
+}

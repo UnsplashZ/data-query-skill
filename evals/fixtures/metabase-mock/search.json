@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 321,
+      "model": "card",
+      "name": "Refund Daily KPI Mock",
+      "collection_name": "Eval Fixtures",
+      "dashboard_id": 88,
+      "updated_at": "2026-06-01T00:00:00Z"
+    },
+    {
+      "id": 88,
+      "model": "dashboard",
+      "name": "Refund Overview Mock",
+      "collection_name": "Eval Fixtures",
+      "updated_at": "2026-06-01T00:00:00Z"
+    }
+  ]
+}

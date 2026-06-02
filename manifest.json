@@ -1,0 +1,1356 @@
+{
+  "name": "internal-data-query",
+  "generated_at": "2026-06-02",
+  "skill_name": "internal-data-query",
+  "root_directory": "internal-data-query",
+  "default_output_dir": "data-query-work/",
+  "scope": "repository-agnostic internal data query skill",
+  "single_installable_skill": true,
+  "nested_skill_files_renamed": true,
+  "setup_connections_script": "scripts/setup_connections.py",
+  "normalized_old_sql": true,
+  "path_encoding": "ASCII filenames; UTF-8 file contents",
+  "connection_templates": true,
+  "unified_query_runner": true,
+  "metabase_scripts": true,
+  "file_count": 266,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5159,
+      "sha256": "0468c1ab656de4bc1538e20767635b4454ea3ce1adfbabd98b33664575d566b6"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 14487,
+      "sha256": "920a7bb89d271442885ebdf12d656feaba246e02a325881d10fd2d1943dff288"
+    },
+    {
+      "path": "data-query-knowledge/OWNERS.yaml",
+      "bytes": 553,
+      "sha256": "60932ed0a3455c49ea15e5765de4e99e90ab277bd3a89fdad9d7dd98ea215ab8"
+    },
+    {
+      "path": "data-query-knowledge/README.md",
+      "bytes": 701,
+      "sha256": "f88cda9eb4ab44c5b76524cc22b91d859583fddc11ffd1736ee9f0b0b06e8ce9"
+    },
+    {
+      "path": "data-query-knowledge/candidates/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/candidates/observations/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/candidates/query-verified/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/candidates/reusable-patterns/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/candidates/user-assertions/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/deprecated/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/golden-queries/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/joins/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/manifest.yaml",
+      "bytes": 969,
+      "sha256": "be93d0c746be56b74d5e71a97f04260095a74031fdf774a776eb40e0d0e21e92"
+    },
+    {
+      "path": "data-query-knowledge/metrics/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/promotion-log.md",
+      "bytes": 254,
+      "sha256": "c5e2bb2d42a27c8db690b33258d29e3e577b8a38944992b8686b66f688db3a04"
+    },
+    {
+      "path": "data-query-knowledge/reviews/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/semantic-memory/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data-query-knowledge/sources/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "evals/cases/eval-matrix.json",
+      "bytes": 918,
+      "sha256": "bde22f663b6597f2f7eed2a12d82f8de53a260e488bf593781f1f27552560f32"
+    },
+    {
+      "path": "evals/expected/eval-skill-pack.expected.json",
+      "bytes": 545,
+      "sha256": "55d3349999b7803ae691fa181ba7721abac4089575acf05f8736a11a4196a124"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/OWNERS.yaml",
+      "bytes": 87,
+      "sha256": "9ede92e874f2e20b8c7c42d9e2ef9651c5a7eaac31d5d5250fa6d4adb5dc0901"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/candidates/observations/missing-review-candidate.md",
+      "bytes": 703,
+      "sha256": "2163eb144eeee4a9b532b6799cfb01e635464ae91b7a471d1ea9aa47e4c8dd8d"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/candidates/observations/refund-rate-candidate.md",
+      "bytes": 805,
+      "sha256": "285082256916966c3a0eeb4230980cb070511653f0acbcdc705ac7ddbfec98c8"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/deprecated/refund-rate-old.md",
+      "bytes": 794,
+      "sha256": "d417fe02b7012b9ef5ba7527c43acaadf117f31df8f7d8a9e2e8cde02caeb4b8"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/golden-queries/refund-rate-monthly.md",
+      "bytes": 888,
+      "sha256": "17b1d87972660a1bceca9665c6a3bd839bf57d8eede7b0ddbbe967f853e3baeb"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/joins/refund-to-gmv.md",
+      "bytes": 732,
+      "sha256": "78cb01771cb6d1deca10d9419b18f5358beb80de266ad4f342b211b8000031d1"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/manifest.yaml",
+      "bytes": 133,
+      "sha256": "9aec43dbabc7254c25a9010e47e4e7ebecf38bb7bd12b43bc7663818c7532fd3"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/metrics/refund-rate-approved.md",
+      "bytes": 801,
+      "sha256": "48aa1d9c1cedb6d138842937cf063a62341154136d8e05f5d8db2d10eb292aba"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/promotion-log.md",
+      "bytes": 1206,
+      "sha256": "abeace195fb01511546ca63be85fa23952140eb9f9b6b1a383844a71893884db"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/reviews/review-refund-rate-approved.md",
+      "bytes": 683,
+      "sha256": "7d919adea134f7e6728b8ffc5d5d5297679ca6dc54b8ac1fa70fe92ec6ba75d7"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge/sources/refund-order-daily.md",
+      "bytes": 687,
+      "sha256": "c5a2e4d63b78332733bfce17ef54ba536ed58af97df33403bafefa7f3b611542"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/manifest.yaml",
+      "bytes": 105,
+      "sha256": "8d491885bfa4c804cabfef52ef553e31f106e969701de9ea30c35f62270ebfc1"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/metrics/refund-rate-legacy.md",
+      "bytes": 433,
+      "sha256": "183751ec0251d62c9e1418d3849e7b15aa7ec048fa6402f53dbe18556d158432"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/data-query-knowledge/reviews/refund-rate-review.md",
+      "bytes": 298,
+      "sha256": "2ee2792669ef90366304041cdd5eed2bd4d76eabc89b5aa3ac5ef972383666a9"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/manifest.yaml",
+      "bytes": 105,
+      "sha256": "8d491885bfa4c804cabfef52ef553e31f106e969701de9ea30c35f62270ebfc1"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/metrics/refund-rate-legacy.md",
+      "bytes": 433,
+      "sha256": "183751ec0251d62c9e1418d3849e7b15aa7ec048fa6402f53dbe18556d158432"
+    },
+    {
+      "path": "evals/fixtures/data-query-knowledge-old/reviews/refund-rate-review.md",
+      "bytes": 298,
+      "sha256": "2ee2792669ef90366304041cdd5eed2bd4d76eabc89b5aa3ac5ef972383666a9"
+    },
+    {
+      "path": "evals/fixtures/metabase/card_1001_gmv_daily.json",
+      "bytes": 2036,
+      "sha256": "037e3a78a4824391176914a4c7f7df25e45d2b5cd592d3f5e31116d6f81b8892"
+    },
+    {
+      "path": "evals/fixtures/metabase-mock/card-321.json",
+      "bytes": 475,
+      "sha256": "d0793806c98004c3c107b850c726e2805632e2a6440ae56eb39a2d04965ebbc1"
+    },
+    {
+      "path": "evals/fixtures/metabase-mock/config.yaml",
+      "bytes": 223,
+      "sha256": "a08fd3a6d9a0cab256b53092a3eb53a31449468b984b92ab0d126bd4ebf9d896"
+    },
+    {
+      "path": "evals/fixtures/metabase-mock/run-card-321.json",
+      "bytes": 1276,
+      "sha256": "ed5d72d2c98d5879552e4d2aaa0b34e8e82a3b89db858f51d7de560e1e4111bd"
+    },
+    {
+      "path": "evals/fixtures/metabase-mock/search.json",
+      "bytes": 402,
+      "sha256": "e559f318813d3829daf065804011cfc5e6b54a443e83e1828eeb457e60bd2266"
+    },
+    {
+      "path": "evals/fixtures/missing-time-range.sql",
+      "bytes": 198,
+      "sha256": "1899d1745c6e95b4234cb62a124206a46d814d820974928bf6168974ff6f8274"
+    },
+    {
+      "path": "evals/fixtures/query-case.md",
+      "bytes": 876,
+      "sha256": "4a84e3e94a5135cc83b017ff8d66f0338d0d09319216ac87401bab28d84b4f83"
+    },
+    {
+      "path": "evals/fixtures/query-session.json",
+      "bytes": 900,
+      "sha256": "7f37ddc712b61ca8527dd6fa4a5130c27545aaa90baf5bb034466e137b13fd67"
+    },
+    {
+      "path": "evals/fixtures/readonly.sql",
+      "bytes": 468,
+      "sha256": "c517d5b1cd2399f3f10ae3d6e162e96326eda3bc6c7850c41e9bef5be6451c4d"
+    },
+    {
+      "path": "evals/fixtures/reject-dml.sql",
+      "bytes": 163,
+      "sha256": "13a5b9876f1da01e87b5c3a7f580907d6c1992ab4d4372cb05843b7d70353939"
+    },
+    {
+      "path": "evals/fixtures/run-query-mock-result.json",
+      "bytes": 202,
+      "sha256": "1c02471e3a1e66f4cfbc4dc08489bb91ff0fe1caa816364a06a12c9ae0e97fa9"
+    },
+    {
+      "path": "evals/fixtures/security-risk.sql",
+      "bytes": 674,
+      "sha256": "36dcc47724640ea69aa583be737d1818593029ad0a41bfbe1e2ec54d5dec9c03"
+    },
+    {
+      "path": "references/bundled-assets.md",
+      "bytes": 3442,
+      "sha256": "88eaca3302087a5c981de52e41b81b5acb8de8f1f0d464c918b13c475fca013e"
+    },
+    {
+      "path": "references/historical-sql-index.md",
+      "bytes": 32462,
+      "sha256": "7b41d3be711d2f9313092c27a4a8792da8b85d1555c310434b1731da800a1723"
+    },
+    {
+      "path": "references/old-sql/README.md",
+      "bytes": 325,
+      "sha256": "71ce3ea3ee657193660346525a2cd1d245420e15e3cdbd84b630edff5811e963"
+    },
+    {
+      "path": "references/old-sql/historical-sql-index.csv",
+      "bytes": 23876,
+      "sha256": "e656d97817add1c7669a7116a074f2a3d87f56a1e150db3251b0c5d38e002f46"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0001-cost-sku-product.sql",
+      "bytes": 3546,
+      "sha256": "4860224c605de2324f6db45318cd2d8fbda340a291f41912c098cb92507faaf6"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0002-cost-sku-product.sql",
+      "bytes": 3290,
+      "sha256": "26e4a1c665a81d74a91a99f80f66ba5059c95425c863fa2c140b152219a13e62"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0003-handover-conversion.sql",
+      "bytes": 1533,
+      "sha256": "4c1fb7e14588b118f12c2677ccf579102d55be05d0975ab301b109ae4543a7f8"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0004-handover-conversion.sql",
+      "bytes": 1951,
+      "sha256": "f5eb0a844c2765cc89e6c60b2ed9062bd37f2bbcc236b7db710267003685d0fa"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0005-handover-conversion.sql",
+      "bytes": 1951,
+      "sha256": "f5eb0a844c2765cc89e6c60b2ed9062bd37f2bbcc236b7db710267003685d0fa"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0006-handover-channel-camp.sql",
+      "bytes": 2311,
+      "sha256": "28f5a48510504237fb19b2e20af624282f1d30c6c6926f0e3dfa84f0b2285b5a"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0007-channel-camp-order.sql",
+      "bytes": 1882,
+      "sha256": "6648929dc07c5ce7d38762e1a81ef863a913666331a3b2ead8dcb6070bf1f53f"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0008-channel-camp-order.sql",
+      "bytes": 2601,
+      "sha256": "a46251ebeba5345767a90484700ad08083b7855098f0813b05f09cdf30f46e6e"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0009-channel-camp-order.sql",
+      "bytes": 2567,
+      "sha256": "cec52c4bfd9ec5e386c5a46f60ec0fa007263d21b56484ea53356b52e660e6b7"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0010-refund-renewal.sql",
+      "bytes": 2573,
+      "sha256": "ca6941fac107bfa581e11828174b381890d26916c5ff44bb32de29568abec82b"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0011-refund-renewal.sql",
+      "bytes": 2994,
+      "sha256": "5f6e54205ee61bd635361b2ffab0ffc310f9df0342bf5edfb2830cf3a7830bcb"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0012-refund-renewal.sql",
+      "bytes": 2994,
+      "sha256": "5f6e54205ee61bd635361b2ffab0ffc310f9df0342bf5edfb2830cf3a7830bcb"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0013-refund-renewal.sql",
+      "bytes": 3016,
+      "sha256": "fbf49deb8cffbd3cae50ee91751f6b924bdea90b21cd2f8ec965a0677955d10d"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0014-refund-renewal.sql",
+      "bytes": 2994,
+      "sha256": "a5af80460ebe51ddb48228d0c10d552d211965a3b13269f5ec933fc45e93a1b0"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0015-refund-handover.sql",
+      "bytes": 7516,
+      "sha256": "a99dc26fbfc3cf794e39dddb29a7aafe927405679b7ef42e276463a8b044e67a"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0016-refund-handover.sql",
+      "bytes": 7426,
+      "sha256": "dadbc7febd94f3035baed274fbefbbd2fe487eb903b17065f74cf9d429f05a3e"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0017-refund-channel-camp.sql",
+      "bytes": 3392,
+      "sha256": "909c46f08aafd3167d54aeff74336e0f2222797c32e1be10b1422b040163b99f"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0018-refund-handover.sql",
+      "bytes": 5734,
+      "sha256": "6070f849b37ee98bbb009235266f19f4944272b138cf11645c158bcd528f0864"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0019-refund-handover.sql",
+      "bytes": 11569,
+      "sha256": "3f7ae2548792815e102c26cd13ebb3d701b11b4ad20c4e81ff04e2e48bd4213c"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0020-refund-gmv.sql",
+      "bytes": 2058,
+      "sha256": "22febfc8921987454b1f897ec793f52d8627a6116b8aebf696598b867de306a9"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0021-refund-gmv.sql",
+      "bytes": 4163,
+      "sha256": "f221dbe2644905114bb85966a235e88ab6fb164817ccbbc7c86a3697cad9d309"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0022-channel-camp-order.sql",
+      "bytes": 428,
+      "sha256": "38dcb9fd9c57189aa0e64a438c8ebf06ae8ce11ffdd79b75b9ca7ab90d870ca9"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0023-gmv-renewal.sql",
+      "bytes": 2428,
+      "sha256": "9ed4f9bde3af07d158d246391d3f7f3ed98c380af9788bba8f6e066a97aefbd7"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0024-channel-camp-order.sql",
+      "bytes": 761,
+      "sha256": "e965d86a180a419d26aad8bc0a9d75598e56ea5561698553eaa4992bad9c10c2"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0025-refund-gmv.sql",
+      "bytes": 1654,
+      "sha256": "4e9157951aa53176e318d2f964d57580b5c0d25d33c207b1a8491f36cbc1e19d"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0026-gmv-cashflow.sql",
+      "bytes": 3878,
+      "sha256": "96ccdbea8a5d5315a82599ca9d79e0b71360edd47fce34103b23e4d9278ea6eb"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0027-gmv-handover.sql",
+      "bytes": 7410,
+      "sha256": "cdffe1ed8c199f49736fff1d314af2505f80783be650c2349bb24d95d72dc982"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0028-gmv-channel-camp.sql",
+      "bytes": 3110,
+      "sha256": "4b5cfa210cf71d39abd3387543146dde73adb7a61526719d9fed9ea246f4d265"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0029-gmv-handover.sql",
+      "bytes": 3874,
+      "sha256": "714c19e9d00eb26b50bab56ea7e69f24390b79700d5b17ecd3a3dee52075cf71"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0030-gmv-handover.sql",
+      "bytes": 7041,
+      "sha256": "fef3433f6a3c1b78bffd765c7bda66821056e9519438cac3ebbf06952f65e61c"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0031-gmv-handover.sql",
+      "bytes": 5875,
+      "sha256": "54397b6930c974eb0d550490e7a0072ad9ef34d2df17c18ca23b55160d52e82c"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0032-gmv-handover.sql",
+      "bytes": 5524,
+      "sha256": "f3f6db937cf9ed855544d1ffe92de9b5a11dcaebf695c00d2dd2ea4bc4c5c907"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0033-refund-gmv.sql",
+      "bytes": 1567,
+      "sha256": "4c8fd384a952800677c65382b176fe23602ec8721df8c92bded5924a7a86ecba"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0034-cashflow-cost.sql",
+      "bytes": 707,
+      "sha256": "3822c4c02caf4f9319a5ce30b3eca475fc2388c20a9bee549ebb0e6192cab359"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0035-cashflow-cost.sql",
+      "bytes": 3450,
+      "sha256": "c81d17d2fbd49d7e4a09a27cfae37480b0028197a06760e0e41f916f83209b7e"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0036-cashflow-cost.sql",
+      "bytes": 755,
+      "sha256": "7d7ca42f65b4ec3e596c5912a773583256e8805c14b1c67d8e626e20dc8911ae"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0037-cashflow-cost.sql",
+      "bytes": 3456,
+      "sha256": "258dec0a08d8f9883b24cdcdecdfcb9e62937b29db51ed8e4da5758eaf53f8f8"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0038-refund-gmv.sql",
+      "bytes": 979,
+      "sha256": "797150db3092619217b810691b5c6d435f4bab9bb75d5ca23cc79ebbeee7b2ac"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0039-gmv-cashflow.sql",
+      "bytes": 1717,
+      "sha256": "d1d6f557433377818ad167e873c04f0b418d39696cbe5a88a473f72f3b4b99e9"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0040-refund-gmv.sql",
+      "bytes": 1161,
+      "sha256": "279ea9406dd076e232df3856e206b9c90bfc8bc0c641e019ce8cdafef536b862"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0041-cost-channel-camp.sql",
+      "bytes": 1291,
+      "sha256": "857b4075bbac04df4ec466c885db0cc3f5782c1818e7d361710beb58cce11c4e"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0042-gmv-cost.sql",
+      "bytes": 3038,
+      "sha256": "cb3569d54ab6426f4f0f6caded227e6213f54e84cfd4d7b69bcf34703af8238a"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0043-cost-channel-camp.sql",
+      "bytes": 1279,
+      "sha256": "e5abdcc5710e677ebde51a5e404544cb1dfba03fd7a8c1ba57251db0a927feee"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0044-gmv-channel-camp.sql",
+      "bytes": 3212,
+      "sha256": "93d83df69c63ba03f3e99075220de4915697c8f02052a9b0df0eecc88f29302c"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0045-refund-cohort.sql",
+      "bytes": 10902,
+      "sha256": "1396345b9ccf30d7395afa9928ed5eab1986fd8d9f414eb68789777dd0ae4316"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0046-cost-clickhouse.sql",
+      "bytes": 3456,
+      "sha256": "1636cb872a542d4c9afd06521a7cec35440e57a7ed42643e5950e3ff5b99a21d"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0047-cost-clickhouse.sql",
+      "bytes": 3450,
+      "sha256": "c81d17d2fbd49d7e4a09a27cfae37480b0028197a06760e0e41f916f83209b7e"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0048-gmv-cashflow.sql",
+      "bytes": 175,
+      "sha256": "52abf5d55ccaccf82de2efc2ba768c023b6112410ba30ea706d757e3d9590536"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0049-refund-handover.sql",
+      "bytes": 12806,
+      "sha256": "b8f395ad8a1b54b22c51627367ece577db681797ebf32385a63849efc9a75df6"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0050-refund-handover.sql",
+      "bytes": 11647,
+      "sha256": "8263dd2b041b39cb4e00f00d9d0fc7efe1bc7bfca96ca0d0f83f65a7f00cd548"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0051-refund-cohort.sql",
+      "bytes": 759,
+      "sha256": "c06a95daff4ef52f170fb9338654080fc097e54bf4953a5ba28fdd1bc9719237"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0052-refund-gmv.sql",
+      "bytes": 1379,
+      "sha256": "0f8bae3271cd26391e4bab701a657bd1b9c5fe2be116ec804b0049a6e670d189"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0053-refund-gmv.sql",
+      "bytes": 1349,
+      "sha256": "15c57d518ab37dcc79d32a455390512ac892f871357647a1b2cba728788ce8ed"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0054-refund-handover.sql",
+      "bytes": 7909,
+      "sha256": "754f9238837aca9a0ef3d77cd96ebd87f80f89e2b31140c2da68c3c0c5d0b5cd"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0055-refund-handover.sql",
+      "bytes": 5755,
+      "sha256": "dde7b87eda9c3db15bcc61b8853793200c64530c3ba79357c7fea88c141afc7f"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0056-refund-handover.sql",
+      "bytes": 5755,
+      "sha256": "dde7b87eda9c3db15bcc61b8853793200c64530c3ba79357c7fea88c141afc7f"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0057-refund-handover.sql",
+      "bytes": 5755,
+      "sha256": "dde7b87eda9c3db15bcc61b8853793200c64530c3ba79357c7fea88c141afc7f"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0058-refund-handover.sql",
+      "bytes": 5465,
+      "sha256": "43a986ced078f17e3cb52f57c61cf4d85ec6749044027a8410463b0dc6100fe3"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0059-refund-handover.sql",
+      "bytes": 4936,
+      "sha256": "02799739279d3e5a5c85f1c041c513f003d6dd37f647259c63f6605a102cc20d"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0060-refund-handover.sql",
+      "bytes": 6408,
+      "sha256": "7ecfb64343f0b8dc56e3fe1d4a70645e260ce8ed96681bdcd62467b6c0b6e245"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0061-refund-handover.sql",
+      "bytes": 4984,
+      "sha256": "23754b6aeae7638a44774095cd8f47a36594682eb1ec947e06196b1fe7a9a139"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0062-refund-user-relationship.sql",
+      "bytes": 2356,
+      "sha256": "376dc01a4e306086440866ef38bb25901b84d5345f5474e70afdd103c167f5da"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0063-user-relationship-clickhouse.sql",
+      "bytes": 31969,
+      "sha256": "6309e5710e74889768344e16624b9d0f69592bd32ce0166baf9f13336d58c7dd"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0064-user-relationship.sql",
+      "bytes": 31172,
+      "sha256": "f67bd67b6a74544d917781234b479bf4c527fffde16d0ec7afb7837191384844"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0065-user-relationship.sql",
+      "bytes": 24988,
+      "sha256": "4d1e37ee968990eba83a91a93c21e24b8664d561e1930496952e17c0bad60ed4"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0066-user-relationship.sql",
+      "bytes": 24988,
+      "sha256": "4d1e37ee968990eba83a91a93c21e24b8664d561e1930496952e17c0bad60ed4"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0067-refund-cost.sql",
+      "bytes": 8439,
+      "sha256": "728b9b5c59f549a5f66df953d14b8ec7acc26ebf62cb745aa5b88271a50a81de"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0068-handover-user-relationship.sql",
+      "bytes": 31788,
+      "sha256": "8030ccafb2c1a626ec1edcba46a1c68ecfcbc546163f9c8346a63a974f32fe2b"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0069-user-relationship-clickhouse.sql",
+      "bytes": 25074,
+      "sha256": "6ed5d83ebd8aaf18e990f01f8f2a21a21560af2e344a6115750d5e3877c40c9b"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0070-refund-user-relationship.sql",
+      "bytes": 8684,
+      "sha256": "d122888cf8b6d7f52d52ea893d2c7c0eb5e1a9397e0452e20e35109b8176b605"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0071-user-relationship-clickhouse.sql",
+      "bytes": 31877,
+      "sha256": "780f58dade51d162beacae6bfeba114609811f79b054a77f7b6b448115cf15eb"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0072-user-relationship-clickhouse.sql",
+      "bytes": 62928,
+      "sha256": "6e39b92370c6b97bf4d7203e02cceaedd560a00601b667259bdad6695285fb9a"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0073-user-relationship-clickhouse.sql",
+      "bytes": 31258,
+      "sha256": "9c8f406f6ed980d7f4f022205484d3a148fe844c42a1b6a7064c8262a114fbcc"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0074-user-relationship.sql",
+      "bytes": 31172,
+      "sha256": "4064dbb12094cea6eaf35c43e72229be38054a67fd947678c33233b1d34ee974"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0075-user-relationship-clickhouse.sql",
+      "bytes": 63253,
+      "sha256": "4ddc82253bd12159714900922e8bda68414b575a5b5977ad0b544dab4be75bbe"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0076-user-relationship-clickhouse.sql",
+      "bytes": 32253,
+      "sha256": "e67ebe4e99b7276de2cad47a0473891a17b64d9e2f314db3f0901f71d20f1f06"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0077-user-relationship-clickhouse.sql",
+      "bytes": 16195,
+      "sha256": "0beea3508c13793583f1020703d996e2c0d13a460c9fdb527d0ae8dfcf1f03ab"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0078-user-relationship-clickhouse.sql",
+      "bytes": 16195,
+      "sha256": "4c93e6a2416fdc0b0dc1e2509d13b7e5798ed6ad9f29b0a7b34be47fcaecf1dd"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0079-user-relationship-clickhouse.sql",
+      "bytes": 25495,
+      "sha256": "857b55ccb252b1de2cca5014a4ad54ef82456f660b863d87b4b1c8c2a8be1b14"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0080-user-relationship-clickhouse.sql",
+      "bytes": 25495,
+      "sha256": "857b55ccb252b1de2cca5014a4ad54ef82456f660b863d87b4b1c8c2a8be1b14"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0081-refund-user-relationship.sql",
+      "bytes": 8644,
+      "sha256": "4762c63fa77b3ef336e2e27d4376214f522ab4db871bb062946a243ca5adf964"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0082-user-relationship-clickhouse.sql",
+      "bytes": 31877,
+      "sha256": "539a8671bff6d4a7d8da6cb263402c8190df15463d1926b362cc0b90745cecf4"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0083-user-relationship-clickhouse.sql",
+      "bytes": 15794,
+      "sha256": "07f01c3f404d12bcef107773c7cc8bf777dcd6c951a1e6792692392dc137975d"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0084-user-relationship-clickhouse.sql",
+      "bytes": 31637,
+      "sha256": "6948bf46f1ac3bdfbfe82f11969f551819737a36b29094ba41c4ab67eef893ad"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0085-user-relationship-clickhouse.sql",
+      "bytes": 50237,
+      "sha256": "c22a0a0971fbbd48375052bea5a44a0e83184a001eb586e7d1408bf5062d805b"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0086-user-relationship-clickhouse.sql",
+      "bytes": 50237,
+      "sha256": "c22a0a0971fbbd48375052bea5a44a0e83184a001eb586e7d1408bf5062d805b"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0087-user-relationship-clickhouse.sql",
+      "bytes": 62928,
+      "sha256": "70d3b3caa5e366d9ff240e80bbdaf998bd16439f298c9011a82b9b3d52b00329"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0088-user-relationship-clickhouse.sql",
+      "bytes": 31258,
+      "sha256": "d6e6a2d42bb60d94613203072a15fe97b166e97bf94d4838a38e01604eace599"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0089-gmv-order.sql",
+      "bytes": 915,
+      "sha256": "1a5319b64a02eb369e978601c9c765612b7c2ef2a684d1322c7ac44cd76ceb6e"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0090-gmv-order.sql",
+      "bytes": 879,
+      "sha256": "c80b5929fedf083aa6944493b56560969a1b38ee3f5b1b46693fe2a30d23993c"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0091-gmv-order.sql",
+      "bytes": 915,
+      "sha256": "ebc1f8c759adbda21bdbddff438faedcc1e0d8ed6a4a561cb080cd3ae53c537c"
+    },
+    {
+      "path": "references/old-sql/sql/legacy-sql-0092-gmv-order.sql",
+      "bytes": 879,
+      "sha256": "419ea5724291ef3f6ea897998d2d5b8344ec3b1188774304f3863167406bd61f"
+    },
+    {
+      "path": "references/query-checklist.md",
+      "bytes": 2589,
+      "sha256": "c20ec243c675ea1c52069046cc65e803a6f2d47fa75acc51a54cdfe09e04796d"
+    },
+    {
+      "path": "references/query-execution-contract.md",
+      "bytes": 6501,
+      "sha256": "61a9c4625fcbfbd2d8b88ad458ed9de56c3902ae17addcef21446958d8325945"
+    },
+    {
+      "path": "references/sql-query-method-internal/README.md",
+      "bytes": 1394,
+      "sha256": "66561b510b9a83764496b4146286f7d30083029db8f9073ea26dec2c3d97ad3a"
+    },
+    {
+      "path": "references/sql-query-method-internal/SKILL.reference.md",
+      "bytes": 13610,
+      "sha256": "65f3d4afb64dd36bb49aca376b7dfa5b16740b92bc4e1435e60a7db1154d9966"
+    },
+    {
+      "path": "references/sql-query-method-internal/manifest.json",
+      "bytes": 17821,
+      "sha256": "874975448127ab0f9146021cf764cc2cfda09ecf6a910e15f19e6a8d1e7b2a27"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/checklist.md",
+      "bytes": 1349,
+      "sha256": "0934d58513a5f5838e4e11cbdb1cfec91d66a24d712c2d1bed27d8cfa5071858"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/cohort-analysis-local/SKILL.reference.md",
+      "bytes": 5375,
+      "sha256": "918035049294f58cbce20af3d300902f84b67a94cfd1021a774d06768dde40e9"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/gmv-feishu-sync-maintenance/SKILL.reference.md",
+      "bytes": 3811,
+      "sha256": "6a6b44c5f0dc01b6ffd4631c7b9cd9ab067ca0e80676e564c3afe3445dc39fa6"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/gmv-feishu-sync-maintenance/references/high-1plus3-zdw-month-course.md",
+      "bytes": 2198,
+      "sha256": "4fe41bcff94cc45956dc55150bca513002f6ca44a465b2c7655306c120f3559e"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-realtime-sync-maintenance/SKILL.reference.md",
+      "bytes": 65217,
+      "sha256": "94cce5fb36de43d788803ca5bde1fcd140f070f46a7a42ad56f5701025dfce22"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-realtime-sync-maintenance/references/card-cache-callback-compatibility-2026-05.md",
+      "bytes": 4148,
+      "sha256": "bcc774d96295b88e54ef9617f123fcc615182dcff93b0d6b2852c8c31d774b61"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-realtime-sync-maintenance/references/card-top-range-and-may-track-filter-2026-05.md",
+      "bytes": 4231,
+      "sha256": "1b9fa101ef56041af6cd3a444e65c0fc628d2d9ae818cd52f28c9419f1faa9d3"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-realtime-sync-maintenance/references/refund-handover-docx-chart-correction-2026-05.md",
+      "bytes": 4660,
+      "sha256": "485ff2f7de2dd38f580240a93fb20e5348893f6b94a0100a90b8d647b2b74b7f"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-realtime-sync-maintenance/references/rerun-after-pay-type-restore-2026-05.md",
+      "bytes": 3255,
+      "sha256": "e821ab3137aa2968dc2a393474403361e8699f96bef675bbd7d26c60a911898f"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-stats-report-method/SKILL.reference.md",
+      "bytes": 6851,
+      "sha256": "b4ea3a5de3b3780e35c92ad93b41d3d6fc19841e6060bf964998b83dee9cf43e"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-stats-report-method/references/channel-camp-monthly-funnel-report.md",
+      "bytes": 4915,
+      "sha256": "103d28faefd4e5346d106675989e304479617e54822f2e187af27ab90625791d"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-stats-report-method/references/channel-camp-monthly-funnel-review-checks.md",
+      "bytes": 3919,
+      "sha256": "c648a95b3d03c38bf474f72123fe65b43a34e0e386f31a61ee92e86b4f0f6ba2"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/handover-stats-report-method/references/handover-daily-card-kpi-sources.md",
+      "bytes": 2874,
+      "sha256": "e9101b5c3a0e4abb4666ceb972e0b2aa098ff6b5a8076dfa1c83081dde2ae930"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/high-handover-feishu-sync/SKILL.reference.md",
+      "bytes": 10090,
+      "sha256": "27fff9d59db3c81a155adb06aaffa779ec6fd580b7c351fb3896ed260b54265d"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/SKILL.reference.md",
+      "bytes": 83783,
+      "sha256": "7517b44a921c3ae1b9a9a44b278971575bf524a9ef497c0badde57bf26d48893"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/cash-account-indicators-and-dashboard-sql-review-20260512.md",
+      "bytes": 5954,
+      "sha256": "76c0917ca43239448ef05b5fd0203171efb96d3824e1b4f351a2df9b7e4b2117"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/clickhouse-user-relationship-export-20260519.md",
+      "bytes": 3372,
+      "sha256": "e5b62da72d1cd141435b627a4d0a79e5188fe09de66bd9766edfe4e8d2483c4d"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/clickhouse-user-relationship-export-userlevel-20260519.md",
+      "bytes": 2726,
+      "sha256": "c748c4023751dc2467dcf239c6fcb3961c7323105883da281ada37de2774f975"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/drh-order-current-1sql-left-join-followup.md",
+      "bytes": 2035,
+      "sha256": "69b7678879ab93ab08c395532fa1d0648c457a4d041c50fe44e0b303b83e35f7"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/drh-order-vs-dwd-order-flow-gmv-reconciliation.md",
+      "bytes": 3291,
+      "sha256": "823f4205c349c43d90dce947e60fe663562b3240673d505218f2b424eec017f7"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/first-payment-only-stop-freeze-report-20260429.md",
+      "bytes": 8351,
+      "sha256": "fa2d34123af69a72247226461f85f2220af4d3d6ffc5d139811cc6dc45b0da94"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/first-payment-stop-freeze-feishu-20260508.md",
+      "bytes": 8284,
+      "sha256": "0d8dc44f32d4d355f13a2f434c0cddd30c5f43eca18df0eb5fe0e304fca88eb0"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/first-payment-stop-freeze-historical-combined-20260508.md",
+      "bytes": 4901,
+      "sha256": "e77baa9f7aafffc4e39b6890fb1d497959dc137d116a8deb22b6d781ea473773"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/first-payment-stop-freeze-history-feishu-20260508-latest.md",
+      "bytes": 4542,
+      "sha256": "a9deca281e5b1150a9224d4d696afd7435ad7d1f6c276a384fde8ce8dbaba51d"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/first-payment-stop-freeze-history-feishu-20260508.md",
+      "bytes": 11866,
+      "sha256": "3938a88ff9061b715c91f039c93ad1b7d20276e3383b68e69829204762078010"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/order-keyword-detail-export.md",
+      "bytes": 2108,
+      "sha256": "2a7f62901c775eabb2bdab27a5a8e66d28061c492d69516ddd92ae77f4166d66"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/piano-stage-conversion-by-handover-camp-20260509.md",
+      "bytes": 4693,
+      "sha256": "f2e5897d9c761bcc465e7a701eca678c4d6ca50bab9f11af70a2b60ecd7f2fdf"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/piano-stage-source-purchase-price-people-20260509.md",
+      "bytes": 4223,
+      "sha256": "9573ccd090d3982ce2d7ce996efc9c934efafe7077ae2fca0459e0e020013c06"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/refund-approval-stage-and-backend-team-order-lookup-20260518.md",
+      "bytes": 5187,
+      "sha256": "6cc79cabc8b5575f7134e038aea9ad5f626b1073901afa9cffc406f8276a7057"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/refund-handover-effect-same-month-cohort.md",
+      "bytes": 3458,
+      "sha256": "3a9e9bfe38220fe693b6c87159d8e95a0e00eab937803d2ac5da2b3c27fb4f58"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/stage-source-package-price-by-previous-stage.md",
+      "bytes": 5271,
+      "sha256": "6043044ce0a8d4f98bd9352a721f9e77a2023074ef8ae2a3ad634d9e83434501"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/vocal-frontend-cohort-refund-chart-2026-05.md",
+      "bytes": 5757,
+      "sha256": "d2b4e0458110b68902004739ba87489cc79bdbef433f4853089deeb08108802a"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/vocal-frontend-cohort-refund-d90-chart.md",
+      "bytes": 3360,
+      "sha256": "1cd750c2508372d8a6a15bf802e7f4f832b9940c313e4c25c557aa6f585099b7"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/vocal-frontend-month-cohort-refund-heatmap-2026-05.md",
+      "bytes": 4697,
+      "sha256": "da7f59bc46c60ae058f9df6eed35cef948684871dcd6232a201575193bf6b362"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/vocal-frontend-same-day-cohort-refund-chart.md",
+      "bytes": 6099,
+      "sha256": "422216b801b1bb2f20d700c87debc60bda03c652dc2b7347a16ab6abb15657e7"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/vocal-gmv-refund-daily-month-course-stage-20260511.md",
+      "bytes": 11618,
+      "sha256": "bb7a536ed5d8c450bb1ca38d5df171eff17638fc6af63e5df8a9a68f6285ae82"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/local-cashflow-sql-querying/references/vocal-handover-refund-effect-analysis.md",
+      "bytes": 4724,
+      "sha256": "25a92410b81f9197d3b691246be79ae2c55c9c028b116fd94b0d303b540a8792"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb/SKILL.reference.md",
+      "bytes": 11695,
+      "sha256": "a7d327eca6722f9354737df03c11cccd137fe104f1a1e3eccbd460d85f258940"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb/references/clickhouse-order-dimension-relationship-export.md",
+      "bytes": 3646,
+      "sha256": "a0beb8790c49852ad91355c78b8051f0b3dbb26820418da1b368be531ce51aac"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb/references/clickhouse-user-relationship-export-session-20260519.md",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb/references/clickhouse-user-relationship-export.md",
+      "bytes": 2321,
+      "sha256": "9afae9efb9aaf2e10246737332a7a8507e6579059022a815bab782e075d1956a"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/odps-clickhouse-schema-kb-workflow/SKILL.reference.md",
+      "bytes": 10204,
+      "sha256": "b26c4e8eda03e9ee90b9660c1c7eb0b891d56c47373593ff26ffa267815e3a9f"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/profitability-analysis-local/SKILL.reference.md",
+      "bytes": 1093,
+      "sha256": "97b9ff6456b2a7cffb0b92d80e10eec2394cfc08cace2c5a373b1b72db87519f"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/SKILL.reference.md",
+      "bytes": 14078,
+      "sha256": "7b1a2712c2bb486eb24cdab3353986be5d8780614585b3b304d31ea16d04de50"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/current-month-vs-cumulative-refund-rate-forecast-20260528.md",
+      "bytes": 2211,
+      "sha256": "aba72a1a0807d7dc16b5769055853d2308de2e2b49ff0bf5700d1d99cbe6e46f"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/feishu-docx-refund-report-style-audit-20260514.md",
+      "bytes": 2629,
+      "sha256": "673e3470ee4e9ae7e40386d5d389130826d684ddca115411f9b101dfb4c7bdb6"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/first-payment-freeze-analysis-method.md",
+      "bytes": 4004,
+      "sha256": "56fe2e232f9629e81bf9952909ea5fb1fa9206f5221125c41dda107064359c07"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/piano-cohort-refund-reason-20260520.md",
+      "bytes": 3577,
+      "sha256": "5ca56594670f46b72fc5888c8bc0518a2711e83a41b5d15307dc6de444de14dc"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/refund-doc-leader-summary-after-user-edits-20260514.md",
+      "bytes": 2748,
+      "sha256": "bae2fc3c837bd9b3c3d1dff852879dcc6748cae535e9fb3b72acf2248c8e4f23"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/sku-front-back-june-refund-forecast-workbook-20260527.md",
+      "bytes": 3134,
+      "sha256": "8207d15895f12fdfbe61371fabf649ac1e476cb0880b94e34f3edb61a6a2543a"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/sku-front-back-monthly-refund-forecast-excel-20260527.md",
+      "bytes": 3154,
+      "sha256": "9ba7025116264463f19488cb9c2c681066c973a9422a2e78330ec2f4314e4e53"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-backend-refund-detail-pay-month-trace-20260511.md",
+      "bytes": 5017,
+      "sha256": "06a6778426cd4f7c6fc3488e0127783103997cabdbfe61cc84e62898c491b062"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-april-docx-visual-report-20260513.md",
+      "bytes": 2695,
+      "sha256": "e8cf153939adbba6d3c49f4d818094379629be0f2e4492a317c3db3c04b33e23"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-channel-rate-comparison-20260514.md",
+      "bytes": 3738,
+      "sha256": "8ab4ed8c5316813aa3002f4e71d34e346a136fef13c5bb6a2bb418ccfbf1802c"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-docx-report-structure-iteration-20260514.md",
+      "bytes": 2818,
+      "sha256": "3ce07c4d9ff8a6e5ce8124c9103a808e65f06e3ca7a46bf5571ec71b2052d3c7"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-handover-refund-analysis-20260513.md",
+      "bytes": 3602,
+      "sha256": "333c9fe344a717db22feb54796cfcaf2d2811bedcc2e27cdc99f281e93d86169"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-march-april-m0-m1-diagnosis-20260513.md",
+      "bytes": 3474,
+      "sha256": "112b33479e9afc9c73cfb0d070befe3c01197a89f6c83fabb1c6a489047c3422"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-march-systemic-refund-diagnosis-20260514.md",
+      "bytes": 3815,
+      "sha256": "003d79f70e7c0973d2c46ee6ce526a52adaefe36d99115d6ce5f8fabfb1d69b1"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-refund-report-executive-upgrade-20260514.md",
+      "bytes": 3141,
+      "sha256": "c13b5fb800cb3826245cce61a70b999454df59f86ae2e248ff70d391b3202e06"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-refund-sheet-automation-pitfalls-20260513.md",
+      "bytes": 2332,
+      "sha256": "6ddb6f8cabe4e9dd96fa45f9f592988c23050801183e2f6ae9c5cbda1bf51d2c"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/refund-report-method/references/vocal-frontend-selected-period-refund-risk-20260514.md",
+      "bytes": 3390,
+      "sha256": "62e8809c9179b47cd1ffa36e2b82c2e2a52afbe374cc9fcc14f4f94e09912c67"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/renewal-forecast-vocal-method/SKILL.reference.md",
+      "bytes": 2281,
+      "sha256": "6c33c8f7a5851632d9c4e7fd6c2a99633b7d5d70dcc784139169950b362ff62d"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/track-renewal-dual-metric/SKILL.reference.md",
+      "bytes": 5019,
+      "sha256": "33a8863f4e92c5b04dd75652c505d3e3d2e68266ea2f9bb6d773c9585b056e51"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills/track-renewal-dual-metric/references/vocal-selected-tracks-gmv-course-gmv-interval-20260511.md",
+      "bytes": 5375,
+      "sha256": "35058a51176f387ec40d435b81772cb0c28dc50391958c0430187b6c25bd0ee8"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/method-skills-index.md",
+      "bytes": 7026,
+      "sha256": "ac8cffc210b7b3e9bdadf664e00a9374e8ecc36ef26ebd946b32333c0e9fb8e5"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/old-sql/README.md",
+      "bytes": 218,
+      "sha256": "7a825911cf00c3e91677b0a89a1d1c6e99bb58b334d9b609de240033ca8280dc"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/old-sql-index.md",
+      "bytes": 177,
+      "sha256": "645b787cf977fbb0ad15bbc94411335cb711a16eaca8754254b4bd4226d7d37f"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/schema-kb/clickhouse_manifest_latest.json",
+      "bytes": 262946,
+      "sha256": "7cc8cc2bd8847af11582d16feba4c3efcf225d237d4144261fe03b15b80bc76a"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/schema-kb/field_to_tables.json",
+      "bytes": 4383581,
+      "sha256": "4cdb7e706bc5978cb66d9d1d8def8fa7768dcc8275886084eba1cd47686e126d"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/schema-kb/odps_manifest_latest.json",
+      "bytes": 163674,
+      "sha256": "18b6620cba8fb64af60e1730d23a782ebf3a78732dde74a16fa5853414547897"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/schema-kb/refresh_summary.json",
+      "bytes": 1266,
+      "sha256": "676a16430d665702ada5182850c11e77fef49999880e3c3fbf71c562e3952999"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/schema-kb/schema_kb.md",
+      "bytes": 16942,
+      "sha256": "e8297ab5ad2f865a81eea2d9f97b89f25d6723b823de4e8a81aa58b69316be43"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/schema-kb/table_mapping.json",
+      "bytes": 529109,
+      "sha256": "2374296d211fb306d9b0fcac0bc77370cf8bcbfc52cc241154e83ac3add47401"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/schema-kb/unified_schema_index.json",
+      "bytes": 10835117,
+      "sha256": "1c89045a14c4700afb9c5122252e00d495adce9249653df5ef13dd8b075fd244"
+    },
+    {
+      "path": "references/sql-query-method-internal/references/schema-kb-index.md",
+      "bytes": 503,
+      "sha256": "a8b2606f86e56cfa722c819b6d5b4ddcfe8fd128ec5988cbed9cd6f492fb857c"
+    },
+    {
+      "path": "references/sql-query-method-overlay.md",
+      "bytes": 2363,
+      "sha256": "3567b9b798bf6194e6aae1f452c762618bd23ea8cb278fb3d9ff5e43beec4463"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 49,
+      "sha256": "71d3ef12a6ab500d3b5403487eb7aa8cfe2db27431657ee1f72205368b3f2ded"
+    },
+    {
+      "path": "scripts/capture_query_knowledge.py",
+      "bytes": 10288,
+      "sha256": "29f9f8cd3605d8ddf6f23abcffdc03eefe2c1bdd7bf0ece9f8d3a7a5b201f52c"
+    },
+    {
+      "path": "scripts/check_connections.py",
+      "bytes": 7279,
+      "sha256": "38012567dca96c35e02409562de8f1769d628785392c534abae4ec21b5a73deb"
+    },
+    {
+      "path": "scripts/discover_data_sources.py",
+      "bytes": 8574,
+      "sha256": "6f6b9b6928824cfbbef4ec8f314bb17dba69e50a6aee06d88bc3ffa090935b25"
+    },
+    {
+      "path": "scripts/eval_skill_pack.py",
+      "bytes": 21118,
+      "sha256": "f2111e3361f72f1aadb1d0a8179a9d912f315f0ee7e5a25df3fdd8ab21ab3324"
+    },
+    {
+      "path": "scripts/lib_data_sources.py",
+      "bytes": 13670,
+      "sha256": "2ef9b0a2c0d2562fcc8ca770e6382e098381da2a963ec9ca68915f9585c89554"
+    },
+    {
+      "path": "scripts/metabase_get_card.py",
+      "bytes": 5366,
+      "sha256": "d6f26eb1e0d023e65b06f8e862ee03e89ff43443c541f92aff1025cbf582edc1"
+    },
+    {
+      "path": "scripts/metabase_run_card.py",
+      "bytes": 9783,
+      "sha256": "39d4ea0f1d476c1a7752e050fb1813cb0a6599dedb0fbd9ce9e541d228d629ce"
+    },
+    {
+      "path": "scripts/metabase_search.py",
+      "bytes": 4065,
+      "sha256": "b6663afaa437a4932ebf70c017116dc49b340ba6dba6fb111ea6696a7be1170b"
+    },
+    {
+      "path": "scripts/migrate_query_knowledge.py",
+      "bytes": 4252,
+      "sha256": "04cad7def7159aba05ebb7df8546f5544f5b5b86ce3210b88fab20b023cebef0"
+    },
+    {
+      "path": "scripts/promote_query_knowledge.py",
+      "bytes": 6846,
+      "sha256": "390a4b0329efc07b7807a7bae9638b480a97a6c3ee2e4450d41b41628f8970d8"
+    },
+    {
+      "path": "scripts/query_static_check.py",
+      "bytes": 12423,
+      "sha256": "0ae0442756e88e94aad4cc8a37766b3bbcf848d770e9c01fd29bf569671f6269"
+    },
+    {
+      "path": "scripts/report_query_knowledge_sync.py",
+      "bytes": 5989,
+      "sha256": "173e6dcea403dbfef4c911630c75dbbc0908909e04d958b0c8881152e7dca139"
+    },
+    {
+      "path": "scripts/run_query.py",
+      "bytes": 10606,
+      "sha256": "abed13b5182f9046e6dffcf3e9c257696b66768c92b1b8be5ba99c6657d86868"
+    },
+    {
+      "path": "scripts/scan_sensitive_info.py",
+      "bytes": 3432,
+      "sha256": "a12273387c5f9066ba842163636c79dd540cc773a6e00c6afb1a1087ef7b51b6"
+    },
+    {
+      "path": "scripts/search_old_sql.py",
+      "bytes": 3389,
+      "sha256": "47c8163d703cc31fa77352a422a484a77fd42acdb81c4541eb46f37aeaf9d42e"
+    },
+    {
+      "path": "scripts/search_query_knowledge.py",
+      "bytes": 7754,
+      "sha256": "3ce112dd9b0a5c9ddc644a34dc7ab6ed0a6d24c81b7d4e02e04392c0003cc88e"
+    },
+    {
+      "path": "scripts/search_schema.py",
+      "bytes": 4364,
+      "sha256": "e16348b20cf3edd134ecc57442f6491abe2e2d513f6cdcf196c0687f6195e32d"
+    },
+    {
+      "path": "scripts/setup_connections.py",
+      "bytes": 9796,
+      "sha256": "4c9bb2c6774ea0ddf2d2452a3f24c03f8356bed3eac0cb678b870bf7a3444ffa"
+    },
+    {
+      "path": "scripts/suggest_knowledge_capture.py",
+      "bytes": 4335,
+      "sha256": "7035f057f10abda6b6219dfb5968277d117e5d2ca936d1fd66ca12efd6270475"
+    },
+    {
+      "path": "scripts/validate_manifest.py",
+      "bytes": 2758,
+      "sha256": "ee7a18322cb8f22a9e54670b5d0a3f2474eea4b5eb91850764cd3254dfefa747"
+    },
+    {
+      "path": "scripts/validate_query_knowledge.py",
+      "bytes": 7251,
+      "sha256": "f0f8c06a68115c33a7fdc3d06054196db9f4a354a49a72986950fd62da02bc97"
+    },
+    {
+      "path": "templates/connections/clickhouse.env.example",
+      "bytes": 174,
+      "sha256": "18683724daba73168bcf2ba0e42d68009bd96d541f331d7946685a034a3b65a5"
+    },
+    {
+      "path": "templates/connections/data-sources.yaml.example",
+      "bytes": 885,
+      "sha256": "59c27a780349d6d173afa27a9349795db94c55fd9c629917412b3c11281cfdaa"
+    },
+    {
+      "path": "templates/connections/metabase.env.example",
+      "bytes": 129,
+      "sha256": "0ece1b337e7a2f40b63d174cd8ac1ee279348d59938f5c982cabd299edc8116c"
+    },
+    {
+      "path": "templates/connections/mysql.env.example",
+      "bytes": 145,
+      "sha256": "1abea1887facdd22230d82b5931770647a11838d9711acf4a0dcdc6524d2e682"
+    },
+    {
+      "path": "templates/connections/odps.env.example",
+      "bytes": 149,
+      "sha256": "0fd5abbb3c32757e0f46ec669ee486eed0cb7687cdff6ffa4e8bb06fbf1edc7f"
+    },
+    {
+      "path": "templates/feature-data-dependency.md",
+      "bytes": 452,
+      "sha256": "b468aa4d1e72ac1706e371934a7ee0dfaf7ce894946726347a72daf410eb4093"
+    },
+    {
+      "path": "templates/query-brief.md",
+      "bytes": 396,
+      "sha256": "c5eb6660f7c8f2213b71adc2572b5f06ee5ad760dc8999c2ebca90d5addd5c17"
+    },
+    {
+      "path": "templates/query-knowledge/OWNERS.yaml.example",
+      "bytes": 461,
+      "sha256": "e3ee4310854dfd9762b7c5013e509b954ceb6e094dcd76bf88cfcfce3af21752"
+    },
+    {
+      "path": "templates/query-knowledge/golden-query.md",
+      "bytes": 495,
+      "sha256": "bf951a49c23bb0a045d1823fbec754b282086b12cca513181ae74314b41a477f"
+    },
+    {
+      "path": "templates/query-knowledge/join-contract.md",
+      "bytes": 457,
+      "sha256": "f82ed7600e38425fcfd4d0da8a6560760f4b5f5a4d357c98bdef8af6ff2dae1c"
+    },
+    {
+      "path": "templates/query-knowledge/knowledge-candidate.md",
+      "bytes": 863,
+      "sha256": "620d11936ec4ec8b80a9116fdbf63cf9078d0e7cb9c9cc5926111de23887356c"
+    },
+    {
+      "path": "templates/query-knowledge/metric-definition.md",
+      "bytes": 471,
+      "sha256": "de7bdd1f5f63cf5bbe958258c2332d4be5ad815c240d2d355712b283df559699"
+    },
+    {
+      "path": "templates/query-knowledge/promotion-request.md",
+      "bytes": 488,
+      "sha256": "09c7894dbcce8124965959165424e7a365d7a568a392cb1fda9dba9b5a1cf0cb"
+    },
+    {
+      "path": "templates/query-knowledge/review-record.md",
+      "bytes": 456,
+      "sha256": "8c9f5a90e42a8236b17e5a2b1a5295b5ed8fa4d29a239beabdbb5eb2285e107e"
+    },
+    {
+      "path": "templates/query-knowledge/semantic-memory.md",
+      "bytes": 469,
+      "sha256": "84dab1b73d031365da553ab25a6af072a707b3fab3c873535b200ef5c23b6973"
+    },
+    {
+      "path": "templates/query-knowledge/source-profile.md",
+      "bytes": 464,
+      "sha256": "f520914c2b5abcdc85dae80e76e5c68d04544883ad53a8341bd172be8b614384"
+    },
+    {
+      "path": "templates/result-summary.md",
+      "bytes": 316,
+      "sha256": "3e6c023876329e47e58eb1b33c052114255ee01782b2d0ee1c5822b1ca638465"
+    },
+    {
+      "path": "templates/sql-review.md",
+      "bytes": 499,
+      "sha256": "1eb1d5dc7beb02a06742aae24917a61a06cccea26c1ce00e6cedbb52922688cb"
+    }
+  ],
+  "query_static_check": "scripts/query_static_check.py",
+  "check_connections": "scripts/check_connections.py",
+  "discover_data_sources": "scripts/discover_data_sources.py",
+  "query_knowledge": "data-query-knowledge/",
+  "query_knowledge_templates": "templates/query-knowledge/",
+  "eval_pack": "scripts/eval_skill_pack.py",
+  "query_execution_contract": "references/query-execution-contract.md"
+}
