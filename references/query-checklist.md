@@ -14,9 +14,9 @@
 ## Source Explorer
 
 - [ ] Current repository/workspace has been searched.
-- [ ] Schema KB has been searched.
-- [ ] Historical SQL index has been searched.
-- [ ] Method skills or business runbooks have been searched.
+- [ ] External schema index, live metadata, or target-repo data catalog has been searched when available.
+- [ ] External historical SQL index has been searched when available.
+- [ ] Target-repo runbooks or business docs have been searched when available.
 - [ ] Recommended and rejected sources are listed.
 - [ ] Source status is labeled: confirmed, evidence, historical, draft, gap, unknown.
 - [ ] Key fields exist.

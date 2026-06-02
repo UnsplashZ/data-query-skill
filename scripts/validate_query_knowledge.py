@@ -14,8 +14,7 @@ import yaml
 from lib_workspace import resolve_knowledge_root, warn_if_needed
 
 
-CURRENT_SCHEMA_VERSION = "1.0"
-SKIP_NAMES = {"manifest.yaml", "OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
+SKIP_NAMES = {"OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
 VALID_STATUS = {"draft", "candidate", "reviewed", "approved", "deprecated"}
 VALID_CONFIDENCE = {"low", "medium", "high"}
 REQUIRED_FIELDS = [
@@ -133,9 +132,6 @@ def main() -> int:
     ok = True
 
     knowledge_root = resolve_knowledge_root(root, mode="read").path
-    if not (knowledge_root / "manifest.yaml").exists():
-        print("FAIL: data-query-work/knowledge/manifest.yaml missing")
-        ok = False
     if not (knowledge_root / "OWNERS.yaml").exists():
         print("FAIL: data-query-work/knowledge/OWNERS.yaml missing")
         ok = False
@@ -166,9 +162,6 @@ def main() -> int:
         if str(item.get("confidence", "")).lower() not in VALID_CONFIDENCE:
             print(f"FAIL {rel}: invalid confidence {item.get('confidence')}")
             ok = False
-        if item.get("schema_version") != CURRENT_SCHEMA_VERSION:
-            print(f"WARN {rel}: schema_version={item.get('schema_version')} current={CURRENT_SCHEMA_VERSION}")
-
         if not as_list(item.get("created_by")):
             print(f"FAIL {rel}: created_by is required")
             ok = False

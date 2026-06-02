@@ -1,10 +1,10 @@
 # Query Execution Contract
 
-本契约约束 internal-data-query 的 SQL 查询执行闭环。任何真实查数都必须先确认数据源、SQL 只读性、采样策略和结果可信度；执行不可用时必须显式标记 `unverified`，不能把历史 SQL、示例配置或候选知识当作当前真源。
+本契约约束 internal-data-query 的 SQL 查询执行闭环。任何真实查数都必须先确认数据源、SQL 只读性、采样策略和结果可信度；执行不可用时必须显式标记 `unverified`，不能把历史 SQL、示例配置、外部索引或候选知识当作当前真源。skill package 不携带实际业务 schema、历史 SQL 或团队知识。
 
 ## 1. 执行前决策
 
-1. 先检索当前仓库、schema KB、历史 SQL、Metabase card/dashboard、method references、`data-query-work/knowledge/`。
+1. 先检索当前仓库、用户提供的外部 schema index / historical SQL index、Metabase card/dashboard、目标仓库 runbook、`data-query-work/knowledge/`。
 2. 先选定 engine/profile，再写 SQL；不能静默切换 ClickHouse、ODPS、MySQL 或 Metabase。
 3. SQL 必须只读。默认禁止 DDL、DML、权限、导出、过程执行、维护类语句。
 4. 每个查询必须声明时间字段、时间范围、统计粒度、状态过滤、金额单位和业务 scope。
@@ -24,7 +24,7 @@
 - 日期分区常见为 `dt`、`ds`、`biz_date`、`stat_date`；先确认分区字段再扩大范围。
 - 日期函数需按 ODPS 方言复核，例如 `to_date`、`dateadd` 等，不要直接套用 ClickHouse 函数。
 - 首次执行必须限制日期范围或 `LIMIT`；大结果集优先聚合，不直接明细全量导出。
-- 权限不足时不要换表猜测，先回到 schema KB、历史 SQL 和用户确认。
+- 权限不足时不要换表猜测，先回到目标仓库、外部 schema / historical SQL index、Metabase 证据和用户确认。
 
 ### MySQL
 
@@ -61,7 +61,7 @@
 ### 字段不存在
 
 1. 停止扩大查询范围。
-2. 回查 schema KB、Metabase SQL、历史 SQL 和当前仓库。
+2. 回查当前仓库、外部 schema index、Metabase SQL、外部 historical SQL index 和用户确认。
 3. 确认字段别名、分区字段、表版本和 engine。
 4. 修正后先跑 `LIMIT` 或小日期范围。
 

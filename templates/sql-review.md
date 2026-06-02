@@ -16,7 +16,7 @@
 - [ ] Time range and time field are correct.
 - [ ] Grain is controlled before joins.
 - [ ] Join cardinality checked.
-- [ ] Status/refund/cancel filters match the metric.
+- [ ] Status/state/cancel/error filters match the metric.
 - [ ] Amount units are clear.
 - [ ] Query is readonly.
 - [ ] Small sample executed before full range.

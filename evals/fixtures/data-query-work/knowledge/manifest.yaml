@@ -1,7 +1,0 @@
-schema_version: 1
-knowledge_root: data-query-work/knowledge
-domains:
-  - refund
-owners:
-  - data-query-eval
-last_validated_at: 2026-06-01

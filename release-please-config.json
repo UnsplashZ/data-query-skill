@@ -5,14 +5,7 @@
       "release-type": "simple",
       "package-name": "internal-data-query",
       "include-component-in-tag": false,
-      "version-file": "version.txt",
-      "extra-files": [
-        {
-          "type": "json",
-          "path": "manifest.json",
-          "jsonpath": "$.version"
-        }
-      ]
+      "version-file": "version.txt"
     }
   }
 }

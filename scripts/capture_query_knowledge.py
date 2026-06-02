@@ -153,10 +153,9 @@ def slugify(value: str, *, fallback: str) -> str:
 
 
 def infer_domain(text: str) -> str:
-    lowered = text.lower()
-    for key in ("refund", "gmv", "cashflow", "cost", "handover", "renewal", "order", "user-relationship"):
-        if key in lowered:
-            return key
+    match = re.search(r"(?im)^\s*(?:domain|业务域)\s*[:：]\s*([a-zA-Z0-9_-]+)", text)
+    if match:
+        return slugify(match.group(1), fallback="general")
     return "general"
 
 

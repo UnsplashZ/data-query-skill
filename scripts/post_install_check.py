@@ -19,7 +19,7 @@ from lib_data_sources import (
 )
 
 
-REQUIRED_FILES = ("SKILL.md", "manifest.json", "scripts/setup_connections.py")
+REQUIRED_FILES = ("SKILL.md", "scripts/setup_connections.py")
 
 
 def run(root: Path, command: list[str]) -> dict[str, Any]:
@@ -57,10 +57,9 @@ def profile_rows(config: dict[str, Any]) -> list[dict[str, Any]]:
 
 def build_report(root: Path, config_path: Path | None, env_file: Path | None, real_smoke: bool) -> dict[str, Any]:
     required = {rel: (root / rel).exists() for rel in REQUIRED_FILES}
-    manifest = run(root, [sys.executable, "scripts/validate_manifest.py"])
     sensitive = run(root, [sys.executable, "scripts/scan_sensitive_info.py", "."])
     setup_help = run(root, [sys.executable, "scripts/setup_connections.py", "--help"])
-    schema_smoke = run(root, [sys.executable, "scripts/search_schema.py", "refund", "--limit", "1"])
+    schema_smoke = run(root, [sys.executable, "scripts/search_schema.py", "example", "--limit", "1"])
 
     config_error = None
     try:
@@ -84,7 +83,7 @@ def build_report(root: Path, config_path: Path | None, env_file: Path | None, re
     elif real_smoke:
         connection_smoke = {"status": "missing_config", "reason": "no config file found"}
 
-    installed_ok = all(required.values()) and manifest["ok"] and sensitive["ok"]
+    installed_ok = all(required.values()) and sensitive["ok"]
     configured_ok = bool(configured_engines)
     connected_ok = connection_smoke.get("status") == "ok"
     query_verified = "skipped"
@@ -96,7 +95,6 @@ def build_report(root: Path, config_path: Path | None, env_file: Path | None, re
             "installed": installed_ok,
         },
         "checks": {
-            "manifest": manifest,
             "sensitive_scan": sensitive,
             "setup_help": setup_help,
             "schema_offline_smoke": schema_smoke,
@@ -118,6 +116,7 @@ def build_report(root: Path, config_path: Path | None, env_file: Path | None, re
         "connection_smoke": connection_smoke,
         "next_actions": [
             "Use scripts/setup_connections.py --add-sources <sources> to add missing local profiles without overwriting existing profiles.",
+            "After readonly profiles are configured and network/VPN is available, run scripts/refresh_schema.py --root <target-repo> to build data-query-work/schema/unified_schema_index.json.",
             "Run scripts/post_install_check.py --real-smoke only when VPN/network and readonly accounts are available.",
             "Restart Codex to pick up new skills.",
         ],

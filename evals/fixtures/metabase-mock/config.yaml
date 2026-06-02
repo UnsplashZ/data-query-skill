@@ -1,8 +1,0 @@
-profiles:
-  metabase:
-    mock:
-      base_url: "https://metabase.example.invalid"
-      auth_method: "api_key"
-      api_key_env: "METABASE_API_KEY"
-      readonly: true
-      mock_data_dir: "evals/fixtures/metabase-mock"

@@ -2,15 +2,14 @@
 
 ## Project Structure & Module Organization
 
-This repository packages the `internal-data-query` skill. Core behavior lives in `SKILL.md`; package metadata and file hashes live in `manifest.json`. Python CLI utilities are in `scripts/`, including connection setup, query execution, Metabase helpers, manifest validation, sensitive-info scanning, and offline evals. Templates are in `templates/`, method references and historical SQL are in `references/`, and shared query knowledge is under `data-query-knowledge/`. Offline fixtures live in `evals/`. Release assets are generated under `dist/` and are not source.
+This repository packages the `internal-data-query` skill. Core behavior lives in `SKILL.md`. Python CLI utilities are in `scripts/`, including connection setup, query execution, Metabase helpers, sensitive-info scanning, and post-install checks. Templates are in `templates/`; generic query method references are in `references/`. Do not store real business schema, historical SQL, exports, credentials, or team knowledge in this repository. Release assets are generated under `dist/` and are not source.
 
 ## Build, Test, and Development Commands
 
-- `python scripts/validate_manifest.py`: verify every packaged file against `manifest.json`.
 - `python scripts/scan_sensitive_info.py .`: scan the repo for credentials, internal URLs, and other sensitive material.
-- `python scripts/eval_skill_pack.py --allow-blocked`: run the offline eval pack without real data connections.
-- `python scripts/query_static_check.py --sql-file evals/fixtures/readonly.sql --engine clickhouse`: validate readonly SQL safety rules.
+- `python -m py_compile scripts/*.py`: catch syntax errors in packaged scripts.
 - `python scripts/package_skill.py --json`: build the release zip in `dist/`.
+- `python scripts/post_install_check.py --offline-ok`: run lightweight install smoke checks.
 - `python -m pip install -r requirements.txt`: install optional runtime dependencies for real queries and exports.
 
 ## Coding Style & Naming Conventions
@@ -19,15 +18,15 @@ Use Python 3 scripts with explicit CLI arguments via `argparse`. Prefer small, s
 
 ## Testing Guidelines
 
-The primary test harness is `scripts/eval_skill_pack.py`; it must remain offline and fixture-driven. Add fixtures under `evals/fixtures/` and update expected outputs when behavior changes intentionally. For query changes, include static checks for readonly behavior, rejected DML, and required time ranges. Do not require live Metabase, ClickHouse, ODPS, or MySQL access for CI validation.
+Keep validation lightweight. At minimum, run Python compilation, sensitive-info scanning, packaging, and post-install smoke checks. Do not require live Metabase, ClickHouse, ODPS, or MySQL access for CI validation.
 
 ## Commit & Pull Request Guidelines
 
-Recent commits use short imperative summaries, such as `Add automated release versioning`. Keep commits focused and mention user-visible changes first. PRs should include purpose, changed scripts or templates, validation commands run, and any manifest or release impact.
+Recent commits use short imperative summaries, such as `Add automated release versioning`. Keep commits focused and mention user-visible changes first. PRs should include purpose, changed scripts or templates, and validation commands run.
 
 ## Security & Configuration Tips
 
-Never commit real credentials, tokens, hosts, sessions, exports, or local `data-sources.yaml` files. Real profiles belong in `~/.internal-data-query/data-sources.yaml` or another user-owned local path with restrictive permissions. After changing packaged files, update `manifest.json` and rerun validation.
+Never commit real credentials, tokens, hosts, sessions, exports, local `data-sources.yaml` files, business schema snapshots, historical SQL, or team knowledge. Real profiles belong in `~/.internal-data-query/data-sources.yaml` or another user-owned local path with restrictive permissions.
 
 ## Agent-Specific Instructions
 

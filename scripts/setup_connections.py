@@ -167,7 +167,7 @@ def build_placeholder(sources: list[str], profile: str) -> dict[str, Any]:
 def build_interactive(sources: list[str], profile: str) -> dict[str, Any]:
     data: dict[str, Any] = {"profiles": {}}
     print("internal-data-query connection setup")
-    print("This writes a local config only. It does not edit the skill package, repository docs, manifest, or generated SQL.")
+    print("This writes a local config only. It does not edit the skill package, repository docs, or generated SQL.")
     print("Configure readonly data sources. Press Enter to keep defaults or leave optional fields empty.")
     print("Metabase can use API key, session id, or username/password. Configure only the method your team uses.")
     for source in sources:
@@ -284,8 +284,8 @@ def main() -> int:
     print("  python scripts/setup_connections.py --help")
     print(f"  python scripts/check_connections.py --config {output} --offline-ok")
     print(f"  python scripts/discover_data_sources.py --config {output}")
-    print("  python scripts/metabase_search.py refund --mock-file evals/fixtures/metabase-mock/search.json --json")
-    print("  python scripts/metabase_get_card.py 321 --mock-file evals/fixtures/metabase-mock/card-321.json --json")
+    print(f"  python scripts/refresh_schema.py --config {output} --root <target-repo>")
+    print("  python scripts/metabase_search.py example --config ~/.internal-data-query/data-sources.yaml --json")
     print("  python scripts/run_query.py --help")
     if wrote_placeholder:
         print("  Placeholder config is not a real connectivity smoke target; replace it before Metabase/search/query calls.")

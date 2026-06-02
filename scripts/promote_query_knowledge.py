@@ -10,26 +10,11 @@ from typing import Any
 
 import yaml
 
-from lib_workspace import LegacyKnowledgeWriteError, resolve_knowledge_root, warn_if_needed, writable_knowledge_root
+from lib_workspace import resolve_knowledge_root, warn_if_needed, writable_knowledge_root
 
 
 VALID_TARGETS = {"reviewed", "approved", "deprecated"}
-SKIP_NAMES = {"manifest.yaml", "OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
-
-
-def is_relative_to(path: Path, parent: Path) -> bool:
-    try:
-        path.resolve().relative_to(parent.resolve())
-        return True
-    except ValueError:
-        return False
-
-
-def is_legacy_item_path(root: Path, path: Path) -> bool:
-    if is_relative_to(path, root / "data-query-knowledge"):
-        return True
-    selection = resolve_knowledge_root(root, mode="read")
-    return selection.is_legacy and is_relative_to(path, selection.path)
+SKIP_NAMES = {"OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
 
 
 def as_list(value: Any) -> list[str]:
@@ -166,22 +151,11 @@ def main() -> int:
     if args.dry_run:
         return 0
 
-    if is_legacy_item_path(root, path):
-        print(
-            "FAIL: refusing to write to legacy data-query-knowledge/. "
-            "Move the item to data-query-work/knowledge/ and retry."
-        )
-        return 1
-
     if path.suffix.lower() == ".md":
         dump_markdown(path, data, body or "")
     else:
         dump_yaml(path, data)
-    try:
-        append_log(root, item_id, old_status, args.to, args.actor, ",".join(reviewers), "; ".join(args.evidence), args.notes)
-    except LegacyKnowledgeWriteError as exc:
-        print(f"FAIL: {exc}")
-        return 1
+    append_log(root, item_id, old_status, args.to, args.actor, ",".join(reviewers), "; ".join(args.evidence), args.notes)
     print("PASS: promotion applied and promotion-log updated.")
     return 0
 

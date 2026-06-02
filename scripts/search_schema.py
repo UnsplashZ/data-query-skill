@@ -1,16 +1,39 @@
 #!/usr/bin/env python3
-"""Search bundled schema KB and print table/field oriented results."""
+"""Search an optional external schema index and print table/field oriented results."""
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 from typing import Any
 
 
-def load_unified(root: Path) -> dict[str, Any]:
-    path = root / "references" / "sql-query-method-internal" / "references" / "schema-kb" / "unified_schema_index.json"
+def default_schema_candidates(root: Path) -> list[Path]:
+    candidates: list[Path] = []
+    env_path = os.environ.get("INTERNAL_DATA_QUERY_SCHEMA_INDEX")
+    if env_path:
+        candidates.append(Path(env_path).expanduser())
+    candidates.extend(
+        [
+            root / "data-query-work" / "schema" / "unified_schema_index.json",
+            root / "references" / "schema-kb" / "unified_schema_index.json",
+        ]
+    )
+    return candidates
+
+
+def resolve_schema_index(root: Path, file_path: Path | None) -> Path | None:
+    if file_path:
+        return file_path.expanduser()
+    for candidate in default_schema_candidates(root):
+        if candidate.exists():
+            return candidate
+    return None
+
+
+def load_unified(path: Path) -> dict[str, Any]:
     if not path.exists():
         raise FileNotFoundError(f"schema index not found: {path}")
     return json.loads(path.read_text(encoding="utf-8"))
@@ -84,11 +107,12 @@ def print_table(rows: list[dict[str, Any]]) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Search schema KB by table, field, engine, or keyword.")
+    parser = argparse.ArgumentParser(description="Search an optional external schema index by table, field, engine, or keyword.")
     parser.add_argument("query", nargs="?", default="", help="Keyword to search in table/field/comment.")
     parser.add_argument("--table", help="Filter by table name substring.")
     parser.add_argument("--field", help="Filter by field name substring.")
-    parser.add_argument("--engine", choices=["odps", "clickhouse"], help="Filter by engine/source.")
+    parser.add_argument("--engine", help="Filter by engine/source.")
+    parser.add_argument("--file", type=Path, help="External unified schema index JSON.")
     parser.add_argument("--limit", type=int, default=30)
     parser.add_argument("--json", action="store_true")
     parser.add_argument(
@@ -99,7 +123,16 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    data = load_unified(args.root)
+    root = args.root.resolve()
+    index_path = resolve_schema_index(root, args.file)
+    if not index_path:
+        if args.json:
+            print("[]")
+        else:
+            print("No schema index configured. Provide --file or set INTERNAL_DATA_QUERY_SCHEMA_INDEX.")
+        return 0
+
+    data = load_unified(index_path)
     rows = []
     for item in iter_matches(data, args):
         rows.append(item)

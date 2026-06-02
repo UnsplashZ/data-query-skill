@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Summarize installed drivers, local profiles, bundled knowledge, and next actions."""
+"""Summarize installed drivers, local profiles, external context, and next actions."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ import argparse
 import csv
 import importlib.util
 import json
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -59,25 +60,55 @@ def profile_status(engine: str, profile: str, cfg: dict[str, Any]) -> dict[str, 
     }
 
 
+def first_existing(candidates: list[Path]) -> Path | None:
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
+
+
 def schema_kb_status(root: Path) -> dict[str, Any]:
-    kb = root / "references" / "sql-query-method-internal" / "references" / "schema-kb"
-    unified = kb / "unified_schema_index.json"
-    status: dict[str, Any] = {"path": str(kb), "exists": kb.exists(), "tables": {}, "files": []}
-    if kb.exists():
-        status["files"] = sorted(path.name for path in kb.iterdir() if path.is_file())
-    if unified.exists():
+    candidates = []
+    env_path = os.environ.get("INTERNAL_DATA_QUERY_SCHEMA_INDEX")
+    if env_path:
+        candidates.append(Path(env_path).expanduser())
+    candidates.extend(
+        [
+            root / "data-query-work" / "schema" / "unified_schema_index.json",
+            root / "references" / "schema-kb" / "unified_schema_index.json",
+        ]
+    )
+    unified = first_existing(candidates)
+    status: dict[str, Any] = {
+        "path": str(unified) if unified else None,
+        "exists": bool(unified),
+        "tables": {},
+        "generated_at": None,
+        "configured_by": "external",
+    }
+    if unified and unified.exists():
         data = json.loads(unified.read_text(encoding="utf-8"))
         tables = data.get("tables") or {}
         status["tables"] = {engine: len(items or {}) for engine, items in tables.items()}
+        status["generated_at"] = data.get("generated_at")
     return status
 
 
 def historical_sql_status(root: Path) -> dict[str, Any]:
-    csv_path = root / "references" / "old-sql" / "historical-sql-index.csv"
-    sql_dir = root / "references" / "old-sql" / "sql"
+    candidates = []
+    env_path = os.environ.get("INTERNAL_DATA_QUERY_OLD_SQL_INDEX")
+    if env_path:
+        candidates.append(Path(env_path).expanduser())
+    candidates.extend(
+        [
+            root / "data-query-work" / "historical-sql" / "historical-sql-index.csv",
+        ]
+    )
+    csv_path = first_existing(candidates)
+    sql_dir = csv_path.parent / "sql" if csv_path else None
     count = 0
     domains: dict[str, int] = {}
-    if csv_path.exists():
+    if csv_path and csv_path.exists():
         with csv_path.open(newline="", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 count += 1
@@ -89,12 +120,13 @@ def historical_sql_status(root: Path) -> dict[str, Any]:
                 for key in tags or ["unknown"]:
                     domains[key] = domains.get(key, 0) + 1
     return {
-        "index_path": str(csv_path),
-        "index_exists": csv_path.exists(),
-        "sql_dir": str(sql_dir),
-        "sql_file_count": len(list(sql_dir.glob("*.sql"))) if sql_dir.exists() else 0,
+        "index_path": str(csv_path) if csv_path else None,
+        "index_exists": bool(csv_path),
+        "sql_dir": str(sql_dir) if sql_dir else None,
+        "sql_file_count": len(list(sql_dir.glob("*.sql"))) if sql_dir and sql_dir.exists() else 0,
         "index_count": count,
         "domains": dict(sorted(domains.items())[:20]),
+        "configured_by": "external",
     }
 
 
@@ -104,7 +136,7 @@ def query_knowledge_status(root: Path) -> dict[str, Any]:
     status: dict[str, Any] = {
         "path": str(kb),
         "exists": kb.exists(),
-        "path_kind": "legacy" if selection.is_legacy else "workspace",
+        "path_kind": "workspace",
         "warning": selection.warning,
         "file_count": 0,
         "status_counts": {},
@@ -140,13 +172,11 @@ def build_next_actions(local_config: dict[str, Any], available_sources: list[dic
     if any(item["status"] in {"missing", "offline_placeholder"} for item in available_sources):
         actions.append("补齐 missing/offline_placeholder profile；占位配置不能作为 verified 查询来源。")
     if not offline_knowledge["schema_kb"].get("exists"):
-        actions.append("缺少 schema KB，写 SQL 前需要从业务文档或用户确认表字段。")
+        actions.append("未配置 schema index；配置只读数据源后可运行 scripts/refresh_schema.py --root <target-repo> 拉取元数据。")
     if not offline_knowledge["data_query_knowledge"].get("exists"):
-        actions.append("未发现 data-query-work/knowledge；只能使用 schema KB/历史 SQL/当前用户证据，不能标记共享知识 verified。")
-    elif offline_knowledge["data_query_knowledge"].get("path_kind") == "legacy":
-        actions.append("当前只发现旧 data-query-knowledge；它只作为只读兼容来源，写入前先迁到 data-query-work/knowledge。")
+        actions.append("未发现 data-query-work/knowledge；只能使用目标仓库、外部索引、实时连接或当前用户证据，不能标记共享知识 verified。")
     if not actions:
-        actions.append("复杂查询前先运行 search_schema/search_old_sql，再执行 query_static_check 与 sample 查询。")
+        actions.append("复杂查询前先检索目标仓库、外部 schema/historical SQL、Metabase，再执行 query_static_check 与 sample 查询。")
     return actions
 
 
@@ -162,7 +192,7 @@ def print_text(result: dict[str, Any]) -> None:
     schema = result["offline_knowledge"]["schema_kb"]
     hist = result["offline_knowledge"]["historical_sql"]
     dqk = result["offline_knowledge"]["data_query_knowledge"]
-    print(f"- schema_kb: exists={schema['exists']} tables={schema.get('tables', {})}")
+    print(f"- schema_kb: exists={schema['exists']} generated_at={schema.get('generated_at')} tables={schema.get('tables', {})}")
     print(f"- historical_sql: index_count={hist['index_count']} sql_file_count={hist['sql_file_count']}")
     print(
         f"- data_query_knowledge: exists={dqk['exists']} "

@@ -15,7 +15,7 @@ from lib_workspace import resolve_knowledge_root, warn_if_needed
 
 
 CURRENT_SCHEMA_VERSION = "1.0"
-SKIP_NAMES = {"manifest.yaml", "OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
+SKIP_NAMES = {"OWNERS.yaml", "promotion-log.md", "README.md", ".gitkeep"}
 CONFIDENCE_ORDER = {"low": 1, "medium": 2, "high": 3}
 ORDER_CONFIDENCE = {value: key for key, value in CONFIDENCE_ORDER.items()}
 
