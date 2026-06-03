@@ -233,7 +233,10 @@ def test_schema_index_discovery() -> None:
         assert rows and rows[0]["source_file"] == "all_sources_schema_index.json"
         discover = run(["scripts/discover_data_sources.py", "--root", str(root), "--json"], env=clean_env)
         status = json.loads(discover.stdout)["offline_knowledge"]["schema_kb"]
-        assert "/data-query-work/schema/all_sources_schema_index.json" in status["path"]
+        selected_path = Path(status["path"])
+        assert selected_path.name == "all_sources_schema_index.json"
+        assert selected_path.parent.name == "schema"
+        assert selected_path.parent.parent.name == "data-query-work"
 
     with tempfile.TemporaryDirectory(prefix="dq schema multi ") as tmp:
         root = Path(tmp)
