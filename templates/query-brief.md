@@ -7,6 +7,7 @@
 - Validation:
 - Risk:
 - Suggested file: `data-query-work/briefs/YYYY-MM-DD__domain__topic__brief.md`
+- Workflow stage: `brief -> sql-draft -> static check -> sample -> validation -> full query -> review/result -> knowledge decision`
 
 ## Business Question
 
@@ -37,6 +38,14 @@
 | source | status | why considered | risk |
 | --- | --- | --- | --- |
 | | | | |
+
+## Evidence To Search Before SQL
+
+- Repo docs / SQL / reports:
+- Schema index:
+- Metabase cards / dashboards:
+- Historical SQL:
+- `data-query-work/knowledge/`:
 
 ## Assumptions
 

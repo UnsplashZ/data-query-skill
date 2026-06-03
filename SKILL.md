@@ -3,10 +3,10 @@ name: internal-data-query
 description: 通用内部数据查询 skill，适用于安装/配置内部数据查询能力、配置 Metabase/ClickHouse/ODPS/MaxCompute/MySQL 只读账号、刷新 schema/DDL/metadata、查数据、写只读 SQL、搜索 Metabase card/dashboard、找表字段、导出数据、验证报表口径、沉淀 data-query-work 知识。安装或配置时必须把凭证写入用户本机 data-sources.yaml，不得写入 skill 包、业务仓库或聊天记录；刷新 schema/DDL 前必须先说明会拉取的元数据范围并取得用户同意。
 license: Internal Use Only
 metadata:
-  version: 0.1.4
+  version: 0.1.5
   author: Hermes Agent
   hermes:
-    version: 0.1.4
+    version: 0.1.5
     author: Hermes Agent
     tags: [sql, data-query, odps, clickhouse, metabase, mysql, internal-data, schema-kb]
 ---
@@ -106,6 +106,15 @@ data-query-work/schema/unified_schema_index.json
 data-query-work/schema/ddl/<engine>/<profile>/<database>/<table>.sql
 ```
 
+Schema index discovery is shared by scripts. Resolution priority is:
+
+1. Explicit CLI path, such as `--file` or `--from-schema-index`.
+2. `INTERNAL_DATA_QUERY_SCHEMA_INDEX`.
+3. Repo-local `data-query-work/schema/schema-index.config.json`.
+4. Default repo-local candidates: `data-query-work/schema/*_schema_index.json`, with `unified_schema_index.json` preferred, then `all_sources_schema_index.json`.
+
+If multiple default candidates exist and neither preferred name is present, stop and ask the user to specify a file path instead of guessing.
+
 If the user declines metadata refresh, continue with repo files, Metabase, user-provided schema index, or live one-off metadata checks as explicitly allowed.
 
 ## Workspace Layout
@@ -155,8 +164,7 @@ For every data question:
 1. Restate the clarified metric/entity, time range, grain, filters/scope, output shape, and use of result.
 2. Search existing evidence before writing SQL:
    - current repo docs, SQL, scripts, reports, notebooks, data catalogs
-   - `data-query-work/schema/unified_schema_index.json`
-   - user-provided schema index or `INTERNAL_DATA_QUERY_SCHEMA_INDEX`
+   - schema index discovered from explicit path, `INTERNAL_DATA_QUERY_SCHEMA_INDEX`, repo-local config, or `data-query-work/schema/*_schema_index.json`
    - Metabase cards/dashboards
    - user-provided historical SQL index or `INTERNAL_DATA_QUERY_OLD_SQL_INDEX`
    - `data-query-work/knowledge/`
@@ -167,6 +175,34 @@ For every data question:
 7. Deliver source, SQL/result, validation performed, assumptions, and remaining risks.
 
 If execution is unavailable, label SQL/result as `unverified` and list missing checks.
+
+## Formal Query Artifact Workflow
+
+For any real query, SQL execution, result delivery, reusable metric definition, source reuse, or knowledge capture task, default to the full artifact gate:
+
+```text
+brief -> sql-draft -> static check -> sample query -> validation -> full query -> review/result -> knowledge candidate decision
+```
+
+Use `templates/query-brief.md`, `templates/sql-review.md`, `templates/result-summary.md`, and `templates/query-knowledge/knowledge-candidate.md` as a connected workflow, not isolated files.
+
+1. Brief: clarify metric/entity, time range, grain, filters, output shape, result use, and source choice. Save to `data-query-work/briefs/`.
+2. SQL draft: search repo docs, discovered schema index, Metabase, historical SQL, and `data-query-work/knowledge/` before writing readonly SQL. Save SQL to `data-query-work/sql-drafts/`.
+3. Static check: run `scripts/query_static_check.py` before execution. Errors block execution; warnings must be recorded in the review or result summary.
+4. Sample query: before full scope, run `LIMIT`, a small date range, a single partition, or a Metabase card sample.
+5. Validation: check row count, join hit rate/cardinality, key enum distribution, NULL/0 distribution, amount units, time fields, and deduplication risk.
+6. Full query: run the target range only after sample and validation are acceptable.
+7. Review/result: save source, SQL/card, result path or result table, validation, confidence, assumptions, and residual risks to `data-query-work/reviews/`.
+8. Knowledge candidate: create a candidate only when the task produced reusable knowledge such as metric definitions, source profiles, join contracts, golden queries, table mappings, or recurring pitfalls. Do not pollute knowledge with one-off results.
+
+Status labels:
+
+- `unverified`: execution is unavailable or only offline evidence/static checks exist.
+- `partially_verified`: sample or partial execution completed, but full scope or required validation is missing.
+- `verified`: static check, sample, validation, and target-scope query all completed against the current source.
+- `historical_only`: evidence comes only from old SQL, old cards, old docs, or stale knowledge.
+
+Lightweight exception: if the user explicitly says the task is temporary and does not need files, you may skip writing the full artifact set, but real execution still must keep `static check -> sample before full`.
 
 ## Source Rules
 
@@ -201,9 +237,9 @@ python scripts/patch_query_knowledge.py --root <target-repo> --patch-file correc
 - `scripts/setup_connections.py`: create or merge local readonly data-source config.
 - `scripts/check_connections.py`: parse config and optionally smoke-check real readonly connectivity.
 - `scripts/refresh_schema.py`: pull metadata, table structure, field details, and available DDL into `data-query-work/schema/`.
-- `scripts/sample_tables.py`: generate latest-row sample SQL from schema index, execute ClickHouse sampling when allowed, and write masked JSONL/status/report outputs.
-- `scripts/discover_data_sources.py`: summarize configured profiles, drivers, schema index, historical SQL index, and workspace knowledge.
-- `scripts/search_schema.py`: search schema index by table, field, engine, or keyword.
+- `scripts/sample_tables.py`: discover schema index, generate latest-row sample SQL, execute ClickHouse sampling when allowed, and write masked JSONL/status/report outputs.
+- `scripts/discover_data_sources.py`: summarize configured profiles, drivers, discovered schema index, historical SQL index, and workspace knowledge.
+- `scripts/search_schema.py`: discover and search schema index by table, field, engine, or keyword.
 - `scripts/search_old_sql.py`: search an external historical SQL index.
 - `scripts/query_static_check.py`: check readonly SQL safety.
 - `scripts/run_query.py`: run readonly ClickHouse, ODPS, MySQL, or Metabase queries and export CSV/XLSX.

@@ -20,6 +20,7 @@ from lib_data_sources import (
     profile_placeholder_fields,
     resolve_config_path,
 )
+from lib_schema_index import discover_schema_index, load_schema_index
 from lib_workspace import resolve_knowledge_root
 
 DRIVERS = {
@@ -69,26 +70,19 @@ def first_existing(candidates: list[Path]) -> Path | None:
 
 
 def schema_kb_status(root: Path) -> dict[str, Any]:
-    candidates = []
-    env_path = os.environ.get("INTERNAL_DATA_QUERY_SCHEMA_INDEX")
-    if env_path:
-        candidates.append(Path(env_path).expanduser())
-    candidates.extend(
-        [
-            root / "data-query-work" / "schema" / "unified_schema_index.json",
-            root / "references" / "schema-kb" / "unified_schema_index.json",
-        ]
-    )
-    unified = first_existing(candidates)
+    discovery = discover_schema_index(root)
     status: dict[str, Any] = {
-        "path": str(unified) if unified else None,
-        "exists": bool(unified),
+        "path": str(discovery.path) if discovery.path else None,
+        "exists": bool(discovery.exists),
         "tables": {},
         "generated_at": None,
-        "configured_by": "external",
+        "configured_by": discovery.source,
+        "ambiguous": discovery.ambiguous,
+        "candidates": [str(path) for path in discovery.candidates],
+        "message": discovery.message,
     }
-    if unified and unified.exists():
-        data = json.loads(unified.read_text(encoding="utf-8"))
+    if discovery.path and discovery.exists and not discovery.ambiguous:
+        data = load_schema_index(discovery.path)
         tables = data.get("tables") or {}
         status["tables"] = {engine: len(items or {}) for engine, items in tables.items()}
         status["generated_at"] = data.get("generated_at")
@@ -172,7 +166,10 @@ def build_next_actions(local_config: dict[str, Any], available_sources: list[dic
         actions.append("运行 scripts/setup_connections.py --non-interactive 生成本机配置模板，然后填入只读连接。")
     if any(item["status"] in {"missing", "offline_placeholder"} for item in available_sources):
         actions.append("补齐 missing/offline_placeholder profile；占位配置不能作为 verified 查询来源。")
-    if not offline_knowledge["schema_kb"].get("exists"):
+    schema_kb = offline_knowledge["schema_kb"]
+    if schema_kb.get("ambiguous"):
+        actions.append("发现多个 schema index，且没有 unified_schema_index.json 或 all_sources_schema_index.json；请用 --file/--from-schema-index 指定。")
+    elif not schema_kb.get("exists"):
         actions.append("未配置 schema index；配置只读数据源后可运行 scripts/refresh_schema.py --root <target-repo> 拉取元数据。")
     if not offline_knowledge["data_query_knowledge"].get("exists"):
         actions.append("未发现 data-query-work/knowledge；只能使用目标仓库、外部索引、实时连接或当前用户证据，不能标记共享知识 verified。")
@@ -193,7 +190,12 @@ def print_text(result: dict[str, Any]) -> None:
     schema = result["offline_knowledge"]["schema_kb"]
     hist = result["offline_knowledge"]["historical_sql"]
     dqk = result["offline_knowledge"]["data_query_knowledge"]
-    print(f"- schema_kb: exists={schema['exists']} generated_at={schema.get('generated_at')} tables={schema.get('tables', {})}")
+    print(
+        f"- schema_kb: exists={schema['exists']} configured_by={schema.get('configured_by')} "
+        f"generated_at={schema.get('generated_at')} tables={schema.get('tables', {})}"
+    )
+    if schema.get("ambiguous") or schema.get("message"):
+        print(f"  message: {schema.get('message')}")
     print(f"- historical_sql: index_count={hist['index_count']} sql_file_count={hist['sql_file_count']}")
     print(
         f"- data_query_knowledge: exists={dqk['exists']} "

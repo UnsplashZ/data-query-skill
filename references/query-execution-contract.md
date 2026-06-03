@@ -10,10 +10,22 @@
 4. 先选定 engine/profile，再写 SQL；不能静默切换 ClickHouse、ODPS、MySQL 或 Metabase。
 5. SQL 必须只读。默认禁止 DDL、DML、权限、导出、过程执行、维护类语句。
 6. 每个查询必须声明时间字段、时间范围、统计粒度、状态过滤、金额单位和业务 scope。
-7. 执行路径必须是 `static check -> sample -> validation -> full scope`。无法执行 full scope 时，结果只能标为 `partially_verified` 或 `unverified`。
+7. 正式查数 artifact 路径必须是 `brief -> sql-draft -> static check -> sample query -> validation -> full query -> review/result -> knowledge candidate decision`。无法执行 full scope 时，结果只能标为 `partially_verified` 或 `unverified`。
 8. 若只需要指定表，先用 `refresh_schema.py --table-list` 定向刷新 metadata；若需要表样例，优先用 `sample_tables.py --dry-run` 生成 SQL/status，再在用户允许真实查询后执行。
+9. 只有用户明确说“只要临时看一下，不需要落盘”时，才可跳过完整 artifact 落盘；真实执行仍不能跳过 `static check -> sample before full`。
 
-## 2. Dialect 策略
+## 2. Schema Index Discovery
+
+所有读取 schema index 的脚本使用统一发现优先级：
+
+1. 显式 CLI 参数：`--file` 或 `--from-schema-index`。
+2. `INTERNAL_DATA_QUERY_SCHEMA_INDEX`。
+3. `data-query-work/schema/schema-index.config.json`。
+4. `data-query-work/schema/*_schema_index.json`。
+
+默认候选多于一个时，优先选择 `unified_schema_index.json`，其次选择 `all_sources_schema_index.json`。如果仍无法确定，脚本必须列出候选并要求用户指定路径，不能随机选择。
+
+## 3. Dialect 策略
 
 ### ClickHouse
 
@@ -41,7 +53,7 @@
 - Native SQL 执行必须指定 database/card 上下文；模板变量需要显式传入 parameters。
 - Metabase 结果需要记录 card id、database id、参数、运行时间和权限/过滤风险。
 
-## 3. Static Check 规则
+## 4. Static Check 规则
 
 运行 `scripts/query_static_check.py` 检查：
 
@@ -61,7 +73,7 @@
 - `confidence`：默认 `card/sample/full -> partially_verified`，`manual -> unverified`；只有外部验证闭环完整时，结果说明中才可升级为 `verified`。
 - `validation_notes`：记录静态检查、采样/全量声明、card 参数或人工校验说明。
 
-## 4. 失败修正循环
+## 5. 失败修正循环
 
 ### 字段不存在
 
@@ -101,7 +113,7 @@
 2. 用更小字段集查询分布，而不是立即判定业务为 0。
 3. 若所有验证都为空，输出中注明验证 SQL 和空结果风险。
 
-## 5. 采样策略
+## 6. 采样策略
 
 - `LIMIT` sample：首次执行明细查询必须加 `LIMIT`。
 - 小日期范围 sample：先跑 1 天、3 天或单个分区，再扩大到目标周期。
@@ -110,7 +122,7 @@
 - 聚合 sanity check：核心指标至少做行数、去重数、金额总和、空值比例或边界日期检查。
 - Full scope：只有 sample 和 validation 通过后才运行完整范围。
 
-## 6. Confidence 标签
+## 7. Confidence 标签
 
 - `verified`：使用当前可执行 source 完成 static check、sample、validation 和目标范围查询；结果包含 source、SQL/参数、时间范围和验证记录。
 - `partially_verified`：只完成部分验证，例如 sample 通过但 full scope timeout，或 card 可运行但字段口径仍需业务确认。

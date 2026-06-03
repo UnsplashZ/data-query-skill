@@ -5,45 +5,17 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 from pathlib import Path
 from typing import Any
 
-
-def default_schema_candidates(root: Path) -> list[Path]:
-    candidates: list[Path] = []
-    env_path = os.environ.get("INTERNAL_DATA_QUERY_SCHEMA_INDEX")
-    if env_path:
-        candidates.append(Path(env_path).expanduser())
-    candidates.extend(
-        [
-            root / "data-query-work" / "schema" / "unified_schema_index.json",
-            root / "references" / "schema-kb" / "unified_schema_index.json",
-        ]
-    )
-    return candidates
-
-
-def resolve_schema_index(root: Path, file_path: Path | None) -> Path | None:
-    if file_path:
-        return file_path.expanduser()
-    for candidate in default_schema_candidates(root):
-        if candidate.exists():
-            return candidate
-    return None
-
-
-def load_unified(path: Path) -> dict[str, Any]:
-    if not path.exists():
-        raise FileNotFoundError(f"schema index not found: {path}")
-    return json.loads(path.read_text(encoding="utf-8"))
+from lib_schema_index import discover_schema_index, load_schema_index
 
 
 def lower(value: Any) -> str:
     return str(value or "").lower()
 
 
-def iter_matches(data: dict[str, Any], args: argparse.Namespace):
+def iter_matches(data: dict[str, Any], args: argparse.Namespace, source_file: str):
     query = lower(args.query)
     table_filter = lower(args.table)
     field_filter = lower(args.field)
@@ -76,7 +48,7 @@ def iter_matches(data: dict[str, Any], args: argparse.Namespace):
                         "field": "",
                         "type": "",
                         "comment": meta.get("comment", ""),
-                        "source_file": "unified_schema_index.json",
+                        "source_file": source_file,
                     }
                 continue
 
@@ -94,7 +66,7 @@ def iter_matches(data: dict[str, Any], args: argparse.Namespace):
                     "field": field,
                     "type": col.get("type", ""),
                     "comment": col.get("comment", "") or meta.get("comment", ""),
-                    "source_file": "unified_schema_index.json",
+                    "source_file": source_file,
                 }
 
 
@@ -106,35 +78,58 @@ def print_table(rows: list[dict[str, Any]]) -> None:
         print(" | ".join(str(row.get(h, "")).replace("\n", " ")[:180] for h in headers))
 
 
+def print_discovery_error(message: str, candidates: list[Path], as_json: bool) -> None:
+    if as_json:
+        print(
+            json.dumps(
+                {
+                    "error": message,
+                    "schema_index_candidates": [str(path) for path in candidates],
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+    else:
+        print(message)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Search an optional external schema index by table, field, engine, or keyword.")
     parser.add_argument("query", nargs="?", default="", help="Keyword to search in table/field/comment.")
     parser.add_argument("--table", help="Filter by table name substring.")
     parser.add_argument("--field", help="Filter by field name substring.")
     parser.add_argument("--engine", help="Filter by engine/source.")
-    parser.add_argument("--file", type=Path, help="External unified schema index JSON.")
+    parser.add_argument("--file", type=Path, help="Schema index JSON. Overrides env/config/default discovery.")
     parser.add_argument("--limit", type=int, default=30)
     parser.add_argument("--json", action="store_true")
     parser.add_argument(
         "--root",
         type=Path,
         default=Path(__file__).resolve().parents[1],
-        help="Skill root directory.",
+        help="Target repository root directory.",
     )
     args = parser.parse_args()
 
     root = args.root.resolve()
-    index_path = resolve_schema_index(root, args.file)
-    if not index_path:
+    discovery = discover_schema_index(root, args.file)
+    if discovery.ambiguous:
+        print_discovery_error(discovery.message, discovery.candidates, args.json)
+        return 2
+    if not discovery.path or not discovery.exists:
+        message = discovery.message or "No schema index configured. Provide --file or set INTERNAL_DATA_QUERY_SCHEMA_INDEX."
+        if discovery.path:
+            print_discovery_error(message, discovery.candidates, args.json)
+            return 2
         if args.json:
             print("[]")
         else:
-            print("No schema index configured. Provide --file or set INTERNAL_DATA_QUERY_SCHEMA_INDEX.")
+            print(message)
         return 0
 
-    data = load_unified(index_path)
+    data = load_schema_index(discovery.path)
     rows = []
-    for item in iter_matches(data, args):
+    for item in iter_matches(data, args, discovery.path.name):
         rows.append(item)
         if len(rows) >= args.limit:
             break

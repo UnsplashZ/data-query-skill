@@ -17,6 +17,7 @@
 
 - [ ] Current repository/workspace has been searched.
 - [ ] External schema index, live metadata, or target-repo data catalog has been searched when available.
+- [ ] Schema index discovery checked explicit path, `INTERNAL_DATA_QUERY_SCHEMA_INDEX`, repo-local config, and `data-query-work/schema/*_schema_index.json`.
 - [ ] Scoped schema refresh has been run with `--table-list` when the question is limited to known tables.
 - [ ] External historical SQL index has been searched when available.
 - [ ] Target-repo runbooks or business docs have been searched when available.
@@ -28,6 +29,8 @@
 
 ## SQL Author
 
+- [ ] Brief artifact exists under `data-query-work/briefs/`, unless the user explicitly requested no artifact files.
+- [ ] SQL draft is saved under `data-query-work/sql-drafts/`, unless the user explicitly requested no artifact files.
 - [ ] SQL is readonly.
 - [ ] Time range is explicit.
 - [ ] Scope, limit, or aggregation constraint is present.
@@ -41,6 +44,8 @@
 ## Execution
 
 - [ ] Schema/dry-run/metadata check completed.
+- [ ] `scripts/query_static_check.py` completed before any real execution.
+- [ ] Static check errors blocked execution; warnings are recorded.
 - [ ] `sample_tables.py` dry-run or sample completed when schema-index table examples are needed.
 - [ ] Small-range or `LIMIT` query completed.
 - [ ] Enum/status distribution checked.
@@ -61,6 +66,7 @@
 
 ## Delivery
 
+- [ ] Review or result summary is saved under `data-query-work/reviews/`, unless the user explicitly requested no artifact files.
 - [ ] Executable SQL or result path is provided.
 - [ ] Data source, tables, and key fields are listed.
 - [ ] Business definition and assumptions are stated.
@@ -68,3 +74,4 @@
 - [ ] Remaining risks and follow-up checks are stated.
 - [ ] Reusable outputs are saved under `data-query-work/` or the user-selected local folder.
 - [ ] Exports and sample outputs are masked before writing; residual sensitive scan has no high-risk findings.
+- [ ] Knowledge candidate is generated only for reusable metric/source/join/golden-query/table-mapping knowledge, not for every one-off result.

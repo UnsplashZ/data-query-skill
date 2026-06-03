@@ -7,12 +7,14 @@ import argparse
 import csv
 import json
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from lib_data_sources import bool_value, load_profile
 from lib_masking import FIELD_NAME_PATTERNS, assert_no_high_risk_text, field_name_findings, mask_records, residual_scan_file
+from lib_schema_index import discover_schema_index, load_schema_index
 from lib_table_list import parse_table_list
 
 
@@ -54,13 +56,6 @@ def atomic_write_text(path: Path, text: str) -> None:
     tmp = path.with_name(path.name + ".tmp")
     tmp.write_text(text, encoding="utf-8")
     tmp.replace(path)
-
-
-def load_schema_index(path: Path) -> dict[str, Any]:
-    data = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(data, dict):
-        raise ValueError("schema index must be a JSON object")
-    return data
 
 
 def columns_for(entry: dict[str, Any]) -> list[dict[str, Any]]:
@@ -242,6 +237,8 @@ def write_report(path: Path, summary: dict[str, Any]) -> None:
         "",
         f"- mode: {summary['mode']}",
         f"- profile: {summary['profile']}",
+        f"- schema_index: {summary.get('schema_index')}",
+        f"- schema_index_source: {summary.get('schema_index_source')}",
         f"- rows_requested: {summary['rows_requested']}",
         f"- masked_jsonl: {summary.get('masked_jsonl')}",
         f"- status_csv: {summary.get('status_csv')}",
@@ -280,7 +277,7 @@ def write_report(path: Path, summary: dict[str, Any]) -> None:
     lines.append(f"- high_risk_findings: {summary.get('residual_scan', {}).get('high_risk_findings')}")
     lines.append("")
     lines.append("## Validation")
-    lines.append("- python scripts/sample_tables.py --engine <engine> --from-schema-index <path> --rows 2 --root <target-repo> --dry-run")
+    lines.append("- python scripts/sample_tables.py --engine <engine> --rows 2 --root <target-repo> --dry-run")
     atomic_write_text(path, "\n".join(lines).rstrip() + "\n")
 
 
@@ -290,7 +287,7 @@ def main() -> int:
     parser.add_argument("--profile", default="default")
     parser.add_argument("--config", type=Path)
     parser.add_argument("--env-file", type=Path)
-    parser.add_argument("--from-schema-index", type=Path, required=True)
+    parser.add_argument("--from-schema-index", type=Path, help="Schema index JSON. Overrides env/config/default discovery.")
     parser.add_argument("--table-list", type=Path)
     parser.add_argument("--table-column")
     parser.add_argument("--sheet")
@@ -303,7 +300,15 @@ def main() -> int:
     args = parser.parse_args()
 
     root = args.root.resolve()
-    schema = load_schema_index(args.from_schema_index.resolve())
+    discovery = discover_schema_index(root, args.from_schema_index)
+    if discovery.ambiguous or not discovery.path or not discovery.exists:
+        message = discovery.message or "No schema index configured. Provide --from-schema-index or set INTERNAL_DATA_QUERY_SCHEMA_INDEX."
+        if args.json:
+            print(json.dumps({"error": message, "schema_index_candidates": [str(path) for path in discovery.candidates]}, ensure_ascii=False, indent=2))
+        else:
+            print(message, file=sys.stderr)
+        return 2
+    schema = load_schema_index(discovery.path)
     table_plan = (
         parse_table_list(args.table_list, default_database=args.default_database, table_column=args.table_column, sheet=args.sheet)
         if args.table_list
@@ -402,6 +407,8 @@ def main() -> int:
         "engine": args.engine,
         "profile": args.profile,
         "rows_requested": args.rows,
+        "schema_index": str(discovery.path),
+        "schema_index_source": discovery.source,
         "masked_jsonl": None if args.dry_run else str(jsonl_path),
         "status_csv": str(status_path),
         "report": str(report_path),

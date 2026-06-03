@@ -48,7 +48,7 @@ data-query-work/
 └── knowledge/
 ```
 
-- `schema/` 保存从只读数据源刷新出的 `unified_schema_index.json` 和 DDL 快照。
+- `schema/` 保存从只读数据源刷新出的 schema index 和 DDL 快照。脚本默认发现 `data-query-work/schema/*_schema_index.json`，优先 `unified_schema_index.json`，其次 `all_sources_schema_index.json`。
 - `knowledge/` 默认只创建 `candidates/`、`reviewed/`、`approved/`、`OWNERS.yaml`、`promotion-log.md`；`deprecated/` 只在首次弃用时创建。
 - `exports/` 可能包含查询结果；内置查询导出和样例抽取默认写入脱敏结果，提交前仍应按团队安全要求处理。
 
@@ -72,3 +72,11 @@ data-query-work/
 验证这个报表口径
 把这些 knowledge candidate 批量 approve / deprecated
 ```
+
+正式查数默认走 artifact workflow：
+
+```text
+brief -> sql-draft -> static check -> sample query -> validation -> full query -> review/result -> knowledge candidate decision
+```
+
+只有明确临时探索且不需要落盘时，才可跳过完整 artifact 文件；真实执行仍必须先 static check，再 sample before full。

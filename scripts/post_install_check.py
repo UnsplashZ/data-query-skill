@@ -124,7 +124,7 @@ def build_report(root: Path, config_path: Path | None, env_file: Path | None, re
         "connection_smoke": connection_smoke,
         "next_actions": [
             "Use scripts/setup_connections.py --add-sources <sources> to add missing local profiles without overwriting existing profiles.",
-            "After readonly profiles are configured and network/VPN is available, run scripts/refresh_schema.py --root <target-repo> to build data-query-work/schema/unified_schema_index.json.",
+            "After readonly profiles are configured and network/VPN is available, run scripts/refresh_schema.py --root <target-repo> to build data-query-work/schema/*_schema_index.json plus DDL files.",
             "Run scripts/post_install_check.py --real-smoke only when VPN/network and readonly accounts are available.",
             "Restart Codex to pick up new skills.",
         ],

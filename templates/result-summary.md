@@ -13,6 +13,10 @@
 - Output file:
 - Row count:
 - Runtime:
+- Prior brief:
+- SQL draft:
+- SQL review:
+- Knowledge candidate decision: `none / candidate-created / candidate-needed`
 
 ## Result
 
@@ -27,11 +31,21 @@
 
 ## Verification
 
--
+- Static check:
+- Sample query:
+- Validation:
+- Full scope:
+- Confidence rationale:
 
 ## Risks / Caveats
 
 -
+
+## Knowledge Candidate Decision
+
+- Reusable knowledge found:
+- Candidate path:
+- Reason if not captured:
 
 ## Re-run
 

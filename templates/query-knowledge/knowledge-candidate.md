@@ -38,6 +38,7 @@ source_interaction: []
 - Source interaction:
 - Source type: `query-brief / sql-review / result-summary / metabase / user-assertion`
 - Created at:
+- Capture rule: only create for reusable metric definitions, source profiles, join contracts, golden queries, table mappings, or recurring pitfalls.
 
 ## Candidate Summary
 
@@ -45,7 +46,11 @@ source_interaction: []
 
 ## Evidence
 
--
+- Brief:
+- SQL draft:
+- Static check:
+- Sample/full query:
+- Result summary or review:
 
 ## Review Notes
 
