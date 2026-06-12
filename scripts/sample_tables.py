@@ -318,10 +318,13 @@ def main() -> int:
     missing = missing_requested(schema, args.engine, table_plan)
     export_dir = root / "data-query-work" / "exports"
     report_dir = root / "data-query-work" / "discovery-reports"
+    # Export artifacts live under the gitignored exports/ dir (not naming-lint scope);
+    # keep their machine stem. The discovery report is committed, so it follows the
+    # repo YYYY-MM-DD-<source>-<topic> convention.
     stem = f"{date_stem()}__sample-tables__{slug(args.engine)}"
     jsonl_path = export_dir / f"{stem}__masked.jsonl"
     status_path = export_dir / f"{stem}__status.csv"
-    report_path = report_dir / f"{stem}__report.md"
+    report_path = report_dir / f"{date_stem()}-{slug(args.engine)}-sample-tables-report.md"
 
     all_masked_records: list[dict[str, Any]] = []
     status_rows: list[dict[str, Any]] = []

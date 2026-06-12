@@ -463,7 +463,7 @@ def profile_default_database(config: dict[str, Any], engine_filter: str, profile
 
 def write_discovery_report(root: Path, engine: str, summary: dict[str, Any], *, write_json: bool = True) -> dict[str, str]:
     report_dir = root / "data-query-work" / "discovery-reports"
-    stem = f"{date_stem()}__schema-refresh__{slug(engine)}__report"
+    stem = f"{date_stem()}-{slug(engine)}-schema-refresh-report"
     md_path = report_dir / f"{stem}.md"
     json_path = report_dir / f"{stem}.json"
     lines = [

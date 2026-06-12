@@ -3,10 +3,10 @@ name: internal-data-query
 description: 通用内部数据查询 skill，适用于安装/配置内部数据查询能力、配置 Metabase/ClickHouse/ODPS/MaxCompute/MySQL 只读账号、刷新 schema/DDL/metadata、查数据、写只读 SQL、搜索 Metabase card/dashboard、找表字段、导出数据、验证报表口径、沉淀 data-query-work 知识。安装或配置时必须把凭证写入用户本机 data-sources.yaml，不得写入 skill 包、业务仓库或聊天记录；刷新 schema/DDL 前必须先说明会拉取的元数据范围并取得用户同意。
 license: Internal Use Only
 metadata:
-  version: 0.1.5
+  version: 0.1.6
   author: Hermes Agent
   hermes:
-    version: 0.1.5
+    version: 0.1.6
     author: Hermes Agent
     tags: [sql, data-query, odps, clickhouse, metabase, mysql, internal-data, schema-kb]
 ---
